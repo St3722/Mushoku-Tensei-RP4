@@ -1,0 +1,614 @@
+{
+  "quest_categories": {
+    "main_story": {
+      "name": "Histoire Principale",
+      "description": "Quêtes liées à la trame narrative principale du jeu.",
+      "icon": "quest_main_story.png",
+      "color": "#FFC125"
+    },
+    "side_quest": {
+      "name": "Quêtes Secondaires",
+      "description": "Aventures optionnelles enrichissant l'univers du jeu.",
+      "icon": "quest_side.png",
+      "color": "#87CEEB"
+    },
+    "guild_quest": {
+      "name": "Quêtes de Guilde",
+      "description": "Missions confiées par les diverses guildes du monde.",
+      "icon": "quest_guild.png",
+      "color": "#9370DB"
+    },
+    "hunting_quest": {
+      "name": "Contrats de Chasse",
+      "description": "Contrats pour éliminer des monstres ou des criminels.",
+      "icon": "quest_hunting.png",
+      "color": "#CD5C5C"
+    },
+    "crafting_quest": {
+      "name": "Quêtes d'Artisanat",
+      "description": "Missions axées sur la création d'objets spécifiques.",
+      "icon": "quest_crafting.png",
+      "color": "#8FBC8F"
+    },
+    "exploration_quest": {
+      "name": "Exploration",
+      "description": "Aventures centrées sur la découverte de nouveaux lieux.",
+      "icon": "quest_exploration.png",
+      "color": "#6495ED"
+    },
+    "legendary_quest": {
+      "name": "Quêtes Légendaires",
+      "description": "Missions épiques liées aux légendes du monde.",
+      "icon": "quest_legendary.png",
+      "color": "#FF8C00"
+    }
+  },
+  "quest_lines": {
+    "awakening_path": {
+      "id": "awakening_path",
+      "name": "Le Chemin de l'Éveil",
+      "description": "La quête principale du jeu, suivant le parcours du protagoniste vers sa destinée.",
+      "category": "main_story",
+      "quests": ["first_awakening", "search_for_master", "trial_of_elements"],
+      "requirements": {
+        "level": 1
+      },
+      "rewards": {
+        "special_title": "L'Éveillé"
+      }
+    },
+    "god_styles_legend": {
+      "id": "god_styles_legend",
+      "name": "La Légende des Styles Divins",
+      "description": "Série de quêtes pour découvrir et maîtriser les styles de combat légendaires.",
+      "category": "legendary_quest",
+      "quests": ["sword_god_rumor", "water_god_disciple", "north_god_challenge"],
+      "requirements": {
+        "level": 15,
+        "combat_skill": 5
+      },
+      "rewards": {
+        "unique_skill": "style_fusion",
+        "special_title": "Héritier des Trois Dieux"
+      }
+    }
+  },
+  "quests": {
+    "first_awakening": {
+      "id": "first_awakening",
+      "name": "Le Premier Éveil",
+      "description": "Votre nouvelle vie commence à la suite d'un événement mystérieux qui a réveillé vos pouvoirs latents.",
+      "category": "main_story",
+      "quest_line": "awakening_path",
+      "is_mandatory": true,
+      "quest_giver": {
+        "npc_id": "old_sage",
+        "location_id": "starting_village"
+      },
+      "objectives": [
+        {
+          "id": "meet_sage",
+          "description": "Rencontrer le vieux sage",
+          "type": "talk_to_npc",
+          "target_id": "old_sage",
+          "completed": false
+        },
+        {
+          "id": "activate_power",
+          "description": "Activer votre pouvoir intérieur",
+          "type": "use_skill",
+          "target_id": "inner_power",
+          "completed": false
+        },
+        {
+          "id": "defeat_shadow",
+          "description": "Vaincre votre ombre intérieure",
+          "type": "defeat_enemy",
+          "target_id": "inner_shadow",
+          "count": 1,
+          "completed": false
+        }
+      ],
+      "rewards": {
+        "experience": 300,
+        "gold": 50,
+        "items": [
+          {
+            "id": "awakened_pendant",
+            "count": 1
+          }
+        ],
+        "skills": [
+          {
+            "id": "basic_touki",
+            "level": 1
+          }
+        ],
+        "reputation": {
+          "starting_village": 100
+        },
+        "unlocks": ["search_for_master"]
+      },
+      "fail_conditions": [],
+      "time_limit": null,
+      "dialogue": {
+        "start": [
+          {
+            "npc": "old_sage",
+            "text": "Je sens un pouvoir sommeiller en toi. Il est temps de l'éveiller."
+          },
+          {
+            "player": ["Quel pouvoir?", "Comment puis-je l'éveiller?"],
+            "responses": [
+              {
+                "text": "Un pouvoir ancien qui pourrait changer ton destin.",
+                "next": "explain_power"
+              },
+              {
+                "text": "À travers la méditation et en affrontant tes propres ténèbres.",
+                "next": "meditation_guide"
+              }
+            ]
+          }
+        ],
+        "explain_power": [
+          {
+            "npc": "old_sage",
+            "text": "C'est une énergie intérieure appelée Touki, que seuls quelques élus peuvent maîtriser."
+          }
+        ],
+        "meditation_guide": [
+          {
+            "npc": "old_sage",
+            "text": "Assieds-toi et ferme les yeux. Cherche au plus profond de toi cette lueur d'énergie."
+          }
+        ],
+        "completion": [
+          {
+            "npc": "old_sage",
+            "text": "Tu as réussi! Le Touki coule maintenant en toi. Ce n'est que le début de ton voyage."
+          }
+        ]
+      },
+      "journal_entries": [
+        {
+          "trigger": "quest_start",
+          "text": "Un vieux sage m'a parlé d'un pouvoir qui sommeille en moi. Je dois le rencontrer et apprendre à éveiller cette force mystérieuse."
+        },
+        {
+          "trigger": "objective_complete_meet_sage",
+          "text": "Le sage m'a enseigné une technique de méditation pour trouver mon énergie intérieure, le Touki."
+        },
+        {
+          "trigger": "objective_complete_activate_power",
+          "text": "J'ai réussi à activer mon Touki! Mais une manifestation sombre de mon énergie est apparue... Je dois l'affronter pour compléter mon éveil."
+        },
+        {
+          "trigger": "quest_complete",
+          "text": "J'ai vaincu mon ombre intérieure et complété mon premier éveil. Le sage m'a remis un pendentif mystérieux et m'a parlé d'un maître qui pourrait m'aider à progresser."
+        }
+      ],
+      "followup_quests": ["search_for_master"],
+      "world_state_changes": {
+        "player_awakened": true
+      }
+    },
+    "search_for_master": {
+      "id": "search_for_master",
+      "name": "À la Recherche du Maître",
+      "description": "Le vieux sage vous a parlé d'un maître vivant dans les montagnes du nord qui pourrait vous enseigner à maîtriser votre Touki.",
+      "category": "main_story",
+      "quest_line": "awakening_path",
+      "is_mandatory": true,
+      "quest_giver": {
+        "npc_id": "old_sage",
+        "location_id": "starting_village"
+      },
+      "prerequisites": {
+        "quests_completed": ["first_awakening"]
+      },
+      "objectives": [
+        {
+          "id": "reach_mountains",
+          "description": "Atteindre les montagnes du nord",
+          "type": "reach_location",
+          "target_id": "northern_mountains",
+          "completed": false
+        },
+        {
+          "id": "find_clues",
+          "description": "Trouver des indices sur l'emplacement du maître",
+          "type": "collect_item",
+          "target_id": "master_clue",
+          "count": 3,
+          "completed": false
+        },
+        {
+          "id": "defeat_guardian",
+          "description": "Vaincre le gardien du passage",
+          "type": "defeat_enemy",
+          "target_id": "mountain_guardian",
+          "count": 1,
+          "completed": false
+        },
+        {
+          "id": "meet_master",
+          "description": "Rencontrer le maître",
+          "type": "talk_to_npc",
+          "target_id": "north_god_master",
+          "completed": false
+        }
+      ],
+      "rewards": {
+        "experience": 800,
+        "gold": 200,
+        "items": [
+          {
+            "id": "north_god_training_manual",
+            "count": 1
+          }
+        ],
+        "skills": [
+          {
+            "id": "north_god_style",
+            "level": 1
+          }
+        ],
+        "unlocks": ["trial_of_elements"]
+      },
+      "fail_conditions": [],
+      "time_limit": null,
+      "dialogue": {
+        "start": [
+          {
+            "npc": "old_sage",
+            "text": "Maintenant que ton pouvoir est éveillé, tu dois chercher un vrai maître. Dans les montagnes du nord vit un disciple du Dieu Nord. Il pourra t'enseigner à maîtriser ton Touki."
+          }
+        ],
+        "mountain_arrival": [
+          {
+            "narrator": "Les montagnes se dressent devant vous, majestueuses et intimidantes. Le vent froid vous gifle le visage."
+          }
+        ],
+        "guardian_encounter": [
+          {
+            "npc": "mountain_guardian",
+            "text": "Seuls ceux qui prouvent leur valeur peuvent rencontrer le maître. Montre-moi ta force!"
+          }
+        ],
+        "master_meeting": [
+          {
+            "npc": "north_god_master",
+            "text": "Je t'observais depuis ton entrée dans la montagne. Tu as du potentiel, mais un long chemin t'attend encore."
+          }
+        ],
+        "completion": [
+          {
+            "npc": "north_god_master",
+            "text": "Je vais t'enseigner les bases du Style du Dieu Nord. C'est un style adaptatif qui te servira bien dans ton voyage."
+          }
+        ]
+      },
+      "journal_entries": [
+        {
+          "trigger": "quest_start",
+          "text": "Le sage m'a parlé d'un maître vivant dans les montagnes du nord. Je dois le trouver pour apprendre à maîtriser mon Touki."
+        },
+        {
+          "trigger": "objective_complete_reach_mountains",
+          "text": "J'ai atteint les montagnes du nord. L'air y est froid et raréfié. Je dois maintenant trouver des indices sur l'emplacement du maître."
+        },
+        {
+          "trigger": "objective_complete_find_clues",
+          "text": "Grâce aux indices recueillis, j'ai découvert le chemin menant à la retraite du maître. Mais un puissant gardien bloque le passage."
+        },
+        {
+          "trigger": "objective_complete_defeat_guardian",
+          "text": "J'ai vaincu le gardien de la montagne. Il semblait tester ma détermination plus que ma force."
+        },
+        {
+          "trigger": "quest_complete",
+          "text": "J'ai rencontré le maître du Style du Dieu Nord. Il a accepté de m'enseigner les bases de son style de combat. Ce n'est que le début de mon apprentissage."
+        }
+      ],
+      "followup_quests": ["trial_of_elements"],
+      "world_state_changes": {
+        "met_north_god_master": true
+      }
+    },
+    "trial_of_elements": {
+      "id": "trial_of_elements",
+      "name": "L'Épreuve des Éléments",
+      "description": "Pour progresser dans votre maîtrise du Touki, vous devez passer l'Épreuve des Éléments et démontrer votre affinité.",
+      "category": "main_story",
+      "quest_line": "awakening_path",
+      "is_mandatory": true,
+      "quest_giver": {
+        "npc_id": "north_god_master",
+        "location_id": "master_retreat"
+      },
+      "prerequisites": {
+        "quests_completed": ["search_for_master"]
+      },
+      "objectives": [
+        {
+          "id": "meditation_preparation",
+          "description": "Méditer et se préparer pour l'épreuve",
+          "type": "use_skill",
+          "target_id": "meditation",
+          "completed": false
+        },
+        {
+          "id": "trial_fire",
+          "description": "Passer l'épreuve du feu",
+          "type": "complete_challenge",
+          "target_id": "fire_trial",
+          "completed": false
+        },
+        {
+          "id": "trial_water",
+          "description": "Passer l'épreuve de l'eau",
+          "type": "complete_challenge",
+          "target_id": "water_trial",
+          "completed": false
+        },
+        {
+          "id": "trial_earth",
+          "description": "Passer l'épreuve de la terre",
+          "type": "complete_challenge",
+          "target_id": "earth_trial",
+          "completed": false
+        },
+        {
+          "id": "trial_air",
+          "description": "Passer l'épreuve de l'air",
+          "type": "complete_challenge",
+          "target_id": "air_trial",
+          "completed": false
+        },
+        {
+          "id": "elemental_fusion",
+          "description": "Réaliser la fusion élémentaire",
+          "type": "use_skill",
+          "target_id": "elemental_fusion",
+          "completed": false
+        }
+      ],
+      "rewards": {
+        "experience": 1500,
+        "gold": 300,
+        "items": [
+          {
+            "id": "elemental_crystal",
+            "count": 1
+          }
+        ],
+        "skills": [
+          {
+            "id": "elemental_touki",
+            "level": 1
+          }
+        ]
+      },
+      "fail_conditions": [
+        {
+          "type": "player_death",
+          "description": "Mourir pendant l'une des épreuves"
+        }
+      ],
+      "time_limit": null,
+      "journal_entries": [
+        {
+          "trigger": "quest_start",
+          "text": "Le maître m'a parlé de l'Épreuve des Éléments, un rituel ancien que je dois accomplir pour progresser dans ma maîtrise du Touki. Je dois me préparer par la méditation."
+        },
+        {
+          "trigger": "objective_complete_meditation_preparation",
+          "text": "J'ai terminé ma préparation mentale. Je me sens plus centré et prêt à affronter les épreuves élémentaires."
+        },
+        {
+          "trigger": "objective_complete_trial_fire",
+          "text": "J'ai traversé l'épreuve du feu. La chaleur était intense, mais j'ai appris à utiliser mon Touki pour me protéger et résister."
+        },
+        {
+          "trigger": "quest_complete",
+          "text": "J'ai passé toutes les épreuves élémentaires et réussi la fusion. Le maître m'a remis un cristal élémentaire et m'a enseigné comment infuser mon Touki avec les énergies élémentaires."
+        }
+      ],
+      "world_state_changes": {
+        "elemental_affinity_unlocked": true
+      }
+    },
+    "sword_god_rumor": {
+      "id": "sword_god_rumor",
+      "name": "Rumeurs du Dieu Épée",
+      "description": "Des rumeurs parlent d'un vieil épéiste vivant reclus qui pourrait être un disciple du légendaire Dieu Épée.",
+      "category": "legendary_quest",
+      "quest_line": "god_styles_legend",
+      "is_mandatory": false,
+      "quest_giver": {
+        "npc_id": "tavern_keeper",
+        "location_id": "eastern_town"
+      },
+      "prerequisites": {
+        "level": 15,
+        "skills": {
+          "sword": 5
+        }
+      },
+      "objectives": [
+        {
+          "id": "gather_information",
+          "description": "Recueillir des informations sur l'épéiste",
+          "type": "talk_to_npc",
+          "target_id": ["old_warrior", "town_scholar", "wandering_merchant"],
+          "count": 3,
+          "completed": false
+        },
+        {
+          "id": "find_sword_master",
+          "description": "Localiser la cabane de l'épéiste",
+          "type": "reach_location",
+          "target_id": "hidden_cabin",
+          "completed": false
+        },
+        {
+          "id": "prove_worth",
+          "description": "Prouver votre valeur à l'épéiste",
+          "type": "defeat_enemy",
+          "target_id": "sword_master_test",
+          "count": 1,
+          "completed": false
+        },
+        {
+          "id": "learn_technique",
+          "description": "Apprendre la technique de base du Style du Dieu Épée",
+          "type": "complete_training",
+          "target_id": "sword_god_basic",
+          "completed": false
+        }
+      ],
+      "rewards": {
+        "experience": 2000,
+        "gold": 500,
+        "items": [
+          {
+            "id": "sword_god_emblem",
+            "count": 1
+          }
+        ],
+        "skills": [
+          {
+            "id": "sword_god_style",
+            "level": 1
+          }
+        ]
+      },
+      "journal_entries": [
+        {
+          "trigger": "quest_start",
+          "text": "J'ai entendu des rumeurs à propos d'un vieil épéiste qui maîtriserait le légendaire Style du Dieu Épée. Si je peux le trouver et gagner son respect, peut-être acceptera-t-il de m'enseigner."
+        },
+        {
+          "trigger": "objective_complete_gather_information",
+          "text": "Après avoir parlé à plusieurs personnes, j'ai appris que l'épéiste vit dans une cabane isolée dans la forêt à l'est. Il est réputé pour être extrêmement exigeant avec ses disciples potentiels."
+        },
+        {
+          "trigger": "objective_complete_find_sword_master",
+          "text": "J'ai trouvé la cabane de l'épéiste. C'est un vieil homme à l'air sévère, mais je peux sentir une aura incroyable émaner de lui. Il a accepté de me tester."
+        },
+        {
+          "trigger": "quest_complete",
+          "text": "Après avoir prouvé ma valeur, le maître m'a enseigné les bases du Style du Dieu Épée. C'est un style axé sur la vitesse et les attaques décisives. Il m'a également remis un emblème symbolisant mon statut de disciple."
+        }
+      ],
+      "world_state_changes": {
+        "sword_god_disciple": true
+      }
+    },
+    "village_defense": {
+      "id": "village_defense",
+      "name": "Défense du Village",
+      "description": "Le village est menacé par une bande de pillards. Les villageois ont besoin d'aide pour se défendre.",
+      "category": "side_quest",
+      "is_mandatory": false,
+      "quest_giver": {
+        "npc_id": "village_elder",
+        "location_id": "farming_village"
+      },
+      "objectives": [
+        {
+          "id": "scout_bandits",
+          "description": "Repérer le campement des bandits",
+          "type": "reach_location",
+          "target_id": "bandit_camp",
+          "completed": false
+        },
+        {
+          "id": "prepare_defenses",
+          "description": "Aider à préparer les défenses du village",
+          "type": "collect_item",
+          "target_id": "defense_material",
+          "count": 10,
+          "completed": false
+        },
+        {
+          "id": "train_villagers",
+          "description": "Former les villageois au maniement des armes basiques",
+          "type": "talk_to_npc",
+          "target_id": ["villager_group_a", "villager_group_b", "villager_group_c"],
+          "count": 3,
+          "completed": false
+        },
+        {
+          "id": "defeat_bandits",
+          "description": "Repousser l'attaque des bandits",
+          "type": "defeat_enemy",
+          "target_id": "bandit",
+          "count": 15,
+          "completed": false
+        },
+        {
+          "id": "defeat_bandit_leader",
+          "description": "Vaincre le chef des bandits",
+          "type": "defeat_enemy",
+          "target_id": "bandit_leader",
+          "count": 1,
+          "completed": false
+        }
+      ],
+      "rewards": {
+        "experience": 1200,
+        "gold": 350,
+        "items": [
+          {
+            "id": "village_guardian_medal",
+            "count": 1
+          },
+          {
+            "id": "health_potion",
+            "count": 3
+          }
+        ],
+        "reputation": {
+          "farming_village": 500
+        }
+      },
+      "time_limit": {
+        "days": 3,
+        "description": "Les bandits attaqueront dans trois jours"
+      },
+      "journal_entries": [
+        {
+          "trigger": "quest_start",
+          "text": "Le chef du village m'a supplié de les aider à se défendre contre une bande de pillards qui menace d'attaquer. Je dois d'abord localiser leur camp pour évaluer leur nombre."
+        },
+        {
+          "trigger": "objective_complete_scout_bandits",
+          "text": "J'ai repéré le camp des bandits. Ils sont plus nombreux que prévu, environ une vingtaine, et bien armés. Je dois aider le village à se préparer rapidement."
+        },
+        {
+          "trigger": "objective_complete_prepare_defenses",
+          "text": "Avec l'aide des villageois, nous avons renforcé les défenses du village. Des barricades ont été érigées aux points stratégiques."
+        },
+        {
+          "trigger": "objective_complete_train_villagers",
+          "text": "J'ai enseigné aux villageois quelques techniques de base pour se défendre. Ils sont effrayés mais déterminés à protéger leurs foyers."
+        },
+        {
+          "trigger": "objective_complete_defeat_bandits",
+          "text": "Nous avons repoussé l'assaut principal des bandits. Plusieurs sont tombés, d'autres ont fui. Mais leur chef continue de combattre férocement."
+        },
+        {
+          "trigger": "quest_complete",
+          "text": "Le chef des bandits a été vaincu et les survivants ont fui. Le village est sauvé! Les villageois sont extrêmement reconnaissants et m'ont offert une médaille de gardien du village, un symbole de leur gratitude."
+        }
+      ],
+      "world_state_changes": {
+        "farming_village_saved": true,
+        "bandit_threat_eliminated": true
+      }
+    }
+  }
+}
+

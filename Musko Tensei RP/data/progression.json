@@ -1,0 +1,2471 @@
+{
+  "attributes": {
+    "strength": {
+      "name": "Force",
+      "description": "Détermine la puissance physique, la capacité à porter des objets lourds et les dégâts des attaques physiques.",
+      "min_value": 1,
+      "max_value": 100,
+      "default_value": 10
+    },
+    "vitality": {
+      "name": "Vitalité",
+      "description": "Détermine les points de vie, la résistance aux maladies et aux poisons, et la récupération naturelle.",
+      "min_value": 1,
+      "max_value": 100,
+      "default_value": 10
+    },
+    "dexterity": {
+      "name": "Dextérité",
+      "description": "Influence la précision, l'esquive, la vitesse d'action et les compétences manuelles.",
+      "min_value": 1,
+      "max_value": 100,
+      "default_value": 10
+    },
+    "agility": {
+      "name": "Agilité",
+      "description": "Détermine la vitesse de déplacement, l'initiative au combat et la capacité à éviter les pièges.",
+      "min_value": 1,
+      "max_value": 100,
+      "default_value": 10
+    },
+    "intelligence": {
+      "name": "Intelligence",
+      "description": "Affecte la puissance magique, la capacité d'apprentissage et la résolution d'énigmes.",
+      "min_value": 1,
+      "max_value": 100,
+      "default_value": 20
+    },
+    "wisdom": {
+      "name": "Sagesse",
+      "description": "Influence la réserve de mana, la régénération du mana et la résistance magique.",
+      "min_value": 1,
+      "max_value": 100,
+      "default_value": 15
+    },
+    "charisma": {
+      "name": "Charisme",
+      "description": "Améliore les interactions sociales, la négociation et l'influence sur les autres personnages.",
+      "min_value": 1,
+      "max_value": 100,
+      "default_value": 10
+    },
+    "perception": {
+      "name": "Perception",
+      "description": "Capacité à remarquer les détails, sentir le danger et détecter les pièges ou personnes cachées.",
+      "min_value": 1,
+      "max_value": 100,
+      "default_value": 10
+    },
+    "luck": {
+      "name": "Chance",
+      "description": "Influence les probabilités en votre faveur pour diverses actions et événements aléatoires.",
+      "min_value": 1,
+      "max_value": 100,
+      "default_value": 10
+    }
+  },
+  "skill_categories": {
+    "magic": "Compétences liées à l'utilisation et la compréhension de la magie",
+    "combat": "Compétences de combat physique",
+    "social": "Compétences d'interaction sociale",
+    "survival": "Compétences de survie et d'adaptation",
+    "crafting": "Compétences de création et fabrication",
+    "knowledge": "Connaissances académiques et théoriques",
+    "movement": "Compétences liées au déplacement",
+    "detection": "Compétences d'observation et de perception",
+    "support": "Compétences d'assistance et de soutien",
+    "stealth": "Compétences liées à la discrétion et l'infiltration"
+  },
+  "magic_ranks": {
+    "beginner": "Capacité à lancer des sorts simples sans incantation",
+    "intermediate": "Capacité à lancer des sorts de niveau moyen sans incantation",
+    "advanced": "Capacité à lancer des sorts complexes sans incantation",
+    "saint": "Maîtrise de sorts puissants et capacité à en inventer de nouveaux",
+    "king": "Maîtrise complète d'un élément magique",
+    "emperor": "Capacité presque divine dans la manipulation de la magie",
+    "god": "Niveau de maîtrise légendaire réservé aux divinités et figures mythiques"
+  },
+  "sword_ranks": {
+    "beginner": "Bases du maniement de l'épée et postures fondamentales",
+    "intermediate": "Techniques avancées et efficacité au combat",
+    "advanced": "Maîtrise des techniques complexes et adaptabilité tactique",
+    "saint": "Capacités extraordinaires dépassant les limites humaines normales",
+    "king": "Maîtrise absolue d'un style particulier",
+    "emperor": "Capacité à fusionner différents styles et à innover",
+    "god": "Niveau légendaire atteignant la perfection absolue"
+  },
+  "skills": {
+    "water_magic": {
+      "name": "Magie de l'Eau",
+      "category": "magic",
+      "description": "Capacité à manipuler l'élément eau pour créer des sorts défensifs et de guérison.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Création basique de petites quantités d'eau et manipulation simple.",
+          "spells": ["water_ball", "water_stream"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Contrôle amélioré et sorts de guérison mineure.",
+          "spells": ["water_shield", "minor_healing"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Manipulation avancée et création de structures complexes.",
+          "spells": ["water_blade", "healing_wave"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Contrôle de grandes quantités d'eau et guérison efficace.",
+          "spells": ["water_prison", "major_healing"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Maîtrise complète de l'élément eau et puissantes capacités de guérison.",
+          "spells": ["water_dragon", "healing_circle", "cryomancy"]
+        }
+      }
+    },
+    "fire_magic": {
+      "name": "Magie du Feu",
+      "category": "magic",
+      "description": "Capacité à manipuler l'élément feu pour créer des sorts offensifs et destructeurs.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "strength"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Création de petites flammes et manipulation basique.",
+          "spells": ["fire_bolt", "light"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Création de boules de feu et contrôle amélioré.",
+          "spells": ["fireball", "heat_wave"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Manipulation avancée et sorts de zone.",
+          "spells": ["fire_wall", "flame_burst"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Maîtrise de flammes intenses et précises.",
+          "spells": ["incinerate", "explosion"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Contrôle absolu du feu et sorts dévastateurs.",
+          "spells": ["fire_storm", "volcano", "inferno"]
+        }
+      }
+    },
+    "earth_magic": {
+      "name": "Magie de la Terre",
+      "category": "magic",
+      "description": "Capacité à manipuler l'élément terre pour créer des sorts défensifs et de contrôle.",
+      "max_level": 10,
+      "attribute_affinity": ["vitality", "intelligence"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Manipulation basique de petites quantités de terre et pierre.",
+          "spells": ["stone_throw", "earth_sense"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Création de barrières et manipulation du sol.",
+          "spells": ["rock_wall", "quicksand"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Contrôle précis et manipulation de grandes structures.",
+          "spells": ["stone_spikes", "tremor"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Maîtrise des minéraux et création de constructs.",
+          "spells": ["golem_creation", "fissure"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Contrôle géologique complet et altération du terrain.",
+          "spells": ["earthquake", "petrification", "mountain_formation"]
+        }
+      }
+    },
+    "wind_magic": {
+      "name": "Magie du Vent",
+      "category": "magic",
+      "description": "Capacité à manipuler l'élément vent pour créer des sorts de mouvement et d'attaque à distance.",
+      "max_level": 10,
+      "attribute_affinity": ["agility", "intelligence"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Création de légères brises et manipulation basique de l'air.",
+          "spells": ["gust", "air_sense"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Contrôle des courants d'air et augmentation de vitesse.",
+          "spells": ["wind_blade", "feather_step"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Création de tornades et lévitation limitée.",
+          "spells": ["whirlwind", "air_cushion"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Vol temporaire et contrôle des tempêtes.",
+          "spells": ["flight", "storm_arrows"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Maîtrise complète des cieux et manipulation des tempêtes.",
+          "spells": ["hurricane", "vacuum_blade", "sky_dominion"]
+        }
+      }
+    },
+    "healing_magic": {
+      "name": "Magie de Guérison",
+      "category": "magic",
+      "description": "Art magique spécialisé dans la guérison des blessures et le traitement des maladies.",
+      "max_level": 10,
+      "attribute_affinity": ["wisdom", "charisma"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Soins mineurs de petites blessures superficielles.",
+          "spells": ["minor_heal", "pain_relief"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Traitement de blessures moyennes et de maladies communes.",
+          "spells": ["cure_wounds", "detoxify"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Guérison efficace et traitement de conditions graves.",
+          "spells": ["greater_healing", "cure_disease"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Reconstitution de tissus et traitement de poisons mortels.",
+          "spells": ["regeneration", "neutralize_poison"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Restauration complète et traitement de conditions magiques.",
+          "spells": ["mass_healing", "resurrection", "magical_purification"]
+        }
+      }
+    },
+    "lightning_magic": {
+      "name": "Magie de la Foudre",
+      "category": "magic", 
+      "description": "Manipulation de l'électricité pour des attaques rapides et puissantes.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "agility"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Génération d'étincelles et chocs mineurs.",
+          "spells": ["electric_touch", "spark"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Création d'arcs électriques et attaques ciblées.",
+          "spells": ["lightning_bolt", "electric_charge"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Contrôle précis de l'électricité et attaques en chaîne.",
+          "spells": ["chain_lightning", "static_field"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Manipulation avancée et sorts à zone d'effet destructrice.",
+          "spells": ["thunder_strike", "magnetic_control"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Contrôle absolu de la foudre et sorts cataclysmiques.",
+          "spells": ["lightning_storm", "thunder_god_wrath", "electromagnetic_pulse"]
+        }
+      }
+    },
+    "gravity_magic": {
+      "name": "Magie de Gravité",
+      "category": "magic",
+      "description": "Manipulation rare des forces gravitationnelles pour contrôler le poids et l'espace.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "strength"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Légère altération du poids d'objets petits.",
+          "spells": ["weight_adjustment", "gravity_sense"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Capacité à augmenter ou diminuer la gravité localement.",
+          "spells": ["gravity_well", "weight_reduction"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Création de zones de gravité modifiée affectant plusieurs cibles.",
+          "spells": ["gravity_zone", "crushing_pressure"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Manipulation précise permettant lévitation et compression.",
+          "spells": ["levitation_field", "gravity_crush"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Contrôle absolu de la gravité dans une large zone.",
+          "spells": ["black_hole", "zero_gravity", "gravity_manipulation"]
+        }
+      }
+    },
+    "curse_magic": {
+      "name": "Magie de Malédiction",
+      "category": "magic",
+      "description": "Forme de magie sombre qui affaiblit ou inflige des effets négatifs aux cibles.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "charisma"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Sorts mineurs causant inconfort ou petits malheurs.",
+          "spells": ["minor_jinx", "evil_eye"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Malédictions temporaires affectant les capacités ou la santé.",
+          "spells": ["weakness_curse", "misfortune"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Capacité à créer des malédictions durables et difficiles à lever.",
+          "spells": ["binding_curse", "energy_drain"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Malédictions puissantes affectant profondément une cible.",
+          "spells": ["doom_curse", "soul_affliction"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Création de malédictions légendaires pouvant affecter des générations.",
+          "spells": ["eternal_suffering", "death_mark", "bloodline_curse"]
+        }
+      }
+    },
+    "summoning_magic": {
+      "name": "Magie d'Invocation",
+      "category": "magic",
+      "description": "Art magique permettant d'invoquer des créatures ou des objets d'autres dimensions.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "charisma"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Invocation d'objets simples ou de petites créatures.",
+          "spells": ["item_summon", "familiar_calling"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Invocation de créatures combattantes de faible puissance.",
+          "spells": ["battle_familiar", "weapon_summon"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Création de contrats magiques et invocation d'entités plus puissantes.",
+          "spells": ["contract_summon", "elemental_calling"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Invocation d'entités majeures et création de liens permanents.",
+          "spells": ["greater_summon", "dimensional_gate"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Capacité à invoquer des entités légendaires et à ouvrir des portails stables.",
+          "spells": ["legendary_beast_summon", "permanent_gateway", "divine_calling"]
+        }
+      }
+    },
+    "barrier_magic": {
+      "name": "Magie des Barrières",
+      "category": "magic",
+      "description": "Spécialisation dans la création de champs protecteurs et défensifs.",
+      "max_level": 10,
+      "attribute_affinity": ["wisdom", "vitality"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Création de barrières simples contre les attaques physiques.",
+          "spells": ["shield", "barrier_sense"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Barrières plus durables et protections contre la magie basique.",
+          "spells": ["magic_shield", "reinforced_barrier"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Création de dômes protecteurs et de barrières spécifiques.",
+          "spells": ["elemental_barrier", "protection_dome"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Barrières complexes aux propriétés multiples et grande durabilité.",
+          "spells": ["absolute_defense", "barrier_reflection"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Création de champs défensifs légendaires pouvant protéger des zones entières.",
+          "spells": ["invincible_fortress", "dimensional_barrier", "mana_absorption_field"]
+        }
+      }
+    },
+    "detection_magic": {
+      "name": "Magie de Détection",
+      "category": "magic",
+      "description": "Capacité à détecter et identifier des présences, objets ou énergies magiques.",
+      "max_level": 10,
+      "attribute_affinity": ["wisdom", "perception"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Détection basique de la présence de magie.",
+          "spells": ["detect_magic", "mana_sense"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Capacité à identifier les types de magie et présences vivantes.",
+          "spells": ["life_detection", "magical_analysis"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Détection précise et à plus longue portée.",
+          "spells": ["aura_reading", "truth_vision"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Capacité à voir à travers les illusions et détecter les menaces cachées.",
+          "spells": ["true_sight", "danger_prediction"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Perception quasi-omnisciente dans un large rayon.",
+          "spells": ["all_seeing_eye", "fate_reading", "soul_perception"]
+        }
+      }
+    },
+    "illusion_magic": {
+      "name": "Magie d'Illusion",
+      "category": "magic",
+      "description": "Art de créer des images, sons et sensations trompeuses.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "charisma"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Création d'images simples et sons basiques.",
+          "spells": ["minor_illusion", "phantom_sound"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Illusions plus complexes affectant plusieurs sens.",
+          "spells": ["disguise_self", "misleading_image"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Illusions réalistes difficiles à distinguer de la réalité.",
+          "spells": ["perfect_image", "phantasmal_terrain"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Illusions interactives et capacité à infliger des dégâts psychiques.",
+          "spells": ["phantom_reality", "nightmare_vision"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Création de réalités alternatives quasi-tangibles.",
+          "spells": ["illusory_realm", "mass_hallucination", "perfect_deception"]
+        }
+      }
+    },
+    "teleportation_magic": {
+      "name": "Magie de Téléportation",
+      "category": "magic",
+      "description": "Capacité à déplacer instantanément des objets ou personnes d'un point à un autre.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Téléportation de petits objets sur courte distance.",
+          "spells": ["minor_displacement", "object_fetch"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Auto-téléportation sur courte distance et téléportation d'objets plus grands.",
+          "spells": ["short_hop", "swap_position"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Téléportation précise sur des distances moyennes.",
+          "spells": ["accurate_teleport", "group_displacement"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Téléportation longue distance et création de marques de téléportation.",
+          "spells": ["teleport_mark", "long_distance_jump"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Téléportation instantanée vers n'importe quel lieu connu et portails permanents.",
+          "spells": ["dimensional_doorway", "mass_teleport", "teleport_network"]
+        }
+      }
+    },
+    "time_magic": {
+      "name": "Magie du Temps",
+      "category": "magic",
+      "description": "Manipulation extrêmement rare de l'écoulement temporel.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Perception accrue du temps et ralentissement mineur.",
+          "spells": ["time_sense", "minor_slow"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Accélération ou ralentissement personnel limité.",
+          "spells": ["haste_self", "temporal_bubble"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Affectation du temps pour des cibles externes.",
+          "spells": ["time_slow", "accelerate_object"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Manipulation temporelle avancée et vision limitée du passé.",
+          "spells": ["time_stop", "past_vision"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Contrôle puissant du flux temporel dans une zone.",
+          "spells": ["rewind", "time_dilation", "temporal_stasis"]
+        }
+      }
+    },
+    "soul_magic": {
+      "name": "Magie de l'Âme",
+      "category": "magic",
+      "description": "Manipulation dangereuse et interdite de l'essence vitale des êtres vivants.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "charisma"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "rank": "beginner",
+          "description": "Perception basique des âmes et de leur énergie.",
+          "spells": ["soul_sense", "spirit_touch"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "rank": "beginner",
+          "description": "Communication limitée avec les esprits et manipulation mineure.",
+          "spells": ["speak_with_dead", "soul_light"]
+        },
+        "5": {
+          "name": "Adepte",
+          "rank": "intermediate",
+          "description": "Manipulation des âmes et création de liens spirituels.",
+          "spells": ["soul_bond", "spirit_calling"]
+        },
+        "7": {
+          "name": "Expert",
+          "rank": "advanced",
+          "description": "Extraction et transfert d'énergie spirituelle.",
+          "spells": ["soul_drain", "spirit_vessel"]
+        },
+        "10": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Contrôle complet sur les âmes et l'énergie spirituelle.",
+          "spells": ["reincarnation", "soul_manipulation", "afterlife_bridge"]
+        }
+      }
+    },
+    "sword_god_style": {
+      "name": "Style du Dieu Épée",
+      "category": "combat",
+      "description": "Style de combat à l'épée privilégiant la vitesse et les frappes décisives.",
+      "max_level": 10,
+      "attribute_affinity": ["agility", "dexterity"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "rank": "beginner",
+          "description": "Postures de base et techniques fondamentales.",
+          "techniques": ["basic_stance", "direct_thrust"]
+        },
+        "3": {
+          "name": "Épéiste",
+          "rank": "intermediate",
+          "description": "Mouvements fluides et attaques précises.",
+          "techniques": ["flash_strike", "parry"]
+        },
+        "5": {
+          "name": "Avancé",
+          "rank": "advanced",
+          "description": "Techniques de combat rapides et enchaînements.",
+          "techniques": ["sword_dance", "precise_counter"]
+        },
+        "7": {
+          "name": "Saint Épée",
+          "rank": "saint",
+          "description": "Maîtrise des mouvements à haute vitesse et techniques létales.",
+          "techniques": ["phantom_step", "vital_strike"]
+        },
+        "10": {
+          "name": "Roi Épée",
+          "rank": "king",
+          "description": "Vitesse surhumaine et techniques ultimes du style du Dieu Épée.",
+          "techniques": ["longsword_of_light", "god_strike", "instant_kill"]
+        }
+      }
+    },
+    "water_god_style": {
+      "name": "Style du Dieu Eau",
+      "category": "combat",
+      "description": "Style de combat défensif basé sur la redirection des attaques ennemies.",
+      "max_level": 10,
+      "attribute_affinity": ["dexterity", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "rank": "beginner",
+          "description": "Postures défensives de base et parades simples.",
+          "techniques": ["flowing_stance", "basic_deflection"]
+        },
+        "3": {
+          "name": "Épéiste",
+          "rank": "intermediate",
+          "description": "Mouvements fluides et contre-attaques.",
+          "techniques": ["water_flow", "counterattack"]
+        },
+        "5": {
+          "name": "Avancé",
+          "rank": "advanced",
+          "description": "Techniques de redirection avancées et adaptation.",
+          "techniques": ["flowing_water", "adaptable_defense"]
+        },
+        "7": {
+          "name": "Saint Épée",
+          "rank": "saint",
+          "description": "Défense parfaite et contre-attaques dévastatrices.",
+          "techniques": ["absolute_defense", "water_mirror"]
+        },
+        "10": {
+          "name": "Roi Eau",
+          "rank": "king",
+          "description": "Défense impénétrable et techniques ultimes du style du Dieu Eau.",
+          "techniques": ["flowing_void", "water_dragon_strike", "perfect_counter"]
+        }
+      }
+    },
+    "north_god_style": {
+      "name": "Style du Dieu Nord",
+      "category": "combat",
+      "description": "Style de combat imprévisible utilisant la ruse et l'adaptation.",
+      "max_level": 10,
+      "attribute_affinity": ["strength", "intelligence"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "rank": "beginner",
+          "description": "Techniques de base non conventionnelles et postures variables.",
+          "techniques": ["unorthodox_stance", "surprise_attack"]
+        },
+        "3": {
+          "name": "Épéiste",
+          "rank": "intermediate",
+          "description": "Combinaisons d'attaques imprévisibles et feintes.",
+          "techniques": ["feinting_strike", "misdirection"]
+        },
+        "5": {
+          "name": "Avancé",
+          "rank": "advanced",
+          "description": "Adaptations tactiques et mouvements complexes.",
+          "techniques": ["tactical_assault", "weapon_improvisation"]
+        },
+        "7": {
+          "name": "Saint Épée",
+          "rank": "saint",
+          "description": "Techniques de combat chaotiques mais efficaces.",
+          "techniques": ["chaos_blade", "unpredictable_pattern"]
+        },
+        "10": {
+          "name": "Roi Nord",
+          "rank": "king",
+          "description": "Maîtrise absolue de l'imprévisibilité et techniques ultimes du style du Dieu Nord.",
+          "techniques": ["chaotic_void", "crushing_mountain", "absolute_destruction"]
+        }
+      }
+    },
+    "god_hand_style": {
+      "name": "Style du Poing Divin",
+      "category": "combat",
+      "description": "Art martial ancien utilisant principalement les poings et la force brute.",
+      "max_level": 10,
+      "attribute_affinity": ["strength", "vitality"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "rank": "beginner",
+          "description": "Postures de base et techniques de frappe fondamentales.",
+          "techniques": ["power_punch", "solid_stance"]
+        },
+        "3": {
+          "name": "Praticien",
+          "rank": "intermediate",
+          "description": "Combinaisons de coups puissants et résistance accrue.",
+          "techniques": ["stone_fist", "iron_body"]
+        },
+        "5": {
+          "name": "Avancé",
+          "rank": "advanced",
+          "description": "Techniques destructrices et endurance surhumaine.",
+          "techniques": ["mountain_breaker", "body_fortification"]
+        },
+        "7": {
+          "name": "Saint Poing",
+          "rank": "saint",
+          "description": "Force démesurée et résistance exceptionnelle aux dégâts.",
+          "techniques": ["earth_shattering_blow", "unbreakable_body"]
+        },
+        "10": {
+          "name": "Roi Poing",
+          "rank": "king",
+          "description": "Puissance légendaire capable de détruire des fortifications.",
+          "techniques": ["divine_impact", "invulnerability", "one_punch"]
+        }
+      }
+    },
+    "tiger_biting_fist": {
+      "name": "Poing du Tigre Mordant",
+      "category": "combat",
+      "description": "Style de combat bestial inspiré des mouvements du tigre.",
+      "max_level": 10,
+      "attribute_affinity": ["strength", "agility"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "rank": "beginner",
+          "description": "Postures de base imitant le tigre et techniques d'attaque directes.",
+          "techniques": ["tiger_stance", "claw_strike"]
+        },
+        "3": {
+          "name": "Praticien",
+          "rank": "intermediate",
+          "description": "Mouvements agiles et attaques perforantes.",
+          "techniques": ["pouncing_strike", "rending_claws"]
+        },
+        "5": {
+          "name": "Avancé",
+          "rank": "advanced",
+          "description": "Combinaisons brutales et mouvements explosifs.",
+          "techniques": ["tiger_leap", "crushing_bite"]
+        },
+        "7": {
+          "name": "Maître",
+          "rank": "saint",
+          "description": "Vitesse et force bestiales dépassant les limites humaines.",
+          "techniques": ["hunting_predator", "tiger_king_roar"]
+        },
+        "10": {
+          "name": "Grand Maître",
+          "rank": "king",
+          "description": "Incarnation parfaite de la puissance du tigre.",
+          "techniques": ["divine_tiger_spirit", "death_claw", "unstoppable_predator"]
+        }
+      }
+    },
+    "death_god_style": {
+      "name": "Style du Dieu de la Mort",
+      "category": "combat",
+      "description": "Style de combat sombre visant les points vitaux et l'élimination rapide.",
+      "max_level": 10,
+      "attribute_affinity": ["dexterity", "perception"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "rank": "beginner",
+          "description": "Notions de base sur les points vitaux et techniques d'assassinat simples.",
+          "techniques": ["vital_knowledge", "silent_step"]
+        },
+        "3": {
+          "name": "Assassin",
+          "rank": "intermediate",
+          "description": "Techniques de combat létal et mouvements furtifs.",
+          "techniques": ["death_touch", "shadow_strike"]
+        },
+        "5": {
+          "name": "Avancé",
+          "rank": "advanced",
+          "description": "Maîtrise des attaques instantanément mortelles.",
+          "techniques": ["poison_mastery", "arterial_strike"]
+        },
+        "7": {
+          "name": "Saint Assassin",
+          "rank": "saint",
+          "description": "Techniques mystiques de manipulation de la vie et de la mort.",
+          "techniques": ["life_drain", "phantom_kill"]
+        },
+        "10": {
+          "name": "Roi Assassin",
+          "rank": "king",
+          "description": "Maîtrise absolue de l'art de donner la mort.",
+          "techniques": ["soul_reaping", "true_death_strike", "one_cut_kill"]
+        }
+      }
+    },
+    "magic_theory": {
+      "name": "Théorie Magique",
+      "category": "knowledge",
+      "description": "Compréhension des principes fondamentaux régissant la magie.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "description": "Connaissances de base sur les éléments et le mana.",
+          "abilities": ["mana_sense", "elemental_identification"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "description": "Compréhension des sorts et de leur structure.",
+          "abilities": ["spell_analysis", "mana_control"]
+        },
+        "5": {
+          "name": "Adepte",
+          "description": "Capacité à comprendre et modifier des sorts existants.",
+          "abilities": ["spell_modification", "magical_efficiency"]
+        },
+        "7": {
+          "name": "Expert",
+          "description": "Création de nouveaux sorts et compréhension approfondie des lois magiques.",
+          "abilities": ["spell_creation", "magical_insight"]
+        },
+        "10": {
+          "name": "Maître",
+          "description": "Maîtrise complète de la théorie magique et compréhension des principes universels.",
+          "abilities": ["magical_innovation", "spell_perfection", "law_manipulation"]
+        }
+      }
+    },
+    "teaching": {
+      "name": "Enseignement",
+      "category": "social",
+      "description": "Capacité à transmettre efficacement des connaissances et compétences à autrui.",
+      "max_level": 5,
+      "attribute_affinity": ["intelligence", "charisma"],
+      "levels": {
+        "1": {
+          "name": "Tuteur Débutant",
+          "description": "Capable d'enseigner des concepts de base à des élèves motivés.",
+          "abilities": ["basic_instruction", "simple_explanation"]
+        },
+        "2": {
+          "name": "Tuteur Compétent",
+          "description": "Peut adapter son approche pédagogique selon l'élève.",
+          "abilities": ["adaptive_teaching", "patient_guidance"]
+        },
+        "3": {
+          "name": "Professeur",
+          "description": "Enseigne efficacement à plusieurs types d'élèves.",
+          "abilities": ["engaging_lessons", "progress_assessment"]
+        },
+        "4": {
+          "name": "Maître Éducateur",
+          "description": "Capable d'enseigner des concepts complexes et d'inspirer ses élèves.",
+          "abilities": ["inspiring_lectures", "talent_identification"]
+        },
+        "5": {
+          "name": "Sage Mentor",
+          "description": "Fait ressortir le plein potentiel de ses élèves et guide leur développement personnel.",
+          "abilities": ["potential_unlocking", "life_guidance", "accelerated_learning"]
+        }
+      }
+    },
+    "magic_combat": {
+      "name": "Combat Magique",
+      "category": "combat",
+      "description": "Techniques d'utilisation de la magie en situation de combat.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "agility"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "description": "Application basique de sorts en combat.",
+          "abilities": ["combat_casting", "defensive_magic"]
+        },
+        "3": {
+          "name": "Apprenti",
+          "description": "Utilisation efficace de sorts offensifs et réaction rapide.",
+          "abilities": ["quick_cast", "counter_spell"]
+        },
+        "5": {
+          "name": "Adepte",
+          "description": "Combinaison de différents sorts et adaptabilité tactique.",
+          "abilities": ["spell_chain", "elemental_adaptation"]
+        },
+        "7": {
+          "name": "Expert",
+          "description": "Casting avancé en mouvement et ciblage précis.",
+          "abilities": ["battle_casting", "precision_targeting"]
+        },
+        "10": {
+          "name": "Maître",
+          "description": "Maîtrise complète du champ de bataille magique.",
+          "abilities": ["instant_casting", "spell_battle_control", "mana_efficiency"]
+        }
+      }
+    },
+    "survival": {
+      "name": "Survie",
+      "category": "survival",
+      "description": "Compétences pour survivre dans des environnements hostiles.",
+      "max_level": 5,
+      "attribute_affinity": ["vitality", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "description": "Connaissances de base pour la survie en milieu naturel.",
+          "abilities": ["fire_making", "clean_water_finding"]
+        },
+        "2": {
+          "name": "Voyageur",
+          "description": "Adaptation à différents terrains et reconnaissance des dangers.",
+          "abilities": ["shelter_building", "danger_sense"]
+        },
+        "3": {
+          "name": "Forestier",
+          "description": "Vie autonome en milieu sauvage pendant de longues périodes.",
+          "abilities": ["hunting_trapping", "natural_navigation"]
+        },
+        "4": {
+          "name": "Expert Wilderness",
+          "description": "Maîtrise complète des techniques de survie dans tous les environnements.",
+          "abilities": ["wilderness_medicine", "weather_prediction"]
+        },
+        "5": {
+          "name": "Survivant Ultime",
+          "description": "Capacité à prospérer dans les conditions les plus extrêmes.",
+          "abilities": ["extreme_adaptation", "natural_communion", "resource_mastery"]
+        }
+      }
+    },
+    "leadership": {
+      "name": "Leadership",
+      "category": "social",
+      "description": "Capacité à guider et motiver les autres.",
+      "max_level": 5,
+      "attribute_affinity": ["charisma", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Chef Potentiel",
+          "description": "Premiers pas dans la direction d'un petit groupe.",
+          "abilities": ["basic_command", "team_motivation"]
+        },
+        "2": {
+          "name": "Chef Compétent",
+          "description": "Direction efficace d'une équipe avec des objectifs clairs.",
+          "abilities": ["decisive_action", "team_coordination"]
+        },
+        "3": {
+          "name": "Leader",
+          "description": "Capacité à inspirer et diriger un groupe plus large.",
+          "abilities": ["inspiring_presence", "strategic_planning"]
+        },
+        "4": {
+          "name": "Commandant",
+          "description": "Leadership dans des situations de crise et prise de décision sous pression.",
+          "abilities": ["crisis_management", "tactical_insight"]
+        },
+        "5": {
+          "name": "Leader Visionnaire",
+          "description": "Capacité à unifier des groupes importants autour d'un objectif commun.",
+          "abilities": ["unifying_vision", "legendary_inspiration", "strategic_mastery"]
+        }
+      }
+    },
+    "etiquette": {
+      "name": "Étiquette",
+      "category": "social",
+      "description": "Connaissance des coutumes et comportements appropriés en société.",
+      "max_level": 5,
+      "attribute_affinity": ["charisma", "intelligence"],
+      "levels": {
+        "1": {
+          "name": "Bases Sociales",
+          "description": "Connaissance des règles fondamentales de politesse.",
+          "abilities": ["proper_greeting", "basic_manners"]
+        },
+        "2": {
+          "name": "Socialement Acceptable",
+          "description": "Navigation aisée dans les situations sociales ordinaires.",
+          "abilities": ["polite_conversation", "appropriate_behavior"]
+        },
+        "3": {
+          "name": "Raffiné",
+          "description": "Maîtrise des codes sociaux de différents milieux.",
+          "abilities": ["social_adaptation", "diplomatic_speech"]
+        },
+        "4": {
+          "name": "Courtisan",
+          "description": "Excellence dans les environnements sociaux formels et nobles.",
+          "abilities": ["court_manners", "subtle_influence"]
+        },
+        "5": {
+          "name": "Diplomate Accompli",
+          "description": "Maîtrise parfaite de l'étiquette dans tous les contextes culturels.",
+          "abilities": ["perfect_composure", "cultural_fluency", "social_mastery"]
+        }
+      }
+    },
+    "alchemy": {
+      "name": "Alchimie",
+      "category": "crafting",
+      "description": "Art de transformer et combiner des substances pour créer potions et élixirs.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "dexterity"],
+      "levels": {
+        "1": {
+          "name": "Apprenti Alchimiste",
+          "description": "Création de potions simples et identification d'ingrédients de base.",
+          "abilities": ["herb_knowledge", "basic_brewing"]
+        },
+        "3": {
+          "name": "Alchimiste",
+          "description": "Création de potions médicinales efficaces et d'élixirs magiques mineurs.",
+          "abilities": ["advanced_brewing", "ingredient_substitution"]
+        },
+        "5": {
+          "name": "Maître Alchimiste",
+          "description": "Création de potions complexes et transformation de matériaux.",
+          "abilities": ["material_transmutation", "potion_perfection"]
+        },
+        "7": {
+          "name": "Archimiste",
+          "description": "Alchimie avancée touchant aux principes fondamentaux de la matière.",
+          "abilities": ["elemental_extraction", "philosopher's_work"]
+        },
+        "10": {
+          "name": "Grand Archimiste",
+          "description": "Maîtrise légendaire de la transformation de la matière et de la vie.",
+          "abilities": ["philosopher's_stone", "elixir_of_life", "perfect_transmutation"]
+        }
+      }
+    },
+    "blacksmithing": {
+      "name": "Forge",
+      "category": "crafting",
+      "description": "Art de travailler les métaux pour créer armes, armures et outils.",
+      "max_level": 10,
+      "attribute_affinity": ["strength", "dexterity"],
+      "levels": {
+        "1": {
+          "name": "Apprenti Forgeron",
+          "description": "Création d'outils simples et réparations basiques.",
+          "abilities": ["metal_knowledge", "basic_forging"]
+        },
+        "3": {
+          "name": "Forgeron",
+          "description": "Fabrication d'armes et armures de qualité standard.",
+          "abilities": ["weapon_crafting", "armor_forging"]
+        },
+        "5": {
+          "name": "Maître Forgeron",
+          "description": "Création d'équipement de haute qualité et travail de métaux spéciaux.",
+          "abilities": ["masterwork_creation", "special_metal_working"]
+        },
+        "7": {
+          "name": "Armurier Royal",
+          "description": "Fabrication d'armes et armures exceptionnelles dignes des nobles.",
+          "abilities": ["legendary_weapon_forging", "royal_armor_creation"]
+        },
+        "10": {
+          "name": "Forgeron Légendaire",
+          "description": "Capacité à créer des armes et armures mythiques aux propriétés uniques.",
+          "abilities": ["mythic_forging", "enchanted_metalwork", "divine_craftsmanship"]
+        }
+      }
+    },
+    "enchanting": {
+      "name": "Enchantement",
+      "category": "crafting",
+      "description": "Art d'imprégner des objets avec des propriétés magiques.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Apprenti Enchanteur",
+          "description": "Application d'enchantements mineurs et temporaires.",
+          "abilities": ["magic_infusion", "enchantment_identification"]
+        },
+        "3": {
+          "name": "Enchanteur",
+          "description": "Création d'objets magiques durables aux effets modérés.",
+          "abilities": ["permanent_enchantment", "magical_charging"]
+        },
+        "5": {
+          "name": "Maître Enchanteur",
+          "description": "Enchantements puissants et combinaison d'effets magiques.",
+          "abilities": ["complex_enchanting", "magic_binding"]
+        },
+        "7": {
+          "name": "Archimage Enchanteur",
+          "description": "Création d'artefacts aux pouvoirs significatifs.",
+          "abilities": ["artifact_creation", "soul_binding"]
+        },
+        "10": {
+          "name": "Grand Archimage",
+          "description": "Capacité à créer des objets légendaires aux pouvoirs extraordinaires.",
+          "abilities": ["legendary_enchantment", "divine_infusion", "artifact_mastery"]
+        }
+      }
+    },
+    "stealth": {
+      "name": "Furtivité",
+      "category": "stealth",
+      "description": "Art de se déplacer sans être vu ni entendu.",
+      "max_level": 10,
+      "attribute_affinity": ["agility", "perception"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "description": "Capacité basique à se cacher et se déplacer silencieusement.",
+          "abilities": ["quiet_movement", "shadow_hiding"]
+        },
+        "3": {
+          "name": "Infiltrateur",
+          "description": "Mouvement silencieux efficace et dissimulation améliorée.",
+          "abilities": ["silent_step", "quick_hide"]
+        },
+        "5": {
+          "name": "Ombre",
+          "description": "Déplacement presque indétectable et capacité à disparaître rapidement.",
+          "abilities": ["vanishing_act", "perfect_stealth"]
+        },
+        "7": {
+          "name": "Fantôme",
+          "description": "Maîtrise absolue du mouvement silencieux et de la dissimulation.",
+          "abilities": ["ghost_walk", "shadow_blend"]
+        },
+        "10": {
+          "name": "Ombre Légendaire",
+          "description": "Capacité presque surnaturelle à rester indétectable.",
+          "abilities": ["perfect_invisibility", "traceless_movement", "presence_erasure"]
+        }
+      }
+    },
+    "lockpicking": {
+      "name": "Crochetage",
+      "category": "stealth",
+      "description": "Art d'ouvrir des serrures et de désarmer des pièges sans les clés.",
+      "max_level": 5,
+      "attribute_affinity": ["dexterity", "perception"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "description": "Capacité à crocheter des serrures simples.",
+          "abilities": ["simple_lock_picking", "trap_detection"]
+        },
+        "2": {
+          "name": "Crocheteur",
+          "description": "Ouverture de serrures de difficulté moyenne et désarmement de pièges basiques.",
+          "abilities": ["medium_lock_picking", "trap_disarming"]
+        },
+        "3": {
+          "name": "Expert",
+          "description": "Maîtrise de serrures complexes et de pièges avancés.",
+          "abilities": ["complex_lock_picking", "advanced_trap_disarming"]
+        },
+        "4": {
+          "name": "Maître Serrurier",
+          "description": "Capacité à vaincre presque tous les systèmes de sécurité mécaniques.",
+          "abilities": ["master_lock_picking", "trap_expertise"]
+        },
+        "5": {
+          "name": "Légendaire",
+          "description": "Art du crochetage porté à la perfection, capable de vaincre même les serrures magiques.",
+          "abilities": ["magical_lock_picking", "instant_unlock", "perfect_disarming"]
+        }
+      }
+    },
+    "archery": {
+      "name": "Archerie",
+      "category": "combat",
+      "description": "Maîtrise du tir à l'arc et autres armes à projectiles.",
+      "max_level": 10,
+      "attribute_affinity": ["dexterity", "perception"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "description": "Bases du tir à l'arc et précision moyenne.",
+          "abilities": ["steady_aim", "basic_shot"]
+        },
+        "3": {
+          "name": "Archer",
+          "description": "Tirs précis à moyenne distance et techniques variées.",
+          "abilities": ["precise_shot", "quick_draw"]
+        },
+        "5": {
+          "name": "Archer Expert",
+          "description": "Grande précision à longue distance et tirs spéciaux.",
+          "abilities": ["long_shot", "piercing_arrow"]
+        },
+        "7": {
+          "name": "Maître Archer",
+          "description": "Précision exceptionnelle et tirs dans des conditions difficiles.",
+          "abilities": ["sniper_shot", "moving_target"]
+        },
+        "10": {
+          "name": "Archer Légendaire",
+          "description": "Maîtrise absolue dépassant les limites humaines normales.",
+          "abilities": ["impossible_shot", "multiple_target", "arrow_storm"]
+        }
+      }
+    }
+    ,
+    "beast_language": {
+      "name": "Langage Bestial",
+      "category": "social",
+      "description": "Capacité à communiquer avec les créatures et animaux.",
+      "max_level": 5,
+      "attribute_affinity": ["charisma", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Ami des Animaux",
+          "description": "Communication basique avec les animaux domestiques.",
+          "abilities": ["animal_calm", "simple_command"]
+        },
+        "2": {
+          "name": "Ami de la Nature",
+          "description": "Communication avec des animaux sauvages et compréhension de leurs sentiments.",
+          "abilities": ["wild_animal_speech", "beast_empathy"]
+        },
+        "3": {
+          "name": "Voix des Bêtes",
+          "description": "Communication complexe avec diverses espèces animales.",
+          "abilities": ["creature_speech", "animal_negotiation"]
+        },
+        "4": {
+          "name": "Maître des Bêtes",
+          "description": "Influence profonde sur les animaux et créatures intelligentes.",
+          "abilities": ["beast_command", "monster_diplomacy"]
+        },
+        "5": {
+          "name": "Esprit Bestial",
+          "description": "Communion totale avec le monde animal et monstres intelligents.",
+          "abilities": ["perfect_understanding", "mythical_beast_speech", "beast_alliance"]
+        }
+      }
+    },
+    "demon_language": {
+      "name": "Langue Démoniaque",
+      "category": "knowledge",
+      "description": "Maîtrise des langages et dialectes des races démoniaques.",
+      "max_level": 5,
+      "attribute_affinity": ["intelligence", "charisma"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "description": "Compréhension de phrases simples en langue démoniaque commune.",
+          "abilities": ["basic_demon_speech", "simple_reading"]
+        },
+        "2": {
+          "name": "Pratiquant",
+          "description": "Conversation basique et lecture de textes simples.",
+          "abilities": ["demon_conversation", "text_comprehension"]
+        },
+        "3": {
+          "name": "Adepte",
+          "description": "Maîtrise de plusieurs dialectes démoniaques.",
+          "abilities": ["dialect_knowledge", "complex_conversation"]
+        },
+        "4": {
+          "name": "Expert",
+          "description": "Compréhension avancée incluant idiomes et textes anciens.",
+          "abilities": ["ancient_text_reading", "cultural_understanding"]
+        },
+        "5": {
+          "name": "Maître",
+          "description": "Maîtrise complète de tous les dialectes et langues démoniaques connues.",
+          "abilities": ["perfect_speech", "forbidden_text_comprehension", "demonic_poetry"]
+        }
+      }
+    },
+    "divine_language": {
+      "name": "Langue Divine",
+      "category": "knowledge",
+      "description": "Compréhension des langages sacrés utilisés dans les textes religieux et rituels.",
+      "max_level": 5,
+      "attribute_affinity": ["wisdom", "intelligence"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "description": "Reconnaissance et prononciation de mots divins simples.",
+          "abilities": ["basic_prayer_reading", "divine_script_recognition"]
+        },
+        "2": {
+          "name": "Acolyte",
+          "description": "Lecture de textes sacrés et compréhension des prières classiques.",
+          "abilities": ["sacred_text_reading", "prayer_recitation"]
+        },
+        "3": {
+          "name": "Prêtre",
+          "description": "Maîtrise des dialectes divins et des écritures complexes.",
+          "abilities": ["divine_dialect_fluency", "sacred_writing"]
+        },
+        "4": {
+          "name": "Grand Prêtre",
+          "description": "Compréhension profonde des textes anciens et mythiques.",
+          "abilities": ["ancient_divine_knowledge", "sacred_translation"]
+        },
+        "5": {
+          "name": "Oracle",
+          "description": "Maîtrise complète du langage des dieux et textes prophétiques.",
+          "abilities": ["divine_communion", "prophecy_deciphering", "creation_language"]
+        }
+      }
+    },
+        "beast_taming": {
+      "name": "Dressage de Créatures",
+      "category": "survival",
+      "description": "Art d'apprivoiser et d'entraîner des bêtes sauvages et des monstres.",
+      "max_level": 10,
+      "attribute_affinity": ["charisma", "perception"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "description": "Capacité à apprivoiser des animaux domestiques et peu agressifs.",
+          "abilities": ["animal_approach", "basic_training"]
+        },
+        "3": {
+          "name": "Dresseur",
+          "description": "Dressage d'animaux sauvages et créatures mineures.",
+          "abilities": ["beast_taming", "command_training"]
+        },
+        "5": {
+          "name": "Maître-Dresseur",
+          "description": "Capacité à apprivoiser des monstres et établir des liens durables.",
+          "abilities": ["monster_taming", "combat_training"]
+        },
+        "7": {
+          "name": "Dompteur",
+          "description": "Dressage de créatures dangereuses et établissement de liens profonds.",
+          "abilities": ["dangerous_beast_mastery", "telepathic_command"]
+        },
+        "10": {
+          "name": "Maître des Bêtes",
+          "description": "Capacité légendaire à dompter même les créatures mythiques.",
+          "abilities": ["mythical_creature_bond", "perfect_synchronization", "beast_army_command"]
+        }
+      }
+    },
+    "incantationless_magic": {
+      "name": "Magie sans Incantation",
+      "category": "magic",
+      "description": "Capacité rare à lancer des sorts sans prononcer d'incantations, augmentant considérablement la vitesse de casting.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "description": "Capacité à lancer des sorts très simples sans incantation.",
+          "abilities": ["silent_casting_minor", "mental_focus"]
+        },
+        "3": {
+          "name": "Adepte",
+          "description": "Lancement sans incantation de sorts de niveau intermédiaire.",
+          "abilities": ["thought_casting", "quick_magic"]
+        },
+        "5": {
+          "name": "Expert",
+          "description": "Maîtrise permettant le lancement rapide de sorts avancés par la pensée.",
+          "abilities": ["instant_casting", "multi_casting"]
+        },
+        "7": {
+          "name": "Maître",
+          "description": "Casting mental avancé permettant plusieurs sorts simultanés.",
+          "abilities": ["chain_casting", "complex_silent_magic"]
+        },
+        "10": {
+          "name": "Archimage Silencieux",
+          "description": "Niveau légendaire où la pensée et la magie deviennent presque indissociables.",
+          "abilities": ["perfect_mind_casting", "mana_direct_control", "thought_magic_innovation"]
+        }
+      }
+    },
+    "gods_eye": {
+      "name": "Œil de Dieu",
+      "category": "detection",
+      "description": "Don mystique permettant de voir les possibilités futures et de percevoir les flux de mana.",
+      "max_level": 7,
+      "attribute_affinity": ["perception", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Éveil",
+          "description": "Premières manifestations de visions brèves et perception accrue du mana.",
+          "abilities": ["future_glimpse", "enhanced_mana_sight"]
+        },
+        "2": {
+          "name": "Vision Claire",
+          "description": "Visions plus claires et capacité à voir les flux de mana environnants.",
+          "abilities": ["short_prescience", "mana_flow_vision"]
+        },
+        "3": {
+          "name": "Œil Éveillé",
+          "description": "Capacité à voir plusieurs possibilités futures à court terme.",
+          "abilities": ["branching_futures", "danger_prediction"]
+        },
+        "4": {
+          "name": "Clairvoyance",
+          "description": "Visions détaillées et capacité d'analyse des multiples futurs possibles.",
+          "abilities": ["detailed_foresight", "countermeasure_vision"]
+        },
+        "5": {
+          "name": "Œil de la Providence",
+          "description": "Vision claire de futurs multiples et perception des intentions cachées.",
+          "abilities": ["combat_prediction", "intent_reading"]
+        },
+        "6": {
+          "name": "Vision Divine",
+          "description": "Perception presque parfaite des événements futurs probables.",
+          "abilities": ["perfect_prediction", "fate_reading"]
+        },
+        "7": {
+          "name": "Œil de Dieu Complet",
+          "description": "Manifestation complète du pouvoir légendaire permettant de voir le flux du destin.",
+          "abilities": ["fate_vision", "absolute_prediction", "timeline_navigation"]
+        }
+      }
+    },
+    "chantless_magic": {
+      "name": "Magie sans Chant",
+      "category": "magic",
+      "description": "Forme avancée de magie où les sorts complexes peuvent être lancés sans incantations longues.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "agility"],
+      "levels": {
+        "1": {
+          "name": "Initié",
+          "description": "Réduction légère du temps d'incantation pour les sorts simples.",
+          "abilities": ["shortened_chant", "quick_cast_minor"]
+        },
+        "3": {
+          "name": "Pratiquant",
+          "description": "Capacité à abréger significativement les incantations standard.",
+          "abilities": ["abbreviated_casting", "spell_efficiency"]
+        },
+        "5": {
+          "name": "Adepte",
+          "description": "Lancement de sorts de niveau intermédiaire avec incantations minimales.",
+          "abilities": ["minimal_chanting", "spell_mastery"]
+        },
+        "7": {
+          "name": "Expert",
+          "description": "Capacité à lancer instantanément la plupart des sorts courants.",
+          "abilities": ["instant_standard_spell", "combat_casting"]
+        },
+        "10": {
+          "name": "Maître Sans Chant",
+          "description": "Maîtrise ultime permettant de lancer même les sorts les plus complexes sans incantation.",
+          "abilities": ["pure_will_casting", "complex_spell_instant", "magical_efficiency"]
+        }
+      }
+    },
+    "battle_god_style": {
+      "name": "Style du Dieu de la Guerre",
+      "category": "combat",
+      "description": "Style de combat combinant techniques d'épée, arts martiaux et tactique.",
+      "max_level": 10,
+      "attribute_affinity": ["strength", "intelligence"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "description": "Bases du style combinant attaque, défense et tactique.",
+          "techniques": ["tactical_stance", "balanced_strike"]
+        },
+        "3": {
+          "name": "Guerrier",
+          "description": "Techniques coordonnées et adaptabilité au combat.",
+          "techniques": ["battlefield_awareness", "tactical_response"]
+        },
+        "5": {
+          "name": "Avancé",
+          "description": "Maîtrise de techniques complexes et capacité à exploiter les faiblesses.",
+          "techniques": ["weakness_exploit", "combat_adaptation"]
+        },
+        "7": {
+          "name": "Saint Guerre",
+          "description": "Techniques surhumaines et contrôle parfait du champ de bataille.",
+          "techniques": ["perfect_balance", "overwhelming_assault"]
+        },
+        "10": {
+          "name": "Roi Guerre",
+          "description": "Maîtrise absolue faisant du pratiquant une force guerrière légendaire.",
+          "techniques": ["divine_combat", "ultimate_battle_sense", "perfect_victory"]
+        }
+      }
+    },
+    "touki": {
+      "name": "Touki (Aura de Combat)",
+      "category": "combat",
+      "description": "Technique permettant de manifester son énergie vitale comme une aura renforçant le corps.",
+      "max_level": 10,
+      "attribute_affinity": ["vitality", "strength"],
+      "levels": {
+        "1": {
+          "name": "Éveil",
+          "description": "Manifestation initiale de l'énergie interne pour renforcer légèrement le corps.",
+          "abilities": ["physical_enhancement", "energy_sense"]
+        },
+        "3": {
+          "name": "Initié",
+          "description": "Capacité à maintenir le Touki pendant des périodes prolongées.",
+          "abilities": ["sustained_enhancement", "impact_resistance"]
+        },
+        "5": {
+          "name": "Adepte",
+          "description": "Renforcement significatif des capacités physiques et projection limitée.",
+          "abilities": ["aura_projection", "enhanced_strength"]
+        },
+        "7": {
+          "name": "Maître",
+          "description": "Maîtrise avancée permettant d'utiliser le Touki comme arme et bouclier.",
+          "abilities": ["aura_weapon", "touki_barrier"]
+        },
+        "10": {
+          "name": "Grand Maître",
+          "description": "Perfection du Touki permettant des prouesses physiques légendaires.",
+          "abilities": ["perfect_touki", "life_force_mastery", "aura_dominance"]
+        }
+      }
+    },
+    "magic_formation": {
+      "name": "Formation Magique",
+      "category": "magic",
+      "description": "Art de créer des structures magiques complexes pour des effets durables ou rituels.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "description": "Création de formations magiques simples à effets mineurs.",
+          "abilities": ["basic_circle", "minor_enhancement_formation"]
+        },
+        "3": {
+          "name": "Praticien",
+          "description": "Formations de taille moyenne avec effets durables.",
+          "abilities": ["protection_circle", "element_enhancement_formation"]
+        },
+        "5": {
+          "name": "Adepte",
+          "description": "Création de formations complexes et rituels multi-élémentaires.",
+          "abilities": ["complex_formation", "ritual_circle"]
+        },
+        "7": {
+          "name": "Maître",
+          "description": "Formations avancées aux effets puissants et étendus.",
+          "abilities": ["grand_formation", "area_enchantment"]
+        },
+        "10": {
+          "name": "Archimage des Formations",
+          "description": "Capacité à créer des formations légendaires affectant de vastes zones.",
+          "abilities": ["world_formation", "permanent_magical_structure", "formation_innovation"]
+        }
+      }
+    },
+    "spell_creation": {
+      "name": "Création de Sort",
+      "category": "magic",
+      "description": "Art de concevoir et développer de nouveaux sorts et techniques magiques.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "creativity"],
+      "levels": {
+        "1": {
+          "name": "Novice",
+          "description": "Capacité à modifier légèrement des sorts existants.",
+          "abilities": ["spell_modification", "effect_adjustment"]
+        },
+        "3": {
+          "name": "Créateur",
+          "description": "Développement de variantes personnelles de sorts connus.",
+          "abilities": ["spell_variant", "personalized_casting"]
+        },
+        "5": {
+          "name": "Innovateur",
+          "description": "Création de sorts originaux de puissance modérée.",
+          "abilities": ["original_spell", "magic_experimentation"]
+        },
+        "7": {
+          "name": "Archimage Créateur",
+          "description": "Développement de sorts puissants et techniques innovantes.",
+          "abilities": ["powerful_creation", "magical_breakthrough"]
+        },
+        "10": {
+          "name": "Génie Magique",
+          "description": "Capacité légendaire à créer des sorts révolutionnaires.",
+          "abilities": ["revolutionary_magic", "magical_theory_advancement", "school_founding"]
+        }
+      }
+    },
+    "human_language": {
+      "name": "Langues Humaines",
+      "category": "knowledge",
+      "description": "Maîtrise des différentes langues parlées par les races humaines.",
+      "max_level": 5,
+      "attribute_affinity": ["intelligence", "charisma"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "description": "Connaissance de base d'une ou deux langues humaines principales.",
+          "abilities": ["common_tongue", "simple_communication"]
+        },
+        "2": {
+          "name": "Polyglotte Apprenti",
+          "description": "Maîtrise de plusieurs langues communes et dialectes régionaux.",
+          "abilities": ["regional_dialects", "cultural_expressions"]
+        },
+        "3": {
+          "name": "Linguiste",
+          "description": "Connaissance approfondie de la plupart des langues humaines connues.",
+          "abilities": ["language_analysis", "accent_adaptation"]
+        },
+        "4": {
+          "name": "Maître Linguiste",
+          "description": "Maîtrise quasi-parfaite de toutes les langues humaines courantes et anciennes.",
+          "abilities": ["ancient_languages", "dialect_mastery"]
+        },
+        "5": {
+          "name": "Érudit des Langues",
+          "description": "Compréhension parfaite de toutes les langues humaines existantes et éteintes.",
+          "abilities": ["perfect_translation", "language_revival", "linguistic_innovation"]
+        }
+      }   
+    },
+    "elven_language": {
+      "name": "Langue Elfique",
+      "category": "knowledge",
+      "description": "Maîtrise de l'ancien et complexe langage des elfes.",
+      "max_level": 5,
+      "attribute_affinity": ["intelligence", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "description": "Compréhension des phrases simples et expressions courantes.",
+          "abilities": ["basic_elven", "common_phrases"]
+        },
+        "2": {
+          "name": "Pratiquant",
+          "description": "Conversation fluide et compréhension de textes standards.",
+          "abilities": ["elven_conversation", "cultural_references"]
+        },
+        "3": {
+          "name": "Adepte",
+          "description": "Maîtrise des dialectes régionaux et de la poésie elfique.",
+          "abilities": ["poetic_elven", "dialectical_variations"]
+        },
+        "4": {
+          "name": "Érudit Elfique",
+          "description": "Compréhension profonde des anciens textes et de l'histoire linguistique.",
+          "abilities": ["ancient_elven", "historical_linguistics"]
+        },
+        "5": {
+          "name": "Sage Elfique",
+          "description": "Maîtrise parfaite comparable à celle des anciens elfes natifs.",
+          "abilities": ["sacred_elven", "lost_dialects", "runic_elven_script"]
+        }
+      }
+    },
+    "dwarven_language": {
+      "name": "Langue Naine",
+      "category": "knowledge",
+      "description": "Maîtrise de la langue robuste et technique des nains.",
+      "max_level": 5,
+      "attribute_affinity": ["intelligence", "vitality"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "description": "Bases de la langue naine et terminologie simple.",
+          "abilities": ["basic_dwarven", "mining_terminology"]
+        },
+        "2": {
+          "name": "Pratiquant",
+          "description": "Conversation courante et compréhension des termes techniques.",
+          "abilities": ["technical_dwarven", "craft_terminology"]
+        },
+        "3": {
+          "name": "Adepte",
+          "description": "Maîtrise des dialectes des différents clans et expressions idiomatiques.",
+          "abilities": ["clan_dialects", "dwarven_idioms"]
+        },
+        "4": {
+          "name": "Érudit Nain",
+          "description": "Connaissance approfondie des runes naines et récits ancestraux.",
+          "abilities": ["runic_reading", "ancestral_tales"]
+        },
+        "5": {
+          "name": "Sage Nain",
+          "description": "Maîtrise complète comparable à celle d'un maître archiviste nain.",
+          "abilities": ["ancient_runes", "secret_knowledge", "forge_songs"]
+        }
+      }
+    },
+    "holy_language": {
+      "name": "Langue Sacrée",
+      "category": "knowledge",
+      "description": "Connaissance des langues utilisées dans les rituels religieux et textes sacrés.",
+      "max_level": 5,
+      "attribute_affinity": ["wisdom", "intelligence"],
+      "levels": {
+        "1": {
+          "name": "Initié",
+          "description": "Reconnaissance des symboles sacrés et prières communes.",
+          "abilities": ["prayer_reading", "symbol_recognition"]
+        },
+        "2": {
+          "name": "Acolyte",
+          "description": "Lecture de textes liturgiques et compréhension des rituels.",
+          "abilities": ["ritual_language", "liturgical_reading"]
+        },
+        "3": {
+          "name": "Prêtre Linguiste",
+          "description": "Interprétation précise des écritures et traduction de textes anciens.",
+          "abilities": ["scripture_interpretation", "holy_text_translation"]
+        },
+        "4": {
+          "name": "Érudit Sacré",
+          "description": "Maîtrise des langues sacrées de multiples religions et traditions.",
+          "abilities": ["comparative_religion", "sacred_etymology"]
+        },
+        "5": {
+          "name": "Oracle Linguistique",
+          "description": "Connaissance parfaite de toutes les langues sacrées connues et perdues.",
+          "abilities": ["forgotten_holy_tongues", "divine_writing", "perfect_sacred_pronunciation"]
+        }
+      }
+    },
+    "ancient_language": {
+      "name": "Langues Anciennes",
+      "category": "knowledge",
+      "description": "Étude des langues perdues et civilisations disparues.",
+      "max_level": 5,
+      "attribute_affinity": ["intelligence", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Étudiant",
+          "description": "Reconnaissance de bases linguistiques des civilisations passées.",
+          "abilities": ["basic_decipherment", "ancient_alphabets"]
+        },
+        "2": {
+          "name": "Chercheur",
+          "description": "Traduction de textes simples et compréhension contextuelle.",
+          "abilities": ["contextual_translation", "historical_reference"]
+        },
+        "3": {
+          "name": "Archéolinguiste",
+          "description": "Capacité à traduire des textes complexes et comprendre les nuances culturelles.",
+          "abilities": ["complete_translation", "cultural_context"]
+        },
+        "4": {
+          "name": "Érudit Ancien",
+          "description": "Maîtrise de multiples langues disparues et leurs évolutions.",
+          "abilities": ["linguistic_evolution", "dead_language_fluency"]
+        },
+        "5": {
+          "name": "Sage des Âges",
+          "description": "Compréhension parfaite des langues des civilisations perdues.",
+          "abilities": ["perfect_ancient_fluency", "forgotten_knowledge", "language_resurrection"]
+        }
+      }
+    },
+    "scroll_crafting": {
+      "name": "Fabrication de Parchemins",
+      "category": "crafting",
+      "description": "Art de créer des parchemins magiques à usage unique.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "dexterity"],
+      "levels": {
+        "1": {
+          "name": "Apprenti",
+          "description": "Création de parchemins basiques contenant des sorts simples.",
+          "abilities": ["basic_scroll", "ink_preparation"]
+        },
+        "3": {
+          "name": "Scribe",
+          "description": "Fabrication de parchemins fiables pour sorts de niveau intermédiaire.",
+          "abilities": ["quality_scroll", "magical_calligraphy"]
+        },
+        "5": {
+          "name": "Maître Scribe",
+          "description": "Création de parchemins complexes avec modifications mineures.",
+          "abilities": ["complex_scroll", "spell_modification"]
+        },
+        "7": {
+          "name": "Archiviste",
+          "description": "Parchemins avancés avec sorts personnalisés et effets améliorés.",
+          "abilities": ["enhanced_scrolls", "custom_spell_binding"]
+        },
+        "10": {
+          "name": "Grand Archiviste",
+          "description": "Fabrication de parchemins légendaires aux effets extraordinaires.",
+          "abilities": ["legendary_scroll", "spell_permanence", "multi-effect_binding"]
+        }
+      }
+    },
+    "fighting_spirit": {
+      "name": "Esprit Combatif",
+      "category": "combat",
+      "description": "Capacité à transcender ses limites physiques par la force de volonté et la détermination.",
+      "max_level": 10,
+      "attribute_affinity": ["vitality", "willpower"],
+      "levels": {
+        "1": {
+          "name": "Volonté de Fer",
+          "description": "Détermination permettant de continuer malgré la fatigue et les blessures légères.",
+          "abilities": ["pain_resistance", "exhaustion_delay"]
+        },
+        "3": {
+          "name": "Âme Indomptable",
+          "description": "Force mentale permettant de dépasser temporairement ses limites physiques.",
+          "abilities": ["second_wind", "critical_resolve"]
+        },
+        "5": {
+          "name": "Esprit de Guerrier",
+          "description": "Capacité à maintenir sa force au maximum même dans des situations désespérées.",
+          "abilities": ["desperate_strength", "unbreakable_will"]
+        },
+        "7": {
+          "name": "Âme de Héros",
+          "description": "Transcendance des limites normales et résistance aux effets mentaux.",
+          "abilities": ["heroic_surge", "mental_fortress"]
+        },
+        "10": {
+          "name": "Esprit Légendaire",
+          "description": "Volonté presque mythique permettant des exploits surhumains.",
+          "abilities": ["legendary_resilience", "inextinguishable_will", "miracle_survival"]
+        }
+      }
+    },
+    "mana_manipulation": {
+      "name": "Manipulation du Mana",
+      "category": "magic",
+      "description": "Contrôle précis et efficace de l'énergie magique brute.",
+      "max_level": 10,
+      "attribute_affinity": ["intelligence", "wisdom"],
+      "levels": {
+        "1": {
+          "name": "Débutant",
+          "description": "Contrôle basique du mana personnel et perception des flux.",
+          "abilities": ["mana_perception", "basic_control"]
+        },
+        "3": {
+          "name": "Adepte",
+          "description": "Manipulation efficace et économe de l'énergie magique.",
+          "abilities": ["efficient_casting", "mana_conservation"]
+        },
+        "5": {
+          "name": "Expert",
+          "description": "Contrôle précis permettant des manipulations complexes et adaptables.",
+          "abilities": ["fine_control", "mana_shaping"]
+        },
+        "7": {
+          "name": "Maître",
+          "description": "Capacité à manipuler le mana environnant et créer des structures complexes.",
+          "abilities": ["environmental_mana", "complex_manipulation"]
+        },
+        "10": {
+          "name": "Archimage",
+          "description": "Maîtrise absolue du mana sous toutes ses formes.",
+          "abilities": ["perfect_control", "mana_weaving", "raw_magic_manipulation"]
+        }
+      }
+    }
+  },
+  "experience_table": {
+    "level_1": 0,
+    "level_2": 100,
+    "level_3": 300,
+    "level_4": 600,
+    "level_5": 1000,
+    "level_6": 1500,
+    "level_7": 2100,
+    "level_8": 2800,
+    "level_9": 3600,
+    "level_10": 4500,
+    "level_11": 5500,
+    "level_12": 6600,
+    "level_13": 7800,
+    "level_14": 9100,
+    "level_15": 10500,
+    "level_16": 12000,
+    "level_17": 13600,
+    "level_18": 15300,
+    "level_19": 17100,
+    "level_20": 19000,
+    "level_21": 21000,
+    "level_22": 23100,
+    "level_23": 25300,
+    "level_24": 27600,
+    "level_25": 30000,
+    "level_26": 32500,
+    "level_27": 35100,
+    "level_28": 37800,
+    "level_29": 40600,
+    "level_30": 43500,
+    "level_31": 46500,
+    "level_32": 49600,
+    "level_33": 52800,
+    "level_34": 56100,
+    "level_35": 59500,
+    "level_36": 63000,
+    "level_37": 66600,
+    "level_38": 70300,
+    "level_39": 74100,
+    "level_40": 78000,
+    "level_41": 82000,
+    "level_42": 86100,
+    "level_43": 90300,
+    "level_44": 94600,
+    "level_45": 99000,
+    "level_46": 103500,
+    "level_47": 108100,
+    "level_48": 112800,
+    "level_49": 117600,
+    "level_50": 122500,
+    "level_100": 500000
+  },
+  "character_classes": {
+    "mage": {
+      "name": "Mage",
+      "description": "Spécialiste de la magie et des sorts, cherchant la connaissance et la maîtrise des éléments.",
+      "primary_attributes": ["intelligence", "wisdom"],
+      "skill_bonuses": {
+        "magic_theory": 2,
+        "magic_combat": 2
+      },
+      "starting_skills": ["magic_theory", "water_magic"],
+      "growth_rates": {
+        "strength": 1,
+        "vitality": 2,
+        "dexterity": 2,
+        "agility": 2,
+        "intelligence": 4,
+        "wisdom": 3,
+        "charisma": 2,
+        "perception": 3,
+        "luck": 1
+      }
+    },
+    "warrior": {
+      "name": "Guerrier",
+      "description": "Combattant au corps à corps maîtrisant diverses techniques d'épée et d'art martial.",
+      "primary_attributes": ["strength", "dexterity"],
+      "skill_bonuses": {
+        "sword_god_style": 2,
+        "north_god_style": 1
+      },
+      "starting_skills": ["sword_god_style"],
+      "growth_rates": {
+        "strength": 4,
+        "vitality": 3,
+        "dexterity": 3,
+        "agility": 2,
+        "intelligence": 1,
+        "wisdom": 2,
+        "charisma": 1,
+        "perception": 2,
+        "luck": 2
+      }
+    },
+    "adventurer": {
+      "name": "Aventurier",
+      "description": "Explorateur polyvalent capable de s'adapter à diverses situations et défis.",
+      "primary_attributes": ["dexterity", "agility"],
+      "skill_bonuses": {
+        "survival": 2,
+        "water_god_style": 1
+      },
+      "starting_skills": ["survival", "water_god_style"],
+      "growth_rates": {
+        "strength": 2,
+        "vitality": 2,
+        "dexterity": 3,
+        "agility": 3,
+        "intelligence": 2,
+        "wisdom": 2,
+        "charisma": 2,
+        "perception": 3,
+        "luck": 3
+      }
+    },
+    "noble": {
+      "name": "Noble",
+      "description": "Membre de l'aristocratie formé aux arts de la guerre, de la magie et de la politique.",
+      "primary_attributes": ["charisma", "intelligence"],
+      "skill_bonuses": {
+        "etiquette": 2,
+        "leadership": 2
+      },
+      "starting_skills": ["etiquette", "water_god_style"],
+      "growth_rates": {
+        "strength": 2,
+        "vitality": 2,
+        "dexterity": 2,
+        "agility": 2,
+        "intelligence": 3,
+        "wisdom": 2,
+        "charisma": 3,
+        "perception": 2,
+        "luck": 2
+      }
+    },
+    "scholar": {
+      "name": "Érudit",
+      "description": "Intellectuel dévoué à l'acquisition et au partage des connaissances.",
+      "primary_attributes": ["intelligence", "wisdom"],
+      "skill_bonuses": {
+        "magic_theory": 2,
+        "teaching": 2
+      },
+      "starting_skills": ["magic_theory", "teaching"],
+      "growth_rates": {
+        "strength": 1,
+        "vitality": 1,
+        "dexterity": 2,
+        "agility": 1,
+        "intelligence": 4,
+        "wisdom": 4,
+        "charisma": 3,
+        "perception": 2,
+        "luck": 2
+      }
+    },
+    "saint": {
+      "name": "Saint",
+      "description": "Individu béni par les dieux possédant des talents innés pour la magie divine et la guérison.",
+      "primary_attributes": ["wisdom", "charisma"],
+      "skill_bonuses": {
+        "healing_magic": 3,
+        "holy_language": 2
+      },
+      "starting_skills": ["healing_magic", "divine_language"],
+      "growth_rates": {
+        "strength": 1,
+        "vitality": 2,
+        "dexterity": 2,
+        "agility": 1,
+        "intelligence": 3,
+        "wisdom": 4,
+        "charisma": 4,
+        "perception": 2,
+        "luck": 3
+      }
+    },
+    "rogue": {
+      "name": "Roublard",
+      "description": "Expert en discrétion, infiltration et acquisition de biens par des moyens détournés.",
+      "primary_attributes": ["agility", "dexterity"],
+      "skill_bonuses": {
+        "stealth": 3,
+        "lockpicking": 2
+      },
+      "starting_skills": ["stealth", "lockpicking"],
+      "growth_rates": {
+        "strength": 2,
+        "vitality": 2,
+        "dexterity": 4,
+        "agility": 4,
+        "intelligence": 2,
+        "wisdom": 2,
+        "charisma": 2,
+        "perception": 3,
+        "luck": 3
+      }
+    },
+    "summoner": {
+      "name": "Invocateur",
+      "description": "Spécialiste capable d'appeler et lier des créatures d'autres dimensions.",
+      "primary_attributes": ["intelligence", "charisma"],
+      "skill_bonuses": {
+        "summoning_magic": 3,
+        "beast_language": 2
+      },
+      "starting_skills": ["summoning_magic", "beast_taming"],
+      "growth_rates": {
+        "strength": 1,
+        "vitality": 2,
+        "dexterity": 2,
+        "agility": 2,
+        "intelligence": 3,
+        "wisdom": 3,
+        "charisma": 3,
+        "perception": 2,
+        "luck": 2
+      }
+    },
+    "battle_mage": {
+      "name": "Mage de Combat",
+      "description": "Combattant hybride alliant magie offensive et compétences martiales.",
+      "primary_attributes": ["intelligence", "strength"],
+      "skill_bonuses": {
+        "magic_combat": 2,
+        "sword_god_style": 1
+      },
+      "starting_skills": ["magic_combat", "fire_magic"],
+      "growth_rates": {
+        "strength": 3,
+        "vitality": 2,
+        "dexterity": 2,
+        "agility": 2,
+        "intelligence": 3,
+        "wisdom": 2,
+        "charisma": 1,
+        "perception": 2,
+        "luck": 1
+      }
+    }
+  },
+  "races": {
+    "human": {
+      "name": "Humain",
+      "description": "Race la plus commune, adaptable et versatile.",
+      "attribute_modifiers": {
+        "strength": 0,
+        "vitality": 0,
+        "dexterity": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 0,
+        "perception": 0,
+        "luck": 0
+      },
+      "special_abilities": ["adaptability", "determination"]
+    },
+    "elf": {
+      "name": "Elfe",
+      "description": "Race à longue durée de vie avec affinité naturelle pour la magie et la nature.",
+      "attribute_modifiers": {
+        "strength": -1,
+        "vitality": 0,
+        "dexterity": 1,
+        "agility": 1,
+        "intelligence": 1,
+        "wisdom": 1,
+        "charisma": 1,
+        "perception": 1,
+        "luck": 0
+      },
+      "special_abilities": ["longevity", "mana_affinity", "nature_bond"]
+    },
+    "dwarf": {
+      "name": "Nain",
+      "description": "Race robuste spécialisée dans la forge, les mines et la résistance.",
+      "attribute_modifiers": {
+        "strength": 1,
+        "vitality": 2,
+        "dexterity": 1,
+        "agility": -1,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": -1,
+        "perception": 1,
+        "luck": 0
+      },
+      "special_abilities": ["stone_sense", "crafting_mastery", "poison_resistance"]
+    },
+    "beast_race": {
+      "name": "Race Bestiale",
+      "description": "Race possédant des caractéristiques animales et des sens aiguisés.",
+      "attribute_modifiers": {
+        "strength": 1,
+        "vitality": 1,
+        "dexterity": 0,
+        "agility": 1,
+        "intelligence": -1,
+        "wisdom": 0,
+        "charisma": 0,
+        "perception": 2,
+        "luck": 0
+      },
+      "special_abilities": ["enhanced_senses", "natural_weapons", "night_vision"]
+    },
+    "demon_race": {
+      "name": "Race Démoniaque",
+      "description": "Race originaire du continent démoniaque avec une affinité pour la magie destructrice.",
+      "attribute_modifiers": {
+        "strength": 1,
+        "vitality": 1,
+        "dexterity": 0,
+        "agility": 0,
+        "intelligence": 1,
+        "wisdom": -1,
+        "charisma": -1,
+        "perception": 0,
+        "luck": 0
+      },
+      "special_abilities": ["demonic_resilience", "dark_affinity", "intimidation"]
+    },
+    "mixed_blood": {
+      "name": "Sang-Mêlé",
+      "description": "Individu né de l'union de deux races différentes, héritant de traits des deux.",
+      "attribute_modifiers": {
+        "strength": 0,
+        "vitality": 0,
+        "dexterity": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 0,
+        "perception": 1,
+        "luck": 1
+      },
+      "special_abilities": ["hybrid_vigor", "adaptability", "dual_heritage"]
+    }
+  },
+  "special_eyes": {
+  "demon_eyes": {
+    "name": "Yeux Démoniaques",
+    "description": "Capacités oculaires spéciales accordant des pouvoirs uniques à leur possesseur.",
+    "types": {
+      "foresight": {
+        "name": "Œil de la Prévoyance (Ghislaine)",
+        "description": "Permet de percevoir les mouvements d'attaque imminents et d'anticiper les actions adverses.",
+        "abilities": [
+          "combat_prediction",
+          "movement_anticipation",
+          "counter_opportunity"
+        ],
+        "limitations": "Fonctionne uniquement sur les intentions hostiles directes et les actions physiques."
+      },
+      "vision": {
+        "name": "Œil de la Vision (Rudeus)",
+        "description": "Permet de voir les futures possibilités et d'anticiper les événements à venir.",
+        "abilities": [
+          "future_sight",
+          "multiple_futures",
+          "danger_prediction"
+        ],
+        "limitations": "Les futurs perçus sont des possibilités, pas des certitudes absolues."
+      },
+      "absolute": {
+        "name": "Œil Absolu",
+        "description": "Capacité à voir la vérité absolue derrière les illusions et apparences.",
+        "abilities": [
+          "illusion_penetration",
+          "truth_perception",
+          "reality_anchor"
+        ],
+        "limitations": "Cause une forte fatigue mentale lors d'utilisations prolongées."
+      },
+      "heart": {
+        "name": "Œil du Cœur",
+        "description": "Permet de lire les émotions et pensées superficielles des autres.",
+        "abilities": [
+          "emotion_reading",
+          "intention_detection",
+          "lie_perception"
+        ],
+        "limitations": "Ne peut pas lire les pensées profondes ou bien protégées."
+      },
+      "identification": {
+        "name": "Œil d'Identification",
+        "description": "Révèle les propriétés, capacités et faiblesses des objets et êtres vivants.",
+        "abilities": [
+          "property_analysis",
+          "weakness_detection",
+          "magical_assessment"
+        ],
+        "limitations": "Nécessite une concentration soutenue et un contact visuel direct."
+      },
+      "death": {
+        "name": "Œil de la Mort",
+        "description": "Capacité à voir les points vitaux et à influencer la force vitale des cibles.",
+        "abilities": [
+          "vital_point_vision",
+          "life_force_perception",
+          "death_acceleration"
+        ],
+        "limitations": "Utilisation aux lourdes conséquences karmiques et éthiques."
+      }
+    }
+  },
+  "curse_eyes": {
+    "name": "Yeux Maudits",
+    "description": "Manifestations oculaires résultant de malédictions puissantes, avec des effets néfastes ou déformants.",
+    "types": {
+      "petrification": {
+        "name": "Œil de Pétrification",
+        "description": "Capacité à transformer en pierre les êtres vivants regardés directement.",
+        "abilities": [
+          "stone_transformation",
+          "partial_petrification",
+          "stone_control"
+        ],
+        "limitations": "Difficile à contrôler, peut affecter des alliés par accident."
+      },
+      "corruption": {
+        "name": "Œil de Corruption",
+        "description": "Corrompt graduellement ce qui est observé, détériorant matière et esprit.",
+        "abilities": [
+          "material_decay",
+          "spirit_erosion",
+          "corruption_spread"
+        ],
+        "limitations": "Effet lent qui s'accumule, difficile à stopper une fois commencé."
+      }
+    }
+  },
+  "mystic_eyes": {
+    "name": "Yeux Mystiques",
+    "description": "Capacités oculaires innées ou acquises par des moyens mystiques autres que démoniaques.",
+    "types": {
+      "clairvoyance": {
+        "name": "Œil de Clairvoyance",
+        "description": "Permet de voir des lieux distants et à travers les obstacles physiques.",
+        "abilities": [
+          "remote_viewing",
+          "barrier_penetration",
+          "distance_sight"
+        ],
+        "limitations": "La précision diminue avec la distance et les barrières magiques peuvent bloquer la vision."
+      },
+      "mana_perception": {
+        "name": "Œil de Perception du Mana",
+        "description": "Visualisation des flux et structures magiques invisibles à l'œil normal.",
+        "abilities": [
+          "mana_flow_vision",
+          "spell_structure_analysis",
+          "magical_weakness_detection"
+        ],
+        "limitations": "Surcharge sensorielle possible dans les zones à forte concentration magique."
+      }
+    }
+  },
+  "divine_eyes": {
+    "name": "Yeux Divins",
+    "description": "Manifestations oculaires extrêmement rares accordées par intervention divine ou héritage céleste.",
+    "types": {
+      "all_seeing": {
+        "name": "Œil Omniscient",
+        "description": "Capacité légendaire permettant une perception presque omniprésente du monde.",
+        "abilities": [
+          "global_awareness",
+          "past_present_future_sight",
+          "soul_perception"
+        ],
+        "limitations": "Peut submerger l'esprit du possesseur avec trop d'informations simultanées."
+      },
+      "creator": {
+        "name": "Œil du Créateur",
+        "description": "Don divin permettant de voir la structure fondamentale de la réalité.",
+        "abilities": [
+          "reality_perception",
+          "creation_blueprint",
+          "fundamental_understanding"
+        ],
+        "limitations": "Compréhension limitée par la capacité mentale du possesseur."
+      }
+    }
+  }
+}
+}

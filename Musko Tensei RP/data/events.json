@@ -1,0 +1,2580 @@
+{
+  "event_types": {
+    "main_quest": "Événement principal lié à l'histoire centrale",
+    "side_quest": "Quête secondaire optionnelle",
+    "character_event": "Événement centré sur un personnage spécifique",
+    "world_event": "Événement affectant une région ou le monde entier",
+    "random_encounter": "Rencontre aléatoire lors des déplacements",
+    "dungeon": "Exploration de donjon ou zone dangereuse",
+    "festival": "Célébration culturelle ou religieuse",
+    "disaster": "Catastrophe naturelle ou magique",
+    "political": "Intrigue politique ou diplomatique"
+  },
+  "event_status": {
+    "unavailable": "Pas encore disponible",
+    "available": "Disponible mais pas encore découvert",
+    "discovered": "Découvert mais pas commencé",
+    "in_progress": "En cours",
+    "completed": "Terminé",
+    "failed": "Échoué",
+    "expired": "Plus disponible"
+  },
+  "events": {
+    "prologue_fittoa": {
+      "id": "prologue_fittoa",
+      "title": "Une nouvelle vie à Fittoa",
+      "type": "main_quest",
+      "description": "Familiarisez-vous avec votre nouvelle vie dans le village de Fittoa et découvrez qui sont Paul et Zenith.",
+      "location_start": "centre_village",
+      "required_year_min": 0,
+      "required_year_max": 3,
+      "prerequisite_events": [],
+      "prerequisite_attributes": {},
+      "reward_exp": 100,
+      "reward_gold": 0,
+      "reward_items": [],
+      "reward_relationships": {
+        "paul": 5,
+        "zenith": 5
+      },
+      "stages": [
+        {
+          "id": "explore_house",
+          "description": "Explorez la maison Greyrat",
+          "objective_type": "visit_location",
+          "objective_target": "maison_greyrat",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Alors, on explore la maison? Fais attention à ne pas te blesser."
+            }
+          ]
+        },
+        {
+          "id": "meet_family",
+          "description": "Faites connaissance avec vos parents",
+          "objective_type": "talk_to",
+          "objective_targets": ["paul", "zenith"],
+          "dialogue": [
+            {
+              "speaker": "zenith",
+              "text": "Tu as l'air curieux aujourd'hui. As-tu bien dormi?"
+            }
+          ]
+        },
+        {
+          "id": "village_tour",
+          "description": "Visitez le village de Fittoa",
+          "objective_type": "visit_locations",
+          "objective_targets": ["centre_village", "auberge_fittoa"],
+          "dialogue": []
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "paul",
+          "text": "Tu t'habitues bien à la vie ici. Peut-être qu'il est temps que je commence à t'apprendre quelques trucs."
+        },
+        {
+          "speaker": "zenith",
+          "text": "Ne va pas lui mettre des idées d'épée dans la tête si tôt, Paul!"
+        }
+      ],
+      "follow_up_events": ["early_training"]
+    },
+    "early_training": {
+      "id": "early_training",
+      "title": "Premiers pas vers la force",
+      "type": "main_quest",
+      "description": "Paul a décidé de commencer votre formation en arts martiaux et maniement de l'épée.",
+      "location_start": "maison_greyrat",
+      "required_year_min": 2,
+      "required_year_max": 5,
+      "prerequisite_events": ["prologue_fittoa"],
+      "prerequisite_attributes": {
+        "age_min": 2
+      },
+      "reward_exp": 200,
+      "reward_gold": 0,
+      "reward_items": ["wooden_sword"],
+      "reward_skills": {
+        "sword_basic": 1
+      },
+      "reward_relationships": {
+        "paul": 10
+      },
+      "stages": [
+        {
+          "id": "accept_training",
+          "description": "Acceptez l'offre de formation de Paul",
+          "objective_type": "talk_to",
+          "objective_target": "paul",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Tu grandis vite. Je pense qu'il est temps de commencer à t'enseigner quelques bases du maniement de l'épée. Qu'en penses-tu?"
+            },
+            {
+              "speaker": "player",
+              "text": "[Accepter l'entraînement]",
+              "choices": [
+                {
+                  "text": "Oui, j'aimerais apprendre!",
+                  "effect": "progress_quest"
+                },
+                {
+                  "text": "Je préfère attendre encore un peu.",
+                  "effect": "delay_quest"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "first_lesson",
+          "description": "Suivez votre première leçon dans la clairière d'entraînement",
+          "objective_type": "visit_location",
+          "objective_target": "clairiere_entrainement",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Nous allons commencer par les bases de la posture. La force ne suffit pas, il faut de la technique."
+            }
+          ]
+        },
+        {
+          "id": "practice_moves",
+          "description": "Pratiquez les mouvements de base enseignés par Paul",
+          "objective_type": "mini_game",
+          "objective_target": "sword_practice",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Essaie de répéter ce mouvement. Concentre-toi sur ta posture, pas sur la force."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "paul",
+          "text": "Tu apprends vite! Beaucoup plus vite que je ne l'aurais imaginé. Continue comme ça et tu pourrais devenir un épéiste décent un jour."
+        }
+      ],
+      "follow_up_events": ["meet_sylphie"]
+    },
+    "meet_sylphie": {
+      "id": "meet_sylphie",
+      "title": "L'enfant aux cheveux verts",
+      "type": "main_quest",
+      "description": "Rencontrez une jeune fille aux cheveux verts qui vit à la périphérie du village.",
+      "location_start": "centre_village",
+      "required_year_min": 3,
+      "required_year_max": 7,
+      "prerequisite_events": ["early_training"],
+      "prerequisite_attributes": {
+        "age_min": 3
+      },
+      "reward_exp": 150,
+      "reward_gold": 0,
+      "reward_relationships": {
+        "sylphiette": 20
+      },
+      "stages": [
+        {
+          "id": "hear_rumors",
+          "description": "Entendez parler d'un enfant aux cheveux verts",
+          "objective_type": "talk_to_any",
+          "objective_targets": ["zenith", "paul"],
+          "dialogue": [
+            {
+              "speaker": "zenith",
+              "text": "J'ai entendu dire qu'il y a une petite fille aux cheveux verts qui vit près de la forêt. Les autres enfants sont méchants avec elle à cause de ses origines elfiques."
+            }
+          ]
+        },
+        {
+          "id": "find_sylphie",
+          "description": "Trouvez et approchez l'enfant aux cheveux verts",
+          "objective_type": "visit_location",
+          "objective_target": "maison_sylphiette",
+          "dialogue": []
+        },
+        {
+          "id": "protect_sylphie",
+          "description": "Protégez Sylphiette des enfants qui la harcèlent",
+          "objective_type": "mini_game",
+          "objective_target": "confrontation",
+          "dialogue": [
+            {
+              "speaker": "npc_bully",
+              "text": "Regardez, c'est l'elfe bizarre! Qu'est-ce que tu fais là, monstre?"
+            },
+            {
+              "speaker": "sylphiette",
+              "text": "Je... je voulais juste..."
+            }
+          ]
+        },
+        {
+          "id": "befriend_sylphie",
+          "description": "Faites connaissance avec Sylphiette",
+          "objective_type": "talk_to",
+          "objective_target": "sylphiette",
+          "dialogue": [
+            {
+              "speaker": "sylphiette",
+              "text": "M-merci de m'avoir aidée... Personne n'avait jamais pris ma défense avant."
+            },
+            {
+              "speaker": "player",
+              "text": "[Présenter vous]",
+              "choices": [
+                {
+                  "text": "Je m'appelle Rudeus. Tu veux être mon amie?",
+                  "effect": "relationship_increase:sylphiette:10"
+                },
+                {
+                  "text": "Ce n'était rien. Ces enfants sont stupides.",
+                  "effect": "relationship_increase:sylphiette:5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "sylphiette",
+          "text": "Tu es vraiment gentil... Est-ce qu'on pourrait jouer ensemble demain aussi?"
+        },
+        {
+          "speaker": "player",
+          "text": "Bien sûr! Je pourrais même t'apprendre quelques trucs que mon père m'a enseignés."
+        }
+      ],
+      "follow_up_events": ["magic_discovery", "teach_sylphie"]
+    },
+    "magic_discovery": {
+      "id": "magic_discovery",
+      "title": "La magie existe!",
+      "type": "main_quest",
+      "description": "Découvrez votre affinité pour la magie et commencez à comprendre ses principes fondamentaux.",
+      "location_start": "maison_greyrat",
+      "required_year_min": 3,
+      "required_year_max": 7,
+      "prerequisite_events": ["meet_sylphie"],
+      "prerequisite_attributes": {},
+      "reward_exp": 300,
+      "reward_gold": 0,
+      "reward_skills": {
+        "magic_theory": 1,
+        "water_magic": 1
+      },
+      "stages": [
+        {
+          "id": "strange_feeling",
+          "description": "Ressentez une étrange énergie autour de vous",
+          "objective_type": "triggered_event",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vous sentez quelque chose d'étrange dans l'air autour de vous, comme un courant invisible que vous pourriez presque toucher..."
+            }
+          ]
+        },
+        {
+          "id": "first_spell",
+          "description": "Essayez de canaliser cette étrange énergie",
+          "objective_type": "mini_game",
+          "objective_target": "magic_channeling",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "En vous concentrant, vous sentez l'énergie répondre à votre volonté. Une petite sphère d'eau se forme entre vos mains!"
+            }
+          ]
+        },
+        {
+          "id": "tell_parents",
+          "description": "Montrez votre découverte à vos parents",
+          "objective_type": "talk_to_all",
+          "objective_targets": ["paul", "zenith"],
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Incroyable! Comment as-tu appris à faire ça tout seul?"
+            },
+            {
+              "speaker": "zenith",
+              "text": "C'est extraordinaire! Tu as un don pour la magie. Nous devrions peut-être trouver quelqu'un pour t'enseigner..."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "paul",
+          "text": "Je vais essayer de trouver quelqu'un qui pourrait t'enseigner la magie correctement. En attendant, sois prudent avec tes expérimentations."
+        }
+      ],
+      "follow_up_events": ["roxy_arrival"]
+    },
+    "teach_sylphie": {
+      "id": "teach_sylphie",
+      "title": "Partager ses connaissances",
+      "type": "side_quest",
+      "description": "Enseignez à Sylphiette ce que vous avez appris de Paul.",
+      "location_start": "maison_sylphiette",
+      "required_year_min": 3,
+      "required_year_max": 7,
+      "prerequisite_events": ["meet_sylphie", "early_training"],
+      "prerequisite_attributes": {},
+      "reward_exp": 100,
+      "reward_gold": 0,
+      "reward_relationships": {
+        "sylphiette": 15,
+        "paul": 5
+      },
+      "stages": [
+        {
+          "id": "offer_teaching",
+          "description": "Proposez à Sylphiette de lui apprendre ce que vous savez",
+          "objective_type": "talk_to",
+          "objective_target": "sylphiette",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "Mon père m'apprend à manier l'épée. Je pourrais te montrer si tu veux."
+            },
+            {
+              "speaker": "sylphiette",
+              "text": "Vraiment? Tu ferais ça pour moi? Je... je ne suis pas très forte, mais j'aimerais apprendre."
+            }
+          ]
+        },
+        {
+          "id": "training_session",
+          "description": "Organisez une session d'entraînement avec Sylphiette",
+          "objective_type": "visit_location",
+          "objective_target": "clairiere_entrainement",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "D'abord, il faut que tu apprennes la bonne posture. Tiens-toi comme ça..."
+            },
+            {
+              "speaker": "sylphiette",
+              "text": "Comme ça? C'est difficile de rester en équilibre..."
+            }
+          ]
+        },
+        {
+          "id": "sylph_progress",
+          "description": "Aidez Sylphiette à progresser dans ses bases",
+          "objective_type": "mini_game",
+          "objective_target": "teaching_game",
+          "dialogue": []
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "sylphiette",
+          "text": "Merci beaucoup pour ton aide! Je n'aurais jamais pensé pouvoir apprendre ces choses."
+        },
+        {
+          "speaker": "paul",
+          "text": "Je t'ai observé enseigner à la petite Sylphiette. Tu as une bonne pédagogie, c'est impressionnant pour ton âge."
+        }
+      ]
+    },
+    "village_trouble": {
+      "id": "village_trouble",
+      "title": "Problèmes au village",
+      "type": "side_quest",
+      "description": "Des vols ont été signalés à Fittoa. Aidez à résoudre ce mystère.",
+      "location_start": "centre_village",
+      "required_year_min": 4,
+      "required_year_max": 7,
+      "prerequisite_events": ["prologue_fittoa"],
+      "prerequisite_attributes": {
+        "age_min": 4
+      },
+      "reward_exp": 100,
+      "reward_gold": 20,
+      "reward_relationships": {
+        "alphonse": 10
+      },
+      "stages": [
+        {
+          "id": "hear_about_thefts",
+          "description": "Entendez parler des vols mystérieux",
+          "objective_type": "talk_to",
+          "objective_target": "alphonse",
+          "dialogue": [
+            {
+              "speaker": "alphonse",
+              "text": "Ah, jeune Greyrat. Des choses étranges se produisent au village. Des objets disparaissent sans explication."
+            }
+          ]
+        },
+        {
+          "id": "investigate_village",
+          "description": "Enquêtez autour du village pour trouver des indices",
+          "objective_type": "visit_locations",
+          "objective_targets": ["auberge_fittoa", "centre_village"],
+          "dialogue": []
+        },
+        {
+          "id": "follow_tracks",
+          "description": "Suivez les traces suspectes vers la forêt",
+          "objective_type": "visit_location",
+          "objective_target": "foret_fittoa",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vous remarquez de petites empreintes qui se dirigent vers la forêt..."
+            }
+          ]
+        },
+        {
+          "id": "confront_thief",
+          "description": "Trouvez et confrontez le voleur",
+          "objective_type": "mini_game",
+          "objective_target": "tracking",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vous découvrez un petit campement où un animal ressemblant à un raton laveur a amassé divers objets brillants du village."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "alphonse",
+          "text": "Un animal magique? Je vois! Merci de ton aide, jeune Greyrat. Tu as un bon sens de l'observation."
+        }
+      ]
+    },
+    "roxy_arrival": {
+      "id": "roxy_arrival",
+      "title": "L'arrivée du tuteur",
+      "type": "main_quest",
+      "description": "Un tuteur de magie est arrivé pour vous enseigner les arts magiques.",
+      "location_start": "maison_greyrat",
+      "required_year_min": 5,
+      "required_year_max": 7,
+      "prerequisite_events": ["magic_discovery"],
+      "prerequisite_attributes": {
+        "age_min": 5
+      },
+      "reward_exp": 200,
+      "reward_gold": 0,
+      "reward_skills": {
+        "magic_theory": 2,
+        "water_magic": 2
+      },
+      "reward_relationships": {
+        "roxy": 15
+      },
+      "stages": [
+        {
+          "id": "tutor_announcement",
+          "description": "Paul vous annonce l'arrivée d'un tuteur de magie",
+          "objective_type": "talk_to",
+          "objective_target": "paul",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "J'ai une surprise pour toi. J'ai trouvé quelqu'un pour t'enseigner la magie. Une vraie magicienne, pas un amateur comme moi."
+            }
+          ]
+        },
+        {
+          "id": "meet_roxy",
+          "description": "Rencontrez votre nouveau tuteur, Roxy Migurdia",
+          "objective_type": "talk_to",
+          "objective_target": "roxy",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Bonjour. Je suis Roxy Migurdia, mage de rang intermédiaire. On m'a dit que tu avais un talent naturel pour la magie."
+            },
+            {
+              "speaker": "player",
+              "text": "[Répondre à Roxy]",
+              "choices": [
+                {
+                  "text": "Je suis honoré de vous rencontrer, Maître Roxy.",
+                  "effect": "relationship_increase:roxy:5"
+                },
+                {
+                  "text": "Vous êtes plus jeune que je ne pensais pour un tuteur.",
+                  "effect": "relationship_decrease:roxy:5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "first_magic_lesson",
+          "description": "Suivez votre première leçon de magie formelle",
+          "objective_type": "mini_game",
+          "objective_target": "magic_lesson",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Commençons par les bases. La magie n'est pas un jouet, c'est une force qu'il faut respecter et comprendre."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "roxy",
+          "text": "Tu as un talent incroyable. Je n'ai jamais vu quelqu'un apprendre aussi vite. Je sens que tu iras loin dans l'étude de la magie."
+        }
+      ],
+      "follow_up_events": ["magic_training"]
+    },
+    "magic_training": {
+      "id": "magic_training",
+      "title": "Formation magique intensive",
+      "type": "main_quest",
+      "description": "Suivez l'entraînement rigoureux de Roxy pour maîtriser les bases de la magie.",
+      "location_start": "maison_greyrat",
+      "required_year_min": 5,
+      "required_year_max": 7,
+      "prerequisite_events": ["roxy_arrival"],
+      "prerequisite_attributes": {},
+      "reward_exp": 400,
+      "reward_gold": 0,
+      "reward_skills": {
+        "water_magic": 3,
+        "earth_magic": 1,
+        "fire_magic": 1,
+        "wind_magic": 1
+      },
+      "reward_relationships": {
+        "roxy": 20
+      },
+      "stages": [
+        {
+          "id": "magic_theory",
+          "description": "Étudiez la théorie magique avec Roxy",
+          "objective_type": "mini_game",
+          "objective_target": "study_session",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Avant de pratiquer davantage, tu dois comprendre les principes fondamentaux qui régissent la magie."
+            }
+          ]
+        },
+        {
+          "id": "elemental_practice",
+          "description": "Pratiquez la manipulation des différents éléments",
+          "objective_type": "visit_location",
+          "objective_target": "riviere_claire",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "L'eau est l'élément que tu maîtrises naturellement, mais tu dois t'exercer avec tous les éléments pour devenir un mage complet."
+            }
+          ]
+        },
+        {
+          "id": "control_test",
+          "description": "Passez un test de contrôle magique",
+          "objective_type": "mini_game",
+          "objective_target": "magic_control",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Montre-moi jusqu'où tu peux aller en termes de précision. La puissance sans contrôle est dangereuse."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "roxy",
+          "text": "Impressionnant. En quelques mois, tu as maîtrisé ce qui prend des années à la plupart des mages. Je suis fière d'être ton enseignante."
+        },
+        {
+          "speaker": "player",
+          "text": "C'est grâce à vos enseignements, Maître Roxy."
+        }
+      ],
+      "follow_up_events": ["magic_adventure", "teach_sylphie_magic"]
+    },
+    "teach_sylphie_magic": {
+      "id": "teach_sylphie_magic",
+      "title": "Partager la magie",
+      "type": "side_quest",
+      "description": "Partagez vos connaissances magiques avec Sylphiette.",
+      "location_start": "maison_sylphiette",
+      "required_year_min": 5,
+      "required_year_max": 7,
+      "prerequisite_events": ["magic_training", "teach_sylphie"],
+      "prerequisite_attributes": {},
+      "reward_exp": 150,
+      "reward_gold": 0,
+      "reward_relationships": {
+        "sylphiette": 25,
+        "roxy": 5
+      },
+      "stages": [
+        {
+          "id": "show_magic",
+          "description": "Montrez votre magie à Sylphiette",
+          "objective_type": "talk_to",
+          "objective_target": "sylphiette",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "Regarde ce que j'ai appris avec Maître Roxy!"
+            },
+            {
+              "speaker": "sylphiette",
+              "text": "C'est incroyable! J'aimerais tant pouvoir faire ça aussi..."
+            },
+            {
+              "speaker": "player",
+              "text": "[Proposer]",
+              "choices": [
+                {
+                  "text": "Je peux t'apprendre si tu veux.",
+                  "effect": "progress_quest"
+                },
+                {
+                  "text": "C'est dommage que tu ne puisses pas apprendre.",
+                  "effect": "relationship_decrease:sylphiette:10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sylph_magic_ability",
+          "description": "Découvrez l'affinité naturelle de Sylphiette pour la magie du vent",
+          "objective_type": "mini_game",
+          "objective_target": "magic_teaching",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "À votre grande surprise, Sylphiette montre une facilité incroyable avec la magie du vent dès ses premiers essais."
+            },
+            {
+              "speaker": "player",
+              "text": "C'est incroyable! Tu as un don naturel pour la magie du vent!"
+            }
+          ]
+        },
+        {
+          "id": "consult_roxy",
+          "description": "Parlez à Roxy du talent de Sylphiette",
+          "objective_type": "talk_to",
+          "objective_target": "roxy",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "Maître Roxy, mon amie Sylphiette a un talent naturel pour la magie du vent."
+            },
+            {
+              "speaker": "roxy",
+              "text": "Vraiment? C'est intéressant. Les talents naturels sont rares. Amène-la à ta prochaine leçon, j'aimerais la voir."
+            }
+          ]
+        },
+        {
+          "id": "joint_lesson",
+          "description": "Assistez à une leçon conjointe avec Sylphiette et Roxy",
+          "objective_type": "mini_game",
+          "objective_target": "group_lesson",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Tu avais raison. Elle a un talent extraordinaire pour la magie du vent. Et tu es déjà un bon enseignant, Rudeus."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "sylphiette",
+          "text": "Merci beaucoup, Rudeus! Je n'aurais jamais découvert que je pouvais utiliser la magie sans toi."
+        },
+        {
+          "speaker": "roxy",
+          "text": "Je suis impressionnée par ta générosité, Rudeus. Beaucoup de mages gardent jalousement leurs connaissances."
+        }
+      ]
+    },
+    "magic_adventure": {
+      "id": "magic_adventure",
+      "title": "Aventure dans la forêt de Fittoa",
+      "type": "main_quest",
+      "description": "Roxy vous emmène dans une expédition éducative dans la forêt pour mettre en pratique vos compétences magiques.",
+      "location_start": "maison_greyrat",
+      "required_year_min": 5,
+      "required_year_max": 7,
+      "prerequisite_events": ["magic_training"],
+      "prerequisite_attributes": {},
+      "reward_exp": 300,
+      "reward_gold": 30,
+      "reward_skills": {
+        "survival": 1,
+        "magic_combat": 2
+      },
+      "reward_items": ["magic_staff_basic"],
+      "reward_relationships": {
+        "roxy": 15
+      },
+      "stages": [
+        {
+          "id": "preparation",
+          "description": "Préparez-vous pour l'expédition dans la forêt",
+          "objective_type": "collect_items",
+          "objective_targets": ["water_flask", "provisions"],
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Nous allons passer la journée dans la forêt. Assure-toi d'être bien préparé."
+            }
+          ]
+        },
+        {
+          "id": "forest_path",
+          "description": "Suivez Roxy dans la forêt",
+          "objective_type": "visit_location",
+          "objective_target": "foret_fittoa",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "La forêt est un excellent endroit pour pratiquer la magie. Les éléments naturels y sont en abondance."
+            }
+          ]
+        },
+        {
+          "id": "encounter_danger",
+          "description": "Faites face à un danger inattendu",
+          "objective_type": "combat",
+          "objective_target": "wild_beast",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Reste calme! C'est le moment d'utiliser ta magie dans une situation réelle. Concentre-toi!"
+            }
+          ]
+        },
+        {
+          "id": "magical_discovery",
+          "description": "Découvrez un ancien site magique dans la forêt",
+          "objective_type": "visit_location",
+          "objective_target": "clairiere_ancienne",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Ces pierres... Je pense que c'est un ancien cercle rituel. La concentration de mana y est extraordinaire."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "roxy",
+          "text": "Tu t'es très bien débrouillé aujourd'hui, surtout face à ce danger inattendu. Je pense que tu es prêt pour des sorts plus avancés."
+        },
+        {
+          "speaker": "roxy",
+          "text": "Tiens, ce bâton t'aidera à canaliser ta magie. Il a appartenu à l'un de mes premiers maîtres."
+        }
+      ],
+      "follow_up_events": ["advanced_magic", "roxy_departure"]
+    },
+    "storm_rescue": {
+      "id": "storm_rescue",
+      "title": "La tempête dévastatrice",
+      "type": "world_event",
+      "description": "Une tempête violente frappe le village de Fittoa, mettant en danger ses habitants.",
+      "location_start": "centre_village",
+      "required_year_min": 6,
+      "required_year_max": 7,
+      "prerequisite_events": ["magic_training"],
+      "prerequisite_attributes": {},
+      "reward_exp": 250,
+      "reward_gold": 0,
+      "reward_relationships": {
+        "paul": 10,
+        "alphonse": 15,
+        "zenith": 10,
+        "villagers": 20
+      },
+      "stages": [
+        {
+          "id": "storm_warning",
+          "description": "Aidez à avertir les villageois de l'arrivée de la tempête",
+          "objective_type": "talk_to_all",
+          "objective_targets": ["alphonse", "villagers"],
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Une tempête arrive rapidement! Nous devons prévenir tout le monde et nous préparer!"
+            }
+          ]
+        },
+        {
+          "id": "secure_village",
+          "description": "Aidez à sécuriser les maisons et bâtiments contre la tempête",
+          "objective_type": "mini_game",
+          "objective_target": "preparation_game",
+          "dialogue": []
+        },
+        {
+          "id": "rescue_mission",
+          "description": "Quelqu'un est piégé dehors pendant la tempête! Aidez à le secourir",
+          "objective_type": "visit_location",
+          "objective_target": "foret_fittoa",
+          "dialogue": [
+            {
+              "speaker": "zenith",
+              "text": "Le vieux Brom n'est pas rentré! Il était parti ramasser des herbes dans la forêt!"
+            }
+          ]
+        },
+        {
+          "id": "use_magic",
+          "description": "Utilisez votre magie pour aider pendant les opérations de sauvetage",
+          "objective_type": "cast_spell",
+          "objective_target": "water_shield",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Tu peux créer un bouclier d'eau pour nous protéger de la pluie et du vent!"
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "alphonse",
+          "text": "Grâce à votre aide, tout le monde est sain et sauf. Tu as fait preuve d'un grand courage aujourd'hui, jeune Greyrat."
+        },
+        {
+          "speaker": "paul",
+          "text": "Je suis fier de toi, fils. Tu as utilisé tes compétences pour aider les autres, c'est ce qui compte vraiment."
+        }
+      ]
+    },
+    "advanced_magic": {
+      "id": "advanced_magic",
+      "title": "Les arcanes supérieurs",
+      "type": "main_quest",
+      "description": "Roxy vous enseigne des sorts plus avancés et des techniques magiques complexes.",
+      "location_start": "maison_greyrat",
+      "required_year_min": 6,
+      "required_year_max": 7,
+      "prerequisite_events": ["magic_adventure"],
+      "prerequisite_attributes": {},
+      "reward_exp": 350,
+      "reward_gold": 0,
+      "reward_skills": {
+        "water_magic": 5,
+        "earth_magic": 3,
+        "fire_magic": 3,
+        "wind_magic": 3,
+        "healing_magic": 2
+      },
+      "reward_relationships": {
+        "roxy": 15
+      },
+      "stages": [
+        {
+          "id": "theory_advanced",
+          "description": "Étudiez les principes théoriques avancés de la magie",
+          "objective_type": "mini_game",
+          "objective_target": "advanced_study",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Ces concepts sont normalement enseignés aux étudiants plus âgés, mais je pense que tu es prêt à les comprendre."
+            }
+          ]
+        },
+        {
+          "id": "complex_spellcasting",
+          "description": "Apprenez à lancer des sorts à composantes multiples",
+          "objective_type": "cast_spells",
+          "objective_targets": ["water_blast", "stone_wall"],
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "La difficulté n'est pas seulement dans la puissance, mais dans la précision et la combinaison des éléments."
+            }
+          ]
+        },
+        {
+          "id": "healing_magic",
+          "description": "Initiez-vous aux bases de la magie de guérison",
+          "objective_type": "mini_game",
+          "objective_target": "healing_practice",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "La magie de guérison est différente. Elle nécessite non seulement du contrôle, mais aussi de l'empathie et une connexion avec le vivant."
+            }
+          ]
+        },
+        {
+          "id": "final_test",
+          "description": "Passez l'évaluation finale de Roxy",
+          "objective_type": "mini_game",
+          "objective_target": "magic_exam",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Montre-moi tout ce que tu as appris. N'aie pas peur d'être créatif dans ton approche."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "roxy",
+          "text": "Tu as dépassé toutes mes attentes. À ton âge, tu as déjà atteint un niveau que beaucoup de mages mettent des décennies à maîtriser."
+        },
+        {
+          "speaker": "roxy",
+          "text": "Je t'ai enseigné tout ce que je pouvais pour le moment. La suite de ton apprentissage dépendra de tes propres explorations et expériences."
+        }
+      ],
+      "follow_up_events": ["roxy_departure"]
+    },
+    "roxy_departure": {
+      "id": "roxy_departure",
+      "title": "Au revoir, Maître",
+      "type": "main_quest",
+      "description": "Roxy estime avoir complété votre formation de base et se prépare à partir.",
+      "location_start": "maison_greyrat",
+      "required_year_min": 7,
+      "required_year_max": 7,
+      "prerequisite_events": ["advanced_magic", "magic_adventure"],
+      "prerequisite_attributes": {},
+      "reward_exp": 200,
+      "reward_gold": 0,
+      "reward_relationships": {
+        "roxy": 25,
+        "paul": 5,
+        "zenith": 5
+      },
+      "stages": [
+        {
+          "id": "departure_news",
+          "description": "Apprenez que Roxy va bientôt partir",
+          "objective_type": "talk_to",
+          "objective_target": "paul",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Roxy m'a dit qu'elle pense avoir terminé ta formation de base. Elle va bientôt reprendre son voyage."
+            },
+            {
+              "speaker": "player",
+              "text": "[Réaction]",
+              "choices": [
+                {
+                  "text": "Je comprends, mais elle va me manquer.",
+                  "effect": "relationship_increase:paul:5"
+                },
+                {
+                  "text": "Pourquoi doit-elle partir? Je veux continuer à apprendre!",
+                  "effect": "relationship_decrease:paul:5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "last_lesson",
+          "description": "Assistez à votre dernière leçon avec Roxy",
+          "objective_type": "talk_to",
+          "objective_target": "roxy",
+          "dialogue": [
+            {
+              "speaker": "roxy",
+              "text": "Pour notre dernière leçon, je ne vais pas t'enseigner un sort, mais plutôt te donner des conseils pour ton avenir en tant que mage."
+            },
+            {
+              "speaker": "roxy",
+              "text": "N'oublie jamais que la magie est à la fois un don et une responsabilité. Utilise-la avec sagesse et continue toujours d'apprendre."
+            }
+          ]
+        },
+        {
+          "id": "farewell_gift",
+          "description": "Préparez un cadeau d'adieu pour Roxy",
+          "objective_type": "craft_item",
+          "objective_target": "personal_gift",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vous voulez offrir quelque chose de spécial à Roxy pour la remercier de tout ce qu'elle vous a enseigné."
+            }
+          ]
+        },
+        {
+          "id": "goodbye_ceremony",
+          "description": "Participez à la petite cérémonie d'adieu pour Roxy",
+          "objective_type": "visit_location",
+          "objective_target": "centre_village",
+          "dialogue": [
+            {
+              "speaker": "zenith",
+              "text": "Nous avons préparé un petit repas d'adieu pour remercier Roxy de tout ce qu'elle a fait."
+            },
+            {
+              "speaker": "player",
+              "text": "[Offrir votre cadeau]"
+            },
+            {
+              "speaker": "roxy",
+              "text": "C'est... c'est très gentil. Merci, Rudeus. Je garderai précieusement ce souvenir."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "roxy",
+          "text": "Je suis fière d'avoir été ton enseignante, Rudeus. Tu as un potentiel extraordinaire. Continue à t'entraîner et peut-être qu'un jour, nos chemins se croiseront à nouveau."
+        },
+        {
+          "speaker": "player",
+          "text": "Merci pour tout, Maître Roxy. Je n'oublierai jamais ce que vous m'avez appris."
+        },
+        {
+          "speaker": "narrator",
+          "text": "Vous regardez Roxy s'éloigner sur la route, son bâton à la main, vers de nouvelles aventures..."
+        }
+      ],
+      "follow_up_events": ["peaceful_days"]
+    },
+    "peaceful_days": {
+      "id": "peaceful_days",
+      "title": "Jours paisibles à Fittoa",
+      "type": "main_quest",
+      "description": "Profitez de la vie tranquille à Fittoa, perfectionnant vos compétences et renforçant vos amitiés.",
+      "location_start": "maison_greyrat",
+      "required_year_min": 7,
+      "required_year_max": 10,
+      "prerequisite_events": ["roxy_departure"],
+      "prerequisite_attributes": {},
+      "reward_exp": 150,
+      "reward_gold": 50,
+      "reward_skills": {
+        "magic_research": 2,
+        "sword_basic": 2,
+        "social": 1
+      },
+      "stages": [
+        {
+          "id": "daily_practice",
+          "description": "Établissez une routine d'entraînement magique et physique",
+          "objective_type": "mini_game",
+          "objective_target": "training_routine",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Maintenant que Roxy est partie, c'est à toi de maintenir ta discipline d'entraînement."
+            }
+          ]
+        },
+        {
+          "id": "help_village",
+          "description": "Utilisez vos compétences pour aider les villageois",
+          "objective_type": "help_npcs",
+          "objective_targets": ["villagers", "alphonse"],
+          "dialogue": [
+            {
+              "speaker": "zenith",
+              "text": "Avec tes talents, tu pourrais aider beaucoup de gens au village. Ce serait une bonne façon de pratiquer."
+            }
+          ]
+        },
+        {
+          "id": "friendship_time",
+          "description": "Passez du temps avec Sylphiette pour renforcer votre amitié",
+          "objective_type": "talk_to",
+          "objective_target": "sylphiette",
+          "dialogue": [
+            {
+              "speaker": "sylphiette",
+              "text": "Tu veux aller explorer la forêt aujourd'hui? J'ai trouvé un nouvel endroit avec plein de fleurs magiques!"
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Les années passent paisiblement à Fittoa. Vous grandissez, perfectionnant vos compétences magiques et martiales, profitant de cette vie simple mais satisfaisante."
+        }
+      ],
+      "follow_up_events": ["boreas_letter"]
+    },
+    "boreas_letter": {
+      "id": "boreas_letter",
+      "title": "L'offre des Boreas",
+      "type": "main_quest",
+      "description": "Paul reçoit une lettre de la famille Boreas proposant d'engager un tuteur pour leur petite-fille.",
+      "location_start": "maison_greyrat",
+      "required_year_min": 10,
+      "required_year_max": 12,
+      "prerequisite_events": ["peaceful_days"],
+      "prerequisite_attributes": {
+        "age_min": 10
+      },
+      "reward_exp": 100,
+      "reward_gold": 0,
+      "stages": [
+        {
+          "id": "letter_arrival",
+          "description": "Paul reçoit une lettre importante",
+          "objective_type": "talk_to",
+          "objective_target": "paul",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "J'ai reçu une lettre intéressante de la famille Boreas Greyrat. Des parents éloignés, mais très puissants."
+            }
+          ]
+        },
+        {
+          "id": "family_discussion",
+          "description": "Discutez de la proposition avec votre famille",
+          "objective_type": "talk_to_all",
+          "objective_targets": ["paul", "zenith", "lilia"],
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Ils cherchent un tuteur pour leur petite-fille, une enfant apparemment... difficile. Ils ont entendu parler de toi."
+            },
+            {
+              "speaker": "zenith",
+              "text": "C'est une opportunité, mais tu es encore jeune... et les Boreas ont une réputation intimidante."
+            },
+            {
+              "speaker": "lilia",
+              "text": "La maison Boreas est l'une des plus puissantes du royaume. Ce serait une connexion précieuse."
+            }
+          ]
+        },
+        {
+          "id": "decision_time",
+          "description": "Décidez si vous acceptez l'offre",
+          "objective_type": "make_choice",
+          "objective_target": "boreas_offer",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "C'est à toi de décider, fils. Tu pourrais apprendre beaucoup chez les nobles, mais ce ne sera pas facile."
+            },
+            {
+              "speaker": "player",
+              "text": "[Prendre votre décision]",
+              "choices": [
+                {
+                  "text": "J'accepte l'offre. C'est une opportunité que je dois saisir.",
+                  "effect": "trigger_event:boreas_acceptance"
+                },
+                {
+                  "text": "Je préfère rester à Fittoa pour l'instant.",
+                  "effect": "trigger_event:stay_fittoa"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "paul",
+          "text": "Quelle que soit ta décision, nous te soutiendrons. Tu as prouvé que tu avais la tête sur les épaules."
+        }
+      ],
+      "follow_up_events": []
+    },
+    "boreas_acceptance": {
+      "id": "boreas_acceptance",
+      "title": "En route vers le manoir Boreas",
+      "type": "main_quest",
+      "description": "Vous avez accepté le poste de tuteur pour la petite-fille de la famille Boreas.",
+      "location_start": "maison_greyrat",
+      "required_year_min": 10,
+      "required_year_max": 12,
+      "prerequisite_events": ["boreas_letter"],
+      "prerequisite_attributes": {},
+      "reward_exp": 250,
+      "reward_gold": 100,
+      "reward_items": ["formal_clothing"],
+      "reward_relationships": {
+        "paul": 5,
+        "zenith": 5
+      },
+      "stages": [
+        {
+          "id": "preparations",
+          "description": "Préparez-vous pour votre départ vers le manoir Boreas",
+          "objective_type": "collect_items",
+          "objective_targets": ["books", "clothing", "magic_supplies"],
+          "dialogue": [
+            {
+              "speaker": "zenith",
+              "text": "Nous devons t'équiper correctement. Tu vas représenter notre famille devant des nobles importants."
+            }
+          ]
+        },
+        {
+          "id": "farewell",
+          "description": "Dites au revoir à votre famille et à Sylphiette",
+          "objective_type": "talk_to_all",
+          "objective_targets": ["paul", "zenith", "lilia", "sylphiette"],
+          "dialogue": [
+            {
+              "speaker": "sylphiette",
+              "text": "Tu... tu vas vraiment partir? Pour combien de temps?"
+            },
+            {
+              "speaker": "player",
+              "text": "[Répondre à Sylphiette]",
+              "choices": [
+                {
+                  "text": "Je reviendrai te voir dès que possible, je te le promets.",
+                  "effect": "relationship_increase:sylphiette:10"
+                },
+                {
+                  "text": "Je ne sais pas combien de temps ça durera.",
+                  "effect": "relationship_decrease:sylphiette:5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "journey_begins",
+          "description": "Commencez votre voyage vers le territoire Boreas",
+          "objective_type": "visit_location",
+          "objective_target": "route_commerciale_asura",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vous quittez Fittoa pour la première fois de votre vie, accompagné d'une escorte envoyée par la famille Boreas."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "escort_captain",
+          "text": "Nous arriverons au manoir Boreas dans quelques jours. Préparez-vous, jeune maître. La petite-fille du seigneur Sauros n'est pas connue pour sa patience."
+        },
+        {
+          "speaker": "narrator",
+          "text": "Un nouveau chapitre de votre vie commence, loin de la sécurité de Fittoa, dans le monde complexe de la noblesse..."
+        }
+      ],
+      "follow_up_events": ["arrival_boreas"]
+    },
+    "stay_fittoa": {
+      "id": "stay_fittoa",
+      "title": "Le choix de rester",
+      "type": "main_quest",
+      "description": "Vous avez décidé de rester à Fittoa plutôt que d'accepter l'offre des Boreas.",
+      "location_start": "maison_greyrat",
+      "required_year_min": 10,
+      "required_year_max": 12,
+      "prerequisite_events": ["boreas_letter"],
+      "prerequisite_attributes": {},
+      "reward_exp": 150,
+      "reward_gold": 50,
+      "reward_relationships": {
+        "sylphiette": 15,
+        "villagers": 10
+      },
+      "stages": [
+        {
+          "id": "explain_decision",
+          "description": "Expliquez votre choix à votre famille",
+          "objective_type": "talk_to_all",
+          "objective_targets": ["paul", "zenith"],
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "Je préfère rester ici et continuer à apprendre par moi-même. Je ne me sens pas prêt pour le monde noble."
+            },
+            {
+              "speaker": "paul",
+              "text": "Je comprends. C'est ton choix, et je le respecte. Il y aura d'autres opportunités."
+            }
+          ]
+        },
+        {
+          "id": "continue_studies",
+          "description": "Établissez un plan pour continuer votre développement à Fittoa",
+          "objective_type": "mini_game",
+          "objective_target": "study_plan",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "Je dois trouver un moyen de continuer à progresser même sans mentor formel."
+            }
+          ]
+        },
+        {
+          "id": "village_role",
+          "description": "Trouvez un rôle utile au sein du village",
+          "objective_type": "talk_to",
+          "objective_target": "alphonse",
+          "dialogue": [
+            {
+              "speaker": "alphonse",
+              "text": "J'ai entendu que tu avais refusé l'offre des Boreas. Si tu restes parmi nous, nous pourrions certainement utiliser tes talents."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "zenith",
+          "text": "Parfois, les meilleures opportunités sont celles que nous créons nous-mêmes, pas celles qui nous sont offertes."
+        },
+        {
+          "speaker": "sylphiette",
+          "text": "Je suis tellement heureuse que tu restes! On pourra continuer à s'entraîner ensemble!"
+        }
+      ],
+      "follow_up_events": ["village_threat"]
+    },
+    "arrival_boreas": {
+      "id": "arrival_boreas",
+      "title": "Bienvenue au manoir Boreas",
+      "type": "main_quest",
+      "description": "Vous arrivez au manoir de la famille Boreas pour commencer votre mission de tuteur.",
+      "location_start": "territoire_boreas",
+      "required_year_min": 10,
+      "required_year_max": 12,
+      "prerequisite_events": ["boreas_acceptance"],
+      "prerequisite_attributes": {},
+      "reward_exp": 200,
+      "reward_gold": 0,
+      "reward_relationships": {
+        "philip": 5,
+        "hilda": -5
+      },
+      "stages": [
+        {
+          "id": "enter_mansion",
+          "description": "Entrez dans l'imposant manoir Boreas pour la première fois",
+          "objective_type": "visit_location",
+          "objective_target": "manoir_boreas",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Le manoir Boreas est bien plus imposant que vous ne l'imaginiez, avec ses tours de pierre et ses bannières flottant au vent."
+            }
+          ]
+        },
+        {
+          "id": "meet_philip",
+          "description": "Rencontrez Philip Boreas Greyrat, le père de votre future élève",
+          "objective_type": "talk_to",
+          "objective_target": "philip",
+          "dialogue": [
+            {
+              "speaker": "philip",
+              "text": "Ah, tu dois être le fils de Paul. Je suis Philip Boreas Greyrat. J'espère que tu pourras aider notre petite Eris. Elle a... un caractère difficile."
+            }
+          ]
+        },
+        {
+          "id": "meet_hilda",
+          "description": "Faites la connaissance de Lady Hilda, la mère d'Eris",
+          "objective_type": "talk_to",
+          "objective_target": "hilda",
+          "dialogue": [
+            {
+              "speaker": "hilda",
+              "text": "Alors c'est toi le nouveau tuteur? Tu me sembles bien jeune. J'espère que tu ne vas pas simplement abandonner comme tous les autres."
+            }
+          ]
+        },
+        {
+          "id": "first_eris_encounter",
+          "description": "Rencontrez votre élève, Eris Boreas Greyrat",
+          "objective_type": "talk_to",
+          "objective_target": "eris",
+          "dialogue": [
+            {
+              "speaker": "eris",
+              "text": "Encore un nouveau tuteur? Je n'ai pas besoin d'un professeur! Surtout pas un enfant comme toi!"
+            },
+            {
+              "speaker": "narrator",
+              "text": "Avant que vous ne puissiez répondre, Eris vous lance un regard furieux et quitte la pièce en claquant la porte."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "philip",
+          "text": "Eh bien, c'est déjà mieux que le dernier tuteur. Au moins, elle ne t'a pas frappé. Tu auras ta propre chambre dans l'aile est. Les leçons commenceront demain."
+        },
+        {
+          "speaker": "narrator",
+          "text": "Il semble que votre tâche s'annonce plus difficile que prévu..."
+        }
+      ],
+      "follow_up_events": ["taming_eris"]
+    },
+    "village_threat": {
+      "id": "village_threat",
+      "title": "Menace sur Fittoa",
+      "type": "main_quest",
+      "description": "Des bandits menacent la région de Fittoa, mettant en danger la sécurité du village.",
+      "location_start": "centre_village",
+      "required_year_min": 10,
+      "required_year_max": 12,
+      "prerequisite_events": ["stay_fittoa"],
+      "prerequisite_attributes": {},
+      "reward_exp": 300,
+      "reward_gold": 75,
+      "reward_relationships": {
+        "paul": 15,
+        "alphonse": 20,
+        "villagers": 25
+      },
+      "stages": [
+        {
+          "id": "bandit_rumors",
+          "description": "Entendez parler de bandits rôdant dans la région",
+          "objective_type": "talk_to",
+          "objective_target": "alphonse",
+          "dialogue": [
+            {
+              "speaker": "alphonse",
+              "text": "Des voyageurs nous ont signalé un groupe de bandits qui s'est installé dans les collines. Ils ont déjà attaqué plusieurs fermes isolées."
+            }
+          ]
+        },
+        {
+          "id": "join_defense",
+          "description": "Rejoignez Paul et les autres hommes du village pour organiser la défense",
+          "objective_type": "talk_to",
+          "objective_target": "paul",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Si ces bandits décident de s'en prendre au village, nous devons être prêts. Ton aide serait précieuse, fils."
+            }
+          ]
+        },
+        {
+          "id": "scouting_mission",
+          "description": "Participez à une mission de reconnaissance pour localiser le camp des bandits",
+          "objective_type": "visit_location",
+          "objective_target": "collines_fittoa",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Avec ta magie, tu pourrais nous aider à repérer leur camp sans être détecté. Mais sois prudent."
+            }
+          ]
+        },
+        {
+          "id": "defend_village",
+          "description": "Aidez à défendre le village contre l'attaque des bandits",
+          "objective_type": "combat",
+          "objective_target": "bandit_group",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Les voilà! Rudeus, utilise ta magie pour les ralentir! Ne les laisse pas atteindre les maisons!"
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "alphonse",
+          "text": "Tu as fait preuve d'un grand courage aujourd'hui, jeune Greyrat. Sans ta magie, nous aurions subi de bien plus grandes pertes."
+        },
+        {
+          "speaker": "paul",
+          "text": "Je suis fier de toi, fils. Tu as prouvé que tu n'avais pas besoin d'aller chez les nobles pour te rendre utile et progresser."
+        }
+      ],
+      "follow_up_events": ["messenger_arrives"]
+    },
+        "taming_eris": {
+      "id": "taming_eris",
+      "title": "Apprivoiser la tempête rousse",
+      "type": "main_quest",
+      "description": "Gagnez la confiance de votre élève récalcitrante, Eris Boreas Greyrat.",
+      "location_start": "manoir_boreas",
+      "required_year_min": 10,
+      "required_year_max": 12,
+      "prerequisite_events": ["arrival_boreas"],
+      "prerequisite_attributes": {},
+      "reward_exp": 300,
+      "reward_gold": 100,
+      "reward_relationships": {
+        "eris": 25,
+        "philip": 10,
+        "hilda": 5
+      },
+      "stages": [
+        {
+          "id": "first_lesson",
+          "description": "Tentez de donner votre première leçon à Eris",
+          "objective_type": "mini_game",
+          "objective_target": "teaching_attempt",
+          "dialogue": [
+            {
+              "speaker": "eris",
+              "text": "Je n'ai pas besoin de leçons! Laisse-moi tranquille!"
+            },
+            {
+              "speaker": "player",
+              "text": "[Approche à adopter]",
+              "choices": [
+                {
+                  "text": "Être patient et calme.",
+                  "effect": "relationship_increase:eris:5"
+                },
+                {
+                  "text": "Être strict et autoritaire.",
+                  "effect": "relationship_decrease:eris:10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "understand_eris",
+          "description": "Essayez de comprendre les intérêts et la personnalité d'Eris",
+          "objective_type": "observe_npc",
+          "objective_target": "eris",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vous remarquez qu'Eris semble s'ennuyer avec les méthodes d'enseignement traditionnelles, mais montre de l'intérêt pour les histoires d'aventure et la magie."
+            }
+          ]
+        },
+        {
+          "id": "adapt_approach",
+          "description": "Adaptez votre méthode d'enseignement pour intéresser Eris",
+          "objective_type": "mini_game",
+          "objective_target": "creative_teaching",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "Aujourd'hui, au lieu d'un cours normal, que dirais-tu si je te montrais comment la magie peut être utilisée en combat?"
+            },
+            {
+              "speaker": "eris",
+              "text": "... Tu sais faire ça? Montre-moi alors!"
+            }
+          ]
+        },
+        {
+          "id": "first_success",
+          "description": "Obtenez votre premier succès pédagogique avec Eris",
+          "objective_type": "teach_skill",
+          "objective_target": "basic_magic",
+          "dialogue": [
+            {
+              "speaker": "eris",
+              "text": "C'était... c'était assez cool. Tu pourrais m'apprendre à faire ça aussi?"
+            },
+            {
+              "speaker": "player",
+              "text": "Bien sûr, mais cela demande de la patience et de la pratique."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "philip",
+          "text": "Je n'en crois pas mes yeux. Eris qui attend ses leçons avec impatience? Tu as accompli un miracle."
+        },
+        {
+          "speaker": "eris",
+          "text": "Tu n'es pas comme les autres tuteurs. Peut-être que je peux apprendre quelque chose de toi après tout."
+        }
+      ],
+      "follow_up_events": ["eris_training"]
+    },
+    "messenger_arrives": {
+      "id": "messenger_arrives",
+      "title": "Le messager inattendu",
+      "type": "main_quest",
+      "description": "Un messager urgent arrive à Fittoa avec des nouvelles troublantes.",
+      "location_start": "centre_village",
+      "required_year_min": 11,
+      "required_year_max": 13,
+      "prerequisite_events": ["village_threat", "stay_fittoa"],
+      "prerequisite_attributes": {},
+      "reward_exp": 100,
+      "reward_gold": 0,
+      "stages": [
+        {
+          "id": "urgent_arrival",
+          "description": "Un messager à cheval arrive en trombe au village",
+          "objective_type": "triggered_event",
+          "dialogue": [
+            {
+              "speaker": "messenger",
+              "text": "Je dois parler immédiatement au chef du village et à Paul Greyrat! C'est une urgence!"
+            }
+          ]
+        },
+        {
+          "id": "gather_information",
+          "description": "Découvrez ce qui amène le messager",
+          "objective_type": "talk_to_all",
+          "objective_targets": ["alphonse", "paul"],
+          "dialogue": [
+            {
+              "speaker": "alphonse",
+              "text": "Des troubles à la frontière? Et une maladie qui se propage? Voilà des nouvelles inquiétantes."
+            },
+            {
+              "speaker": "paul",
+              "text": "La situation semble grave. Ils demandent l'aide de tous les aventuriers et mages disponibles."
+            }
+          ]
+        },
+        {
+          "id": "family_council",
+          "description": "Discutez avec votre famille de la situation",
+          "objective_type": "talk_to_all",
+          "objective_targets": ["paul", "zenith", "lilia"],
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Je dois y aller. Mes compétences d'épéiste pourraient être utiles. Zenith, tes talents de guérison aussi."
+            },
+            {
+              "speaker": "zenith",
+              "text": "Oui, je comprends. Nous devons aider."
+            },
+            {
+              "speaker": "paul",
+              "text": "Rudeus, tu es encore jeune, mais tu es devenu un mage compétent. Tu pourrais venir avec nous ou rester ici pour aider à protéger le village."
+            }
+          ]
+        },
+        {
+          "id": "decision_crisis",
+          "description": "Décidez comment vous allez réagir à cette crise",
+          "objective_type": "make_choice",
+          "objective_target": "crisis_response",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "[Prendre votre décision]",
+              "choices": [
+                {
+                  "text": "Je vais avec vous. Mes compétences en magie pourraient être utiles.",
+                  "effect": "trigger_event:join_expedition"
+                },
+                {
+                  "text": "Je reste à Fittoa pour protéger le village pendant votre absence.",
+                  "effect": "trigger_event:protect_village"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "paul",
+          "text": "Quelle que soit ta décision, je suis fier de toi, fils."
+        }
+      ],
+      "follow_up_events": []
+    }
+}
+,
+
+    "eris_training": {
+      "id": "eris_training",
+      "title": "Formation d'une noble",
+      "type": "main_quest",
+      "description": "Enseignez à Eris la magie, le maniement de l'épée et les connaissances académiques.",
+      "location_start": "manoir_boreas",
+      "required_year_min": 10,
+      "required_year_max": 12,
+      "prerequisite_events": ["taming_eris"],
+      "prerequisite_attributes": {},
+      "reward_exp": 350,
+      "reward_gold": 150,
+      "reward_skills": {
+        "teaching": 3,
+        "nobility_etiquette": 1
+      },
+      "reward_relationships": {
+        "eris": 20,
+        "philip": 15,
+        "sauros": 10
+      },
+      "stages": [
+        {
+          "id": "magic_lessons",
+          "description": "Enseignez les bases de la magie à Eris",
+          "objective_type": "teach_skill",
+          "objective_target": "magic_basics",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "La magie demande de la concentration et de la patience. Essaie de ressentir le mana autour de toi."
+            },
+            {
+              "speaker": "eris",
+              "text": "Je n'y arrive pas! C'est trop difficile!"
+            },
+            {
+              "speaker": "player",
+              "text": "Persévère. Rome ne s'est pas construite en un jour."
+            }
+          ]
+        },
+        {
+          "id": "sword_practice",
+          "description": "Entraînez Eris au maniement de l'épée",
+          "objective_type": "mini_game",
+          "objective_target": "sword_teaching",
+          "dialogue": [
+            {
+              "speaker": "eris",
+              "text": "Je préfère l'épée à la magie! Je veux devenir forte comme mon grand-père!"
+            },
+            {
+              "speaker": "player",
+              "text": "Tu as un talent naturel pour l'épée. Concentre-toi sur ta posture."
+            }
+          ]
+        },
+        {
+          "id": "academic_studies",
+          "description": "Tentez d'enseigner à Eris les matières académiques",
+          "objective_type": "mini_game",
+          "objective_target": "academic_teaching",
+          "dialogue": [
+            {
+              "speaker": "eris",
+              "text": "À quoi ça sert d'étudier l'histoire et les mathématiques? C'est ennuyeux!"
+            },
+            {
+              "speaker": "player",
+              "text": "Une noble doit comprendre ces sujets pour gouverner efficacement un jour. Essayons de rendre ça plus intéressant."
+            }
+          ]
+        },
+        {
+          "id": "meet_grandfather",
+          "description": "Rencontrez Sauros Boreas Greyrat, le grand-père d'Eris",
+          "objective_type": "talk_to",
+          "objective_target": "sauros",
+          "dialogue": [
+            {
+              "speaker": "sauros",
+              "text": "Alors c'est toi qui a réussi à dompter ma petite-fille? Impressionnant. J'aimerais voir ses progrès."
+            },
+            {
+              "speaker": "player",
+              "text": "Elle progresse bien, surtout dans le maniement de l'épée, Lord Boreas."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "sauros",
+          "text": "Tu as fait du bon travail avec Eris. Elle a encore un tempérament de feu, mais elle commence à canaliser cette énergie correctement."
+        },
+        {
+          "speaker": "eris",
+          "text": "Grand-père! Regarde ce que je peux faire maintenant!"
+        }
+      ],
+      "follow_up_events": ["birthday_celebration"]
+    },
+    "join_expedition": {
+      "id": "join_expedition",
+      "title": "L'expédition de secours",
+      "type": "main_quest",
+      "description": "Accompagnez vos parents et les autres volontaires pour aider à la frontière.",
+      "location_start": "centre_village",
+      "required_year_min": 11,
+      "required_year_max": 13,
+      "prerequisite_events": ["messenger_arrives"],
+      "prerequisite_attributes": {},
+      "reward_exp": 400,
+      "reward_gold": 100,
+      "reward_skills": {
+        "healing_magic": 2,
+        "survival": 2,
+        "teamwork": 2
+      },
+      "stages": [
+        {
+          "id": "prepare_journey",
+          "description": "Préparez-vous pour le long voyage vers la frontière",
+          "objective_type": "collect_items",
+          "objective_targets": ["provisions", "medical_supplies", "magic_potions"],
+          "dialogue": [
+            {
+              "speaker": "zenith",
+              "text": "Assure-toi d'emporter tout ce dont tu auras besoin. Le voyage sera long et la situation là-bas est incertaine."
+            }
+          ]
+        },
+        {
+          "id": "dangerous_road",
+          "description": "Traversez des routes devenues dangereuses",
+          "objective_type": "visit_location",
+          "objective_target": "route_commerciale_asura",
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Reste vigilant. Les troubles à la frontière ont rendu les routes moins sûres. Des bandits en profitent."
+            }
+          ]
+        },
+        {
+          "id": "border_arrival",
+          "description": "Arrivez à la zone frontalière touchée par la crise",
+          "objective_type": "visit_location",
+          "objective_target": "frontiere_millis",
+          "dialogue": [
+            {
+              "speaker": "officer",
+              "text": "Dieu merci, des renforts! Nous manquons de mages et de guérisseurs. La situation est critique."
+            }
+          ]
+        },
+        {
+          "id": "healing_efforts",
+          "description": "Utilisez vos connaissances en magie pour aider les malades et les blessés",
+          "objective_type": "cast_spells",
+          "objective_targets": ["healing_water", "purification"],
+          "dialogue": [
+            {
+              "speaker": "zenith",
+              "text": "Rudeus, concentre-toi sur la purification de l'eau. Cela aidera à prévenir la propagation de la maladie."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "commander",
+          "text": "Grâce à l'aide de volontaires comme vous, nous avons réussi à stabiliser la situation. Votre magie de guérison a sauvé beaucoup de vies, jeune homme."
+        },
+        {
+          "speaker": "paul",
+          "text": "Tu t'es bien comporté dans cette crise, fils. Tu as prouvé que tu étais non seulement un mage talentueux, mais aussi quelqu'un sur qui on peut compter."
+        }
+      ],
+      "follow_up_events": ["mysterious_phenomena"]
+    },
+    "protect_village": {
+      "id": "protect_village",
+      "title": "Gardien de Fittoa",
+      "type": "main_quest",
+      "description": "Restez à Fittoa pour protéger le village pendant l'absence de Paul et Zenith.",
+      "location_start": "centre_village",
+      "required_year_min": 11,
+      "required_year_max": 13,
+      "prerequisite_events": ["messenger_arrives"],
+      "prerequisite_attributes": {},
+      "reward_exp": 350,
+      "reward_gold": 75,
+      "reward_skills": {
+        "leadership": 2,
+        "community_management": 2,
+        "defensive_magic": 2
+      },
+      "reward_relationships": {
+        "villagers": 25,
+        "alphonse": 15,
+        "sylphiette": 20
+      },
+      "stages": [
+        {
+          "id": "farewell_parents",
+          "description": "Dites au revoir à vos parents qui partent pour la frontière",
+          "objective_type": "talk_to_all",
+          "objective_targets": ["paul", "zenith"],
+          "dialogue": [
+            {
+              "speaker": "paul",
+              "text": "Je te confie le village, fils. Utilise tes compétences avec sagesse."
+            },
+            {
+              "speaker": "zenith",
+              "text": "Prends soin de toi et de Lilia. Nous reviendrons dès que possible."
+            }
+          ]
+        },
+        {
+          "id": "organize_defense",
+          "description": "Organisez la défense du village avec les habitants restants",
+          "objective_type": "talk_to_all",
+          "objective_targets": ["alphonse", "villagers"],
+          "dialogue": [
+            {
+              "speaker": "alphonse",
+              "text": "Nous avons peu d'hommes valides restants. Que suggères-tu pour protéger le village?"
+            }
+          ]
+        },
+        {
+          "id": "teach_defense",
+          "description": "Enseignez des sorts de défense basiques à Sylphiette et quelques villageois",
+          "objective_type": "teach_skill",
+          "objective_target": "basic_defense",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "Ce simple sort de bouclier peut arrêter des flèches ou des pierres. Concentrez-vous sur la visualisation d'une barrière."
+            },
+            {
+              "speaker": "sylphiette",
+              "text": "Comme ça, Rudeus? Je sens que le vent répond à ma volonté!"
+            }
+          ]
+        },
+        {
+          "id": "strange_occurrences",
+          "description": "Enquêtez sur des phénomènes étranges signalés autour du village",
+          "objective_type": "visit_location",
+          "objective_target": "foret_fittoa",
+          "dialogue": [
+            {
+              "speaker": "villager",
+              "text": "Des lumières étranges ont été aperçues dans la forêt la nuit dernière. Et les animaux semblent agités."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "alphonse",
+          "text": "Tu as prouvé que tu étais un vrai leader, Rudeus. Le village a prospéré sous ta protection."
+        },
+        {
+          "speaker": "sylphiette",
+          "text": "Tu m'as aidée à devenir plus forte. Maintenant, je peux aussi contribuer à protéger notre foyer."
+        }
+      ],
+      "follow_up_events": ["strange_lights"]
+    },
+    "birthday_celebration": {
+      "id": "birthday_celebration",
+      "title": "L'anniversaire d'Eris",
+      "type": "main_quest",
+      "description": "Participez aux préparatifs de la fête d'anniversaire d'Eris au manoir Boreas.",
+      "location_start": "manoir_boreas",
+      "required_year_min": 10,
+      "required_year_max": 12,
+      "prerequisite_events": ["eris_training"],
+      "prerequisite_attributes": {},
+      "reward_exp": 200,
+      "reward_gold": 200,
+      "reward_relationships": {
+        "eris": 15,
+        "philip": 10,
+        "sauros": 5
+      },
+      "stages": [
+        {
+          "id": "invitation",
+          "description": "Recevez une invitation formelle à la célébration",
+          "objective_type": "talk_to",
+          "objective_target": "philip",
+          "dialogue": [
+            {
+              "speaker": "philip",
+              "text": "L'anniversaire d'Eris approche. En tant que son tuteur, ta présence est requise à la fête. Ce sera une occasion importante avec de nombreux nobles invités."
+            }
+          ]
+        },
+        {
+          "id": "gift_preparation",
+          "description": "Préparez un cadeau spécial pour Eris",
+          "objective_type": "craft_item",
+          "objective_target": "special_gift",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "Je devrais trouver un cadeau qui lui plaira vraiment, quelque chose lié à nos leçons peut-être."
+            }
+          ]
+        },
+        {
+          "id": "noble_etiquette",
+          "description": "Apprenez l'étiquette de la noblesse pour ne pas faire d'impair lors de la fête",
+          "objective_type": "study_topic",
+          "objective_target": "noble_customs",
+          "dialogue": [
+            {
+              "speaker": "servant",
+              "text": "Un invité à la fête des Boreas doit connaître les règles de bienséance. Permettez-moi de vous instruire sur les coutumes de la noblesse."
+            }
+          ]
+        },
+        {
+          "id": "attend_celebration",
+          "description": "Assistez à la grande célébration au manoir",
+          "objective_type": "visit_location",
+          "objective_target": "manoir_boreas",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Le manoir est magnifiquement décoré pour l'occasion. Des nobles de tout le royaume d'Asura sont présents, créant une atmosphère intimidante."
+            }
+          ]
+        },
+        {
+          "id": "gift_giving",
+          "description": "Offrez votre cadeau à Eris",
+          "objective_type": "give_item",
+          "objective_target": "eris_gift",
+          "dialogue": [
+            {
+              "speaker": "eris",
+              "text": "Tu... tu m'as fait un cadeau? Je ne m'y attendais pas."
+            },
+            {
+              "speaker": "player",
+              "text": "[Offrir le cadeau]",
+              "choices": [
+                {
+                  "text": "Un livre de sorts rare avec des annotations personnalisées.",
+                  "effect": "relationship_increase:eris:10"
+                },
+                {
+                  "text": "Une dague finement ornée pour ses entraînements.",
+                  "effect": "relationship_increase:eris:15"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "eris",
+          "text": "Merci pour ce cadeau... et pour tout ce que tu m'as appris. C'est... c'est le meilleur anniversaire que j'ai eu."
+        },
+        {
+          "speaker": "sauros",
+          "text": "Tu t'es bien comporté parmi les nobles, jeune Greyrat. Tu sembles avoir un talent naturel pour naviguer dans ces eaux sociales complexes."
+        }
+      ],
+      "follow_up_events": ["mysterious_light"]
+    },
+    "mysterious_light": {
+      "id": "mysterious_light",
+      "title": "La lumière mystérieuse",
+      "type": "main_quest",
+      "description": "Une étrange lumière apparaît dans le ciel, présageant un événement qui changera le monde.",
+      "location_start": "manoir_boreas",
+      "required_year_min": 12,
+      "required_year_max": 14,
+      "prerequisite_events": ["birthday_celebration", "eris_training"],
+      "prerequisite_attributes": {},
+      "reward_exp": 500,
+      "stages": [
+        {
+          "id": "strange_phenomenon",
+          "description": "Observez l'apparition d'une lumière étrange dans le ciel nocturne",
+          "objective_type": "triggered_event",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Alors que la nuit tombe, une lumière intense et mystérieuse illumine soudainement le ciel, transformant l'obscurité en jour."
+            },
+            {
+              "speaker": "eris",
+              "text": "Rudeus! Qu'est-ce que c'est que ça?! Regarde le ciel!"
+            }
+          ]
+        },
+        {
+          "id": "investigate_light",
+          "description": "Tentez de comprendre ce phénomène étrange",
+          "objective_type": "study_phenomenon",
+          "objective_target": "mana_disturbance",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "Je sens une énorme perturbation dans le mana environnant. C'est comme si la structure même de la magie était en train de se déformer."
+            }
+          ]
+        },
+        {
+          "id": "seek_safety",
+          "description": "Cherchez un abri alors que des tremblements commencent à secouer le manoir",
+          "objective_type": "visit_location",
+          "objective_target": "manoir_boreas",
+          "dialogue": [
+            {
+              "speaker": "philip",
+              "text": "Tout le monde à l'intérieur! Quelque chose de grave se produit!"
+            }
+          ]
+        },
+        {
+          "id": "teleportation_event",
+          "description": "Vous êtes englouti par une lumière aveuglante",
+          "objective_type": "triggered_event",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Une vague d'énergie magique pure déferle sur le manoir. Vous sentez votre corps se dissoudre dans la lumière..."
+            },
+            {
+              "speaker": "eris",
+              "text": "Rudeus! Qu'est-ce qui nous arrive?!"
+            },
+            {
+              "speaker": "player",
+              "text": "[Dernières actions]",
+              "choices": [
+                {
+                  "text": "Tenter de protéger Eris avec un sort de bouclier.",
+                  "effect": "relationship_increase:eris:20"
+                },
+                {
+                  "text": "Essayer de comprendre et contre-carrer le phénomène magique.",
+                  "effect": "gain_skill:magic_understanding:5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "La lumière vous enveloppe complètement. Puis l'obscurité. Votre aventure dans ce monde ne fait que commencer..."
+        }
+      ],
+      "follow_up_events": ["continent_begaritt_awakening"]
+    },
+    "strange_lights": {
+      "id": "strange_lights",
+      "title": "Lumières dans la forêt",
+      "type": "main_quest",
+      "description": "Enquêtez sur les étranges lumières apparaissant dans la forêt de Fittoa.",
+      "location_start": "centre_village",
+      "required_year_min": 11,
+      "required_year_max": 13,
+      "prerequisite_events": ["protect_village"],
+      "prerequisite_attributes": {},
+      "reward_exp": 300,
+      "reward_gold": 0,
+      "reward_skills": {
+        "magic_sensing": 3,
+        "investigation": 2
+      },
+      "stages": [
+        {
+          "id": "villager_reports",
+          "description": "Recueillez les témoignages des villageois sur les lumières étranges",
+          "objective_type": "talk_to_all",
+          "objective_targets": ["villagers", "alphonse"],
+          "dialogue": [
+            {
+              "speaker": "villager",
+              "text": "Elles sont apparues il y a trois nuits. Des lumières vertes et bleues qui dansent entre les arbres. Ce n'est pas naturel."
+            },
+            {
+              "speaker": "alphonse",
+              "text": "Les bûcherons refusent de s'aventurer profondément dans la forêt depuis. Certains disent avoir entendu d'étranges voix."
+            }
+          ]
+        },
+        {
+          "id": "forest_expedition",
+          "description": "Organisez une expédition dans la forêt avec Sylphiette",
+          "objective_type": "visit_location",
+          "objective_target": "foret_fittoa",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "Nous devons découvrir la source de ces lumières. Si c'est magique, nous pourrons peut-être le détecter."
+            },
+            {
+              "speaker": "sylphiette",
+              "text": "Je viens avec toi. Ma magie du vent pourrait nous être utile."
+            }
+          ]
+        },
+        {
+          "id": "magical_anomaly",
+          "description": "Découvrez une anomalie magique dans la forêt",
+          "objective_type": "investigate_area",
+          "objective_target": "clairiere_entrainement",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "La concentration de mana ici est incroyablement dense. C'est comme si la barrière entre les plans était en train de s'amincir."
+            },
+            {
+              "speaker": "sylphiette",
+              "text": "Rudeus, regarde! Les lumières deviennent plus intenses!"
+            }
+          ]
+        },
+        {
+          "id": "mana_vortex",
+          "description": "Un vortex de mana se forme sous vos yeux",
+          "objective_type": "triggered_event",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Le mana commence à tourbillonner, formant un vortex lumineux qui s'élève vers le ciel. Une onde de choc magique se propage dans toutes les directions."
+            },
+            {
+              "speaker": "player",
+              "text": "Sylphie! Reste près de moi!"
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Une lumière aveuglante enveloppe toute la région, effaçant tout dans un flash de pure énergie magique..."
+        },
+        {
+          "speaker": "sylphiette",
+          "text": "Rudeus...!"
+        }
+      ],
+      "follow_up_events": ["continent_begaritt_awakening"]
+    },
+    "mysterious_phenomena": {
+      "id": "mysterious_phenomena",
+      "title": "Signes avant-coureurs",
+      "type": "main_quest",
+      "description": "Des phénomènes étranges se produisent à la frontière, présageant un événement catastrophique.",
+      "location_start": "frontiere_millis",
+      "required_year_min": 11,
+      "required_year_max": 13,
+      "prerequisite_events": ["join_expedition"],
+      "prerequisite_attributes": {},
+      "reward_exp": 300,
+      "reward_gold": 0,
+      "reward_skills": {
+        "magic_theory": 3,
+        "observation": 2
+      },
+      "stages": [
+        {
+          "id": "strange_observations",
+          "description": "Remarquez des comportements inhabituels dans la nature environnante",
+          "objective_type": "observe_environment",
+          "objective_target": "frontiere_millis",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "Les animaux sont agités, les oiseaux volent dans des directions étranges, et j'ai l'impression que le mana fluctue de façon anormale."
+            },
+            {
+              "speaker": "paul",
+              "text": "Tu as raison. Quelque chose ne va pas. Même l'air semble chargé d'une énergie étrange."
+            }
+          ]
+        },
+        {
+          "id": "magical_readings",
+          "description": "Utilisez vos connaissances en magie pour analyser les perturbations",
+          "objective_type": "cast_spell",
+          "objective_target": "mana_detection",
+          "dialogue": [
+            {
+              "speaker": "player",
+              "text": "La concentration de mana augmente à un rythme alarmant. C'est comme si une immense quantité d'énergie magique s'accumulait."
+            }
+          ]
+        },
+        {
+          "id": "report_findings",
+          "description": "Faites part de vos découvertes aux responsables de l'expédition",
+          "objective_type": "talk_to",
+          "objective_target": "commander",
+          "dialogue": [
+            {
+              "speaker": "commander",
+              "text": "Des rapports similaires nous parviennent de toute la région. Quelque chose de grand se prépare, mais nous ignorons quoi."
+            }
+          ]
+        },
+        {
+          "id": "sky_light",
+          "description": "Une lumière éclatante apparaît soudainement dans le ciel",
+          "objective_type": "triggered_event",
+          "dialogue": [
+            {
+              "speaker": "zenith",
+              "text": "Rudeus! Paul! Regardez le ciel!"
+            },
+            {
+              "speaker": "narrator",
+              "text": "Une colonne de lumière pure descend du ciel, illuminant toute la région comme en plein jour malgré l'heure tardive."
+            },
+            {
+              "speaker": "paul",
+              "text": "Rassemblement! Tous à l'abri!"
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "La lumière s'intensifie jusqu'à devenir insoutenable. Vous sentez une force immense vous arracher au sol, comme si le tissu même de la réalité se déchirait..."
+        },
+        {
+          "speaker": "player",
+          "text": "Père! Mère!"
+        }
+      ],
+      "follow_up_events": ["continent_begaritt_awakening"]
+    },
+    "continent_begaritt_awakening": {
+      "id": "continent_begaritt_awakening",
+      "title": "Réveil dans un monde inconnu",
+      "type": "main_quest",
+      "description": "Après la catastrophe magique, vous vous réveillez sur un continent inconnu.",
+      "location_start": "desert_begaritt",
+      "required_year_min": 12,
+      "required_year_max": 14,
+      "prerequisite_events": ["mysterious_light", "strange_lights", "mysterious_phenomena"],
+      "prerequisite_attributes": {},
+      "reward_exp": 600,
+      "reward_gold": 0,
+      "reward_skills": {
+        "survival": 3,
+        "adaptation": 2
+      },
+      "stages": [
+        {
+          "id": "awakening",
+          "description": "Reprenez conscience dans un environnement désertique inconnu",
+          "objective_type": "triggered_event",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "Vous ouvrez les yeux sur un ciel d'un bleu étrange. Autour de vous s'étend un désert à perte de vue. Vous êtes seul, désorienté."
+            },
+            {
+              "speaker": "player",
+              "text": "Où... où suis-je? Que s'est-il passé?"
+            }
+          ]
+        },
+        {
+          "id": "initial_survival",
+          "description": "Trouvez de l'eau et un abri dans ce désert hostile",
+          "objective_type": "find_resource",
+          "objective_target": "water_source",
+          "dialogue": [
+            {
+              "speaker": "narrator",
+              "text": "La soif et la chaleur vous accablent rapidement. Vous devez trouver de l'eau pour survivre."
+            }
+          ]
+        },
+        {
+          "id": "locate_civilization",
+          "description": "Cherchez des signes de vie ou de civilisation",
+          "objective_type": "visit_location",
+          "objective_target": "puits_nomades",
+          "dialogue": [
+            {
+              "speaker": "nomad",
+              "text": "Un autre voyageur tombé du ciel? Ces derniers jours ont apporté beaucoup d'étrangers comme toi."
+            },
+            {
+              "speaker": "player",
+              "text": "Du ciel? Y a-t-il d'autres personnes comme moi? Savez-vous où je me trouve?"
+            },
+            {
+              "speaker": "nomad",
+              "text": "Tu es dans le désert de Begaritt, étranger. Un lieu dangereux pour les imprudents."
+            }
+          ]
+        },
+        {
+          "id": "gather_information",
+          "description": "Découvrez ce qu'il est advenu de votre monde et des autres déplacés",
+          "objective_type": "talk_to",
+          "objective_target": "nomad",
+          "dialogue": [
+            {
+              "speaker": "nomad",
+              "text": "Une grande lumière a illuminé le ciel il y a trois jours. Depuis, des gens étranges comme toi apparaissent dans le désert. Certains ont été amenés à l'Oasis Royale."
+            },
+            {
+              "speaker": "player",
+              "text": "Y avait-il une jeune fille aux cheveux roux parmi eux? Ou un homme et une femme qui pourraient être mes parents?"
+            },
+            {
+              "speaker": "nomad",
+              "text": "Je ne saurais dire. Mais si tu cherches les tiens, l'Oasis Royale est ton meilleur espoir."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "Vous comprenez peu à peu l'ampleur de ce qui s'est produit. Une catastrophe magique d'une échelle sans précédent vous a téléporté sur un continent lointain. Votre famille et vos amis sont dispersés, peut-être perdus à jamais."
+        },
+        {
+          "speaker": "player",
+          "text": "Je dois les retrouver. Peu importe le temps que ça prendra, je retrouverai ma famille et je découvrirai ce qui s'est réellement passé."
+        }
+      ],
+      "follow_up_events": ["journey_to_oasis"]
+    },
+    "journey_to_oasis": {
+      "id": "journey_to_oasis",
+      "title": "Voyage vers l'Oasis",
+      "type": "main_quest",
+      "description": "Entreprendre un périlleux voyage à travers le désert vers l'Oasis Royale.",
+      "location_start": "puits_nomades",
+      "required_year_min": 12,
+      "required_year_max": 14,
+      "prerequisite_events": ["continent_begaritt_awakening"],
+      "prerequisite_attributes": {},
+      "reward_exp": 500,
+      "reward_gold": 100,
+      "reward_skills": {
+        "desert_survival": 3,
+        "navigation": 2,
+        "negotiation": 2
+      },
+      "stages": [
+        {
+          "id": "join_caravan",
+          "description": "Trouvez une caravane marchande prête à vous emmener à l'Oasis Royale",
+          "objective_type": "talk_to",
+          "objective_target": "caravan_leader",
+          "dialogue": [
+            {
+              "speaker": "caravan_leader",
+              "text": "L'Oasis Royale? C'est un long voyage à travers le désert, dangereux pour un étranger seul. Tu as quelque chose à offrir en échange du passage?"
+            },
+            {
+              "speaker": "player",
+              "text": "[Négocier votre passage]",
+              "choices": [
+                {
+                  "text": "Je suis un mage compétent. Je peux vous protéger pendant le voyage.",
+                  "effect": "success_conditional:magic:5"
+                },
+                {
+                  "text": "Je n'ai rien de matériel, mais je travaillerai dur pendant le voyage.",
+                  "effect": "success_conditional:charisma:3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "desert_crossing",
+          "description": "Traversez le désert impitoyable avec la caravane",
+          "objective_type": "visit_location",
+          "objective_target": "desert_begaritt",
+          "dialogue": [
+            {
+              "speaker": "caravan_leader",
+              "text": "Reste vigilant. Le désert cache de nombreux dangers: tempêtes de sable, bandits, et créatures que tu ne peux même pas imaginer."
+            }
+          ]
+        },
+        {
+          "id": "sandstorm_challenge",
+          "description": "Survie à une violente tempête de sable",
+          "objective_type": "survival_challenge",
+          "objective_target": "sandstorm",
+          "dialogue": [
+            {
+              "speaker": "caravan_leader",
+              "text": "Une tempête approche! Préparez-vous! Attachez les bâches et protégez les animaux!"
+            },
+            {
+              "speaker": "narrator",
+              "text": "Le ciel s'assombrit alors qu'un mur de sable s'approche rapidement. Le vent hurle et le sable pénètre partout."
+            }
+          ]
+        },
+        {
+          "id": "bandit_attack",
+          "description": "Aidez à défendre la caravane contre une attaque de bandits du désert",
+          "objective_type": "combat",
+          "objective_target": "desert_bandits",
+          "dialogue": [
+            {
+              "speaker": "caravan_guard",
+              "text": "Bandits! Ils sortent des dunes! Aux armes!"
+            },
+            {
+              "speaker": "player",
+              "text": "[Utiliser votre magie pour défendre la caravane]"
+            }
+          ]
+        },
+        {
+          "id": "oasis_arrival",
+          "description": "Arrivez enfin à l'Oasis Royale",
+          "objective_type": "visit_location",
+          "objective_target": "capitale_begaritt",
+          "dialogue": [
+            {
+              "speaker": "caravan_leader",
+              "text": "Voilà l'Oasis Royale. Tu t'es bien débrouillé, étranger. Beaucoup n'auraient pas survécu à ce voyage."
+            },
+            {
+              "speaker": "narrator",
+              "text": "Devant vous s'étend une ville étonnamment vaste et verdoyante au milieu du désert, avec des fontaines, des jardins et des bâtiments aux coupoles bleutées."
+            }
+          ]
+        }
+      ],
+      "completion_dialogue": [
+        {
+          "speaker": "caravan_leader",
+          "text": "Voici où nos chemins se séparent. Si tu cherches d'autres personnes venues du ciel, essaie le Grand Bazaar ou le palais. Les autorités ont regroupé beaucoup d'entre vous."
+        },
+        {
+          "speaker": "player",
+          "text": "Merci pour votre aide. J'espère trouver des réponses ici."
+        }
+      ],
+      "follow_up_events": ["search_for_survivors"]
+    }
+  }

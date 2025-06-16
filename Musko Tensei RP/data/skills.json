@@ -1,0 +1,1387 @@
+{
+  "combat_skills": {
+    "weapon_skills": {
+      "sword": {
+        "id": "sword",
+        "name": "Épée",
+        "description": "Maîtrise du combat à l'épée, incluant les techniques défensives et offensives.",
+        "attribute_dependencies": ["strength", "dexterity"],
+        "progression": {
+          "novice": {
+            "level": 1,
+            "name": "Novice à l'Épée",
+            "description": "Connaissances basiques du maniement de l'épée.",
+            "bonuses": {
+              "damage": 1,
+              "hit_chance": 0.05
+            }
+          },
+          "apprentice": {
+            "level": 3,
+            "name": "Apprenti Épéiste",
+            "description": "Capable d'exécuter des techniques simples et de parer efficacement.",
+            "bonuses": {
+              "damage": 2,
+              "hit_chance": 0.08,
+              "parry_chance": 0.05
+            },
+            "unlocks": ["basic_riposte"]
+          },
+          "adept": {
+            "level": 5,
+            "name": "Adepte de l'Épée",
+            "description": "Maîtrise des techniques intermédiaires et des enchaînements.",
+            "bonuses": {
+              "damage": 4,
+              "hit_chance": 0.12,
+              "parry_chance": 0.08,
+              "critical_chance": 0.03
+            },
+            "unlocks": ["precise_strike", "double_attack"]
+          },
+          "expert": {
+            "level": 8,
+            "name": "Expert Épéiste",
+            "description": "Combattant redoutable capable d'exploiter les faiblesses adverses.",
+            "bonuses": {
+              "damage": 6,
+              "hit_chance": 0.15,
+              "parry_chance": 0.12,
+              "critical_chance": 0.06,
+              "armor_penetration": 0.1
+            },
+            "unlocks": ["blade_mastery", "whirlwind_attack"]
+          },
+          "master": {
+            "level": 10,
+            "name": "Maître d'Armes",
+            "description": "Virtuose de l'épée capable de techniques légendaires.",
+            "bonuses": {
+              "damage": 8,
+              "hit_chance": 0.2,
+              "parry_chance": 0.15,
+              "critical_chance": 0.1,
+              "armor_penetration": 0.2,
+              "intimidation": 0.05
+            },
+            "unlocks": ["blade_storm", "lethal_precision"]
+          }
+        },
+        "abilities": {
+          "basic_riposte": {
+            "name": "Riposte Basique",
+            "description": "Contre-attaque immédiate après une parade réussie.",
+            "type": "reaction",
+            "cost": {
+              "stamina": 15
+            },
+            "requirements": {
+              "sword": 3,
+              "dexterity": 12
+            },
+            "effects": {
+              "attack": {
+                "damage_multiplier": 0.8,
+                "hit_bonus": 2
+              }
+            },
+            "cooldown": 3
+          },
+          "precise_strike": {
+            "name": "Frappe Précise",
+            "description": "Attaque ciblée visant un point faible de l'adversaire.",
+            "type": "active",
+            "cost": {
+              "stamina": 20
+            },
+            "requirements": {
+              "sword": 5,
+              "dexterity": 14
+            },
+            "effects": {
+              "attack": {
+                "damage_multiplier": 1.2,
+                "critical_chance_bonus": 0.15,
+                "armor_penetration": 0.3
+              }
+            },
+            "cooldown": 2
+          },
+          "double_attack": {
+            "name": "Double Frappe",
+            "description": "Deux attaques rapides consécutives.",
+            "type": "active",
+            "cost": {
+              "stamina": 25
+            },
+            "requirements": {
+              "sword": 5,
+              "agility": 13
+            },
+            "effects": {
+              "attack": {
+                "hits": 2,
+                "damage_multiplier": 0.7,
+                "hit_penalty": -2
+              }
+            },
+            "cooldown": 3
+          },
+          "blade_mastery": {
+            "name": "Maîtrise de la Lame",
+            "description": "Technique avancée augmentant considérablement l'efficacité au combat.",
+            "type": "passive",
+            "requirements": {
+              "sword": 8,
+              "dexterity": 16
+            },
+            "effects": {
+              "passive": {
+                "damage_bonus": 3,
+                "critical_damage_multiplier": 0.2
+              }
+            }
+          },
+          "whirlwind_attack": {
+            "name": "Attaque Tourbillonnante",
+            "description": "Attaque circulaire touchant tous les ennemis à portée.",
+            "type": "active",
+            "cost": {
+              "stamina": 35
+            },
+            "requirements": {
+              "sword": 8,
+              "strength": 15
+            },
+            "effects": {
+              "area_attack": {
+                "radius": 2,
+                "damage_multiplier": 0.8
+              }
+            },
+            "cooldown": 5
+          },
+          "blade_storm": {
+            "name": "Tempête de Lames",
+            "description": "Série d'attaques rapides dévastatrices.",
+            "type": "active",
+            "cost": {
+              "stamina": 50
+            },
+            "requirements": {
+              "sword": 10,
+              "dexterity": 18,
+              "agility": 16
+            },
+            "effects": {
+              "attack": {
+                "hits": 5,
+                "damage_multiplier": 0.6,
+                "hit_bonus": 5,
+                "critical_chance_bonus": 0.1
+              }
+            },
+            "cooldown": 8
+          },
+          "lethal_precision": {
+            "name": "Précision Létale",
+            "description": "Attaque ciblée avec une chance de coup critique dévastatrice.",
+            "type": "active",
+            "cost": {
+              "stamina": 40
+            },
+            "requirements": {
+              "sword": 10,
+              "dexterity": 20
+            },
+            "effects": {
+              "attack": {
+                "damage_multiplier": 1.5,
+                "critical_chance_bonus": 0.3,
+                "critical_damage_multiplier": 3.0,
+                "armor_penetration": 0.5
+              }
+            },
+            "cooldown": 6
+          }
+        }
+      },
+      "axe": {
+        "id": "axe",
+        "name": "Hache",
+        "description": "Maîtrise des haches de combat, privilégiant la force brute et les dégâts importants.",
+        "attribute_dependencies": ["strength"],
+        "progression": {
+          "novice": {
+            "level": 1,
+            "name": "Novice à la Hache",
+            "description": "Bases du maniement de la hache de combat.",
+            "bonuses": {
+              "damage": 2,
+              "hit_chance": 0.03
+            }
+          },
+          "apprentice": {
+            "level": 3,
+            "name": "Apprenti Guerrier à la Hache",
+            "description": "Capable de porter des coups puissants avec précision.",
+            "bonuses": {
+              "damage": 4,
+              "hit_chance": 0.05,
+              "armor_penetration": 0.05
+            },
+            "unlocks": ["powerful_swing"]
+          },
+          "adept": {
+            "level": 5,
+            "name": "Adepte de la Hache",
+            "description": "Maîtrise des techniques intermédiaires et des attaques dévastatrices.",
+            "bonuses": {
+              "damage": 6,
+              "hit_chance": 0.08,
+              "armor_penetration": 0.1,
+              "critical_chance": 0.05
+            },
+            "unlocks": ["cleave", "crushing_blow"]
+          },
+          "expert": {
+            "level": 8,
+            "name": "Expert de la Hache",
+            "description": "Combattant redoutable capable de briser les défenses ennemies.",
+            "bonuses": {
+              "damage": 9,
+              "hit_chance": 0.1,
+              "armor_penetration": 0.2,
+              "critical_chance": 0.08,
+              "intimidation": 0.1
+            },
+            "unlocks": ["axe_mastery", "armor_breaker"]
+          },
+          "master": {
+            "level": 10,
+            "name": "Maître de la Hache",
+            "description": "Guerrier légendaire maniant la hache avec une force et une précision terrifiantes.",
+            "bonuses": {
+              "damage": 12,
+              "hit_chance": 0.12,
+              "armor_penetration": 0.3,
+              "critical_chance": 0.12,
+              "critical_damage": 0.5,
+              "intimidation": 0.2
+            },
+            "unlocks": ["berserker_rage", "devastating_cleave"]
+          }
+        },
+        "abilities": {
+          "powerful_swing": {
+            "name": "Balancement Puissant",
+            "description": "Attaque puissante sacrifiant la précision pour la force.",
+            "type": "active",
+            "cost": {
+              "stamina": 20
+            },
+            "requirements": {
+              "axe": 3,
+              "strength": 13
+            },
+            "effects": {
+              "attack": {
+                "damage_multiplier": 1.5,
+                "hit_penalty": -3,
+                "stagger_chance": 0.2
+              }
+            },
+            "cooldown": 2
+          },
+          "cleave": {
+            "name": "Fendre",
+            "description": "Attaque frappant l'ennemi principal et un ennemi adjacent.",
+            "type": "active",
+            "cost": {
+              "stamina": 25
+            },
+            "requirements": {
+              "axe": 5,
+              "strength": 15
+            },
+            "effects": {
+              "attack": {
+                "primary_target_multiplier": 1.0,
+                "secondary_target_multiplier": 0.5,
+                "targets": 2
+              }
+            },
+            "cooldown": 3
+          }
+        }
+      }
+    },
+    "combat_styles": {
+      "sword_god_style": {
+        "id": "sword_god_style",
+        "name": "Style du Dieu Épée",
+        "description": "Style de combat privilégiant la vitesse et les frappes décisives.",
+        "attribute_dependencies": ["agility", "dexterity"],
+        "weapon_requirements": ["sword"],
+        "progression": {
+          "initiate": {
+            "level": 1,
+            "name": "Initié au Style du Dieu Épée",
+            "description": "Apprentissage des principes fondamentaux du style.",
+            "bonuses": {
+              "attack_speed": 0.1,
+              "critical_chance": 0.03
+            }
+          },
+          "disciple": {
+            "level": 3,
+            "name": "Disciple du Style du Dieu Épée",
+            "description": "Maîtrise des techniques de base du style.",
+            "bonuses": {
+              "attack_speed": 0.15,
+              "critical_chance": 0.05,
+              "dodge_chance": 0.05
+            },
+            "unlocks": ["flash_step"]
+          },
+          "practitioner": {
+            "level": 5,
+            "name": "Pratiquant du Style du Dieu Épée",
+            "description": "Application fluide des techniques intermédiaires.",
+            "bonuses": {
+              "attack_speed": 0.2,
+              "critical_chance": 0.08,
+              "dodge_chance": 0.08,
+              "counter_chance": 0.05
+            },
+            "unlocks": ["decisive_strike", "sword_god_stance"]
+          },
+          "successor": {
+            "level": 8,
+            "name": "Successeur du Dieu Épée",
+            "description": "Maîtrise avancée des techniques légendaires du style.",
+            "bonuses": {
+              "attack_speed": 0.25,
+              "critical_chance": 0.12,
+              "dodge_chance": 0.12,
+              "counter_chance": 0.08,
+              "initiative_bonus": 3
+            },
+            "unlocks": ["flowing_water", "phantom_blade"]
+          },
+          "inheritor": {
+            "level": 10,
+            "name": "Héritier du Dieu Épée",
+            "description": "Incarnation vivante du style, capable d'égaler les prouesses du Dieu Épée.",
+            "bonuses": {
+              "attack_speed": 0.3,
+              "critical_chance": 0.15,
+              "dodge_chance": 0.15,
+              "counter_chance": 0.1,
+              "initiative_bonus": 5,
+              "fatal_strike_chance": 0.05
+            },
+            "unlocks": ["god_slaying_sword", "longsword_of_light"]
+          }
+        },
+        "abilities": {
+          "flash_step": {
+            "name": "Pas Éclair",
+            "description": "Mouvement rapide permettant d'atteindre instantanément un ennemi.",
+            "type": "active",
+            "cost": {
+              "stamina": 15
+            },
+            "requirements": {
+              "sword_god_style": 3,
+              "agility": 14
+            },
+            "effects": {
+              "movement": {
+                "distance": 5,
+                "instant": true
+              },
+              "attack": {
+                "follow_up": true,
+                "surprise_bonus": 3
+              }
+            },
+            "cooldown": 3
+          },
+          "decisive_strike": {
+            "name": "Frappe Décisive",
+            "description": "Attaque rapide visant un point vital.",
+            "type": "active",
+            "cost": {
+              "stamina": 25
+            },
+            "requirements": {
+              "sword_god_style": 5,
+              "dexterity": 16
+            },
+            "effects": {
+              "attack": {
+                "damage_multiplier": 1.3,
+                "critical_chance_bonus": 0.2,
+                "critical_damage_multiplier": 2.0
+              }
+            },
+            "cooldown": 4
+          },
+          "sword_god_stance": {
+            "name": "Posture du Dieu Épée",
+            "description": "Posture de combat augmentant considérablement la vitesse d'attaque.",
+            "type": "stance",
+            "cost": {
+              "stamina_per_turn": 5
+            },
+            "requirements": {
+              "sword_god_style": 5,
+              "agility": 15
+            },
+            "effects": {
+              "stance": {
+                "attack_speed_bonus": 0.3,
+                "critical_chance_bonus": 0.1,
+                "defense_penalty": -3
+              }
+            },
+            "duration": "until_cancelled"
+          }
+        }
+      },
+      "water_god_style": {
+        "id": "water_god_style",
+        "name": "Style du Dieu Eau",
+        "description": "Style de combat défensif basé sur la fluidité et la redirection.",
+        "attribute_dependencies": ["dexterity", "perception"],
+        "weapon_requirements": ["sword"],
+        "progression": {
+          "initiate": {
+            "level": 1,
+            "name": "Initié au Style du Dieu Eau",
+            "description": "Apprentissage des mouvements fluides de base.",
+            "bonuses": {
+              "dodge_chance": 0.05,
+              "parry_chance": 0.05
+            }
+          },
+          "disciple": {
+            "level": 3,
+            "name": "Disciple du Style du Dieu Eau",
+            "description": "Maîtrise des techniques défensives fondamentales.",
+            "bonuses": {
+              "dodge_chance": 0.08,
+              "parry_chance": 0.08,
+              "counter_chance": 0.05
+            },
+            "unlocks": ["flowing_defense"]
+          },
+          "practitioner": {
+            "level": 5,
+            "name": "Pratiquant du Style du Dieu Eau",
+            "description": "Application fluide des techniques de redirection.",
+            "bonuses": {
+              "dodge_chance": 0.12,
+              "parry_chance": 0.12,
+              "counter_chance": 0.08,
+              "damage_redirection": 0.1
+            },
+            "unlocks": ["water_flow_counter", "water_god_stance"]
+          },
+          "successor": {
+            "level": 8,
+            "name": "Successeur du Dieu Eau",
+            "description": "Maîtrise avancée des techniques légendaires du style.",
+            "bonuses": {
+              "dodge_chance": 0.15,
+              "parry_chance": 0.15,
+              "counter_chance": 0.12,
+              "damage_redirection": 0.2,
+              "defense_bonus": 3
+            },
+            "unlocks": ["water_mirror", "flowing_river_strike"]
+          },
+          "inheritor": {
+            "level": 10,
+            "name": "Héritier du Dieu Eau",
+            "description": "Incarnation vivante du style, capable d'égaler les prouesses du Dieu Eau.",
+            "bonuses": {
+              "dodge_chance": 0.2,
+              "parry_chance": 0.2,
+              "counter_chance": 0.15,
+              "damage_redirection": 0.3,
+              "defense_bonus": 5,
+              "perfect_counter_chance": 0.05
+            },
+            "unlocks": ["water_dragon_technique", "absolute_zero"]
+          }
+        },
+        "abilities": {
+          "flowing_defense": {
+            "name": "Défense Fluide",
+            "description": "Technique défensive qui transforme l'énergie d'une attaque en mouvement.",
+            "type": "reaction",
+            "cost": {
+              "stamina": 15
+            },
+            "requirements": {
+              "water_god_style": 3,
+              "dexterity": 14
+            },
+            "effects": {
+              "defense": {
+                "dodge_bonus": 5,
+                "movement_bonus": 3,
+                "positioning_advantage": true
+              }
+            },
+            "cooldown": 3
+          },
+          "water_flow_counter": {
+            "name": "Contre-attaque Fluide",
+            "description": "Redirection de l'attaque ennemie suivie d'une contre-attaque précise.",
+            "type": "reaction",
+            "cost": {
+              "stamina": 20
+            },
+            "requirements": {
+              "water_god_style": 5,
+              "perception": 15
+            },
+            "effects": {
+              "defense": {
+                "damage_reduction": 0.3
+              },
+              "counter": {
+                "damage_multiplier": 1.2,
+                "hit_bonus": 3,
+                "positioning_advantage": true
+              }
+            },
+            "cooldown": 4
+          },
+          "water_god_stance": {
+            "name": "Posture du Dieu Eau",
+            "description": "Posture défensive augmentant les capacités de parade et de contre-attaque.",
+            "type": "stance",
+            "cost": {
+              "stamina_per_turn": 3
+            },
+            "requirements": {
+              "water_god_style": 5,
+              "dexterity": 15
+            },
+            "effects": {
+              "stance": {
+                "dodge_bonus": 3,
+                "parry_bonus": 3,
+                "counter_damage_bonus": 0.2,
+                "attack_penalty": -1
+              }
+            },
+            "duration": "until_cancelled"
+          }
+        }
+      },
+      "north_god_style": {
+        "id": "north_god_style",
+        "name": "Style du Dieu Nord",
+        "description": "Style de combat imprévisible et adaptatif.",
+        "attribute_dependencies": ["intelligence", "adaptability"],
+        "weapon_requirements": ["any"],
+        "progression": {
+          "initiate": {
+            "level": 1,
+            "name": "Initié au Style du Dieu Nord",
+            "description": "Apprentissage des principes d'adaptation au combat.",
+            "bonuses": {
+              "versatility": 0.05,
+              "unpredictability": 0.05
+            }
+          },
+          "disciple": {
+            "level": 3,
+            "name": "Disciple du Style du Dieu Nord",
+            "description": "Maîtrise des techniques d'adaptation basiques.",
+            "bonuses": {
+              "versatility": 0.08,
+              "unpredictability": 0.08,
+              "counter_type_bonus": 0.1
+            },
+            "unlocks": ["adaptive_stance"]
+          },
+          "practitioner": {
+            "level": 5,
+            "name": "Pratiquant du Style du Dieu Nord",
+            "description": "Application fluide des techniques d'adaptation avancées.",
+            "bonuses": {
+              "versatility": 0.12,
+              "unpredictability": 0.12,
+              "counter_type_bonus": 0.15,
+              "technique_variety": 3
+            },
+            "unlocks": ["style_mimicry", "north_god_stance"]
+          },
+          "successor": {
+            "level": 8,
+            "name": "Successeur du Dieu Nord",
+            "description": "Maîtrise avancée des techniques légendaires du style.",
+            "bonuses": {
+              "versatility": 0.15,
+              "unpredictability": 0.15,
+              "counter_type_bonus": 0.2,
+              "technique_variety": 5,
+              "adaptation_speed": 0.3
+            },
+            "unlocks": ["perfect_counter", "formless_technique"]
+          },
+          "inheritor": {
+            "level": 10,
+            "name": "Héritier du Dieu Nord",
+            "description": "Incarnation vivante du style, capable d'égaler les prouesses du Dieu Nord.",
+            "bonuses": {
+              "versatility": 0.2,
+              "unpredictability": 0.2,
+              "counter_type_bonus": 0.25,
+              "technique_variety": 8,
+              "adaptation_speed": 0.5,
+              "style_fusion": true
+            },
+            "unlocks": ["all_styles_as_one", "northern_wind"]
+          }
+        },
+        "abilities": {
+          "adaptive_stance": {
+            "name": "Posture Adaptative",
+            "description": "Capacité à ajuster rapidement sa posture en fonction de l'adversaire.",
+            "type": "passive",
+            "requirements": {
+              "north_god_style": 3,
+              "intelligence": 14
+            },
+            "effects": {
+              "passive": {
+                "adaptation_time": -1,
+                "counter_bonus_vs_known_opponent": 2
+              }
+            }
+          },
+          "style_mimicry": {
+            "name": "Mimétisme de Style",
+            "description": "Capacité à copier partiellement les techniques observées chez un adversaire.",
+            "type": "active",
+            "cost": {
+              "stamina": 30,
+              "concentration": 20
+            },
+            "requirements": {
+              "north_god_style": 5,
+              "perception": 15
+            },
+            "effects": {
+              "mimic": {
+                "duration": 3,
+                "efficiency": 0.6,
+                "techniques_copied": 1
+              }
+            },
+            "cooldown": 6
+          },
+          "north_god_stance": {
+            "name": "Posture du Dieu Nord",
+            "description": "Posture imprévisible qui rend difficile l'anticipation des attaques.",
+            "type": "stance",
+            "cost": {
+              "stamina_per_turn": 4
+            },
+            "requirements": {
+              "north_god_style": 5,
+              "adaptability": 15
+            },
+            "effects": {
+              "stance": {
+                "unpredictability_bonus": 5,
+                "enemy_read_penalty": -3,
+                "versatility_bonus": 3
+              }
+            },
+            "duration": "until_cancelled"
+          }
+        }
+      }
+    },
+    "martial_arts": {
+      "unarmed_combat": {
+        "id": "unarmed_combat",
+        "name": "Combat à mains nues",
+        "description": "Techniques de combat sans armes.",
+        "attribute_dependencies": ["strength", "dexterity"],
+        "progression": {
+          "novice": {
+            "level": 1,
+            "name": "Novice en Combat à mains nues",
+            "description": "Maîtrise des techniques de base de frappe et de blocage.",
+            "bonuses": {
+              "unarmed_damage": 2,
+              "hit_chance": 0.05
+            }
+          },
+          "apprentice": {
+            "level": 3,
+            "name": "Apprenti Combattant",
+            "description": "Capables d'enchaînements simples et de blocages efficaces.",
+            "bonuses": {
+              "unarmed_damage": 4,
+              "hit_chance": 0.08,
+              "block_chance": 0.05
+            },
+            "unlocks": ["quick_jab"]
+          },
+          "adept": {
+            "level": 5,
+            "name": "Adepte du Combat",
+            "description": "Maîtrise des techniques avancées et des enchaînements complexes.",
+            "bonuses": {
+              "unarmed_damage": 6,
+              "hit_chance": 0.12,
+              "block_chance": 0.08,
+              "counter_chance": 0.05
+            },
+            "unlocks": ["disarming_strike", "rapid_strikes"]
+          },
+          "expert": {
+            "level": 8,
+            "name": "Expert en Combat à mains nues",
+            "description": "Combattant redoutable capable d'exploiter les points faibles adverses.",
+            "bonuses": {
+              "unarmed_damage": 9,
+              "hit_chance": 0.15,
+              "block_chance": 0.12,
+              "counter_chance": 0.08,
+              "critical_hit_locations": true
+            },
+            "unlocks": ["pressure_point_strike", "combat_flow"]
+          },
+          "master": {
+            "level": 10,
+            "name": "Maître de Combat",
+            "description": "Maître des arts martiaux à mains nues aux techniques légendaires.",
+            "bonuses": {
+              "unarmed_damage": 12,
+              "hit_chance": 0.2,
+              "block_chance": 0.15,
+              "counter_chance": 0.12,
+              "critical_hit_locations": true,
+              "disable_chance": 0.05
+            },
+            "unlocks": ["chi_strike", "hundred_fists"]
+          }
+        },
+        "abilities": {
+          "quick_jab": {
+            "name": "Coup Rapide",
+            "description": "Frappe rapide pouvant déstabiliser l'adversaire.",
+            "type": "active",
+            "cost": {
+              "stamina": 10
+            },
+            "requirements": {
+              "unarmed_combat": 3,
+              "agility": 12
+            },
+            "effects": {
+              "attack": {
+                "damage_multiplier": 0.7,
+                "hit_bonus": 3,
+                "initiative_bonus_next_turn": 2
+              }
+            },
+            "cooldown": 1
+          },
+          "disarming_strike": {
+            "name": "Coup Désarmant",
+            "description": "Technique visant à désarmer l'adversaire.",
+            "type": "active",
+            "cost": {
+              "stamina": 20
+            },
+            "requirements": {
+              "unarmed_combat": 5,
+              "dexterity": 14
+            },
+            "effects": {
+              "attack": {
+                "damage_multiplier": 0.5,
+                "disarm_chance": 0.4,
+                "hit_penalty": -2
+              }
+            },
+            "cooldown": 3
+          }
+        }
+      }
+    }
+  },
+  "magic_skills": {
+    "elemental_magic": {
+      "fire_magic": {
+        "id": "fire_magic",
+        "name": "Magie du Feu",
+        "description": "Art de manipuler l'élément feu pour créer des sorts offensifs.",
+        "attribute_dependencies": ["intelligence", "willpower"],
+        "progression": {
+          "novice": {
+            "level": 1,
+            "name": "Novice en Magie du Feu",
+            "description": "Maîtrise des flammes basiques et de petits sorts de feu.",
+            "bonuses": {
+              "fire_damage": 3,
+              "fire_control": 0.05
+            },
+            "unlocks": ["fire_bolt"]
+          },
+          "apprentice": {
+            "level": 3,
+            "name": "Apprenti Pyromancien",
+            "description": "Capable de sorts de feu intermédiaires et d'une meilleure résistance à la chaleur.",
+            "bonuses": {
+              "fire_damage": 5,
+              "fire_control": 0.1,
+              "fire_resistance": 0.2
+            },
+            "unlocks": ["fireball", "heat_resistance"]
+          },
+          "adept": {
+            "level": 5,
+            "name": "Adepte du Feu",
+            "description": "Maîtrise avancée des flammes et capacité à créer des sorts complexes.",
+            "bonuses": {
+              "fire_damage": 8,
+              "fire_control": 0.15,
+              "fire_resistance": 0.3,
+              "burn_duration": 0.2
+            },
+            "unlocks": ["flame_wave", "combustion"]
+          },
+          "expert": {
+            "level": 8,
+            "name": "Expert en Pyromanie",
+            "description": "Contrôle expert du feu, permettant des manipulations précises et puissantes.",
+            "bonuses": {
+              "fire_damage": 12,
+              "fire_control": 0.25,
+              "fire_resistance": 0.5,
+              "burn_duration": 0.3,
+              "mana_efficiency": 0.15
+            },
+            "unlocks": ["fire_mastery", "inferno"]
+          },
+          "master": {
+            "level": 10,
+            "name": "Maître des Flammes",
+            "description": "Maîtrise absolue du feu, capable de créer et contrôler des infernos dévastateurs.",
+            "bonuses": {
+              "fire_damage": 18,
+              "fire_control": 0.4,
+              "fire_resistance": 0.7,
+              "burn_duration": 0.5,
+              "mana_efficiency": 0.25,
+              "phoenix_blessing": true
+            },
+            "unlocks": ["phoenix_rebirth", "fire_storm"]
+          }
+        },
+        "spells": {
+          "fire_bolt": {
+            "name": "Éclair de Feu",
+            "description": "Projectile de feu basique infligeant des dégâts à une cible.",
+            "type": "attack",
+            "cost": {
+              "mana": 10
+            },
+            "requirements": {
+              "fire_magic": 1,
+              "intelligence": 8
+            },
+            "effects": {
+              "damage": {
+                "base": "1d6+INT",
+                "type": "fire",
+                "burn_chance": 0.1,
+                "burn_duration": 2
+              }
+            },
+            "casting_time": 1,
+            "range": 20
+          },
+          "fireball": {
+            "name": "Boule de Feu",
+            "description": "Sphère explosive de flammes infligeant des dégâts de zone.",
+            "type": "area_attack",
+            "cost": {
+              "mana": 25
+            },
+            "requirements": {
+              "fire_magic": 3,
+              "intelligence": 12
+            },
+            "effects": {
+              "damage": {
+                "base": "2d6+INT",
+                "type": "fire",
+                "burn_chance": 0.3,
+                "burn_duration": 2,
+                "radius": 3
+              }
+            },
+            "casting_time": 2,
+            "range": 30
+          },
+          "heat_resistance": {
+            "name": "Résistance à la Chaleur",
+            "description": "Protection contre les dégâts de feu et la chaleur extrême.",
+            "type": "buff",
+            "cost": {
+              "mana": 15
+            },
+            "requirements": {
+              "fire_magic": 3,
+              "willpower": 10
+            },
+            "effects": {
+              "buff": {
+                "fire_resistance": 0.5,
+                "heat_immunity": true,
+                "duration": 300
+              }
+            },
+            "casting_time": 2,
+            "range": "touch"
+          }
+        }
+      },
+      "water_magic": {
+        "id": "water_magic",
+        "name": "Magie de l'Eau",
+        "description": "Art de manipuler l'élément eau pour des sorts variés.",
+        "attribute_dependencies": ["intelligence", "wisdom"],
+        "progression": {
+          "novice": {
+            "level": 1,
+            "name": "Novice en Magie de l'Eau",
+            "description": "Maîtrise de l'eau basique et de petits sorts aquatiques.",
+            "bonuses": {
+              "water_damage": 2,
+              "healing_bonus": 0.05
+            },
+            "unlocks": ["water_bolt"]
+          },
+          "apprentice": {
+            "level": 3,
+            "name": "Apprenti Hydromagicien",
+            "description": "Capable de sorts d'eau intermédiaires et de soins mineurs.",
+            "bonuses": {
+              "water_damage": 3,
+              "healing_bonus": 0.1,
+              "water_control": 0.2
+            },
+            "unlocks": ["healing_waters", "water_breathing"]
+          },
+          "adept": {
+            "level": 5,
+            "name": "Adepte de l'Eau",
+            "description": "Maîtrise avancée de l'eau et capacité à créer des sorts complexes.",
+            "bonuses": {
+              "water_damage": 5,
+              "healing_bonus": 0.15,
+              "water_control": 0.3,
+              "water_resistance": 0.5
+            },
+            "unlocks": ["water_wall", "ice_spear"]
+          },
+          "expert": {
+            "level": 8,
+            "name": "Expert en Hydromagie",
+            "description": "Contrôle expert de l'eau, permettant des manipulations précises et puissantes.",
+            "bonuses": {
+              "water_damage": 8,
+              "healing_bonus": 0.25,
+              "water_control": 0.5,
+              "water_resistance": 0.7,
+              "mana_efficiency": 0.15
+            },
+            "unlocks": ["water_mastery", "healing_rain"]
+          },
+          "master": {
+            "level": 10,
+            "name": "Maître des Eaux",
+            "description": "Maîtrise absolue de l'eau, capable de créer et contrôler des tsunami dévastateurs.",
+            "bonuses": {
+              "water_damage": 12,
+              "healing_bonus": 0.35,
+              "water_control": 0.7,
+              "water_resistance": 1.0,
+              "mana_efficiency": 0.25,
+              "water_walking": true
+            },
+            "unlocks": ["tsunami", "water_avatar"]
+          }
+        },
+        "spells": {
+          "water_bolt": {
+            "name": "Éclair d'Eau",
+            "description": "Projectile d'eau pressurisée infligeant des dégâts et pouvant repousser la cible.",
+            "type": "attack",
+            "cost": {
+              "mana": 8
+            },
+            "requirements": {
+              "water_magic": 1,
+              "intelligence": 8
+            },
+            "effects": {
+              "damage": {
+                "base": "1d4+INT",
+                "type": "water",
+                "push_distance": 2
+              }
+            },
+            "casting_time": 1,
+            "range": 15
+          },
+          "healing_waters": {
+            "name": "Eaux Curatives",
+            "description": "Sort de guérison utilisant les propriétés régénératrices de l'eau.",
+            "type": "healing",
+            "cost": {
+              "mana": 20
+            },
+            "requirements": {
+              "water_magic": 3,
+              "wisdom": 12
+            },
+            "effects": {
+              "healing": {
+                "base": "2d6+WIS",
+                "cleanse_wounds": true
+              }
+            },
+            "casting_time": 2,
+            "range": "touch"
+          },
+          "water_breathing": {
+            "name": "Respiration Aquatique",
+            "description": "Permet de respirer sous l'eau pendant une durée déterminée.",
+            "type": "buff",
+            "cost": {
+              "mana": 15
+            },
+            "requirements": {
+              "water_magic": 3,
+              "intelligence": 10
+            },
+            "effects": {
+              "buff": {
+                "water_breathing": true,
+                "swimming_speed": 1.5,
+                "duration": 3600
+              }
+            },
+            "casting_time": 3,
+            "range": "touch"
+          }
+        }
+      }
+    },
+    "divine_magic": {
+      "healing": {
+        "id": "healing",
+        "name": "Magie de Guérison",
+        "description": "Art sacré de soigner les blessures et maladies.",
+        "attribute_dependencies": ["wisdom", "spirit"],
+        "progression": {
+          "novice": {
+            "level": 1,
+            "name": "Novice en Guérison",
+            "description": "Capacité à soigner des blessures mineures.",
+            "bonuses": {
+              "healing_power": 3,
+              "disease_cure_chance": 0.1
+            },
+            "unlocks": ["minor_heal"]
+          },
+          "apprentice": {
+            "level": 3,
+            "name": "Apprenti Guérisseur",
+            "description": "Capable de soins plus importants et de traiter certaines maladies.",
+            "bonuses": {
+              "healing_power": 5,
+              "disease_cure_chance": 0.3,
+              "poison_resistance_bonus": 0.2
+            },
+            "unlocks": ["cure_poison", "healing_touch"]
+          }
+        },
+        "spells": {
+          "minor_heal": {
+            "name": "Soin Mineur",
+            "description": "Sort basique de guérison réparant les blessures légères.",
+            "type": "healing",
+            "cost": {
+              "mana": 10
+            },
+            "requirements": {
+              "healing": 1,
+              "wisdom": 8
+            },
+            "effects": {
+              "healing": {
+                "base": "1d8+WIS",
+                "stop_bleeding": true
+              }
+            },
+            "casting_time": 2,
+            "range": "touch"
+          },
+          "cure_poison": {
+            "name": "Guérison du Poison",
+            "description": "Sort neutralisant les toxines dans le corps du sujet.",
+            "type": "cure",
+            "cost": {
+              "mana": 15
+            },
+            "requirements": {
+              "healing": 3,
+              "wisdom": 10
+            },
+            "effects": {
+              "cure": {
+                "poison": true,
+                "toxin_resistance_duration": 300
+              }
+            },
+            "casting_time": 3,
+            "range": "touch"
+          }
+        }
+      }
+    }
+  },
+  "crafting_skills": {
+    "blacksmithing": {
+      "id": "blacksmithing",
+      "name": "Forge",
+      "description": "Art de forger des armes et armures métalliques.",
+      "attribute_dependencies": ["strength", "dexterity"],
+      "progression": {
+        "novice": {
+          "level": 1,
+          "name": "Novice en Forge",
+          "description": "Capable de forger des objets simples.",
+          "craftable_items": ["iron_dagger", "iron_arrow", "simple_repairs"],
+          "quality_bonus": 0
+        },
+        "apprentice": {
+          "level": 3,
+          "name": "Apprenti Forgeron",
+          "description": "Maîtrise des bases de la forge et capacité à créer des armes et armures courantes.",
+          "craftable_items": ["iron_sword", "iron_axe", "chainmail", "metal_repairs"],
+          "quality_bonus": 1
+        },
+        "adept": {
+          "level": 5,
+          "name": "Adepte Forgeron",
+          "description": "Capable de travailler des métaux de qualité supérieure et de créer des objets complexes.",
+          "craftable_items": ["steel_weapons", "plate_armor", "weapon_enhancements"],
+          "quality_bonus": 2
+        },
+        "expert": {
+          "level": 8,
+          "name": "Maître Forgeron",
+          "description": "Expert en métallurgie capable de forger des objets exceptionnels.",
+          "craftable_items": ["silver_weapons", "enchanted_base_items", "masterwork_armor"],
+          "quality_bonus": 3
+        },
+        "master": {
+          "level": 10,
+          "name": "Forgeron Légendaire",
+          "description": "Maître absolu de la forge, capable de créer des objets légendaires.",
+          "craftable_items": ["mithril_items", "legendary_weapon_base", "artifact_restoration"],
+          "quality_bonus": 5
+        }
+      }
+    },
+    "alchemy": {
+      "id": "alchemy",
+      "name": "Alchimie",
+      "description": "Art de créer des potions, poisons et élixirs.",
+      "attribute_dependencies": ["intelligence", "dexterity"],
+      "progression": {
+        "novice": {
+          "level": 1,
+          "name": "Novice en Alchimie",
+          "description": "Apprentissage des bases de la préparation de potions simples.",
+          "craftable_items": ["minor_health_potion", "minor_stamina_potion", "herb_extraction"],
+          "quality_bonus": 0
+        },
+        "apprentice": {
+          "level": 3,
+          "name": "Apprenti Alchimiste",
+          "description": "Capable de créer des potions standard et d'identifer des ingrédients rares.",
+          "craftable_items": ["health_potion", "antidote", "minor_elemental_potion"],
+          "quality_bonus": 1
+        },
+        "adept": {
+          "level": 5,
+          "name": "Adepte Alchimiste",
+          "description": "Maîtrise des réactions complexes et capacité à créer des élixirs avancés.",
+          "craftable_items": ["greater_health_potion", "attribute_elixir", "poison"],
+          "quality_bonus": 2
+        },
+        "expert": {
+          "level": 8,
+          "name": "Expert Alchimiste",
+          "description": "Expert en transmutations et préparations complexes.",
+          "craftable_items": ["master_potions", "transformation_elixir", "rare_ingredient_synthesis"],
+          "quality_bonus": 3
+        },
+        "master": {
+          "level": 10,
+          "name": "Maître Alchimiste",
+          "description": "Alchimiste légendaire capable de créer des élixirs miraculeux.",
+          "craftable_items": ["philosopher_stone_fragment", "legendary_elixir", "immortality_serum"],
+          "quality_bonus": 5
+        }
+      }
+    }
+  },
+  "survival_skills": {
+    "hunting": {
+      "id": "hunting",
+      "name": "Chasse",
+      "description": "Art de traquer et chasser le gibier.",
+      "attribute_dependencies": ["dexterity", "perception"],
+      "progression": {
+        "novice": {
+          "level": 1,
+          "name": "Novice en Chasse",
+          "description": "Bases de la traque d'animaux communs et de la préparation du petit gibier.",
+          "bonuses": {
+            "tracking": 1,
+            "meat_quality": 0
+          }
+        },
+        "apprentice": {
+          "level": 3,
+          "name": "Apprenti Chasseur",
+          "description": "Capable de suivre des pistes plus difficiles et de chasser des proies moyennes.",
+          "bonuses": {
+            "tracking": 2,
+            "meat_quality": 1,
+            "animal_detection_range": 1.2
+          },
+          "unlocks": ["snare_trap"]
+        },
+        "adept": {
+          "level": 5,
+          "name": "Chasseur Compétent",
+          "description": "Capable de traquer des proies difficiles et de récupérer des ressources de qualité.",
+          "bonuses": {
+            "tracking": 3,
+            "meat_quality": 2,
+            "animal_detection_range": 1.5,
+            "hide_quality": 1
+          },
+          "unlocks": ["precise_shot", "animal_knowledge"]
+        },
+        "expert": {
+          "level": 8,
+          "name": "Chasseur Expert",
+          "description": "Maître traqueur capable de chasser les proies les plus dangereuses.",
+          "bonuses": {
+            "tracking": 5,
+            "meat_quality": 3,
+            "animal_detection_range": 2.0,
+            "hide_quality": 2,
+            "trophy_chance": 0.1
+          },
+          "unlocks": ["critical_hunt", "monster_tracking"]
+        },
+        "master": {
+          "level": 10,
+          "name": "Maître Chasseur",
+          "description": "Chasseur légendaire capable de traquer et vaincre n'importe quelle proie.",
+          "bonuses": {
+            "tracking": 8,
+            "meat_quality": 5,
+            "animal_detection_range": 3.0,
+            "hide_quality": 3,
+            "trophy_chance": 0.25,
+            "rare_material_chance": 0.1
+          },
+          "unlocks": ["legendary_trophy", "apex_predator"]
+        }
+      }
+    },
+    "herbalism": {
+      "id": "herbalism",
+      "name": "Herboristerie",
+      "description": "Connaissance des plantes et de leurs propriétés.",
+      "attribute_dependencies": ["perception", "intelligence"],
+      "progression": {
+        "novice": {
+          "level": 1,
+          "name": "Novice en Herboristerie",
+          "description": "Connaissances basiques des herbes communes et de leurs usages.",
+          "bonuses": {
+            "herb_discovery": 1,
+            "herb_quality": 0
+          }
+        },
+        "apprentice": {
+          "level": 3,
+          "name": "Apprenti Herboriste",
+          "description": "Capable d'identifier et de récolter efficacement des plantes plus rares.",
+          "bonuses": {
+            "herb_discovery": 2,
+            "herb_quality": 1,
+            "herb_quantity": 1.2
+          },
+          "unlocks": ["plant_identification"]
+        }
+      }
+    }
+  },
+  "social_skills": {
+    "persuasion": {
+      "id": "persuasion",
+      "name": "Persuasion",
+      "description": "Art de convaincre les autres par la logique et le charisme.",
+      "attribute_dependencies": ["charisma", "intelligence"],
+      "progression": {
+        "novice": {
+          "level": 1,
+          "name": "Orateur Débutant",
+          "description": "Bases de l'argumentation et de la présentation personnelle.",
+          "bonuses": {
+            "shop_prices": -0.05,
+            "npc_disposition": 1
+          }
+        },
+        "apprentice": {
+          "level": 3,
+          "name": "Orateur Compétent",
+          "description": "Capable de présenter des arguments convaincants et de négocier efficacement.",
+          "bonuses": {
+            "shop_prices": -0.1,
+            "npc_disposition": 2,
+            "quest_reward_bonus": 0.05
+          },
+          "unlocks": ["haggling"]
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,582 @@
+{
+  "combat_types": {
+    "duel": {
+      "name": "Duel",
+      "description": "Combat un contre un régi par des règles d'honneur.",
+      "initiative_rules": "Basée sur l'agilité et la perception",
+      "victory_conditions": ["Abandon de l'adversaire", "Incapacité de l'adversaire", "Sortie de la zone de combat"],
+      "special_rules": ["Pas d'assistance extérieure", "Zone de combat délimitée"]
+    },
+    "battlefield": {
+      "name": "Champ de bataille",
+      "description": "Combat à grande échelle impliquant plusieurs combattants.",
+      "initiative_rules": "Ordre d'action par groupe puis par individu",
+      "victory_conditions": ["Élimination de tous les adversaires", "Élimination des commandants adverses", "Fuite/retraite de l'ennemi"],
+      "special_rules": ["Position tactique influence les performances", "Fatigue accumulée", "Moral des troupes"]
+    },
+    "ambush": {
+      "name": "Embuscade",
+      "description": "Attaque surprise donnant l'avantage initial à l'attaquant.",
+      "initiative_rules": "Attaquants agissent en premier, défenseurs peuvent être surpris",
+      "victory_conditions": ["Élimination des cibles", "Fuite réussie"],
+      "special_rules": ["Bonus d'attaque initial pour les attaquants", "Test de perception pour éviter la surprise", "Pénalité initiale pour les défenseurs surpris"]
+    },
+    "monster_encounter": {
+      "name": "Rencontre monstrueuse",
+      "description": "Combat contre des créatures non-humanoïdes aux capacités spéciales.",
+      "initiative_rules": "Variable selon le type de monstre",
+      "victory_conditions": ["Élimination du monstre", "Fuite réussie", "Soumission du monstre"],
+      "special_rules": ["Comportement de monstre aléatoire", "Zones vulnérables spécifiques", "Immunités et faiblesses particulières"]
+    },
+    "magical_duel": {
+      "name": "Duel magique",
+      "description": "Affrontement entre lanceurs de sorts suivant des conventions arcanes.",
+      "initiative_rules": "Basée sur l'intelligence et la maîtrise magique",
+      "victory_conditions": ["Épuisement du mana adverse", "Incapacité de l'adversaire", "Abandon"],
+      "special_rules": ["Interaction des éléments magiques", "Contre-sorts", "Protection magique"]
+    }
+  },
+  "turn_structure": {
+    "phases": [
+      {
+        "name": "Préparation",
+        "description": "Évaluation de la situation et préparation mentale.",
+        "actions_allowed": ["Analyse", "Concentration", "Méditation"],
+        "duration": "Variable selon complexité de la situation"
+      },
+      {
+        "name": "Initiative",
+        "description": "Détermination de l'ordre d'action des participants.",
+        "calculation": "(Agilité + Perception)/2 + 1d10 + Modificateurs",
+        "tiebreaker": "Valeur de Perception plus élevée"
+      },
+      {
+        "name": "Action",
+        "description": "Exécution des actions choisies dans l'ordre d'initiative.",
+        "actions_per_turn": {
+          "standard": 1,
+          "mouvement": 1,
+          "mineure": 1,
+          "réaction": "1 par déclencheur"
+        },
+        "special_conditions": {
+          "haste": "Actions standard +1",
+          "slow": "Actions standard -1",
+          "stunned": "Aucune action standard"
+        }
+      },
+      {
+        "name": "Résolution",
+        "description": "Application des effets des actions et réactions.",
+        "order": ["Dégâts instantanés", "Effets de statut", "Effets environnementaux", "Effets de durée"]
+      },
+      {
+        "name": "Fin de tour",
+        "description": "Conclusion du tour et préparation pour le suivant.",
+        "processes": ["Durée des effets", "Régénération", "Tests de statut"]
+      }
+    ]
+  },
+  "action_types": {
+    "standard": {
+      "name": "Action Standard",
+      "description": "Action principale du tour, généralement offensive.",
+      "examples": ["Attaquer", "Lancer un sort", "Utiliser une compétence majeure"]
+    },
+    "movement": {
+      "name": "Action de Mouvement",
+      "description": "Déplacement sur le champ de bataille.",
+      "calculation": "Distance = Valeur d'Agilité × 0.5 mètres",
+      "modifiers": {
+        "terrain_difficile": "Distance ÷ 2",
+        "charge": "Distance × 1.5, une seule direction"
+      }
+    },
+    "minor": {
+      "name": "Action Mineure",
+      "description": "Action secondaire rapide à exécuter.",
+      "examples": ["Dégainer une arme", "Boire une potion", "Activer un objet"]
+    },
+    "reaction": {
+      "name": "Réaction",
+      "description": "Action réalisée en réponse à un événement spécifique.",
+      "trigger_examples": ["Attaque d'opportunité", "Contre-sort", "Esquive réflexe"],
+      "limitations": "Une seule par déclencheur, jusqu'à 3 par tour"
+    },
+    "free": {
+      "name": "Action Libre",
+      "description": "Action très rapide ne comptant pas dans le quota d'actions.",
+      "examples": ["Parler brièvement", "Lâcher un objet", "Observer rapidement"]
+    }
+  },
+  "attack_types": {
+    "physical": {
+      "melee": {
+        "name": "Corps à corps",
+        "description": "Attaque avec une arme ou à mains nues au contact direct.",
+        "calculation": "Jet d'attaque = (Compétence d'arme + Modificateur d'attribut principal + 1d20)",
+        "defense": "Comparé à la Défense ou Parade de la cible",
+        "attributes_used": {
+          "sword": "Force ou Dextérité",
+          "spear": "Force ou Agilité",
+          "axe": "Force",
+          "fist": "Force ou Dextérité"
+        }
+      },
+      "ranged": {
+        "name": "Distance",
+        "description": "Attaque avec une arme à distance.",
+        "calculation": "Jet d'attaque = (Compétence d'arme + Modificateur de Dextérité + 1d20 - Pénalité de distance)",
+        "defense": "Comparé à l'Esquive ou Défense de la cible",
+        "range_penalties": {
+          "short": 0,
+          "medium": -2,
+          "long": -5,
+          "extreme": -10
+        }
+      }
+    },
+    "magical": {
+      "direct": {
+        "name": "Attaque magique directe",
+        "description": "Sort offensif visant directement une cible.",
+        "calculation": "Jet de sort = (Compétence magique + Modificateur d'Intelligence + 1d20)",
+        "defense": "Comparé à la Résistance Magique ou Esquive Magique de la cible",
+        "casting_time": {
+          "incantation": "1 action standard",
+          "incantationless": "1 action mineure"
+        }
+      },
+      "area": {
+        "name": "Attaque magique de zone",
+        "description": "Sort affectant une zone et toutes les cibles s'y trouvant.",
+        "calculation": "Jet de sort = (Compétence magique + Modificateur d'Intelligence + 1d20)",
+        "defense": "Jet de sauvegarde individuel pour chaque cible",
+        "area_types": {
+          "cone": "Zone en cône partant du lanceur",
+          "circle": "Zone circulaire autour d'un point",
+          "line": "Zone en ligne depuis le lanceur",
+          "cube": "Zone cubique"
+        },
+        "casting_time": {
+          "incantation": "1-3 actions standard selon puissance",
+          "incantationless": "1 action standard"
+        }
+      },
+      "status": {
+        "name": "Sort de statut",
+        "description": "Sort infligeant des effets de statut sans dégâts directs.",
+        "calculation": "Jet de sort = (Compétence magique + Modificateur de Sagesse + 1d20)",
+        "defense": "Comparé à la Résistance Mentale ou Magique de la cible",
+        "duration": "Variable selon la puissance et la résistance"
+      }
+    },
+    "special": {
+      "touki": {
+        "name": "Attaque de Touki",
+        "description": "Attaque utilisant l'énergie intérieure du combattant.",
+        "calculation": "Jet d'attaque = (Compétence Touki + Modificateur de Vitalité + 1d20)",
+        "defense": "Comparé à la Défense de Touki ou physique de la cible"
+      },
+      "technique": {
+        "name": "Technique spéciale",
+        "description": "Mouvement spécial propre à un style de combat particulier.",
+        "calculation": "Jet d'attaque = (Niveau de Style + Modificateur d'attribut adapté + 1d20)",
+        "defense": "Variable selon la technique",
+        "cost": "Points de technique ou points de vie"
+      }
+    }
+  },
+  "defense_types": {
+    "evasion": {
+      "dodge": {
+        "name": "Esquive",
+        "description": "Éviter complètement une attaque en se déplaçant.",
+        "calculation": "Valeur d'esquive = (Compétence d'esquive + Modificateur d'Agilité)",
+        "modifiers": {
+          "encumbrance": "Pénalité selon le poids porté",
+          "terrain": "Variable selon les conditions",
+          "awareness": "Pénalité si surpris ou aveuglé"
+        }
+      },
+      "parry": {
+        "name": "Parade",
+        "description": "Bloquer une attaque avec son arme.",
+        "calculation": "Valeur de parade = (Compétence d'arme + Modificateur de Force ou Dextérité)",
+        "limitations": "Impossible contre certaines attaques ou avec certaines armes"
+      },
+      "magical_evasion": {
+        "name": "Esquive magique",
+        "description": "Capacité à éviter les effets de sorts.",
+        "calculation": "Valeur d'esquive magique = (Compétence magique + Modificateur de Sagesse)",
+        "special": "Utilisable seulement contre certains types de sorts"
+      }
+    },
+    "reduction": {
+      "armor": {
+        "name": "Armure",
+        "description": "Protection physique réduisant les dégâts reçus.",
+        "calculation": "Réduction = Valeur d'armure × Efficacité contre le type d'attaque",
+        "types": {
+          "light": "Protection légère privilégiant la mobilité",
+          "medium": "Protection équilibrée",
+          "heavy": "Protection maximale au détriment de la mobilité"
+        }
+      },
+      "magical_defense": {
+        "name": "Défense magique",
+        "description": "Protection contre les attaques magiques.",
+        "calculation": "Réduction = (Résistance magique + Modificateurs d'objets)",
+        "element_specific": "Bonus/malus selon affinités élémentaires"
+      },
+      "touki_defense": {
+        "name": "Défense de Touki",
+        "description": "Utilisation de l'énergie intérieure pour réduire les dégâts.",
+        "calculation": "Réduction = (Niveau de Touki × 2) + Modificateur de Vitalité",
+        "limitations": "Consomme de l'énergie, efficacité limitée dans le temps"
+      }
+    },
+    "counter": {
+      "counter_attack": {
+        "name": "Contre-attaque",
+        "description": "Attaque réalisée en réponse à une attaque ennemie.",
+        "trigger": "Esquive ou parade réussie avec marge",
+        "calculation": "Jet d'attaque standard avec bonus selon technique"
+      },
+      "counter_spell": {
+        "name": "Contre-sort",
+        "description": "Annulation d'un sort ennemi pendant son incantation",
+        "trigger": "Détection d'incantation ennemie",
+        "calculation": "Jet de contre-magie: (Intelligence + Niveau de compétence magique) VS (Intelligence ennemi + Niveau du sort)",
+        "limitations": "Requiert une réaction rapide et une dépense de mana proportionnelle à la puissance du sort contré"
+      }
+    }
+  },
+  "combat_styles": {
+    "aggressive": {
+      "name": "Style Agressif",
+      "description": "Privilégie l'attaque au détriment de la défense",
+      "attack_bonus": 3,
+      "defense_penalty": -2,
+      "speed_modifier": 1,
+      "requirements": {
+        "strength": 15,
+        "agility": 12
+      }
+    },
+    "defensive": {
+      "name": "Style Défensif",
+      "description": "Privilégie la protection au détriment de l'offensive",
+      "attack_penalty": -1,
+      "defense_bonus": 4,
+      "speed_penalty": -1,
+      "requirements": {
+        "vitality": 15,
+        "dexterity": 12
+      }
+    },
+    "balanced": {
+      "name": "Style Équilibré",
+      "description": "Approche mesurée sans point faible particulier",
+      "attack_bonus": 1,
+      "defense_bonus": 1,
+      "speed_modifier": 0,
+      "requirements": {
+        "dexterity": 13
+      }
+    },
+    "quick": {
+      "name": "Style Rapide",
+      "description": "Privilégie la vitesse et l'initiative",
+      "attack_modifier": 0,
+      "defense_penalty": -1,
+      "speed_bonus": 3,
+      "requirements": {
+        "agility": 16
+      }
+    },
+    "technical": {
+      "name": "Style Technique",
+      "description": "Approche précise visant les points faibles",
+      "attack_modifier": 0,
+      "defense_modifier": 0,
+      "critical_bonus": 10,
+      "requirements": {
+        "intelligence": 14,
+        "dexterity": 14
+      }
+    },
+    "sword_god_style_stance": {
+      "name": "Posture du Dieu Épée",
+      "description": "Style privilégiant la vitesse et les frappes décisives",
+      "attack_bonus": 2,
+      "speed_bonus": 3,
+      "defense_penalty": -2,
+      "requirements": {
+        "sword_god_style": 3
+      }
+    },
+    "water_god_style_stance": {
+      "name": "Posture du Dieu Eau",
+      "description": "Style défensif basé sur la redirection",
+      "defense_bonus": 4,
+      "counter_bonus": 3,
+      "attack_penalty": -1,
+      "requirements": {
+        "water_god_style": 3
+      }
+    },
+    "north_god_style_stance": {
+      "name": "Posture du Dieu Nord",
+      "description": "Style imprévisible et adaptatif",
+      "unpredictability": 3,
+      "versatility": 2,
+      "requirements": {
+        "north_god_style": 3
+      }
+    }
+  },
+  "combat_phases": {
+    "initiative": {
+      "description": "Détermine l'ordre d'action des combattants",
+      "calculation": "(Agility + Perception) / 2 + D20",
+      "modifiers": {
+        "ambush": 10,
+        "prepared": 5,
+        "surprised": -5
+      }
+    },
+    "attack": {
+      "description": "Tentative de porter un coup à l'adversaire",
+      "melee_calculation": "Valeur d'attaque = Niveau de compétence + Attributs pertinents + Bonus d'équipement + D20",
+      "spell_calculation": "Valeur d'attaque = Niveau de magie + Intelligence + Bonus de focus + D20",
+      "modifiers": {
+        "high_ground": 2,
+        "flanking": 3,
+        "blinded": -4
+      }
+    },
+    "defense": {
+      "description": "Tentative d'éviter ou réduire une attaque entrante",
+      "dodge_calculation": "Valeur d'esquive = Agilité + Niveau de compétence pertinent + D20",
+      "block_calculation": "Valeur de blocage = Force/Dextérité + Niveau de compétence pertinent + Défense de l'équipement + D20",
+      "spell_resist_calculation": "Résistance magique = Sagesse + Résistance innée + D20",
+      "modifiers": {
+        "encumbered": -3,
+        "prone": -5,
+        "shielded": 3
+      }
+    },
+    "damage": {
+      "description": "Calcul des dégâts infligés après une attaque réussie",
+      "physical_calculation": "Dégâts = Base d'arme + Modificateur d'attribut + Bonus de compétence - Réduction de dégâts",
+      "magical_calculation": "Dégâts = Base du sort + Intelligence/Sagesse - Résistance magique",
+      "critical_hit": {
+        "threshold": 18,
+        "multiplier": 2
+      }
+    }
+  },
+  "status_effects": {
+    "physical": {
+      "bleeding": {
+        "name": "Saignement",
+        "description": "Perte de vie continue due à des blessures ouvertes",
+        "effect": "Dégâts par tour = Sévérité x 2",
+        "duration_base": 3,
+        "can_stack": true,
+        "cure": "Soins magiques ou bandages"
+      },
+      "poisoned": {
+        "name": "Empoisonné",
+        "description": "Affaibli par des toxines dans le système",
+        "effect": "Dégâts par tour et -2 à tous les attributs",
+        "duration_base": 5,
+        "cure": "Antidote ou magie de guérison avancée"
+      },
+      "stunned": {
+        "name": "Étourdi",
+        "description": "Temporairement incapable d'agir",
+        "effect": "Perte d'action pendant la durée",
+        "duration_base": 1,
+        "cure": "Attendre la récupération"
+      },
+      "exhausted": {
+        "name": "Épuisé",
+        "description": "Fatigue extrême limitant les capacités physiques",
+        "effect": "-3 à Force, Agilité et Dextérité",
+        "duration_base": "Jusqu'à repos",
+        "cure": "Repos long ou stimulants"
+      }
+    },
+    "magical": {
+      "mana_burn": {
+        "name": "Brûlure de Mana",
+        "description": "Circuits magiques surchargés et douloureux",
+        "effect": "Coûts de mana doublés, dégâts lors du casting",
+        "duration_base": 3,
+        "cure": "Potion de restauration de mana ou repos"
+      },
+      "silenced": {
+        "name": "Silence",
+        "description": "Incapacité à prononcer des incantations magiques",
+        "effect": "Impossibilité de lancer des sorts nécessitant une incantation",
+        "duration_base": 2,
+        "cure": "Dissipation magique ou fin de durée"
+      },
+      "hexed": {
+        "name": "Maudit",
+        "description": "Affligé par une magie néfaste diminuant la chance",
+        "effect": "-5 à tous les jets de dés, -3 en Chance",
+        "duration_base": 4,
+        "cure": "Rituel de purification ou bénédiction"
+      },
+      "petrified": {
+        "name": "Pétrifié",
+        "description": "Partiellement ou totalement transformé en pierre",
+        "effect": "Immobilisation et dégâts physiques réduits",
+        "duration_base": "Variable selon la puissance",
+        "cure": "Magie de restauration puissante ou élixir rare"
+      }
+    },
+    "mental": {
+      "fear": {
+        "name": "Peur",
+        "description": "Terreur limitant les capacités de combat",
+        "effect": "-3 à l'attaque et au test de moral, peut fuir",
+        "duration_base": 3,
+        "cure": "Encouragement, compétences de moral ou fin de menace"
+      },
+      "confusion": {
+        "name": "Confusion",
+        "description": "Incapacité à distinguer alliés et ennemis",
+        "effect": "50% de chance d'attaquer la mauvaise cible",
+        "duration_base": 2,
+        "cure": "Coups subis ou sorts de clarté mentale"
+      },
+      "charmed": {
+        "name": "Charme",
+        "description": "Manipulé pour considérer un ennemi comme allié",
+        "effect": "Ne peut attaquer la source du charme, peut défendre ses 'alliés'",
+        "duration_base": 3,
+        "cure": "Dégâts subis ou dissipation magique"
+      }
+    }
+  },
+  "combat_zones": {
+    "melee": {
+      "name": "Corps à corps",
+      "description": "Zone de combat rapproché permettant les attaques de mêlée",
+      "distance": "0-2 mètres",
+      "advantages": ["armes de mêlée", "grappling", "perception de proximité"],
+      "disadvantages": ["arcs", "arbalètes", "grands sorts de zone"]
+    },
+    "short_range": {
+      "name": "Courte portée",
+      "description": "Distance permettant des attaques à courte portée",
+      "distance": "2-10 mètres",
+      "advantages": ["armes de jet", "petits sorts ciblés", "mobilité"],
+      "disadvantages": ["armes de mêlée lourde", "très grands sorts"]
+    },
+    "medium_range": {
+      "name": "Moyenne portée",
+      "description": "Distance idéale pour les archers et mages",
+      "distance": "10-30 mètres",
+      "advantages": ["arcs", "sorts standard", "positionnement tactique"],
+      "disadvantages": ["armes de mêlée", "armes de jet légères"]
+    },
+    "long_range": {
+      "name": "Longue portée",
+      "description": "Distance nécessitant des armes ou sorts spécialisés",
+      "distance": "30-100 mètres",
+      "advantages": ["arbalètes lourdes", "sorts longue portée", "sécurité relative"],
+      "disadvantages": ["précision réduite", "coût de mana accru", "couverture ennemie"]
+    }
+  },
+  "combat_terrain": {
+    "normal": {
+      "name": "Terrain standard",
+      "description": "Surface plate sans effets particuliers",
+      "movement_modifier": 1.0,
+      "combat_modifiers": {}
+    },
+    "difficult": {
+      "name": "Terrain difficile",
+      "description": "Surface inégale ou obstruée ralentissant le mouvement",
+      "movement_modifier": 0.5,
+      "combat_modifiers": {
+        "balance_check": true,
+        "attack_penalty": -1
+      }
+    },
+    "slippery": {
+      "name": "Terrain glissant",
+      "description": "Surface avec faible adhérence comme glace ou boue",
+      "movement_modifier": 0.7,
+      "combat_modifiers": {
+        "balance_check": true,
+        "defense_penalty": -2,
+        "fall_chance": 15
+      }
+    },
+    "elevated": {
+      "name": "Terrain élevé",
+      "description": "Position surélevée offrant avantage tactique",
+      "movement_modifier": 0.8,
+      "combat_modifiers": {
+        "attack_bonus": 2,
+        "range_bonus": 1.2
+      }
+    },
+    "water": {
+      "name": "Combat aquatique",
+      "description": "Immersion partielle ou totale dans l'eau",
+      "movement_modifier": 0.4,
+      "combat_modifiers": {
+        "melee_penalty": -2,
+        "ranged_penalty": -4,
+        "fire_spell_penalty": -5,
+        "water_spell_bonus": 3
+      }
+    }
+  },
+  "combat_ai": {
+    "aggressive": {
+      "name": "IA Agressive",
+      "description": "Privilégie l'attaque directe et continue",
+      "target_priority": ["lowest_health", "spellcaster", "nearest"],
+      "defense_threshold": 30,
+      "retreat_threshold": 15
+    },
+    "defensive": {
+      "name": "IA Défensive",
+      "description": "Privilégie la protection et les contre-attaques",
+      "target_priority": ["attacking_ally", "immediate_threat", "opportunistic"],
+      "defense_threshold": 60,
+      "retreat_threshold": 30
+    },
+    "tactical": {
+      "name": "IA Tactique",
+      "description": "Analyse la situation et adapte sa stratégie",
+      "target_priority": ["highest_threat", "vulnerable_target", "strategic_position"],
+      "defense_threshold": 50,
+      "position_priority": ["advantageous_terrain", "ally_proximity", "escape_route"]
+    },
+    "berserk": {
+      "name": "IA Berserk",
+      "description": "Attaque sans considération pour sa propre sécurité",
+      "target_priority": ["last_attacker", "random_enemy"],
+      "defense_threshold": 0,
+      "retreat_threshold": 0,
+      "special_traits": ["ignores_injuries", "attack_bonuses_when_injured"]
+    },
+    "support": {
+      "name": "IA Soutien",
+      "description": "Priorité au soutien des alliés et à la guérison",
+      "target_priority": ["injured_ally", "ally_under_attack", "buff_opportunities"],
+      "defense_threshold": 40,
+      "position_priority": ["behind_frontline", "healing_range", "safe_position"]
+    }
+  }
+}
+

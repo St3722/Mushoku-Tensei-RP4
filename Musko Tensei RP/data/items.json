@@ -1,0 +1,1198 @@
+{
+  "equipment": {
+    "weapons": {
+      "melee": {
+        "sword_of_beginnings": {
+          "id": "sword_of_beginnings",
+          "name": "Épée des Débuts",
+          "description": "Une épée simple mais fiable pour les aventuriers débutants.",
+          "rarity": "common",
+          "value": 50,
+          "weight": 3.5,
+          "durability": {
+            "current": 100,
+            "max": 100
+          },
+          "requirements": {
+            "strength": 8
+          },
+          "attributes": {
+            "damage": {
+              "base": "1d6+2",
+              "type": "slashing"
+            },
+            "attack_speed": 1.2,
+            "critical_chance": 0.05,
+            "critical_multiplier": 1.5
+          },
+          "upgradable": true,
+          "upgrade_paths": ["sharpness", "durability"],
+          "appearance": {
+            "icon": "sword_basic.png",
+            "model": "sword_basic.mdl"
+          }
+        },
+        "north_fang": {
+          "id": "north_fang",
+          "name": "Croc du Nord",
+          "description": "Cette lame dentelée tranche comme le vent glacial du nord.",
+          "rarity": "uncommon",
+          "value": 300,
+          "weight": 4.0,
+          "durability": {
+            "current": 150,
+            "max": 150
+          },
+          "requirements": {
+            "strength": 10,
+            "level": 5
+          },
+          "attributes": {
+            "damage": {
+              "base": "1d8+3",
+              "type": "slashing",
+              "elemental": {
+                "ice": "1d4"
+              }
+            },
+            "attack_speed": 1.0,
+            "critical_chance": 0.07,
+            "critical_multiplier": 1.6
+          },
+          "special_effects": [
+            {
+              "name": "Morsure Glaciale",
+              "description": "10% de chance de ralentir l'ennemi pendant 2 tours",
+              "trigger_chance": 0.1,
+              "effect": {
+                "type": "status",
+                "name": "slowed",
+                "duration": 2
+              }
+            }
+          ],
+          "upgradable": true,
+          "upgrade_paths": ["ice_damage", "critical_chance"],
+          "appearance": {
+            "icon": "sword_north_fang.png",
+            "model": "sword_north_fang.mdl"
+          }
+        }
+      },
+      "ranged": {
+        "hunter_bow": {
+          "id": "hunter_bow",
+          "name": "Arc du Chasseur",
+          "description": "Un arc simple mais précis, idéal pour la chasse.",
+          "rarity": "common",
+          "value": 60,
+          "weight": 1.8,
+          "durability": {
+            "current": 80,
+            "max": 80
+          },
+          "requirements": {
+            "dexterity": 10
+          },
+          "attributes": {
+            "damage": {
+              "base": "1d8",
+              "type": "piercing"
+            },
+            "attack_speed": 0.9,
+            "range": {
+              "short": 20,
+              "medium": 50,
+              "long": 80
+            },
+            "critical_chance": 0.08,
+            "critical_multiplier": 1.7
+          },
+          "ammunition_type": "arrow",
+          "upgradable": true,
+          "upgrade_paths": ["range", "accuracy"],
+          "appearance": {
+            "icon": "bow_hunter.png",
+            "model": "bow_hunter.mdl"
+          }
+        }
+      },
+      "magical": {
+        "apprentice_staff": {
+          "id": "apprentice_staff",
+          "name": "Bâton d'Apprenti",
+          "description": "Un simple bâton en bois canaliseur de magie, utilisé par les apprentis mages.",
+          "rarity": "common",
+          "value": 100,
+          "weight": 2.0,
+          "durability": {
+            "current": 70,
+            "max": 70
+          },
+          "requirements": {
+            "intelligence": 12
+          },
+          "attributes": {
+            "damage": {
+              "base": "1d4",
+              "type": "bludgeoning"
+            },
+            "magic_bonus": {
+              "power": 10,
+              "cast_speed": 0.05
+            },
+            "elemental_affinities": {
+              "fire": 1.1,
+              "water": 1.0,
+              "earth": 1.0,
+              "air": 1.0
+            }
+          },
+          "special_effects": [
+            {
+              "name": "Focus Arcanique",
+              "description": "Réduit de 5% le coût en mana des sorts",
+              "effect": {
+                "type": "passive",
+                "mana_cost_reduction": 0.05
+              }
+            }
+          ],
+          "upgradable": true,
+          "upgrade_paths": ["magical_power", "mana_efficiency"],
+          "appearance": {
+            "icon": "staff_apprentice.png",
+            "model": "staff_apprentice.mdl"
+          }
+        }
+      }
+    },
+    "armor": {
+      "head": {
+        "leather_cap": {
+          "id": "leather_cap",
+          "name": "Casque en Cuir",
+          "description": "Une simple protection pour la tête faite de cuir durci.",
+          "rarity": "common",
+          "value": 20,
+          "weight": 0.8,
+          "durability": {
+            "current": 50,
+            "max": 50
+          },
+          "requirements": {},
+          "attributes": {
+            "defense": 2,
+            "resistances": {
+              "slashing": 1,
+              "piercing": 0,
+              "bludgeoning": 0
+            }
+          },
+          "upgradable": true,
+          "upgrade_paths": ["reinforcement", "comfort"],
+          "appearance": {
+            "icon": "cap_leather.png",
+            "model": "cap_leather.mdl"
+          }
+        }
+      },
+      "chest": {
+        "leather_tunic": {
+          "id": "leather_tunic",
+          "name": "Tunique en Cuir",
+          "description": "Une tunique en cuir offrant une protection légère.",
+          "rarity": "common",
+          "value": 45,
+          "weight": 3.0,
+          "durability": {
+            "current": 60,
+            "max": 60
+          },
+          "requirements": {},
+          "attributes": {
+            "defense": 4,
+            "resistances": {
+              "slashing": 2,
+              "piercing": 1,
+              "bludgeoning": 1
+            }
+          },
+          "upgradable": true,
+          "upgrade_paths": ["reinforcement", "agility"],
+          "appearance": {
+            "icon": "tunic_leather.png",
+            "model": "tunic_leather.mdl"
+          }
+        },
+        "chain_mail": {
+          "id": "chain_mail",
+          "name": "Cotte de Mailles",
+          "description": "Une armure faite d'anneaux métalliques entrelacés, offrant une bonne protection contre les attaques tranchantes.",
+          "rarity": "uncommon",
+          "value": 250,
+          "weight": 12.0,
+          "durability": {
+            "current": 120,
+            "max": 120
+          },
+          "requirements": {
+            "strength": 12
+          },
+          "attributes": {
+            "defense": 8,
+            "resistances": {
+              "slashing": 6,
+              "piercing": 3,
+              "bludgeoning": 2
+            },
+            "movement_penalty": 0.1
+          },
+          "upgradable": true,
+          "upgrade_paths": ["reinforcement", "weight_reduction"],
+          "appearance": {
+            "icon": "armor_chainmail.png",
+            "model": "armor_chainmail.mdl"
+          }
+        }
+      },
+      "hands": {
+        "leather_gloves": {
+          "id": "leather_gloves",
+          "name": "Gants en Cuir",
+          "description": "Des gants en cuir basiques offrant une protection minimale aux mains.",
+          "rarity": "common",
+          "value": 15,
+          "weight": 0.5,
+          "durability": {
+            "current": 40,
+            "max": 40
+          },
+          "requirements": {},
+          "attributes": {
+            "defense": 1,
+            "dexterity_bonus": 0
+          },
+          "upgradable": true,
+          "upgrade_paths": ["dexterity", "crafting_bonus"],
+          "appearance": {
+            "icon": "gloves_leather.png",
+            "model": "gloves_leather.mdl"
+          }
+        }
+      },
+      "legs": {
+        "leather_pants": {
+          "id": "leather_pants",
+          "name": "Pantalon en Cuir",
+          "description": "Un pantalon en cuir robuste adapté aux aventuriers.",
+          "rarity": "common",
+          "value": 30,
+          "weight": 2.0,
+          "durability": {
+            "current": 50,
+            "max": 50
+          },
+          "requirements": {},
+          "attributes": {
+            "defense": 3,
+            "resistances": {
+              "slashing": 1,
+              "piercing": 1,
+              "bludgeoning": 0
+            }
+          },
+          "upgradable": true,
+          "upgrade_paths": ["reinforcement", "mobility"],
+          "appearance": {
+            "icon": "pants_leather.png",
+            "model": "pants_leather.mdl"
+          }
+        }
+      },
+      "feet": {
+        "leather_boots": {
+          "id": "leather_boots",
+          "name": "Bottes en Cuir",
+          "description": "Des bottes en cuir confortables et durables.",
+          "rarity": "common",
+          "value": 25,
+          "weight": 1.5,
+          "durability": {
+            "current": 60,
+            "max": 60
+          },
+          "requirements": {},
+          "attributes": {
+            "defense": 2,
+            "movement_speed_bonus": 0.02
+          },
+          "upgradable": true,
+          "upgrade_paths": ["speed", "stealth"],
+          "appearance": {
+            "icon": "boots_leather.png",
+            "model": "boots_leather.mdl"
+          }
+        }
+      },
+      "accessories": {
+        "silver_amulet": {
+          "id": "silver_amulet",
+          "name": "Amulette en Argent",
+          "description": "Une simple amulette en argent qui brille légèrement au clair de lune.",
+          "rarity": "uncommon",
+          "value": 150,
+          "weight": 0.2,
+          "durability": {
+            "current": 100,
+            "max": 100
+          },
+          "requirements": {},
+          "attributes": {
+            "magic_resistance": 5,
+            "mana_regeneration": 0.05
+          },
+          "special_effects": [
+            {
+              "name": "Protection Lunaire",
+              "description": "Offre une résistance accrue aux créatures nocturnes",
+              "effect": {
+                "type": "conditional",
+                "condition": "night_time",
+                "resistances": {
+                  "undead": 10,
+                  "lycanthrope": 5
+                }
+              }
+            }
+          ],
+          "upgradable": true,
+          "upgrade_paths": ["magic_power", "magic_resistance"],
+          "appearance": {
+            "icon": "amulet_silver.png",
+            "model": "amulet_silver.mdl"
+          }
+        }
+      }
+    }
+  },
+  "consumables": {
+    "potions": {
+      "health_potion_minor": {
+        "id": "health_potion_minor",
+        "name": "Potion de Soins Mineure",
+        "description": "Une potion rouge qui guérit légèrement les blessures.",
+        "rarity": "common",
+        "value": 20,
+        "weight": 0.3,
+        "effects": {
+          "instant": {
+            "health_restore": 20
+          }
+        },
+        "duration": "instant",
+        "cooldown": 2,
+        "appearance": {
+          "icon": "potion_health_minor.png",
+          "color": "#FF6347"
+        }
+      },
+      "mana_potion_minor": {
+        "id": "mana_potion_minor",
+        "name": "Potion de Mana Mineure",
+        "description": "Une potion bleue qui restaure une petite quantité de mana.",
+        "rarity": "common",
+        "value": 25,
+        "weight": 0.3,
+        "effects": {
+          "instant": {
+            "mana_restore": 15
+          }
+        },
+        "duration": "instant",
+        "cooldown": 2,
+        "appearance": {
+          "icon": "potion_mana_minor.png",
+          "color": "#4169E1"
+        }
+      },
+      "antidote": {
+        "id": "antidote",
+        "name": "Antidote",
+        "description": "Un liquide verdâtre qui neutralise la plupart des poisons.",
+        "rarity": "uncommon",
+        "value": 40,
+        "weight": 0.3,
+        "effects": {
+          "cure": ["poisoned"]
+        },
+        "duration": "instant",
+        "cooldown": 0,
+        "appearance": {
+          "icon": "potion_antidote.png",
+          "color": "#90EE90"
+        }
+      },
+      "strength_elixir": {
+        "id": "strength_elixir",
+        "name": "Élixir de Force",
+        "description": "Un breuvage puissant qui renforce temporairement les muscles.",
+        "rarity": "uncommon",
+        "value": 75,
+        "weight": 0.3,
+        "effects": {
+          "buff": {
+            "strength": 3
+          }
+        },
+        "duration": 300,
+        "cooldown": 600,
+        "appearance": {
+          "icon": "potion_strength.png",
+          "color": "#CD5C5C"
+        }
+      }
+    },
+    "food": {
+      "bread": {
+        "id": "bread",
+        "name": "Pain",
+        "description": "Du pain fraîchement cuit qui calme la faim.",
+        "rarity": "common",
+        "value": 3,
+        "weight": 0.5,
+        "effects": {
+          "instant": {
+            "health_restore": 5
+          },
+          "over_time": {
+            "stamina_regeneration": 0.1
+          }
+        },
+        "duration": 300,
+        "cooldown": 60,
+        "appearance": {
+          "icon": "food_bread.png"
+        }
+      },
+      "dried_meat": {
+        "id": "dried_meat",
+        "name": "Viande Séchée",
+        "description": "De la viande conservée par séchage, idéale pour les voyages.",
+        "rarity": "common",
+        "value": 5,
+        "weight": 0.3,
+        "effects": {
+          "instant": {
+            "health_restore": 8
+          },
+          "over_time": {
+            "strength_bonus": 1
+          }
+        },
+        "duration": 300,
+        "cooldown": 120,
+        "appearance": {
+          "icon": "food_dried_meat.png"
+        }
+      }
+    },
+    "scrolls": {
+      "fireball_scroll": {
+        "id": "fireball_scroll",
+        "name": "Parchemin: Boule de Feu",
+        "description": "Un parchemin magique permettant de lancer une boule de feu sans connaître le sort.",
+        "rarity": "uncommon",
+        "value": 100,
+        "weight": 0.1,
+        "spell_id": "fireball",
+        "requirements": {
+          "intelligence": 10
+        },
+        "single_use": true,
+        "appearance": {
+          "icon": "scroll_fireball.png"
+        }
+      },
+      "recall_scroll": {
+        "id": "recall_scroll",
+        "name": "Parchemin: Rappel",
+        "description": "Un parchemin qui permet de se téléporter instantanément au dernier point de repos.",
+        "rarity": "rare",
+        "value": 250,
+        "weight": 0.1,
+        "effects": {
+          "instant": {
+            "teleport": "last_rest_point"
+          }
+        },
+        "single_use": true,
+        "appearance": {
+          "icon": "scroll_recall.png"
+        }
+      }
+    }
+  },
+  "crafting_materials": {
+    "animal_parts": {
+      "wolf_pelt": {
+        "id": "wolf_pelt",
+        "name": "Peau de Loup",
+        "description": "Une peau de loup de bonne qualité, utile pour fabriquer des vêtements chauds.",
+        "rarity": "common",
+        "value": 12,
+        "weight": 1.5,
+        "appearance": {
+          "icon": "material_wolf_pelt.png"
+        }
+      },
+      "bear_claw": {
+        "id": "bear_claw",
+        "name": "Griffe d'Ours",
+        "description": "Une griffe acérée d'ours, utilisée dans certaines potions et amulettes.",
+        "rarity": "uncommon",
+        "value": 18,
+        "weight": 0.3,
+        "appearance": {
+          "icon": "material_bear_claw.png"
+        }
+      }
+    },
+    "minerals": {
+      "iron_ore": {
+        "id": "iron_ore",
+        "name": "Minerai de Fer",
+        "description": "Du minerai de fer brut qui peut être fondu.",
+        "rarity": "common",
+        "value": 8,
+        "weight": 2.0,
+        "appearance": {
+          "icon": "material_iron_ore.png"
+        }
+      },
+      "silver_ore": {
+        "id": "silver_ore",
+        "name": "Minerai d'Argent",
+        "description": "Du minerai d'argent brut.",
+        "rarity": "uncommon",
+        "value": 15,
+        "weight": 2.0,
+        "appearance": {
+          "icon": "material_silver_ore.png"
+        }
+      },
+      "mithril_ore": {
+        "id": "mithril_ore",
+        "name": "Minerai de Mithril",
+        "description": "Un minerai rare et précieux aux propriétés magiques.",
+        "rarity": "rare",
+        "value": 80,
+        "weight": 1.5,
+        "appearance": {
+          "icon": "material_mithril_ore.png"
+        }
+      }
+    },
+    "plants": {
+      "healing_herb": {
+        "id": "healing_herb",
+        "name": "Herbe Médicinale",
+        "description": "Une plante aux propriétés curatives, utilisée dans les potions de soins.",
+        "rarity": "common",
+        "value": 5,
+        "weight": 0.1,
+        "appearance": {
+          "icon": "material_healing_herb.png"
+        }
+      },
+      "mana_flower": {
+        "id": "mana_flower",
+        "name": "Fleur de Mana",
+        "description": "Une fleur bleue qui rayonne d'énergie magique.",
+        "rarity": "uncommon",
+        "value": 12,
+        "weight": 0.1,
+        "appearance": {
+          "icon": "material_mana_flower.png"
+        }
+      }
+    }
+  },
+  "quest_items": {
+    "ancient_artifact": {
+      "id": "ancient_artifact",
+      "name": "Artefact Ancien",
+      "description": "Un mystérieux objet datant d'une civilisation perdue.",
+      "quest_related": "secrets_of_the_ancients",
+      "appearance": {
+        "icon": "quest_ancient_artifact.png",
+        "model": "quest_ancient_artifact.mdl"
+      }
+    },
+    "nobles_seal": {
+      "id": "nobles_seal",
+      "name": "Sceau du Noble",
+      "description": "Le sceau officiel d'un noble local, garantissant l'authenticité des documents.",
+      "quest_related": "diplomatic_mission",
+      "appearance": {
+        "icon": "quest_nobles_seal.png"
+      }
+    }
+  },
+  "rarity_levels": {
+    "common": {
+      "name": "Commun",
+      "color": "#FFFFFF",
+      "drop_chance": 0.6
+    },
+    "uncommon": {
+      "name": "Peu commun",
+      "color": "#4CFF4C",
+      "drop_chance": 0.25
+    },
+    "rare": {
+      "name": "Rare",
+      "color": "#4C4CFF",
+      "drop_chance": 0.1
+    },
+    "epic": {
+      "name": "Épique",
+      "color": "#9932CC",
+      "drop_chance": 0.04
+    },
+    "legendary": {
+      "name": "Légendaire",
+      "color": "#FFA500",
+      "drop_chance": 0.01
+    }
+  },
+  "artifacts": {
+    "god_sword_fragment": {
+      "id": "god_sword_fragment",
+      "name": "Fragment de l'Épée Divine",
+      "description": "Un fragment d'une lame légendaire qui appartenait au Dieu Épée.",
+      "rarity": "legendary",
+      "value": 5000,
+      "weight": 0.5,
+      "attributes": {
+        "strength_bonus": 2
+      },
+      "collectible": true,
+      "set": "god_sword_pieces",
+      "lore": "On dit que celui qui rassemble tous les fragments de l'Épée Divine obtiendra une puissance comparable à celle du Dieu Épée lui-même.",
+      "appearance": {
+        "icon": "artifact_god_sword_fragment.png",
+        "glow_effect": true,
+        "color": "#FFC125"
+      }
+    },
+    "water_god_tear": {
+      "id": "water_god_tear",
+      "name": "Larme du Dieu Eau",
+      "description": "Une perle d'eau cristallisée qui ne s'évapore jamais.",
+      "rarity": "legendary",
+      "value": 4800,
+      "weight": 0.1,
+      "attributes": {
+        "water_magic_bonus": 15,
+        "mana_regeneration": 0.1
+      },
+      "special_effects": [
+        {
+          "name": "Flux Vital",
+          "description": "Régénère lentement les PV au fil du temps",
+          "effect": {
+            "type": "passive",
+            "health_regeneration": 0.5
+          }
+        }
+      ],
+      "lore": "Une larme versée par le Dieu Eau lors de la Grande Séparation. Possède d'étonnantes propriétés curatives et magiques.",
+      "appearance": {
+        "icon": "artifact_water_god_tear.png",
+        "glow_effect": true,
+        "color": "#00BFFF"
+      }
+    }
+  },
+  "set_items": {
+    "north_warrior": {
+      "name": "Ensemble du Guerrier du Nord",
+      "pieces": {
+        "north_warrior_helm": {
+          "id": "north_warrior_helm",
+          "name": "Heaume du Guerrier du Nord",
+          "description": "Un casque robuste forgé dans les montagnes du nord.",
+          "rarity": "rare",
+          "value": 350,
+          "weight": 3.0,
+          "durability": {
+            "current": 120,
+            "max": 120
+          },
+          "requirements": {
+            "strength": 12,
+            "level": 10
+          },
+          "attributes": {
+            "defense": 7,
+            "resistances": {
+              "ice": 5,
+              "slashing": 3,
+              "piercing": 2
+            }
+          },
+          "set": "north_warrior",
+          "appearance": {
+            "icon": "armor_north_helm.png",
+            "model": "armor_north_helm.mdl"
+          }
+        },
+        "north_warrior_plate": {
+          "id": "north_warrior_plate",
+          "name": "Cuirasse du Guerrier du Nord",
+          "description": "Une armure de plaques ornée de runes nordiques.",
+          "rarity": "rare",
+          "value": 500,
+          "weight": 15.0,
+          "durability": {
+            "current": 150,
+            "max": 150
+          },
+          "requirements": {
+            "strength": 15,
+            "level": 10
+          },
+          "attributes": {
+            "defense": 12,
+            "resistances": {
+              "ice": 8,
+              "slashing": 5,
+              "piercing": 4,
+              "bludgeoning": 3
+            }
+          },
+          "set": "north_warrior",
+          "appearance": {
+            "icon": "armor_north_plate.png",
+            "model": "armor_north_plate.mdl"
+          }
+        }
+      },
+      "set_bonuses": {
+        "2_pieces": {
+          "description": "Résistance accrue au froid",
+          "effects": {
+            "resistances": {
+              "ice": 10
+            }
+          }
+        },
+        "4_pieces": {
+          "description": "Aura de givre",
+          "effects": {
+            "active_ability": {
+              "name": "Aura de Givre",
+              "description": "Inflige des dégâts de glace aux adversaires à proximité",
+              "cooldown": 60,
+              "damage": "2d4",
+              "element": "ice",
+              "radius": 3
+            }
+          }
+        }
+      }
+    }
+  },
+  "containers": {
+    "bags": {
+      "small_pouch": {
+        "id": "small_pouch",
+        "name": "Petite Bourse",
+        "description": "Une bourse en cuir simple qui peut contenir quelques objets.",
+        "rarity": "common",
+        "value": 10,
+        "weight": 0.5,
+        "capacity": {
+          "slots": 6,
+          "max_weight": 5
+        },
+        "appearance": {
+          "icon": "container_small_pouch.png"
+        }
+      },
+      "adventurers_backpack": {
+        "id": "adventurers_backpack",
+        "name": "Sac d'Aventurier",
+        "description": "Un sac à dos robuste avec de nombreuses poches.",
+        "rarity": "common",
+        "value": 30,
+        "weight": 2.0,
+        "capacity": {
+          "slots": 20,
+          "max_weight": 30
+        },
+        "appearance": {
+          "icon": "container_backpack.png"
+        }
+      }
+    },
+    "special": {
+      "alchemy_pouch": {
+        "id": "alchemy_pouch",
+        "name": "Sacoche d'Alchimiste",
+        "description": "Une sacoche spéciale conçue pour transporter des ingrédients alchimiques.",
+        "rarity": "uncommon",
+        "value": 75,
+        "weight": 0.8,
+        "capacity": {
+          "slots": 10,
+          "max_weight": 5,
+          "item_types": ["crafting_materials.plants", "crafting_materials.minerals"]
+        },
+        "special_effects": [
+          {
+            "name": "Conservation",
+            "description": "Les ingrédients alchimiques ne se détériorent pas",
+            "effect": {
+              "type": "passive",
+              "preserve_ingredients": true
+            }
+          }
+        ],
+        "appearance": {
+          "icon": "container_alchemy_pouch.png"
+        }
+      }
+    }
+  },
+  "tools": {
+    "harvesting": {
+      "mining_pick": {
+        "id": "mining_pick",
+        "name": "Pioche de Mineur",
+        "description": "Un outil essentiel pour extraire des minerais.",
+        "rarity": "common",
+        "value": 25,
+        "weight": 3.0,
+        "durability": {
+          "current": 100,
+          "max": 100
+        },
+        "use_skill": "mining",
+        "gathering_bonus": 1.0,
+        "appearance": {
+          "icon": "tool_mining_pick.png"
+        }
+      },
+      "herbalists_scissors": {
+        "id": "herbalists_scissors",
+        "name": "Ciseaux d'Herboriste",
+        "description": "Des ciseaux précis pour récolter les plantes médicinales.",
+        "rarity": "uncommon",
+        "value": 40,
+        "weight": 0.5,
+        "durability": {
+          "current": 80,
+          "max": 80
+        },
+        "use_skill": "herbalism",
+        "gathering_bonus": 1.2,
+        "special_effects": [
+          {
+            "name": "Récolte Précise",
+            "description": "10% de chance d'obtenir une plante supplémentaire",
+            "effect": {
+              "type": "passive",
+              "extra_gather_chance": 0.1
+            }
+          }
+        ],
+        "appearance": {
+          "icon": "tool_herbalist_scissors.png"
+        }
+      }
+    },
+    "crafting": {
+      "blacksmith_hammer": {
+        "id": "blacksmith_hammer",
+        "name": "Marteau de Forgeron",
+        "description": "Un marteau robuste utilisé pour façonner le métal.",
+        "rarity": "common",
+        "value": 30,
+        "weight": 2.5,
+        "durability": {
+          "current": 150,
+          "max": 150
+        },
+        "use_skill": "blacksmithing",
+        "crafting_bonus": 0.05,
+        "appearance": {
+          "icon": "tool_blacksmith_hammer.png"
+        }
+      },
+      "alchemists_kit": {
+        "id": "alchemists_kit",
+        "name": "Kit d'Alchimiste",
+        "description": "Un ensemble complet d'instruments pour préparer des potions.",
+        "rarity": "uncommon",
+        "value": 120,
+        "weight": 4.0,
+        "durability": {
+          "current": 60,
+          "max": 60
+        },
+        "use_skill": "alchemy",
+        "crafting_bonus": 0.1,
+        "special_effects": [
+          {
+            "name": "Mélanges Améliorés",
+            "description": "15% de chance de créer une potion de qualité supérieure",
+            "effect": {
+              "type": "passive",
+              "quality_improvement_chance": 0.15
+            }
+          }
+        ],
+        "appearance": {
+          "icon": "tool_alchemists_kit.png"
+        }
+      }
+    }
+  },
+  "mounts_and_pets": {
+    "mounts": {
+      "bay_horse": {
+        "id": "bay_horse",
+        "name": "Cheval Bai",
+        "description": "Un cheval robuste et fiable pour les longs voyages.",
+        "rarity": "uncommon",
+        "value": 500,
+        "attributes": {
+          "speed_bonus": 0.5,
+          "carrying_capacity": 100,
+          "stamina": 120
+        },
+        "care_requirements": {
+          "food": "horse_feed",
+          "daily_cost": 5
+        },
+        "appearance": {
+          "icon": "mount_bay_horse.png",
+          "model": "mount_bay_horse.mdl"
+        }
+      },
+      "armored_warhorse": {
+        "id": "armored_warhorse",
+        "name": "Destrier de Guerre",
+        "description": "Un puissant cheval de guerre entraîné pour le combat.",
+        "rarity": "rare",
+        "value": 1200,
+        "requirements": {
+          "riding": 5,
+          "level": 12
+        },
+        "attributes": {
+          "speed_bonus": 0.4,
+          "carrying_capacity": 150,
+          "stamina": 160,
+          "combat_bonus": true
+        },
+        "combat_abilities": {
+          "trample": {
+            "name": "Piétinement",
+            "damage": "2d6",
+            "cooldown": 30
+          },
+          "intimidate": {
+            "name": "Intimidation",
+            "effect": "fear",
+            "duration": 3,
+            "cooldown": 60
+          }
+        },
+        "care_requirements": {
+          "food": "premium_horse_feed",
+          "daily_cost": 12
+        },
+        "appearance": {
+          "icon": "mount_warhorse.png",
+          "model": "mount_warhorse.mdl"
+        }
+      }
+    },
+    "pets": {
+      "hunting_dog": {
+        "id": "hunting_dog",
+        "name": "Chien de Chasse",
+        "description": "Un fidèle compagnon qui peut aider à la chasse et au combat.",
+        "rarity": "uncommon",
+        "value": 200,
+        "attributes": {
+          "tracking_bonus": 5,
+          "combat": {
+            "attack": 4,
+            "health": 30,
+            "armor": 2
+          }
+        },
+        "abilities": {
+          "track": {
+            "name": "Pistage",
+            "description": "Peut suivre la trace d'animaux ou d'ennemis",
+            "cooldown": 300
+          },
+          "warn": {
+            "name": "Alerte",
+            "description": "Prévient de la présence d'ennemis à proximité",
+            "detection_radius": 15,
+            "passive": true
+          }
+        },
+        "care_requirements": {
+          "food": "meat",
+          "daily_cost": 3
+        },
+        "appearance": {
+          "icon": "pet_hunting_dog.png",
+          "model": "pet_hunting_dog.mdl"
+        }
+      }
+    }
+  },
+  "magical_items": {
+    "enchanted_gems": {
+      "fire_ruby": {
+        "id": "fire_ruby",
+        "name": "Rubis de Feu",
+        "description": "Une gemme qui palpite avec l'énergie du feu élémentaire.",
+        "rarity": "rare",
+        "value": 300,
+        "weight": 0.1,
+        "attributes": {
+          "fire_damage_bonus": 3,
+          "fire_resistance": 10
+        },
+        "can_be_socketed": true,
+        "socket_effects": {
+          "weapon": "Ajoute 1d4 dégâts de feu",
+          "armor": "Confère 5 points de résistance au feu"
+        },
+        "appearance": {
+          "icon": "gem_fire_ruby.png",
+          "glow_effect": true,
+          "color": "#FF2400"
+        }
+      }
+    },
+    "runes": {
+      "protection_rune": {
+        "id": "protection_rune",
+        "name": "Rune de Protection",
+        "description": "Une rune ancienne gravée avec des symboles de bouclier.",
+        "rarity": "uncommon",
+        "value": 150,
+        "weight": 0.2,
+        "consumable": true,
+        "effects": {
+          "application": {
+            "target": "armor",
+            "duration": 7200,
+            "bonus": {
+              "defense": 3
+            }
+          }
+        },
+        "appearance": {
+          "icon": "rune_protection.png"
+        }
+      }
+    },
+    "summoning_items": {
+      "elemental_whistle": {
+        "id": "elemental_whistle",
+        "name": "Sifflet Élémentaire",
+        "description": "Un sifflet qui peut invoquer un petit esprit élémentaire pendant une courte durée.",
+        "rarity": "rare",
+        "value": 400,
+        "weight": 0.3,
+        "charges": {
+          "current": 5,
+          "max": 5,
+          "recharge": {
+            "type": "daily",
+            "amount": 1
+          }
+        },
+        "effects": {
+          "summon": {
+            "creature": "minor_elemental",
+            "duration": 300,
+            "cooldown": 3600
+          }
+        },
+        "appearance": {
+          "icon": "item_elemental_whistle.png"
+        }
+      }
+    }
+  },
+  "books_and_documents": {
+    "skill_books": {
+      "sword_techniques_basic": {
+        "id": "sword_techniques_basic",
+        "name": "Techniques Basiques d'Escrime",
+        "description": "Un manuel qui enseigne les fondamentaux du maniement de l'épée.",
+        "rarity": "common",
+        "value": 50,
+        "weight": 1.0,
+        "effects": {
+          "skill_gain": {
+            "skill": "sword",
+            "amount": 1,
+            "one_time_use": true
+          }
+        },
+        "requirements": {
+          "literacy": 1
+        },
+        "appearance": {
+          "icon": "book_sword_basic.png"
+        }
+      }
+    },
+    "lore_books": {
+      "legends_of_musko": {
+        "id": "legends_of_musko",
+        "name": "Légendes de Musko",
+        "description": "Un recueil de légendes et mythes anciens du monde de Musko.",
+        "rarity": "uncommon",
+        "value": 75,
+        "weight": 1.2,
+        "content_summary": "Contient des histoires sur l'origine des Dieux Épée, Eau et Nord, ainsi que des récits de héros oubliés.",
+        "knowledge_unlocks": ["god_sword_origin", "water_god_tears", "forgotten_heroes"],
+        "appearance": {
+          "icon": "book_legends.png"
+        }
+      }
+    },
+    "maps": {
+      "northern_mountains_map": {
+        "id": "northern_mountains_map",
+        "name": "Carte des Montagnes du Nord",
+        "description": "Une carte détaillée montrant les passages à travers les montagnes du nord.",
+        "rarity": "uncommon",
+        "value": 60,
+        "weight": 0.3,
+        "effects": {
+          "region_reveal": "northern_mountains",
+          "travel_speed_bonus": 0.1
+        },
+        "appearance": {
+          "icon": "map_northern_mountains.png"
+        }
+      }
+    }
+  }
+}
+

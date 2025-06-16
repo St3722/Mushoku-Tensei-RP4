@@ -1,0 +1,1304 @@
+{
+  "continent_central": {
+    "name": "Continent Central",
+    "description": "Le plus grand des quatre continents, berceau de la civilisation humaine et centre du commerce mondial.",
+    "climate": "Tempéré avec des variations régionales",
+    "regions": {
+      "royaume_asura": {
+        "name": "Royaume d'Asura",
+        "type": "Nation",
+        "description": "Le royaume le plus puissant du continent, connu pour sa stabilité politique et sa force militaire.",
+        "ruler": "roi_asura",
+        "locations": {
+          "capitale_asura": {
+            "name": "Ars (Capitale d'Asura)",
+            "type": "Capitale",
+            "description": "Imposante cité fortifiée aux bâtiments blancs et toits bleus, siège du pouvoir royal d'Asura.",
+            "points_of_interest": {
+              "palais_royal": {
+                "name": "Palais Royal",
+                "description": "Magnifique palais aux dômes bleu-turquoise, résidence de la famille royale et centre administratif.",
+                "notable_npcs": ["roi_asura", "ariel", "grabel", "halfa"],
+                "shops": false,
+                "services": ["audience_royale"]
+              },
+              "quartier_noble": {
+                "name": "Quartier Noble",
+                "description": "Élégant quartier aux manoirs somptueux où résident les familles nobles et les hauts dignitaires.",
+                "notable_npcs": ["darius", "derrick", "luke"],
+                "shops": ["luxury_goods", "magic_items"],
+                "services": ["tutoring"]
+              },
+              "grand_marche": {
+                "name": "Grand Marché",
+                "description": "Immense place marchande grouillante d'activité, où se trouvent des marchandises de tout le continent.",
+                "notable_npcs": ["edna", "merchants_guild_master"],
+                "shops": ["weapons", "armor", "potions", "general_goods", "food", "books"],
+                "services": ["inn", "tavern", "information"]
+              },
+              "caserne_royale": {
+                "name": "Caserne Royale",
+                "description": "Imposant complexe militaire où s'entraîne l'élite des forces armées d'Asura.",
+                "notable_npcs": ["soldat_elite", "randolph", "isolte"],
+                "shops": ["military_equipment"],
+                "services": ["training"]
+              },
+              "guilde_aventuriers": {
+                "name": "Guilde des Aventuriers",
+                "description": "Grand bâtiment en pierre abritant le siège de la Guilde des Aventuriers d'Asura.",
+                "notable_npcs": ["guild_receptionist"],
+                "shops": ["adventurer_supplies"],
+                "services": ["quests", "bounties", "ranking"]
+              }
+            },
+            "connected_to": ["route_commerciale_asura", "port_asura"]
+          },
+          "territoire_boreas": {
+            "name": "Territoire Boreas",
+            "type": "Domaine noble",
+            "description": "Vastes terres appartenant à la maison Boreas Greyrat, caractérisées par des plaines fertiles et des forêts denses.",
+            "points_of_interest": {
+              "manoir_boreas": {
+                "name": "Manoir Boreas",
+                "description": "Imposante demeure fortifiée de la famille Boreas, dominant la région environnante.",
+                "notable_npcs": ["sauros", "philip", "hilda", "eris", "daryl", "sauros_wife", "monica"],
+                "shops": false,
+                "services": ["hospitality"]
+              },
+              "village_boreal": {
+                "name": "Village Boréal",
+                "description": "Paisible village agricole sous protection de la maison Boreas.",
+                "notable_npcs": [],
+                "shops": ["general_goods", "food"],
+                "services": ["inn", "stables"]
+              }
+            },
+            "connected_to": ["capitale_asura", "route_commerciale_asura", "village_buena"]
+          },
+          "village_buena": {
+            "name": "Village de Buena",
+            "type": "Village",
+            "description": "Petit village commerçant situé à la jonction de plusieurs routes marchandes.",
+            "points_of_interest": {
+              "auberge_repos": {
+                "name": "Auberge du Repos",
+                "description": "Bâtiment à deux étages offrant gîte et couvert aux voyageurs.",
+                "notable_npcs": ["nina"],
+                "shops": false,
+                "services": ["inn", "tavern", "information"]
+              },
+              "place_marche": {
+                "name": "Place du Marché",
+                "description": "Centre du village où se tient un marché hebdomadaire attirant les fermiers des environs.",
+                "notable_npcs": [],
+                "shops": ["general_goods", "food"],
+                "services": []
+              }
+            },
+            "connected_to": ["territoire_boreas", "foret_frontiere"]
+          },
+          "port_asura": {
+            "name": "Port Royal d'Asura",
+            "type": "Port",
+            "description": "Port majeur du continent, animé de navires marchands et militaires.",
+            "points_of_interest": {
+              "docks": {
+                "name": "Docks",
+                "description": "Longues jetées en bois où s'amarrent navires marchands et bateaux de pêche.",
+                "notable_npcs": ["gull_barnacle"],
+                "shops": ["maritime_goods", "exotic_items"],
+                "services": ["ship_passage"]
+              },
+              "phare": {
+                "name": "Phare d'Asura",
+                "description": "Haute tour de pierre blanche guidant les navires vers le port en toute sécurité.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["observation"]
+              }
+            },
+            "connected_to": ["capitale_asura", "ocean", "route_commerciale_asura"]
+          },
+          "foret_frontiere": {
+            "name": "Forêt de la Frontière",
+            "type": "Zone sauvage",
+            "description": "Dense forêt marquant la frontière entre le Royaume d'Asura et ses voisins.",
+            "points_of_interest": {
+              "clairiere_sanctuaire": {
+                "name": "Clairière du Sanctuaire",
+                "description": "Clairière paisible abritant un ancien sanctuaire dédié à un esprit forestier.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["rest", "meditation"]
+              },
+              "grotte_mysterieuse": {
+                "name": "Grotte Mystérieuse",
+                "description": "Caverne naturelle dont les profondeurs n'ont jamais été entièrement explorées.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": [],
+                "danger_level": "Medium"
+              }
+            },
+            "connected_to": ["village_buena", "territoire_shirone"]
+          }
+        }
+      },
+      "royaume_shirone": {
+        "name": "Royaume de Shirone",
+        "type": "Nation",
+        "description": "Royaume riche en ressources minières, connu pour son architecture massive et ses traditions guerrières.",
+        "ruler": "roi_shirone",
+        "locations": {
+          "capitale_shirone": {
+            "name": "Shirone (Capitale)",
+            "type": "Capitale",
+            "description": "Cité imposante aux murs massifs et aux tours carrées, construite sur une colline dominant la région.",
+            "points_of_interest": {
+              "palais_shirone": {
+                "name": "Palais de Shirone",
+                "description": "Forteresse massive de pierre grise, siège du pouvoir royal de Shirone.",
+                "notable_npcs": ["roi_shirone", "pax", "zanoba"],
+                "shops": false,
+                "services": ["audience_royale"]
+              },
+              "quartier_artisanal": {
+                "name": "Quartier Artisanal",
+                "description": "Zone animée où travaillent les meilleurs artisans du royaume, renommés pour leur métallurgie.",
+                "notable_npcs": ["fergus"],
+                "shops": ["weapons", "armor", "crafting_supplies"],
+                "services": ["smithing", "crafting"]
+              }
+            },
+            "connected_to": ["mines_shirone", "territoire_shirone"]
+          },
+          "mines_shirone": {
+            "name": "Mines de Shirone",
+            "type": "Zone industrielle",
+            "description": "Vastes complexes miniers exploitant les riches gisements de minerais de la région.",
+            "points_of_interest": {
+              "entrée_principale": {
+                "name": "Grande Entrée",
+                "description": "Imposant portail taillé dans la montagne, gardé par des soldats de Shirone.",
+                "notable_npcs": [],
+                "shops": ["mining_equipment"],
+                "services": ["mining"]
+              },
+              "forge_profonde": {
+                "name": "Forge Profonde",
+                "description": "Atelier souterrain où sont forgées les armes légendaires de Shirone.",
+                "notable_npcs": [],
+                "shops": ["premium_weapons"],
+                "services": ["special_forging"],
+                "access_restricted": true
+              }
+            },
+            "connected_to": ["capitale_shirone", "route_marchande_shirone"]
+          },
+          "territoire_shirone": {
+            "name": "Plaines de Shirone",
+            "type": "Zone rurale",
+            "description": "Vastes plaines parsemées de formations rocheuses et de petits villages agricoles.",
+            "points_of_interest": {
+              "villages_fermiers": {
+                "name": "Villages agricoles",
+                "description": "Communautés rurales vivant principalement d'agriculture et d'élevage.",
+                "notable_npcs": [],
+                "shops": ["food", "basic_supplies"],
+                "services": ["lodging"]
+              },
+              "tour_de_guet": {
+                "name": "Tour de Guet",
+                "description": "Tour de surveillance permettant de repérer les intrus et les menaces à des lieues à la ronde.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["information"]
+              }
+            },
+            "connected_to": ["capitale_shirone", "foret_frontiere"]
+          }
+        }
+      },
+      "village_fittoa": {
+        "name": "Village de Fittoa",
+        "type": "Village",
+        "description": "Petit village rural paisible situé dans une région fertile du Royaume d'Asura, lieu de naissance de plusieurs personnages.",
+        "ruler": "alphonse",
+        "locations": {
+          "centre_village": {
+            "name": "Centre du Village",
+            "type": "Place centrale",
+            "description": "Place centrale du village où se tient le marché hebdomadaire et les rassemblements communautaires.",
+            "points_of_interest": {
+              "maison_greyrat": {
+                "name": "Maison Greyrat",
+                "description": "Maison confortable de pierre et de bois, résidence de la famille Greyrat.",
+                "notable_npcs": ["paul", "zenith", "lilia"],
+                "shops": false,
+                "services": []
+              },
+              "auberge_fittoa": {
+                "name": "Auberge de Fittoa",
+                "description": "Établissement accueillant hébergeant les rares voyageurs passant par le village.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["inn", "tavern", "meals"]
+              },
+              "maison_sylphiette": {
+                "name": "Maison de Sylphiette",
+                "description": "Modeste maison au bord du village où vit la jeune fille aux cheveux verts.",
+                "notable_npcs": ["sylphiette"],
+                "shops": false,
+                "services": []
+              }
+            },
+            "connected_to": ["foret_fittoa", "route_commerciale_asura"]
+          },
+          "foret_fittoa": {
+            "name": "Forêt de Fittoa",
+            "type": "Zone sauvage",
+            "description": "Forêt dense entourant le village, source de bois, de plantes médicinales et de gibier.",
+            "points_of_interest": {
+              "clairiere_entrainement": {
+                "name": "Clairière d'Entraînement",
+                "description": "Espace dégagé utilisé pour l'entraînement et l'exercice physique.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["training"]
+              },
+              "riviere_claire": {
+                "name": "Rivière Claire",
+                "description": "Cours d'eau cristallin traversant la forêt, excellent pour la pêche.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["fishing"]
+              }
+            },
+            "connected_to": ["centre_village", "collines_fittoa"]
+          },
+          "collines_fittoa": {
+            "name": "Collines de Fittoa",
+            "type": "Zone rurale",
+            "description": "Douces collines entourant le village, couvertes de pâturages et de quelques fermes isolées.",
+            "points_of_interest": {
+              "point_de_vue": {
+                "name": "Point de Vue",
+                "description": "Sommet offrant une vue panoramique sur toute la région de Fittoa.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["rest"]
+              }
+            },
+            "connected_to": ["foret_fittoa", "route_commerciale_asura"]
+          }
+        }
+      },
+      "academie_ranoa": {
+        "name": "Académie de Magie de Ranoa",
+        "type": "Institution",
+        "description": "Prestigieuse école de magie, reconnue comme la meilleure institution d'éducation magique du continent.",
+        "ruler": "jenius",
+        "locations": {
+          "campus_principal": {
+            "name": "Campus Principal",
+            "type": "Académique",
+            "description": "Vaste complexe de bâtiments élégants dédiés à l'enseignement et à la recherche magique.",
+            "points_of_interest": {
+              "tour_directeur": {
+                "name": "Tour du Directeur",
+                "description": "Tour centrale abritant le bureau du directeur et les salles de réunion du conseil académique.",
+                "notable_npcs": ["jenius", "rilina"],
+                "shops": false,
+                "services": ["administration"]
+              },
+              "bibliotheque": {
+                "name": "Grande Bibliothèque",
+                "description": "Immense bibliothèque contenant des milliers d'ouvrages sur la magie et les sciences.",
+                "notable_npcs": ["magic_guild_master"],
+                "shops": ["rare_books"],
+                "services": ["research", "study"]
+              },
+              "dortoirs": {
+                "name": "Dortoirs",
+                "description": "Complexe résidentiel où logent les étudiants de l'académie.",
+                "notable_npcs": ["christina", "juliette"],
+                "shops": false,
+                "services": ["lodging"]
+              },
+              "arene_duel": {
+                "name": "Arène de Duel",
+                "description": "Espace circulaire protégé par des barrières magiques, dédié aux duels et démonstrations de magie.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["duels", "practice"]
+              }
+            },
+            "connected_to": ["ville_ranoa", "laboratoires_exterieurs"]
+          },
+          "laboratoires_exterieurs": {
+            "name": "Laboratoires Extérieurs",
+            "type": "Recherche",
+            "description": "Zone isolée dédiée aux expériences magiques dangereuses ou nécessitant de l'espace.",
+            "points_of_interest": {
+              "champ_test": {
+                "name": "Champ de Test",
+                "description": "Vaste plaine protégée par des barrières, utilisée pour tester des sorts destructeurs.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["magic_testing"]
+              },
+              "serres_magiques": {
+                "name": "Serres Magiques",
+                "description": "Serres où sont cultivées des plantes magiques rares de diverses régions du monde.",
+                "notable_npcs": [],
+                "shops": ["magical_plants"],
+                "services": ["herbalism"]
+              }
+            },
+            "connected_to": ["campus_principal", "foret_magique"]
+          },
+          "ville_ranoa": {
+            "name": "Ville de Ranoa",
+            "type": "Ville",
+            "description": "Ville animée entourant l'académie, développée pour servir la population étudiante et académique.",
+            "points_of_interest": {
+              "quartier_marchand": {
+                "name": "Quartier Marchand",
+                "description": "Zone commerciale proposant des articles magiques, des livres et des services aux étudiants.",
+                "notable_npcs": [],
+                "shops": ["magic_supplies", "books", "enchanted_items"],
+                "services": ["enchanting", "item_identification"]
+              },
+              "taverne_magicien": {
+                "name": "Taverne du Magicien Rieur",
+                "description": "Établissement populaire auprès des étudiants et professeurs, connu pour ses boissons spéciales.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["inn", "tavern", "information"]
+              }
+            },
+            "connected_to": ["campus_principal", "route_royale"]
+          },
+          "foret_magique": {
+            "name": "Forêt Magique de Ranoa",
+            "type": "Zone sauvage",
+            "description": "Forêt aux propriétés magiques étranges, abritant des créatures rares et des phénomènes magiques spontanés.",
+            "points_of_interest": {
+              "clairiere_mana": {
+                "name": "Clairière de Mana",
+                "description": "Zone où le mana est particulièrement concentré, créant des phénomènes lumineux nocturnes.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["meditation", "mana_regeneration"]
+              },
+              "ruines_anciennes": {
+                "name": "Ruines Anciennes",
+                "description": "Vestiges d'une civilisation magique ancienne, partiellement recouverts par la végétation.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["exploration"],
+                "danger_level": "Medium"
+              }
+            },
+            "connected_to": ["laboratoires_exterieurs", "territoire_bestial"]
+          }
+        }
+      },
+      "routes_commerciales": {
+        "name": "Routes Commerciales",
+        "type": "Infrastructure",
+        "description": "Réseau de routes reliant les principales villes et régions du continent.",
+        "locations": {
+          "route_commerciale_asura": {
+            "name": "Route Royale d'Asura",
+            "type": "Route principale",
+            "description": "Large route pavée, bien entretenue, reliant la capitale d'Asura aux principales villes du royaume.",
+            "points_of_interest": {
+              "relais_voyageurs": {
+                "name": "Relais des Voyageurs",
+                "description": "Points de repos établis à intervalles réguliers sur la route pour les voyageurs.",
+                "notable_npcs": [],
+                "shops": ["basic_supplies"],
+                "services": ["rest", "horse_change"]
+              },
+              "postes_garde": {
+                "name": "Postes de Garde",
+                "description": "Fortifications légères où les gardes royaux surveillent la sécurité des routes.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["protection", "information"]
+              }
+            },
+            "connected_to": ["capitale_asura", "village_fittoa", "carrefour_commercial"]
+          },
+          "route_marchande_shirone": {
+            "name": "Route Marchande de Shirone",
+            "type": "Route commerciale",
+            "description": "Route principalement utilisée pour transporter les minerais et produits métallurgiques de Shirone.",
+            "points_of_interest": {
+              "comptoirs_marchands": {
+                "name": "Comptoirs Marchands",
+                "description": "Petits postes commerciaux où les marchands négocient et échangent des marchandises.",
+                "notable_npcs": [],
+                "shops": ["trade_goods"],
+                "services": ["currency_exchange"]
+              }
+            },
+            "connected_to": ["capitale_shirone", "carrefour_commercial"]
+          },
+          "carrefour_commercial": {
+            "name": "Grand Carrefour",
+            "type": "Nœud routier",
+            "description": "Point de jonction majeur où se croisent plusieurs routes commerciales importantes.",
+            "points_of_interest": {
+              "marche_caravanes": {
+                "name": "Marché des Caravanes",
+                "description": "Large espace où les marchands itinérants installent leurs échoppes temporaires.",
+                "notable_npcs": ["geese", "glenn"],
+                "shops": ["diverse_goods", "exotic_items"],
+                "services": ["information", "trading"]
+              },
+              "auberge_carrefour": {
+                "name": "Auberge du Carrefour",
+                "description": "Grande auberge accueillant les voyageurs de toutes origines.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["inn", "tavern", "stables"]
+              }
+            },
+            "connected_to": ["route_commerciale_asura", "route_marchande_shirone", "route_royale"]
+          },
+          "route_royale": {
+            "name": "Route Royale",
+            "type": "Route principale",
+            "description": "Ancienne route traversant le continent d'est en ouest, reliant plusieurs royaumes.",
+            "points_of_interest": {
+              "monuments_anciens": {
+                "name": "Monuments Anciens",
+                "description": "Statues et obélisques datant d'époques révolues, jalonnant la route.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["rest"]
+              },
+              "camps_marchands": {
+                "name": "Camps de Marchands",
+                "description": "Sites où les caravanes marchandes s'arrêtent régulièrement pour camper.",
+                "notable_npcs": [],
+                "shops": ["travel_supplies"],
+                "services": ["rest", "caravan_joining"]
+              }
+            },
+            "connected_to": ["carrefour_commercial", "ville_ranoa", "frontiere_millis"]
+          }
+        }
+      }
+    }
+  },
+  "continent_millis": {
+    "name": "Continent de Millis",
+    "description": "Continent dominé par la religion de Millis, connu pour ses cathédrales et son clergé influent.",
+    "climate": "Tempéré avec des hivers doux",
+    "regions": {
+      "territoire_millis": {
+        "name": "Territoire Saint de Millis",
+        "type": "Théocratie",
+        "description": "Nation théocratique dirigée par l'Église de Millis, avec la Sainte Ville de Millishion comme centre religieux.",
+        "ruler": "pape_millis",
+        "locations": {
+          "millishion": {
+            "name": "Millishion",
+            "type": "Ville sainte",
+            "description": "Magnifique cité aux flèches blanches et aux vitraux colorés, centre religieux du culte de Millis.",
+            "points_of_interest": {
+              "grande_cathedrale": {
+                "name": "Grande Cathédrale",
+                "description": "Imposant édifice religieux au centre de la ville, siège du pouvoir ecclésiastique.",
+                "notable_npcs": ["pape_millis", "millishion_bishop", "raymond"],
+                "shops": ["religious_items"],
+                "services": ["prayer", "confession", "blessing"]
+              },
+              "quartier_ecclesiastique": {
+                "name": "Quartier Ecclésiastique",
+                "description": "Zone réservée aux membres du clergé et aux bâtiments administratifs de l'Église.",
+                "notable_npcs": ["therese", "rostelina"],
+                "shops": false,
+                "services": ["healing", "education"]
+              },
+              "place_pelerins": {
+                "name": "Place des Pèlerins",
+                "description": "Vaste esplanade accueillant les fidèles venus de tout le continent.",
+                "notable_npcs": [],
+                "shops": ["pilgrim_supplies", "souvenirs"],
+                "services": ["lodging", "guidance"]
+              },
+              "bibliotheque_sacree": {
+                "name": "Bibliothèque Sacrée",
+                "description": "Dépôt des textes religieux et historiques de l'Église de Millis.",
+                "notable_npcs": ["cliff"],
+                "shops": false,
+                "services": ["research", "study"],
+                "access_restricted": true
+              }
+            },
+            "connected_to": ["routes_pelerinage", "port_millishion"]
+          },
+          "port_millishion": {
+            "name": "Port de Millishion",
+            "type": "Port",
+            "description": "Port bien aménagé accueillant navires marchands et bateaux de pèlerins.",
+            "points_of_interest": {
+              "phare_béni": {
+                "name": "Phare Béni",
+                "description": "Phare dont la lumière est magiquement bénie pour repousser les créatures maléfiques.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["blessing", "navigation_aid"]
+              },
+              "marché_maritime": {
+                "name": "Marché Maritime",
+                "description": "Marché animé proposant des produits frais de la mer et des marchandises d'importation.",
+                "notable_npcs": [],
+                "shops": ["seafood", "imported_goods"],
+                "services": ["ship_passage"]
+              }
+            },
+            "connected_to": ["millishion", "ocean"]
+          },
+          "routes_pelerinage": {
+            "name": "Routes de Pèlerinage",
+            "type": "Routes sacrées",
+            "description": "Réseau de chemins balisés guidant les pèlerins vers les lieux saints de Millis.",
+            "points_of_interest": {
+              "sanctuaires_routiers": {
+                "name": "Sanctuaires Routiers",
+                "description": "Petits temples offrant refuge et bénédictions aux pèlerins en chemin.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["rest", "prayer", "healing"]
+              },
+              "source_sacree": {
+                "name": "Source Sacrée",
+                "description": "Source d'eau pure aux propriétés curatives, lieu de pèlerinage important.",
+                "notable_npcs": [],
+                "shops": ["holy_water"],
+                "services": ["healing", "blessing"]
+              }
+            },
+            "connected_to": ["millishion", "frontiere_millis", "temples_ruraux"]
+          },
+          "temples_ruraux": {
+            "name": "Temples Ruraux",
+            "type": "Zones religieuses",
+            "description": "Temples et monastères disséminés dans les campagnes du territoire de Millis.",
+            "points_of_interest": {
+              "monastere_silence": {
+                "name": "Monastère du Silence",
+                "description": "Communauté monastique vivant dans le silence et la contemplation.",
+                "notable_npcs": [],
+                "shops": ["herbal_remedies", "illuminated_manuscripts"],
+                "services": ["meditation", "education"]
+              },
+              "temple_guérison": {
+                "name": "Temple de la Guérison",
+                "description": "Temple spécialisé dans les arts de guérison magique et naturelle.",
+                "notable_npcs": [],
+                "shops": ["healing_items"],
+                "services": ["advanced_healing", "ailment_curing"]
+              }
+            },
+            "connected_to": ["routes_pelerinage", "villages_millis"]
+          },
+          "villages_millis": {
+            "name": "Villages de Millis",
+            "type": "Zones rurales",
+            "description": "Communautés agricoles paisibles vivant selon les préceptes de la foi de Millis.",
+            "points_of_interest": {
+              "chapelles_villageoises": {
+                "name": "Chapelles Villageoises",
+                "description": "Modestes lieux de culte au centre de chaque village.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["prayer", "basic_healing"]
+              },
+              "champs_bénis": {
+                "name": "Champs Bénis",
+                "description": "Terres agricoles bénies par les prêtres pour assurer de bonnes récoltes.",
+                "notable_npcs": [],
+                "shops": ["fresh_produce"],
+                "services": []
+              }
+            },
+            "connected_to": ["temples_ruraux", "frontiere_millis"]
+          },
+          "frontiere_millis": {
+            "name": "Frontière de Millis",
+            "type": "Zone frontalière",
+            "description": "Région marquant la limite entre le territoire de Millis et le Continent Central.",
+            "points_of_interest": {
+              "poste_frontiere": {
+                "name": "Poste Frontière",
+                "description": "Structure gardée contrôlant les passages entre les continents.",
+                "notable_npcs": [],
+                "shops": ["travel_supplies"],
+                "services": ["border_crossing", "information"]
+              },
+              "auberge_frontiere": {
+                "name": "Auberge de la Frontière",
+                "description": "Établissement accueillant voyageurs et marchands traversant la frontière.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["inn", "tavern", "stables"]
+              }
+            },
+            "connected_to": ["routes_pelerinage", "villages_millis", "route_royale"]
+          }
+        }
+      }
+    }
+  },
+  "continent_demoniaque": {
+    "name": "Continent Démoniaque",
+    "description": "Terre des races démoniaques, caractérisée par une végétation étrange et des paysages tourmentés.",
+    "climate": "Varié, tendance aride et volcanique",
+    "regions": {
+      "territoire_migurd": {
+        "name": "Territoire Migurd",
+        "type": "Village isolé",
+        "description": "Communauté isolée de démons Migurd, vivant en retrait des conflits du continent.",
+        "locations": {
+          "village_migurd": {
+            "name": "Village Migurd",
+            "type": "Village",
+            "description": "Village caché dans une vallée, habité par la race des Migurd aux cheveux bleus, experts en magie d'eau.",
+            "points_of_interest": {
+              "conseil_anciens": {
+                "name": "Conseil des Anciens",
+                "description": "Bâtiment où se réunissent les anciens pour diriger le village par télépathie.",
+                "notable_npcs": ["nokopara", "parents_roxy"],
+                "shops": false,
+                "services": ["guidance", "telepathy_training"]
+              },
+              "etang_sacre": {
+                "name": "Étang Sacré",
+                "description": "Plan d'eau aux propriétés magiques, utilisé pour les rituels et l'entraînement à la magie d'eau.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["water_magic_training", "meditation"]
+              },
+              "huttes_migurd": {
+                "name": "Huttes Migurd",
+                "description": "Habitations traditionnelles de la race Migurd, disposées en cercles concentriques.",
+                "notable_npcs": [],
+                "shops": ["migurd_crafts"],
+                "services": ["lodging"]
+              }
+            },
+            "connected_to": ["montagne_isolee", "foret_demoniaque"]
+          },
+          "montagne_isolee": {
+            "name": "Montagne Isolée",
+            "type": "Zone sauvage",
+            "description": "Montagne escarpée gardant l'accès au territoire Migurd, offrant protection naturelle.",
+            "points_of_interest": {
+              "sentier_cache": {
+                "name": "Sentier Caché",
+                "description": "Chemin discret connu uniquement des Migurd, permettant d'accéder au village.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": []
+              },
+              "caverne_echo": {
+                "name": "Caverne de l'Écho",
+                "description": "Grotte aux propriétés acoustiques étranges, parfois utilisée pour des cérémonies.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["meditation"]
+              }
+            },
+            "connected_to": ["village_migurd", "terres_frontieres_demoniaques"]
+          }
+        }
+      },
+      "grande_foret": {
+        "name": "Grande Forêt",
+        "type": "Zone sauvage",
+        "description": "Immense forêt primitive couvrant une portion significative du continent, territoire des tribus d'hommes-bêtes.",
+        "locations": {
+          "territoire_bestial": {
+            "name": "Territoire Bestial",
+            "type": "Zone tribale",
+            "description": "Région forestière divisée entre les différentes tribus d'hommes-bêtes.",
+            "points_of_interest": {
+              "village_dedoldia": {
+                "name": "Village Dedoldia",
+                "description": "Campement principal de la tribu Dedoldia, composé de huttes et de plateformes dans les arbres.",
+                "notable_npcs": ["ghislaine", "kalman3", "kalman2", "rinia"],
+                "shops": ["beast_weapons", "pelts"],
+                "services": ["tribal_lodging", "training"]
+              },
+              "village_dorudia": {
+                "name": "Village Dorudia",
+                "description": "Territoire de la tribu Dorudia, rivale traditionnelle des Dedoldia.",
+                "notable_npcs": ["dorudia", "pursena"],
+                "shops": ["tribal_goods"],
+                "services": ["hunting_guides"]
+              },
+              "arbre_conseil": {
+                "name": "Arbre du Conseil",
+                "description": "Immense arbre séculaire où se réunissent les chefs des différentes tribus.",
+                "notable_npcs": ["fang_tribe_chief"],
+                "shops": false,
+                "services": ["tribal_gathering"]
+              }
+            },
+            "connected_to": ["foret_profonde", "foret_magique", "terres_frontieres_demoniaques"]
+          },
+          "foret_profonde": {
+            "name": "Forêt Profonde",
+            "type": "Zone sauvage",
+            "description": "Cœur dense et inexploré de la Grande Forêt, réputé dangereux et mystérieux.",
+            "points_of_interest": {
+              "clairiere_ancienne": {
+                "name": "Clairière Ancienne",
+                "description": "Espace ouvert entouré d'arbres millénaires, lieu de pouvoir naturel.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["nature_communion"],
+                "danger_level": "High"
+              },
+              "ruines_forestieres": {
+                "name": "Ruines Forestières",
+                "description": "Vestiges d'une ancienne civilisation, presque entièrement engloutis par la végétation.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["exploration"],
+                "danger_level": "High"
+              }
+            },
+            "connected_to": ["territoire_bestial", "marecages_brumeux"]
+          },
+          "marecages_brumeux": {
+            "name": "Marécages Brumeux",
+            "type": "Zone sauvage",
+            "description": "Région marécageuse perpétuellement couverte de brume, abritant des créatures étranges.",
+            "points_of_interest": {
+              "eaux_stagnantes": {
+                "name": "Eaux Stagnantes",
+                "description": "Zone d'eau immobile aux propriétés magiques imprévisibles.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": [],
+                "danger_level": "Extreme"
+              },
+              "hutte_sorciere": {
+                "name": "Hutte de la Sorcière",
+                "description": "Demeure isolée d'une mystérieuse sorcière connue pour ses potions et malédictions.",
+                "notable_npcs": [],
+                "shops": ["rare_potions", "curse_removal"],
+                "services": ["fortune_telling"],
+                "danger_level": "Medium"
+              }
+            },
+            "connected_to": ["foret_profonde", "foret_demoniaque"]
+          },
+          "foret_demoniaque": {
+            "name": "Forêt Démoniaque",
+            "type": "Zone sauvage",
+            "description": "Partie de la forêt influencée par l'énergie démoniaque, à la flore et faune mutées.",
+            "points_of_interest": {
+              "cercle_fongique": {
+                "name": "Cercle Fongique",
+                "description": "Formation de champignons géants aux propriétés hallucinogènes.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": [],
+                "danger_level": "High"
+              },
+              "clairieres_mortes": {
+                "name": "Clairières Mortes",
+                "description": "Zones où la végétation a été consumée par une énergie démoniaque pure.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": [],
+                "danger_level": "High"
+              }
+            },
+            "connected_to": ["village_migurd", "marecages_brumeux", "terres_frontieres_demoniaques"]
+          }
+        }
+      },
+      "terres_demoniaques": {
+        "name": "Terres Démoniaques",
+        "type": "Royaume démoniaque",
+        "description": "Cœur du continent démoniaque, dominé par diverses factions de démons.",
+        "ruler": "kishirika",
+        "locations": {
+          "capitale_demoniaque": {
+            "name": "Nécrolis",
+            "type": "Capitale démoniaque",
+            "description": "Imposante cité aux architectures cauchemardesques, siège du pouvoir démoniaque.",
+            "points_of_interest": {
+              "palais_imperial": {
+                "name": "Palais Impérial",
+                "description": "Forteresse massive aux tours tordues, résidence de l'Impératrice des Démons.",
+                "notable_npcs": ["kishirika", "badigadi", "demon_empress_guard"],
+                "shops": false,
+                "services": ["audience_imperiale"],
+                "access_restricted": true
+              },
+              "marche_ossements": {
+                "name": "Marché des Ossements",
+                "description": "Place marchande macabre construite sur un ancien champ de bataille.",
+                "notable_npcs": ["demon_lord_general"],
+                "shops": ["demonic_weapons", "magical_artifacts", "rare_ingredients"],
+                "services": ["information", "mercenaries"]
+              },
+              "arene_sang": {
+                "name": "Arène de Sang",
+                "description": "Colisée où se déroulent des combats entre démons ou créatures capturées.",
+                "notable_npcs": [],
+                "shops": ["combat_equipment"],
+                "services": ["betting", "gladiatorial_fights"]
+              },
+              "tours_negation": {
+                "name": "Tours de Négation",
+                "description": "Structures magiques servant à emprisonner des entités puissantes ou dangereuses.",
+                "notable_npcs": ["elimaluk"],
+                "shops": false,
+                "services": [],
+                "access_restricted": true
+              }
+            },
+            "connected_to": ["terres_desolees", "routes_demoniaques"]
+          },
+          "terres_desolees": {
+            "name": "Terres Désolées",
+            "type": "Zone détruite",
+            "description": "Région stérile marquée par d'anciennes guerres magiques, parsemée de cratères et de ruines.",
+            "points_of_interest": {
+              "champs_bataille": {
+                "name": "Champs de Bataille Anciens",
+                "description": "Vastes étendues où se sont déroulés des combats titanesques, imprégnées de résidus magiques.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["artifact_hunting"],
+                "danger_level": "High"
+              },
+              "forteresse_abandonnee": {
+                "name": "Forteresse Abandonnée",
+                "description": "Structure militaire en ruines, vestige d'une ancienne guerre démoniaque.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["exploration"],
+                "danger_level": "Medium"
+              }
+            },
+            "connected_to": ["capitale_demoniaque", "terres_frontieres_demoniaques"]
+          },
+          "terres_frontieres_demoniaques": {
+            "name": "Terres Frontières",
+            "type": "Zone frontalière",
+            "description": "Région tampon entre les territoires démoniaques et les autres parties du continent.",
+            "points_of_interest": {
+              "avant_poste": {
+                "name": "Avant-Poste",
+                "description": "Installation militaire surveillant les mouvements aux frontières.",
+                "notable_npcs": [],
+                "shops": ["basic_supplies"],
+                "services": ["information"]
+              },
+              "cairns_anciens": {
+                "name": "Cairns Anciens",
+                "description": "Monuments de pierre marquant d'anciennes limites territoriales.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": []
+              }
+            },
+            "connected_to": ["terres_desolees", "foret_demoniaque", "montagne_isolee", "territoire_bestial"]
+          },
+          "routes_demoniaques": {
+            "name": "Routes Démoniaques",
+            "type": "Réseau de transport",
+            "description": "Chemins reliant les différentes régions du territoire démoniaque.",
+            "points_of_interest": {
+              "relais_esclavagistes": {
+                "name": "Relais des Esclavagistes",
+                "description": "Points d'arrêt pour les caravanes d'esclaves et de marchandises.",
+                "notable_npcs": [],
+                "shops": ["slaves", "contraband"],
+                "services": ["rest", "information"]
+              },
+              "portes_dimensionnelles": {
+                "name": "Portes Dimensionnelles",
+                "description": "Structures magiques permettant un transport rapide entre certains points du territoire.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["teleportation"],
+                "access_restricted": true
+              }
+            },
+            "connected_to": ["capitale_demoniaque", "montagnes_demoniaques"]
+          },
+          "montagnes_demoniaques": {
+            "name": "Chaîne Démoniaque",
+            "type": "Montagnes",
+            "description": "Imposante chaîne montagneuse aux sommets déchiquetés, abritant des dragons et créatures volantes.",
+            "points_of_interest": {
+              "nids_dragons": {
+                "name": "Nids des Dragons",
+                "description": "Zones escarpées où nichent diverses espèces de dragons.",
+                "notable_npcs": ["dragonia"],
+                "shops": false,
+                "services": [],
+                "danger_level": "Extreme"
+              },
+              "mines_maudites": {
+                "name": "Mines Maudites",
+                "description": "Anciennes excavations où l'on extrayait des minerais magiques, aujourd'hui infestées de monstres.",
+                "notable_npcs": [],
+                "shops": ["rare_minerals"],
+                "services": ["mining"],
+                "danger_level": "High"
+              }
+            },
+            "connected_to": ["routes_demoniaques"]
+          }
+        }
+      }
+    }
+  },
+  "continent_begaritt": {
+    "name": "Continent de Begaritt",
+    "description": "Continent mystérieux et peu exploré, connu pour ses labyrinthes anciens et ses civilisations disparues.",
+    "climate": "Principalement désertique avec des oasis",
+    "regions": {
+      "royaume_begaritt": {
+        "name": "Royaume de Begaritt",
+        "type": "Nation",
+        "description": "État occupant une partie habitable du continent, fondé autour d'anciennes oasis.",
+        "ruler": "water_emperor",
+        "locations": {
+          "capitale_begaritt": {
+            "name": "Oasis Royale",
+            "type": "Capitale",
+            "description": "Cité construite autour d'une immense oasis, mêlant architecture traditionnelle et influences modernes.",
+            "points_of_interest": {
+              "palais_empereur": {
+                "name": "Palais de l'Eau",
+                "description": "Somptueuse résidence impériale aux fontaines et jardins luxuriants.",
+                "notable_npcs": ["water_emperor"],
+                "shops": ["luxury_goods"],
+                "services": ["audience_imperiale"]
+              },
+              "grand_bazaar": {
+                "name": "Grand Bazaar",
+                "description": "Labyrinthe de ruelles et d'échoppes proposant des marchandises exotiques.",
+                "notable_npcs": [],
+                "shops": ["exotic_goods", "spices", "textiles", "artifacts"],
+                "services": ["trading"]
+              },
+              "tours_eaux": {
+                "name": "Tours des Eaux",
+                "description": "Structures magiques régulant et purifiant l'eau des oasis.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["water_magic_study"]
+              }
+            },
+            "connected_to": ["desert_begaritt", "routes_caravanes"]
+          },
+          "desert_begaritt": {
+            "name": "Désert de Begaritt",
+            "type": "Zone sauvage",
+            "description": "Vaste étendue désertique entourant les oasis habitables, ponctuée de ruines anciennes.",
+            "points_of_interest": {
+              "ruines_ensablees": {
+                "name": "Ruines Ensablées",
+                "description": "Vestiges partiellement ensevelis d'une civilisation antique.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["exploration"],
+                "danger_level": "Medium"
+              },
+              "puits_nomades": {
+                "name": "Puits des Nomades",
+                "description": "Points d'eau disséminés dans le désert, lieux de rassemblement des tribus nomades.",
+                "notable_npcs": [],
+                "shops": ["desert_supplies"],
+                "services": ["water", "desert_guides"]
+              }
+            },
+            "connected_to": ["capitale_begaritt", "grand_labyrinthe"]
+          },
+          "routes_caravanes": {
+            "name": "Routes des Caravanes",
+            "type": "Réseau de transport",
+            "description": "Pistes désertiques reliant les différentes oasis et cités du continent.",
+            "points_of_interest": {
+              "khan_caravanier": {
+                "name": "Khan Caravanier",
+                "description": "Grande structure offrant abri aux caravanes marchandes traversant le désert.",
+                "notable_npcs": [],
+                "shops": ["travel_supplies", "preserved_food"],
+                "services": ["rest", "water_refill"]
+              },
+              "piliers_direction": {
+                "name": "Piliers de Direction",
+                "description": "Colonnes gravées servant de points de repère dans l'immensité désertique.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["navigation"]
+              }
+            },
+            "connected_to": ["capitale_begaritt", "oasis_perdues"]
+          },
+          "oasis_perdues": {
+            "name": "Oasis Perdues",
+            "type": "Installations isolées",
+            "description": "Petites oasis éloignées abritant des communautés autonomes ou des avant-postes de recherche.",
+            "points_of_interest": {
+              "village_palmiers": {
+                "name": "Village des Palmiers",
+                "description": "Communauté paisible vivant de l'agriculture autour d'une oasis verdoyante.",
+                "notable_npcs": [],
+                "shops": ["fresh_produce", "handcrafts"],
+                "services": ["lodging", "healing"]
+              },
+              "sanctuaire_eau": {
+                "name": "Sanctuaire de l'Eau",
+                "description": "Temple ancien dédié à une divinité de l'eau, gardé par une communauté dévote.",
+                "notable_npcs": [],
+                "shops": ["holy_water"],
+                "services": ["blessing", "meditation"]
+              }
+            },
+            "connected_to": ["routes_caravanes", "grand_labyrinthe"]
+          },
+          "grand_labyrinthe": {
+            "name": "Grand Labyrinthe",
+            "type": "Structure ancienne",
+            "description": "Complexe souterrain massif d'origine inconnue, s'étendant sous une portion significative du désert.",
+            "points_of_interest": {
+              "entree_principale": {
+                "name": "Entrée Principale",
+                "description": "Vaste portail de pierre marquant l'accès officiel au labyrinthe.",
+                "notable_npcs": [],
+                "shops": ["exploration_gear"],
+                "services": ["guides", "information"],
+                "danger_level": "Medium"
+              },
+              "sanctum_central": {
+                "name": "Sanctum Central",
+                "description": "Chambre mystérieuse au cœur du labyrinthe, objectif de nombreux explorateurs.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": [],
+                "danger_level": "Extreme",
+                "access_restricted": true
+              }
+            },
+            "connected_to": ["desert_begaritt", "oasis_perdues"]
+          }
+        }
+      }
+    }
+  },
+  "royaume_celeste": {
+    "name": "Royaume Céleste",
+    "description": "Domaine flottant au-dessus des nuages, siège de Perugius et de ses douze familiers.",
+    "climate": "Tempéré, perpétuellement ensoleillé",
+    "regions": {
+      "chateau_perugius": {
+        "name": "Château de Perugius",
+        "type": "Forteresse volante",
+        "description": "Magnifique forteresse flottant dans les cieux, résidence du Roi-Dragon Perugius.",
+        "ruler": "perugius",
+        "locations": {
+          "structure_principale": {
+            "name": "Château Principal",
+            "type": "Forteresse",
+            "description": "Structure majestueuse aux tours élancées et aux murs nacrés, défiant les lois de la gravité.",
+            "points_of_interest": {
+              "salle_trone": {
+                "name": "Salle du Trône",
+                "description": "Vaste chambre où Perugius reçoit ses rares visiteurs, décorée de fresques célestes.",
+                "notable_npcs": ["perugius", "guardians_twelve"],
+                "shops": false,
+                "services": ["audience"]
+              },
+              "bibliotheque_aerienne": {
+                "name": "Bibliothèque Aérienne",
+                "description": "Collection de connaissances accumulées sur des millénaires, gardée par des familiers.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["research"],
+                "access_restricted": true
+              },
+              "salle_observation": {
+                "name": "Salle d'Observation",
+                "description": "Pièce dotée d'instruments magiques permettant de surveiller les continents en dessous.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["divination", "scrying"]
+              }
+            },
+            "connected_to": ["jardins_celestes", "tours_exterieures"]
+          },
+          "jardins_celestes": {
+            "name": "Jardins Célestes",
+            "type": "Zone extérieure",
+            "description": "Magnifiques jardins suspendus abritant des espèces végétales rares et magiques.",
+            "points_of_interest": {
+              "fontaine_eternelle": {
+                "name": "Fontaine Éternelle",
+                "description": "Source magique dont l'eau possède des propriétés curatives et rajeunissantes.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["healing", "rejuvenation"]
+              },
+              "bosquet_sacre": {
+                "name": "Bosquet Sacré",
+                "description": "Zone où poussent des arbres millénaires aux fruits aux propriétés mystiques.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["meditation"]
+              }
+            },
+            "connected_to": ["structure_principale", "pont_nuages"]
+          },
+          "tours_exterieures": {
+            "name": "Tours Extérieures",
+            "type": "Défenses",
+            "description": "Ensemble de tours de guet et de défense entourant le château principal.",
+            "points_of_interest": {
+              "tour_sentinelle": {
+                "name": "Tour de la Sentinelle",
+                "description": "Plus haute tour du château, poste d'observation principal.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["long_distance_viewing"]
+              },
+              "arsenal_celeste": {
+                "name": "Arsenal Céleste",
+                "description": "Dépôt d'armes magiques anciennes, gardé par des enchantements puissants.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": [],
+                "access_restricted": true
+              }
+            },
+            "connected_to": ["structure_principale", "pont_nuages"]
+          },
+          "pont_nuages": {
+            "name": "Pont des Nuages",
+            "type": "Accès",
+            "description": "Unique voie d'accès au château, pont magique apparaissant uniquement pour les invités autorisés.",
+            "points_of_interest": {
+              "porte_dimensional": {
+                "name": "Porte Dimensionnelle",
+                "description": "Portail magique permettant l'accès depuis certains points des continents.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["teleportation"]
+              },
+              "poste_garde": {
+                "name": "Poste de Garde",
+                "description": "Point de contrôle où les visiteurs sont examinés par les familiers de Perugius.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["security_check"]
+              }
+            },
+            "connected_to": ["jardins_celestes", "tours_exterieures"]
+          }
+        }
+      }
+    }
+  },
+  "ocean": {
+    "name": "Océans et Mers",
+    "description": "Vastes étendues maritimes séparant et reliant les continents.",
+    "climate": "Variable selon les régions",
+    "regions": {
+      "routes_maritimes": {
+        "name": "Routes Maritimes",
+        "type": "Voies navigables",
+        "description": "Réseaux de routes maritimes empruntées par les navires marchands et militaires.",
+        "locations": {
+          "route_commerce": {
+            "name": "Route de Commerce Principal",
+            "type": "Voie maritime",
+            "description": "Trajet maritime majeur reliant le Continent Central au Continent de Millis.",
+            "points_of_interest": {
+              "archipel_marchand": {
+                "name": "Archipel Marchand",
+                "description": "Chaîne de petites îles servant d'escale aux navires marchands.",
+                "notable_npcs": [],
+                "shops": ["maritime_goods", "exotic_items"],
+                "services": ["ship_repairs", "supply_replenishment"]
+              },
+              "phare_alliance": {
+                "name": "Phare de l'Alliance",
+                "description": "Grand phare marquant un point stratégique de la route maritime.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["navigation_aid"]
+              }
+            },
+            "connected_to": ["port_asura", "port_millishion"]
+          },
+          "mers_dangereuses": {
+            "name": "Mers Dangereuses",
+            "type": "Zone maritime périlleuse",
+            "description": "Portions d'océan connues pour leurs tempêtes, monstres marins et pirates.",
+            "points_of_interest": {
+              "repaire_pirates": {
+                "name": "Repaire des Pirates",
+                "description": "Base cachée où se rassemblent les navires pirates entre leurs raids.",
+                "notable_npcs": ["gull_barnacle"],
+                "shops": ["stolen_goods", "contraband"],
+                "services": ["black_market"],
+                "danger_level": "High"
+              },
+              "cimetiere_navires": {
+                "name": "Cimetière des Navires",
+                "description": "Zone où de nombreuses épaves reposent, résultat de naufrages causés par des monstres ou des tempêtes.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["salvage"],
+                "danger_level": "High"
+              }
+            },
+            "connected_to": ["route_commerce", "iles_mystiques"]
+          },
+          "iles_mystiques": {
+            "name": "Îles Mystiques",
+            "type": "Archipel isolé",
+            "description": "Groupe d'îles éloignées, rarement visitées, réputées pour leurs phénomènes magiques étranges.",
+            "points_of_interest": {
+              "ile_brume": {
+                "name": "Île de la Brume",
+                "description": "Île perpétuellement enveloppée d'un brouillard magique, cachant des ruines anciennes.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": ["exploration"],
+                "danger_level": "Medium"
+              },
+              "grotte_marine": {
+                "name": "Grotte Marine",
+                "description": "Vaste réseau de cavernes sous-marines abritant des créatures et trésors inconnus.",
+                "notable_npcs": [],
+                "shops": false,
+                "services": [],
+                "danger_level": "High"
+              }
+            },
+            "connected_to": ["mers_dangereuses"]
+          }
+        }
+      }
+    }
+  }
+}
+

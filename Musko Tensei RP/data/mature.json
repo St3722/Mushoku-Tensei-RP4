@@ -1,0 +1,443 @@
+{
+  "settings": {
+    "age_verification": {
+      "required": true,
+      "disclaimer_text": "Ce contenu est réservé aux adultes et aborde des thèmes matures et sensibles. En activant ce contenu, vous confirmez être majeur selon les lois de votre pays et consentir pleinement à accéder à ce type de contenu."
+    },
+    "consent_system": {
+      "enabled_by_default": true,
+      "can_be_disabled": true,
+      "override_warning": "Désactiver le système de consentement permet des interactions qui peuvent être moralement problématiques dans un contexte réel. Ces interactions restent dans un cadre purement fictif au sein du jeu."
+    },
+    "content_filters": {
+      "violence": {
+        "enabled": true,
+        "level": "full",
+        "options": ["none", "mild", "moderate", "full", "extreme"]
+      },
+      "sexual_content": {
+        "enabled": true,
+        "level": "full",
+        "options": ["none", "suggestive", "moderate", "explicit", "extreme"]
+      },
+      "language": {
+        "enabled": true,
+        "level": "full",
+        "options": ["clean", "mild", "moderate", "explicit", "extreme"]
+      },
+      "controversial_themes": {
+        "enabled": false,
+        "level": "moderate",
+        "options": ["none", "mild", "moderate", "full", "extreme"]
+      }
+    }
+  },
+  
+  "mature_content_types": {
+    "violence": {
+      "description": "Interactions comportant de la violence physique",
+      "levels": {
+        "mild": {
+          "description": "Violence suggérée sans détails",
+          "examples": [
+            "Le coup l'envoie à terre.",
+            "La lame entaille son bras."
+          ]
+        },
+        "moderate": {
+          "description": "Violence décrite avec détails modérés",
+          "examples": [
+            "Son poing s'écrase contre la mâchoire de l'adversaire avec un craquement sourd.",
+            "L'épée traverse son armure légère, le sang coulant le long de la lame."
+          ]
+        },
+        "full": {
+          "description": "Violence décrite en détail avec conséquences physiques",
+          "examples": [
+            "La lame ouvre profondément son ventre, laissant entrevoir ses entrailles alors qu'il tombe à genoux, tentant vainement de les retenir.",
+            "Son crâne se fend sous l'impact, éclaboussant les murs alentour d'un mélange de sang et de matière grise."
+          ]
+        },
+        "extreme": {
+          "description": "Violence extrêmement graphique et torture",
+          "warning": "Contient des descriptions très explicites de souffrance et mutilation",
+          "examples": [
+            "Il arrache lentement chaque ongle, savourant les hurlements qui diminuent progressivement alors que sa victime sombre dans un état de choc.",
+            "La torture se poursuit pendant des heures, la victime maintenue consciente pour ressentir chaque nouvelle mutilation."
+          ]
+        }
+      },
+      "scenarios": {
+        "battlefield": {
+          "description": "Violence dans un contexte de guerre ou bataille",
+          "example": "Le champ de bataille est jonché de corps démembrés, le sol détrempé par le sang des combattants. Votre épée s'enfonce dans la gorge d'un ennemi, ouvrant une fontaine écarlate."
+        },
+        "torture": {
+          "description": "Scènes de torture physique ou psychologique",
+          "requires": "extreme_filter",
+          "example": "Les instruments de torture s'alignent sur la table. Le bourreau vous montre chacun d'eux, expliquant en détail comment il compte les utiliser sur votre corps pour obtenir les informations."
+        },
+        "execution": {
+          "description": "Mise à mort de personnages",
+          "example": "Vous positionnez votre lame contre sa nuque tremblante. D'un geste ferme, vous tranchez, sentant la résistance momentanée avant que l'acier ne tranche os et chair."
+        }
+      }
+    },
+    
+    "sexual_content": {
+      "description": "Interactions à caractère sexuel ou romantique",
+      "levels": {
+        "suggestive": {
+          "description": "Suggestions et allusions sans contenu explicite",
+          "examples": [
+            "Leurs regards se croisent intensément avant qu'ils ne disparaissent derrière la porte de la chambre...",
+            "Sa main glisse le long de votre cuisse, vous faisant frissonner d'anticipation."
+          ]
+        },
+        "moderate": {
+          "description": "Descriptions modérément détaillées de l'intimité",
+          "examples": [
+            "Elle vous attire contre elle, ses lèvres trouvant les vôtres dans un baiser passionné. Ses mains explorent votre corps avec désir, défaisant lentement les lacets de votre tunique.",
+            "Vos corps s'entrelacent sur les draps de soie, la chaleur de sa peau contre la vôtre vous faisant oublier tout le reste."
+          ]
+        },
+        "explicit": {
+          "description": "Descriptions explicites d'actes sexuels",
+          "warning": "Contient des descriptions graphiques d'intimité sexuelle",
+          "examples": [
+            "Ses hanches se meuvent contre les vôtres dans un rythme frénétique, chaque mouvement arrachant des gémissements de plaisir à vos lèvres.",
+            "Sa langue trace des motifs complexes sur votre peau, descendant toujours plus bas jusqu'à atteindre votre intimité frémissante."
+          ]
+        },
+        "extreme": {
+          "description": "Contenu sexuel très explicite et détaillé",
+          "warning": "Contient des descriptions très graphiques d'actes sexuels",
+          "examples": [
+            "Description minutieuse de chaque sensation, de chaque contact et de chaque réaction physiologique.",
+            "Narration complète et détaillée de l'acte, sans ellipses ni métaphores."
+          ]
+        }
+      },
+      
+      "fan_service_elements": {
+        "scenarios": {
+          "hot_springs": {
+            "description": "Scène de bains ou sources thermales",
+            "example": "La vapeur voile partiellement sa silhouette alors qu'elle entre dans l'eau, ses courbes parfaites se devinant à travers le brouillard.",
+            "variations": [
+              "mixed_bath",
+              "accidental_peek",
+              "intimate_conversation"
+            ]
+          },
+          "beach_episode": {
+            "description": "Scène à la plage avec personnages en maillots",
+            "example": "Le tissu moulant de son maillot souligne ses formes avantageuses, attirant involontairement votre regard.",
+            "variations": [
+              "water_play",
+              "sunscreen_application",
+              "revealing_swimwear"
+            ]
+          },
+          "clothing_mishap": {
+            "description": "Accidents impliquant des vêtements",
+            "example": "Un mouvement maladroit déchire le tissu délicat de sa robe, révélant bien plus qu'elle n'aurait souhaité montrer.",
+            "variations": [
+              "torn_clothes_in_battle",
+              "wet_fabric",
+              "wardrobe_malfunction"
+            ]
+          }
+        },
+        "character_traits": {
+          "innocent_seductive": {
+            "description": "Personnage innocent mais involontairement séduisant",
+            "dialogue_examples": [
+              "Je ne comprends pas pourquoi tout le monde me regarde ainsi...",
+              "Est-ce que cette tenue est inappropriée? Elle me semble confortable..."
+            ]
+          },
+          "flirtatious_tease": {
+            "description": "Personnage ouvertement séducteur",
+            "dialogue_examples": [
+              "Tu aimes ce que tu vois? Il y a bien plus à découvrir...",
+              "*s'approche très près* Oops, c'est un peu étroit ici, non?"
+            ]
+          }
+        }
+      },
+      
+      "consent_scenarios": {
+        "consensual": {
+          "description": "Interactions avec consentement explicite",
+          "examples": [
+            "«Oui, je le veux. Je n'ai jamais été aussi sûre de quoi que ce soit.»",
+            "«Tu es certain? Nous pouvons arrêter quand tu veux.» — «Je suis certain. Je te désire plus que tout.»"
+          ]
+        },
+        "dubious_consent": {
+          "description": "Situations où le consentement est ambigu ou compliqué",
+          "requires": "consent_system_override",
+          "contexts": [
+            "Manipulation émotionnelle ou sociale",
+            "Influence de substances",
+            "Différences de pouvoir significatives"
+          ]
+        },
+        "non_consensual": {
+          "description": "Situations explicitement non consensuelles",
+          "requires": "consent_system_override",
+          "warning": "Ce contenu représente des situations criminelles et moralement répréhensibles dans le monde réel.",
+          "narrative_contexts": [
+            "Établir la nature maléfique d'antagonistes",
+            "Créer une motivation de vengeance ou justice",
+            "Explorer des thèmes de traumatisme et guérison"
+          ]
+        }
+      }
+    },
+    
+    "power_dynamics": {
+      "description": "Relations impliquant des dynamiques de pouvoir déséquilibrées",
+      "types": {
+        "master_servant": {
+          "description": "Relations de servitude ou domesticité",
+          "scenarios": [
+            "Noble et domestique",
+            "Maître d'armes et apprenti",
+            "Employeur puissant et employé"
+          ]
+        },
+        "domination_submission": {
+          "description": "Relations explicites de domination/soumission",
+          "requires": "mature_filter",
+          "scenarios": [
+            "Dominant expérimenté guidant un soumis consentant",
+            "Échange temporaire de pouvoir dans un cadre consensuel",
+            "Structure relationnelle permanente basée sur ces rôles"
+          ]
+        },
+        "captivity": {
+          "description": "Situations de captivité ou d'emprisonnement",
+          "scenarios": [
+            "Prisonnier de guerre",
+            "Otage lors d'un conflit",
+            "Captif d'une créature ou entité"
+          ]
+        },
+        "slavery": {
+          "description": "Situations d'esclavage",
+          "requires": "extreme_filter",
+          "warning": "Représente des violations graves des droits humains",
+          "narrative_contexts": [
+            "Contexte historique ou fantasy avec système d'esclavage établi",
+            "Mission de libération ou résistance contre l'esclavage",
+            "Conséquences d'une défaite ou dette impayée dans l'univers du jeu"
+          ]
+        }
+      },
+      "consent_override_options": {
+        "description": "Options permettant d'outrepasser le système de consentement",
+        "warning": "Ces options représentent des situations problématiques dans un contexte réel",
+        "options": {
+          "power_fantasy": {
+            "description": "Permet au joueur d'exercer un pouvoir absolu sur d'autres personnages",
+            "requires": "consent_system_override",
+            "settings": [
+              "Contrôle total du comportement d'un PNJ",
+              "Capacité à forcer des actions",
+              "Obéissance inconditionnelle"
+            ]
+          },
+          "submission_fantasy": {
+            "description": "Permet au joueur d'expérimenter la perte de contrôle",
+            "requires": "consent_system_override",
+            "settings": [
+              "Être forcé à obéir",
+              "Perte d'autonomie",
+              "Soumission à l'autorité d'un PNJ"
+            ]
+          }
+        },
+        "implementation": {
+          "player_control": "Le joueur décide explicitement d'activer ces scénarios",
+          "safe_words": "Option pour terminer immédiatement toute scène inconfortable",
+          "narrative_framing": "Toujours présenté comme fiction dans un contexte narratif cohérent"
+        }
+      }
+    },
+    
+    "psychological_trauma": {
+      "description": "Contenu abordant des traumatismes psychologiques",
+      "types": {
+        "betrayal": {
+          "description": "Trahisons profondes par des alliés ou proches",
+          "example": "La personne que vous aimiez et en qui vous aviez le plus confiance révèle qu'elle a orchestré chaque malheur qui vous est arrivé."
+        },
+        "loss": {
+          "description": "Perte dévastatrice de proches ou d'êtres chers",
+          "example": "Vous revenez pour découvrir votre village entier massacré, chaque personne que vous avez connue gisant sans vie."
+        },
+        "torture_psychological": {
+          "description": "Torture psychologique et manipulation mentale",
+          "requires": "extreme_filter",
+          "example": "L'interrogateur utilise vos plus grandes peurs et traumatismes contre vous, recréant magiquement les scénarios qui vous hantent."
+        }
+      }
+    }
+  },
+  
+  "ai_directives": {
+    "content_generation": {
+      "principles": [
+        "Adapter le contenu au niveau de filtres sélectionné par le joueur",
+        "Maintenir la cohérence narrative et le réalisme psychologique des personnages",
+        "S'assurer que le contenu mature sert un objectif narratif",
+        "Respecter les paramètres de consentement sauf en cas de désactivation explicite",
+        "Fournir des avertissements appropriés avant un contenu particulièrement sensible"
+      ],
+      "tone_guidelines": {
+        "emotional_impact": "Privilégier l'impact émotionnel sur le lecteur plutôt que le choc gratuit",
+        "psychological_depth": "Explorer les motivations et conséquences psychologiques des actions",
+        "sensory_details": "Utiliser des détails sensoriels pour créer l'immersion plutôt que pour choquer"
+      },
+      "fan_service_guidelines": {
+        "integration": "Intégrer les éléments de fan service de manière organique dans l'histoire",
+        "character_consistency": "S'assurer que les réactions restent cohérentes avec la personnalité établie",
+        "varying_reactions": "Varier les réactions des personnages selon leur personnalité et le contexte"
+      },
+      "consent_override_guidelines": {
+        "warning": "Toujours indiquer clairement quand une scène implique des éléments non consensuels",
+        "framing": "Jamais glorifier ou normaliser les actions moralement répréhensibles",
+        "character_impact": "Montrer les impacts émotionnels et psychologiques sur les personnages",
+        "player_choice": "Offrir des choix narratifs pour la résolution de ces situations",
+        "skip_option": "Prévoir une option pour passer la scène si le joueur change d'avis"
+      }
+    },
+    
+    "content_adaptation": {
+      "violence_scale": {
+        "none": "Aucune description de violence, seulement mention indirecte",
+        "mild": "Violence suggérée sans détails, pas de sang",
+        "moderate": "Violence décrite avec quelques détails, sang mentionné",
+        "full": "Violence décrite en détail avec conséquences physiques",
+        "extreme": "Violence graphique et torture décrites en détail"
+      },
+      
+      "sexual_content_scale": {
+        "none": "Aucune description, romance limitée à des baisers chastes",
+        "suggestive": "Allusions et tension romantique, rien d'explicite",
+        "moderate": "Descriptions modérément détaillées jusqu'au début de l'intimité",
+        "explicit": "Descriptions explicites d'actes sexuels",
+        "extreme": "Descriptions très détaillées sans limites narratives"
+      },
+      
+      "language_scale": {
+        "clean": "Aucun juron ni langage vulgaire",
+        "mild": "Jurons légers et occasionnels",
+        "moderate": "Jurons modérés dans des contextes appropriés",
+        "explicit": "Langage vulgaire et explicite fréquent",
+        "extreme": "Langage constamment vulgaire, insultes et termes dégradants"
+      },
+      
+      "controversial_scale": {
+        "none": "Aucun thème controversé abordé",
+        "mild": "Mention indirecte de thèmes sensibles",
+        "moderate": "Thèmes sensibles abordés mais sans détails explicites",
+        "full": "Thèmes controversés explorés en profondeur",
+        "extreme": "Exploration sans limites de thèmes tabous et controversés"
+      }
+    },
+    
+    "scene_generation_templates": {
+      "intimate_scene": {
+        "intro": {
+          "suggestive": "{character_name} vous regarde avec une lueur dans les yeux qui éveille quelque chose en vous.",
+          "moderate": "La tension entre vous devient palpable, vos corps se rapprochant comme attirés par une force invisible.",
+          "explicit": "Vos lèvres se rejoignent avec une passion dévorante, vos mains explorant déjà avidement le corps de l'autre."
+        },
+        "development": {
+          "suggestive": "Les minutes passent, remplies de regards complices et de contacts fugaces qui en disent long.",
+          "moderate": "Chaque baiser s'approfondit, vos souffles se mêlant tandis que les vêtements deviennent des obstacles à éliminer.",
+          "explicit": "Vos corps nus s'entrelacent dans une danse aussi ancienne que le monde, chaque contact électrisant vos sens."
+        },
+        "climax": {
+          "suggestive": "Le monde extérieur s'évanouit alors que vous vous abandonnez l'un à l'autre.",
+          "moderate": "Un frisson d'extase parcourt votre corps, amplifié par les soupirs de plaisir de votre partenaire.",
+          "explicit": "La vague de plaisir vous submerge tous les deux simultanément, vos corps tremblants fusionnés dans l'extase ultime."
+        },
+        "aftermath": {
+          "suggestive": "Plus tard, un silence confortable s'installe entre vous, rempli de non-dits et de promesses.",
+          "moderate": "Blottis l'un contre l'autre, vos corps encore frémissants, vous savourez ce moment de connexion parfaite.",
+          "explicit": "Épuisés mais comblés, vous restez enlacés, la sueur refroidissant sur vos peaux alors que vos respirations se calment."
+        }
+      },
+      
+      "violence_scene": {
+        "intro": {
+          "mild": "Votre adversaire se prépare à attaquer, son regard trahissant ses intentions hostiles.",
+          "moderate": "L'éclat métallique de la lame brille un instant avant de s'abattre vers vous avec une intention meurtrière.",
+          "full": "Le sourire sadique de votre ennemi s'élargit tandis qu'il révèle son arme ensanglantée, des morceaux de chair encore accrochés à la lame."
+        },
+        "execution": {
+          "mild": "Votre arme trouve sa cible, mettant fin au combat de façon décisive.",
+          "moderate": "Votre lame s'enfonce profondément, traversant chair et os. Un gargouillis remplace le cri de votre adversaire tandis qu'il s'effondre.",
+          "full": "Votre épée pénètre sous son menton, ressortant par le sommet de son crâne dans une gerbe de sang et d'éclats d'os. Ses yeux, encore conscients pendant un instant horrible, vous fixent avec incrédulité."
+        }
+      },
+      
+      "fan_service_scene": {
+        "accidental_encounter": {
+          "mild": "Vous ouvrez la porte pour tomber nez à nez avec {character_name} en pleine toilette.",
+          "moderate": "La porte des bains s'ouvre sans prévenir, révélant {character_name} à peine couverte par une serviette qui glisse dangereusement.",
+          "explicit": "Vous entrez dans la chambre pour découvrir {character_name} complètement dénudée, son corps exposé dans toute sa splendeur."
+        },
+        "reactions": {
+          "embarrassed": [
+            "*rougit furieusement et tente de se couvrir* \"N-ne regarde pas!\"",
+            "*surprise totale, figée sur place* \"Ce... ce n'est pas ce que tu crois!\"",
+            "*mélange de honte et de colère* \"Est-ce que tu pourrais AU MOINS FRAPPER?!\""
+          ],
+          "confident": [
+            "*sourit avec assurance* \"Eh bien, puisque tu es là... que penses-tu de ce que tu vois?\"",
+            "*ne fait aucun effort pour se couvrir* \"Tu apprécies la vue? Je ne te blâme pas.\"",
+            "*pose théâtralement* \"Si tu prends une photo, ça durera plus longtemps~\""
+          ],
+          "aggressive": [
+            "*lance un objet à proximité* \"DEHORS! TOUT DE SUITE!\"",
+            "*s'approche menaçante malgré sa nudité* \"Tu as trois secondes pour disparaître avant que je ne te tue.\"",
+            "*active un sort/saisit une arme* \"Tu viens de signer ton arrêt de mort, pervers!\""
+          ]
+        }
+      }
+    }
+  },
+  
+  "implementation": {
+    "save_preferences": {
+      "description": "Les préférences de contenu mature sont sauvegardées séparément",
+      "encryption": true,
+      "restore_defaults": "Option pour réinitialiser tous les paramètres"
+    },
+    "scene_skip": {
+      "enabled": true,
+      "notification": "Contenu sensible à venir. Souhaitez-vous continuer ou passer cette scène?",
+      "summary_option": "Fournir un résumé non graphique des événements passés"
+    },
+    "adaptive_content": {
+      "learn_preferences": true,
+      "description": "Le système apprend progressivement les préférences du joueur",
+      "suggest_adjustments": "Suggère des ajustements de filtres basés sur les choix précédents"
+    },
+    "content_warnings": {
+      "pre_scene": true,
+      "specific_triggers": [
+        "violence_extreme",
+        "sexual_non_consensual",
+        "psychological_trauma"
+      ],
+      "format": "Avertissement: La scène suivante contient [trigger]. Souhaitez-vous continuer?"
+    }
+  }
+}
+

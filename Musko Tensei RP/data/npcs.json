@@ -1,0 +1,2357 @@
+{
+  "paul": {
+    "name": "Paul Greyrat",
+    "race": "Humain",
+    "birth_year_offset": -21,
+    "gender": "Masculin",
+    "origin": "Maison Notos Greyrat",
+    "occupation": {
+      "child": "Noble",
+      "teen": "Étudiant d'escrime",
+      "adult": "Épéiste et noble"
+    },
+    "description": {
+      "child": "Un garçon aux cheveux blond, espiègle et fougueux, issu d'une branche cadette de la famille Greyrat.",
+      "teen": "Un adolescent talentueux avec l'épée mais à la personnalité rebelle, souvent en conflit avec sa famille.",
+      "adult": "Un homme aux cheveux bleus, maître épéiste talentueux au caractère compliqué, connu pour son charisme et ses décisions impulsives."
+    },
+    "personality": {
+      "traits": ["charismatique", "impulsif", "courageux", "imparfait"],
+      "quirks": ["Infidèle", "Fuit ses responsabilités quand c'est difficile", "Excellent bretteur"]
+    },
+    "relationships": {
+      "zenith": "Épouse",
+      "lilia": "Servante et amante",
+      "norn": "Fille (future)",
+      "aisha": "Fille illégitime avec Lilia (future)",
+      "luke": "Cousin et rival"
+    },
+    "magic_affinity": "Eau (rang intermédiaire)",
+    "combat_style": "Épée de l'école Water God (rang avancé)",
+    "dialogue_topics": ["épée", "famille", "responsabilités", "aventures", "ancienne vie d'aventurier"]
+  },
+  "zenith": {
+    "name": "Zenith Latreia Greyrat",
+    "race": "Humain",
+    "birth_year_offset": -19,
+    "gender": "Féminin",
+    "origin": "Maison Latreia",
+    "occupation": {
+      "child": "Noble",
+      "teen": "Apprentie guérisseuse",
+      "adult": "Noble et guérisseuse"
+    },
+    "description": {
+      "child": "Une fillette aux longs cheveux blonds, douce et pieuse, issue d'une famille noble dévouée à l'église de Millis.",
+      "teen": "Une jeune femme gracieuse aux longs cheveux blonds, consacrant sa vie à l'étude de la magie de guérison et à la dévotion religieuse.",
+      "adult": "Une femme aux longs cheveux blonds, calme et dévouée, douée en magie de guérison et profondément attachée à sa famille."
+    },
+    "personality": {
+      "traits": ["patiente", "bienveillante", "résiliente", "pieuse"],
+      "quirks": ["Très attachée à sa foi en la déesse Millis", "Têtue dans sa propre façon"]
+    },
+    "relationships": {
+      "paul": "Époux",
+      "raymond": "Oncle",
+      "therese": "Parente éloignée",
+      "norn": "Fille (future)"
+    },
+    "magic_affinity": "Guérison (rang avancé)",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["famille", "guérison", "religion", "jardinage", "foi en Millis"]
+  },
+  "lilia": {
+    "name": "Lilia Greyrat",
+    "race": "Humain",
+    "birth_year_offset": -23,
+    "gender": "Féminin",
+    "origin": "Royaume d'Asura",
+    "occupation": {
+      "child": "Fille de soldats",
+      "teen": "Apprentie garde royale",
+      "adult": "Domestique et ancienne garde royale"
+    },
+    "description": {
+      "child": "Une petite fille aux cheveux noirs, sévère et disciplinée, élevée dans une famille militaire.",
+      "teen": "Une jeune femme déterminée suivant un entraînement rigoureux pour devenir garde au palais royal d'Asura.",
+      "adult": "Une femme aux cheveux noirs attachés, ancienne garde du palais devenue domestique après une blessure, strict mais loyale."
+    },
+    "personality": {
+      "traits": ["loyale", "stricte", "pragmatique", "réaliste"],
+      "quirks": ["Cicatrice au dos la rendant sensible", "Très directe dans ses propos"]
+    },
+    "relationships": {
+      "paul": "Employeur et amant",
+      "zenith": "Maîtresse et amie",
+      "aisha": "Fille (future)"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Techniques de combat à mains nues (rang intermédiaire)",
+    "dialogue_topics": ["service domestique", "éducation", "discipline", "passé militaire", "vie à Asura"]
+  },
+  "norn": {
+    "name": "Norn Greyrat",
+    "race": "Humain",
+    "birth_year_offset": 3,
+    "gender": "Féminin",
+    "origin": "Village de Fittoa",
+    "occupation": {
+      "child": "Noble",
+      "teen": "Étudiante",
+      "adult": "Non déterminé"
+    },
+    "description": {
+      "child": "Une petite fille qui naîtra dans trois ans, aux cheveux blonds comme sa mère.",
+      "teen": "Une jeune fille aux cheveux blonds, timide mais déterminée, ressemblant beaucoup à sa mère Zenith.",
+      "adult": "Une jeune femme aux traits délicats héritant de la beauté de sa mère et du sens de la justice de son père."
+    },
+    "personality": {
+      "traits": ["timide", "sensible", "déterminée", "émotive"],
+      "quirks": ["Très attachée à sa famille", "Manque de confiance en elle"]
+    },
+    "relationships": {
+      "paul": "Père",
+      "zenith": "Mère",
+      "aisha": "Demi-sœur"
+    },
+    "magic_affinity": "Eau (potentiel)",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["famille", "études", "insécurités", "avenir"]
+  },
+  "aisha": {
+    "name": "Aisha Greyrat",
+    "race": "Humain",
+    "birth_year_offset": 2,
+    "gender": "Féminin",
+    "origin": "Village de Fittoa",
+    "occupation": {
+      "child": "Noble",
+      "teen": "Étudiante prodige",
+      "adult": "Non déterminé"
+    },
+    "description": {
+      "child": "Une petite fille qui naîtra dans deux ans, aux cheveux gris-violet, fille de Paul et Lilia.",
+      "teen": "Une jeune fille aux cheveux gris-violet, intelligente et mature pour son âge, dotée d'une mémoire eidétique.",
+      "adult": "Une femme élégante et intelligente, capable de mémoriser parfaitement tout ce qu'elle lit ou entend."
+    },
+    "personality": {
+      "traits": ["intelligente", "précise", "efficace", "parfois hautaine"],
+      "quirks": ["Mémoire parfaite", "Développement intellectuel rapide", "Tendance à juger les autres"]
+    },
+    "relationships": {
+      "paul": "Père",
+      "lilia": "Mère",
+      "norn": "Demi-sœur"
+    },
+    "magic_affinity": "Indéterminée",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["connaissances", "famille", "efficacité", "organisation"]
+  },
+  "eris": {
+    "name": "Eris Boreas Greyrat",
+    "race": "Humain",
+    "birth_year_offset": -3,
+    "gender": "Féminin",
+    "origin": "Maison Boreas Greyrat",
+    "occupation": {
+      "child": "Noble",
+      "teen": "Noble et épéiste en formation",
+      "adult": "Épéiste"
+    },
+    "description": {
+      "child": "Une petite fille aux cheveux rouges, issue de la noblesse, déjà connue pour ses crises de colère.",
+      "teen": "Une jeune noble aux cheveux rouges, farouche et déterminée, de la maison Greyrat.",
+      "adult": "Une femme aux cheveux rouges, épéiste accomplie à la personnalité explosive mais au grand sens de l'honneur."
+    },
+    "personality": {
+      "traits": ["têtue", "fière", "impulsive", "passionnée"],
+      "quirks": ["Déteste étudier", "Préfère résoudre les problèmes par la force", "Tendance aux crises de colère"]
+    },
+    "relationships": {
+      "philip": "Père",
+      "hilda": "Mère",
+      "sauros": "Grand-père"
+    },
+    "magic_affinity": "Feu (potentiel)",
+    "combat_style": "North God style (potentiel)",
+    "dialogue_topics": ["épée", "noblesse", "famille", "combats", "frustrations avec les études"]
+  },
+  "sylphiette": {
+    "name": "Sylphiette",
+    "race": "Elfe/Humain (métisse)",
+    "birth_year_offset": 0,
+    "gender": "Féminin",
+    "origin": "Village de Fittoa",
+    "occupation": {
+      "child": "Villageoise",
+      "teen": "Étudiante en magie",
+      "adult": "Mage"
+    },
+    "description": {
+      "child": "Une petite fille aux cheveux verts, souvent victime de discrimination en raison de son apparence elfique.",
+      "teen": "Une jeune fille aux cheveux verts, métisse elfe-humaine, douée en magie de guérison et du vent.",
+      "adult": "Une femme élégante aux cheveux verts, mage accomplie spécialisée en magie de vent et de guérison."
+    },
+    "personality": {
+      "traits": ["douce", "timide", "loyale", "attentionnée"],
+      "quirks": ["Anxiété sociale", "Très attachée à ses amis", "Souffre de discrimination"]
+    },
+    "relationships": {
+      "elinalise": "Possible lien de parenté éloigné (elfique)"
+    },
+    "magic_affinity": "Vent et Guérison (talent naturel)",
+    "combat_style": "Magie de combat défensive",
+    "dialogue_topics": ["magie de guérison", "amitié", "discrimination", "études", "origines elfiques"]
+  },
+  "roxy": {
+    "name": "Roxy Migurdia",
+    "race": "Migurd (démon)",
+    "birth_year_offset": -44,
+    "gender": "Féminin",
+    "origin": "Village Migurd",
+    "occupation": {
+      "child": "Apprentie mage",
+      "teen": "Mage errante",
+      "adult": "Mage et tutrice"
+    },
+    "description": {
+      "child": "Une petite fille démon aux cheveux bleus, incapable de télépathie contrairement aux autres Migurds.",
+      "teen": "Une jeune démonesse aux cheveux bleus, voyageant pour parfaire sa magie et échapper à son isolement.",
+      "adult": "Une démonesse aux cheveux bleus de la race Migurd, maître en magie d'eau et tutrice accomplie, paraissant plus jeune que son âge."
+    },
+    "personality": {
+      "traits": ["sérieuse", "intelligente", "réservée"],
+      "quirks": ["Manque de confiance malgré ses compétences", "Peur des orages", "Incapable de télépathie"]
+    },
+    "relationships": {
+      "parents_roxy": "Parents distants"
+    },
+    "magic_affinity": "Eau (rang avancé)",
+    "combat_style": "Magie de combat orientée eau",
+    "dialogue_topics": ["magie", "enseignement", "voyages", "passé", "isolation"]
+  },
+  "philip": {
+    "name": "Philip Boreas Greyrat",
+    "race": "Humain",
+    "birth_year_offset": -26,
+    "gender": "Masculin",
+    "origin": "Maison Boreas",
+    "occupation": {
+      "adult": "Chef de la maison Boreas"
+    },
+    "description": {
+      "adult": "Un homme noble aux traits aristocratiques, gérant les terres de la maison Boreas sous la supervision stricte de son père."
+    },
+    "personality": {
+      "traits": ["diplomate", "calculateur", "prudent", "respectueux des traditions"],
+      "quirks": ["Vit dans l'ombre de son père", "Affection maladroite pour sa fille"]
+    },
+    "relationships": {
+      "eris": "Fille",
+      "hilda": "Épouse",
+      "sauros": "Père"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Escrime de base (nobles)",
+    "dialogue_topics": ["politique", "responsabilités nobiliaires", "traditions", "famille"]
+  },
+  "hilda": {
+    "name": "Hilda Boreas Greyrat",
+    "race": "Humain",
+    "birth_year_offset": -24,
+    "gender": "Féminin",
+    "origin": "Noblesse mineure d'Asura",
+    "occupation": {
+      "adult": "Noble de la maison Boreas"
+    },
+    "description": {
+      "adult": "Une femme noble aux cheveux rouges comme sa fille, élégante et raffinée, mariée dans la famille Boreas."
+    },
+    "personality": {
+      "traits": ["raffinée", "stricte", "fière", "traditionnelle"],
+      "quirks": ["Très attachée aux convenances", "Désespérée par le comportement d'Eris"]
+    },
+    "relationships": {
+      "eris": "Fille",
+      "philip": "Époux"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["étiquette", "éducation noble", "mariage", "comportement approprié"]
+  },
+  "sauros": {
+    "name": "Sauros Boreas Greyrat",
+    "race": "Humain",
+    "birth_year_offset": -56,
+    "gender": "Masculin",
+    "origin": "Maison Boreas",
+    "occupation": {
+      "adult": "Patriarche de la maison Boreas"
+    },
+    "description": {
+      "adult": "Un homme imposant aux cheveux grisonnants et à la barbe fournie, dirigeant sa maison d'une main de fer."
+    },
+    "personality": {
+      "traits": ["autoritaire", "traditionnel", "direct", "inflexible"],
+      "quirks": ["Affection particulière pour sa petite-fille Eris", "Mépris pour les faiblesses"]
+    },
+    "relationships": {
+      "eris": "Petite-fille",
+      "philip": "Fils",
+      "hilda": "Belle-fille"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Escrime (niveau modéré)",
+    "dialogue_topics": ["honneur familial", "pouvoir", "traditions", "responsabilité"]
+  },
+  "ghislaine": {
+    "name": "Ghislaine Dedoldia",
+    "race": "Homme-bête (léopard)",
+    "birth_year_offset": -34,
+    "gender": "Féminin",
+    "origin": "Tribu Dedoldia",
+    "occupation": {
+      "child": "Membre de tribu",
+      "teen": "Apprentie épéiste",
+      "adult": "Épéiste de rang Roi"
+    },
+    "description": {
+      "child": "Une jeune fille-bête au pelage tacheté comme un léopard, sauvage et indisciplinée.",
+      "teen": "Une adolescente homme-bête puissante, en apprentissage auprès des maîtres épéistes.",
+      "adult": "Une puissante femme-bête à l'apparence léopard, maître épéiste redoutable et respectée."
+    },
+    "personality": {
+      "traits": ["directe", "loyale", "forte", "honorable"],
+      "quirks": ["Difficulté à lire", "Préfère l'action à la réflexion", "Apprécie la bonne nourriture"]
+    },
+    "relationships": {
+      "kalman3": "Relation avec la famille Dedoldia",
+      "eris": "Future tutrice (potentiel)"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Sword God style (rang Roi)",
+    "dialogue_topics": ["techniques d'épée", "voyage", "combat", "honneur", "vie des hommes-bêtes"]
+  },
+  "luke": {
+    "name": "Luke Notos Greyrat",
+    "race": "Humain",
+    "birth_year_offset": -11,
+    "gender": "Masculin",
+    "origin": "Maison Notos",
+    "occupation": {
+      "child": "Noble",
+      "teen": "Garde du corps d'Ariel",
+      "adult": "Noble et guerrier"
+    },
+    "description": {
+      "child": "Un garçon aux cheveux bruns, issu d'une branche de la famille Greyrat, déjà très fier de son nom.",
+      "teen": "Un adolescent ambitieux et sérieux, s'entraînant pour devenir un chevalier au service de la famille royale.",
+      "adult": "Un homme aux cheveux bruns, membre de la famille Greyrat, cousin de Paul, dévoué à la princesse Ariel."
+    },
+    "personality": {
+      "traits": ["fier", "compétitif", "ambitieux", "loyal envers sa famille"],
+      "quirks": ["Rivalité avec Paul", "Très attaché aux traditions familiales"]
+    },
+    "relationships": {
+      "paul": "Cousin et rival",
+      "ariel": "Protégée, princesse qu'il sert"
+    },
+    "magic_affinity": "Terre",
+    "combat_style": "Épée et bouclier",
+    "dialogue_topics": ["famille Greyrat", "politique", "traditions", "noblesse", "service royal"]
+  },
+  "ariel": {
+    "name": "Ariel Anemoi Asura",
+    "race": "Humain",
+    "birth_year_offset": -9,
+    "gender": "Féminin",
+    "origin": "Famille royale d'Asura",
+    "occupation": {
+      "child": "Troisième princesse",
+      "teen": "Princesse et étudiante",
+      "adult": "Princesse royale"
+    },
+    "description": {
+      "child": "Une petite princesse aux cheveux blonds argentés, calme et observatrice malgré son jeune âge.",
+      "teen": "Une jeune princesse élégante aux cheveux argentés, dotée d'une intelligence politique remarquable.",
+      "adult": "Une femme noble aux cheveux argentés, combinant charisme royal et intelligence tactique."
+    },
+    "personality": {
+      "traits": ["intelligente", "pragmatique", "ambitieuse", "diplomate"],
+      "quirks": ["Cache ses émotions", "Observe attentivement avant d'agir"]
+    },
+    "relationships": {
+      "luke": "Garde du corps",
+      "grabel": "Frère aîné",
+      "roi_asura": "Père"
+    },
+    "magic_affinity": "Vent (modéré)",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["politique", "pouvoir royal", "ambition", "stratégie", "famille royale"]
+  },
+  "parents_roxy": {
+    "name": "Parents de Roxy",
+    "race": "Migurd (démon)",
+    "birth_year_offset": -80,
+    "gender": "Divers",
+    "origin": "Village Migurd",
+    "occupation": {
+      "adult": "Villageois Migurd"
+    },
+    "description": {
+      "adult": "Un couple de démons Migurd aux cheveux bleus, communiquant principalement par télépathie, inquiets pour leur fille incapable de cette capacité."
+    },
+    "personality": {
+      "traits": ["traditionnels", "inquiets", "aimants", "patients"],
+      "quirks": ["Difficulté à comprendre leur fille", "Communication principalement télépathique"]
+    },
+    "relationships": {
+      "roxy": "Fille"
+    },
+    "magic_affinity": "Eau (basique)",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["village Migurd", "traditions", "télépathie", "inquiétudes parentales"]
+  },
+  "cliff": {
+    "name": "Cliff Grimoire",
+    "race": "Humain",
+    "birth_year_offset": -5,
+    "gender": "Masculin",
+    "origin": "Millis",
+    "occupation": {
+      "child": "Enfant prodige",
+      "teen": "Étudiant en magie",
+      "adult": "Mage et chercheur"
+    },
+    "description": {
+      "child": "Un petit garçon blond aux lunettes, déjà plongé dans les livres religieux et magiques.",
+      "teen": "Un adolescent studieux et intelligent, combinant recherche magique et dévotion religieuse.",
+      "adult": "Un jeune homme blond aux lunettes, prodige intellectuel et dévot de Millis."
+    },
+    "personality": {
+      "traits": ["intelligent", "studieux", "religieux", "naïf"],
+      "quirks": ["Fanatique religieux", "Manque d'expérience sociale"]
+    },
+    "relationships": {
+      "therese": "Future relation potentielle"
+    },
+    "magic_affinity": "Détoxification",
+    "combat_style": "Magie de support",
+    "dialogue_topics": ["recherche magique", "religion", "théories académiques", "magie", "foi de Millis"]
+  },
+  "orsted": {
+    "name": "Orsted",
+    "race": "Dragon (Dieu Dragon)",
+    "birth_year_offset": -2000,
+    "gender": "Masculin",
+    "origin": "Inconnue",
+    "occupation": {
+      "adult": "Dragon Dieu"
+    },
+    "description": {
+      "adult": "Un homme au visage parfait mais à l'aura terrifiante, puissant au-delà de toute mesure, inspirant une peur instinctive."
+    },
+    "personality": {
+      "traits": ["déterminé", "froid", "méthodique", "patient"],
+      "quirks": ["Malédiction drainant son mana", "Piégé dans une boucle temporelle"]
+    },
+    "relationships": {
+      "hitogami": "Ennemi juré",
+      "perugius": "Alliance"
+    },
+    "magic_affinity": "Toutes",
+    "combat_style": "Techniques de combat divines",
+    "dialogue_topics": ["Dieu Humain", "combat", "boucle temporelle", "destin", "malédiction"]
+  },
+  "hitogami": {
+    "name": "Hitogami",
+    "race": "Dieu",
+    "birth_year_offset": -999999,
+    "gender": "Masculin",
+    "origin": "Inconnue",
+    "occupation": {
+      "adult": "Dieu Humain"
+    },
+    "description": {
+      "adult": "Une entité divine apparaissant sous la forme d'un bel homme en blanc, manipulateur et mystérieux, uniquement dans les rêves."
+    },
+    "personality": {
+      "traits": ["manipulateur", "charmant", "calculateur", "patient"],
+      "quirks": ["Apparaît uniquement dans les rêves", "Donne des conseils ambigus"]
+    },
+    "relationships": {
+      "orsted": "Ennemi juré",
+      "laplace": "Relations complexes"
+    },
+    "magic_affinity": "Divine",
+    "combat_style": "Manipulation indirecte",
+    "dialogue_topics": ["conseil", "destin", "avenir", "pouvoir", "humanité"]
+  },
+  "kishirika": {
+    "name": "Kishirika Kishirisu",
+    "race": "Démon",
+    "birth_year_offset": -1000,
+    "gender": "Féminin",
+    "origin": "Monde démoniaque",
+    "occupation": {
+      "adult": "Impératrice des Démons"
+    },
+    "description": {
+      "adult": "Une petite fille aux cheveux verts, impératrice des démons, capricieuse et puissante, actuellement en attente de réincarnation."
+    },
+    "personality": {
+      "traits": ["enfantine", "impulsive", "égoïste", "puissante"],
+      "quirks": ["Constamment affamée", "Change d'humeur rapidement", "Fascination pour les choses nouvelles"]
+    },
+    "relationships": {
+      "badigadi": "Serviteur loyal"
+    },
+    "magic_affinity": "Démoniaque",
+    "combat_style": "Pouvoirs démoniaques",
+    "dialogue_topics": ["démons", "pouvoir", "yeux démoniaques", "nourriture", "continent démoniaque"]
+  },
+  "badigadi": {
+    "name": "Badigadi",
+    "race": "Démon",
+    "birth_year_offset": -1000,
+    "gender": "Masculin",
+    "origin": "Monde démoniaque",
+    "occupation": {
+      "adult": "Roi Démon"
+    },
+    "description": {
+      "adult": "Un homme imposant au corps musclé et à l'apparence sauvage, ancien roi démon loyal à Kishirika."
+    },
+    "personality": {
+      "traits": ["loyal", "fort", "simple", "direct"],
+      "quirks": ["Dévoué à Kishirika", "Aime les combats frontaux"]
+    },
+    "relationships": {
+      "kishirika": "Maîtresse qu'il sert"
+    },
+    "magic_affinity": "Force",
+    "combat_style": "Combat à mains nues démoniaques",
+    "dialogue_topics": ["combat", "Kishirika", "pouvoir", "histoire des démons", "loyauté"]
+  },
+  "perugius": {
+    "name": "Perugius Dola",
+    "race": "Humain/Dragon",
+    "birth_year_offset": -1000,
+    "gender": "Masculin",
+    "origin": "Inconnue",
+    "occupation": {
+      "adult": "Roi Dragon céleste"
+    },
+    "description": {
+      "adult": "Un homme majestueux à l'apparence noble, gouvernant son château flottant avec ses douze familiers."
+    },
+    "personality": {
+      "traits": ["noble", "fier", "juste", "distant"],
+      "quirks": ["Méfiant envers les humains", "Dévoué à la paix"]
+    },
+    "relationships": {
+      "orsted": "Alliance"
+    },
+    "magic_affinity": "Multiple",
+    "combat_style": "Magie et familiers",
+    "dialogue_topics": ["histoire ancienne", "dragons", "devoir", "paix", "menaces démoniaques"]
+  },
+  "gal_farion": {
+    "name": "Gal Farion",
+    "race": "Humain",
+    "birth_year_offset": -107,
+    "gender": "Masculin",
+    "origin": "Inconnue",
+    "occupation": {
+      "adult": "Ancien Dieu de l'Épée"
+    },
+    "description": {
+      "adult": "Un vieil homme à la barbe blanche, dont le corps affaibli cache une maîtrise absolue de l'épée."
+    },
+    "personality": {
+      "traits": ["discipliné", "strict", "traditionaliste", "honorable"],
+      "quirks": ["Obsédé par la perfection technique", "Respecte uniquement la force"]
+    },
+    "relationships": {
+      "alex": "Successeur"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Sword God style (rang Dieu)",
+    "dialogue_topics": ["techniques d'épée", "discipline", "tradition", "succession", "force"]
+  },
+  "alex": {
+    "name": "Alexander Gaslowan",
+    "race": "Humain",
+    "birth_year_offset": -47,
+    "gender": "Masculin",
+    "origin": "Inconnue",
+    "occupation": {
+      "adult": "Dieu de l'Épée actuel"
+    },
+    "description": {
+      "adult": "Un homme au corps sculpté par l'entraînement, arborant une cicatrice sur le visage, successeur de Gal Farion."
+    },
+    "personality": {
+      "traits": ["dévoué", "sérieux", "perfectionniste", "respectueux des traditions"],
+      "quirks": ["Obsession pour surpasser son prédécesseur", "Vit uniquement pour l'épée"]
+    },
+    "relationships": {
+      "gal_farion": "Prédécesseur"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Sword God style (rang Dieu)",
+    "dialogue_topics": ["maîtrise de l'épée", "école du Dieu de l'Épée", "discipline", "entraînement", "succession"]
+  },
+  "reida": {
+    "name": "Reida Reia",
+    "race": "Humain",
+    "birth_year_offset": -55,
+    "gender": "Féminin",
+    "origin": "Inconnue",
+    "occupation": {
+      "adult": "Dieu de l'Eau actuel"
+    },
+    "description": {
+      "adult": "Une femme d'âge mûr aux mouvements fluides comme l'eau, maîtresse absolue du style Water God."
+    },
+    "personality": {
+      "traits": ["calme", "patiente", "observatrice", "autoritaire"],
+      "quirks": ["Parle peu", "Juge constamment la technique des autres"]
+    },
+    "relationships": {},
+    "magic_affinity": "Eau (faible)",
+    "combat_style": "Water God style (rang Dieu)",
+    "dialogue_topics": ["techniques d'escrime", "philosophie de l'eau", "mouvement", "défense", "contre-attaque"]
+  },
+  "kalman3": {
+    "name": "Kalman III Dedoldia",
+    "race": "Homme-bête",
+    "birth_year_offset": -37,
+    "gender": "Masculin",
+    "origin": "Tribu Dedoldia",
+    "occupation": {
+      "adult": "North God, Patriarche"
+    },
+    "description": {
+      "adult": "Un homme-bête imposant à l'allure noble et sauvage, chef de la tribu Dedoldia et maître du style North God."
+    },
+    "personality": {
+      "traits": ["imprévisible", "instinctif", "charismatique", "libre"],
+      "quirks": ["Suit son instinct avant tout", "Respecte uniquement les forts"]
+    },
+    "relationships": {
+      "ghislaine": "Membre de la tribu",
+      "kalman2": "Père"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "North God style (rang Maître)",
+    "dialogue_topics": ["technique North God", "liberté", "instinct de combat", "règne sur la tribu", "force"]
+  },
+  "kalman2": {
+    "name": "Kalman II Dedoldia",
+    "race": "Homme-bête",
+    "birth_year_offset": -67,
+    "gender": "Masculin",
+    "origin": "Tribu Dedoldia",
+    "occupation": {
+      "adult": "Ancien North God, Ancien Patriarche"
+    },
+    "description": {
+      "adult": "Un vieil homme-bête à la fourrure grisonnante, dont les mouvements trahissent encore une dangereuse maîtrise de l'épée."
+    },
+    "personality": {
+      "traits": ["sage", "expérimenté", "respecté", "traditionnel"],
+      "quirks": ["Parle par énigmes", "Teste constamment les jeunes guerriers"]
+    },
+    "relationships": {
+      "kalman3": "Fils"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "North God style (ancien maître)",
+    "dialogue_topics": ["héritage", "tradition", "leadership", "technique North God", "sagesse"]
+  },
+  "elinalise": {
+    "name": "Elinalise Dragonroad",
+    "race": "Elfe",
+    "birth_year_offset": -200,
+    "gender": "Féminin",
+    "origin": "Inconnue",
+    "occupation": {
+      "adult": "Aventurière"
+    },
+    "description": {
+      "adult": "Une elfe blonde à la beauté intemporelle, aventurière expérimentée cachant une malédiction qui l'oblige à chercher des partenaires."
+    },
+    "personality": {
+      "traits": ["séductrice", "joyeuse", "franche", "expérimentée"],
+      "quirks": ["Malédiction la forçant à rechercher des partenaires", "Attitude ouverte sur la sexualité"]
+    },
+    "relationships": {},
+    "magic_affinity": "Eau",
+    "combat_style": "Combat à l'épée (avancé)",
+    "dialogue_topics": ["aventures", "malédiction", "plaisirs de la vie", "exploration", "liberté"]
+  },
+  "talhand": {
+    "name": "Talhand",
+    "race": "Nain",
+    "birth_year_offset": -47,
+    "gender": "Masculin",
+    "origin": "Colonies naines",
+    "occupation": {
+      "adult": "Forgeron et aventurier"
+    },
+    "description": {
+      "adult": "Un nain robuste à la barbe grise, forgeron talentueux spécialisé dans les armes de qualité, ancien compagnon d'aventure de Paul."
+    },
+    "personality": {
+      "traits": ["travailleur", "perfectionniste", "bourru", "honnête"],
+      "quirks": ["Juge les gens par leur attitude envers le travail", "Parle peu mais avec justesse"]
+    },
+    "relationships": {
+      "paul": "Ancien compagnon d'aventure"
+    },
+    "magic_affinity": "Terre",
+    "combat_style": "Hache de combat",
+    "dialogue_topics": ["forge", "artisanat", "qualité", "matériaux", "anciennes aventures"]
+  },
+  "geese": {
+    "name": "Geese Nukadia",
+    "race": "Homme-bête",
+    "birth_year_offset": -37,
+    "gender": "Masculin",
+    "origin": "Rues de Millis",
+    "occupation": {
+      "adult": "Informateur, voleur"
+    },
+    "description": {
+      "adult": "Un homme-bête agile et rusé, se déplaçant discrètement dans l'ombre, récoltant des informations et des objets de valeur."
+    },
+    "personality": {
+      "traits": ["rusé", "opportuniste", "loyal envers ses amis", "pragmatique"],
+      "quirks": ["S'exprime par dictons", "Disparaît quand les ennuis arrivent"]
+    },
+    "relationships": {
+      "paul": "Ami et ancien compagnon d'aventure"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Dagues et discrétion",
+    "dialogue_topics": ["rumeurs", "information", "survie", "escapades", "marchés noirs"]
+  },
+  "therese": {
+    "name": "Therese Latreia",
+    "race": "Humain",
+    "birth_year_offset": -19,
+    "gender": "Féminin",
+    "origin": "Ordre de Millis",
+    "occupation": {
+      "adult": "Chevalier de l'Ordre"
+    },
+    "description": {
+      "adult": "Une jeune femme aux cheveux blonds courts, portant l'armure de l'Ordre de Millis avec dignité et dévotion."
+    },
+    "personality": {
+      "traits": ["dévouée", "sérieuse", "disciplinée", "juste"],
+      "quirks": ["Conflit entre sa foi et sa curiosité", "Déchirée entre tradition et progrès"]
+    },
+    "relationships": {
+      "zenith": "Parente éloignée",
+      "raymond": "Membre du même ordre"
+    },
+    "magic_affinity": "Feu",
+    "combat_style": "Magie de combat et épée",
+    "dialogue_topics": ["foi en Millis", "devoir", "ordre", "justice", "traditions religieuses"]
+  },
+  "raymond": {
+    "name": "Raymond Latreia",
+    "race": "Humain",
+    "birth_year_offset": -42,
+    "gender": "Masculin",
+    "origin": "Millis",
+    "occupation": {
+      "adult": "Haut membre de l'Ordre de Millis"
+    },
+    "description": {
+      "adult": "Un homme d'âge mûr aux traits nobles, portant les habits élégants de l'ordre de Millis, oncle de Zenith."
+    },
+    "personality": {
+      "traits": ["diplomate", "pieux", "stratège", "manipulateur"],
+      "quirks": ["Cache ses véritables intentions", "Toujours plusieurs coups d'avance"]
+    },
+    "relationships": {
+      "zenith": "Nièce",
+      "therese": "Collègue de l'Ordre"
+    },
+    "magic_affinity": "Guérison",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["politique ecclésiastique", "histoire de Millis", "négociations", "pouvoir religieux"]
+  },
+  "atofe": {
+    "name": "Atofe Raibaku",
+    "race": "Immortelle",
+    "birth_year_offset": -1000,
+    "gender": "Féminin",
+    "origin": "Inconnue",
+    "occupation": {
+      "adult": "Roi Guerrier"
+    },
+    "description": {
+      "adult": "Une femme blonde à l'apparence jeune mais d'une puissance terrifiante, obsédée par les combats et l'affrontement d'adversaires puissants."
+    },
+    "personality": {
+      "traits": ["belliqueuse", "directe", "honorable", "simple d'esprit"],
+      "quirks": ["Cherche constamment des adversaires puissants", "Capacité de régénération"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune",
+    "combat_style": "Combat au corps à corps surhumain",
+    "dialogue_topics": ["combats", "adversaires puissants", "immortalité", "techniques de guerre", "histoires de batailles"]
+  },
+  "zanoba": {
+    "name": "Zanoba Shirone",
+    "race": "Humain",
+    "birth_year_offset": -6,
+    "gender": "Masculin",
+    "origin": "Royaume de Shirone",
+    "occupation": {
+      "child": "Prince",
+      "teen": "Prince",
+      "adult": "Prince chercheur"
+    },
+    "description": {
+      "child": "Un petit garçon aux cheveux blonds, fils cadet du roi de Shirone, déjà passionné par les objets finement travaillés.",
+      "teen": "Un adolescent princier dont les mains cachent une force anormale, obsédé par l'art et l'artisanat.",
+      "adult": "Un prince aux cheveux blonds, d'apparence noble mais cachant une force monstrueuse et une passion obsessionnelle pour l'artisanat."
+    },
+    "personality": {
+      "traits": ["passionné", "obsessionnel", "loyal", "naïf"],
+      "quirks": ["Force surhumaine incontrôlable", "Fascination pour les figurines et l'artisanat"]
+    },
+    "relationships": {
+      "pax": "Frère aîné",
+      "roi_shirone": "Père"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Force brute incontrôlée",
+    "dialogue_topics": ["artisanat", "figurines", "royaume de Shirone", "art", "créations"]
+  },
+  "pax": {
+    "name": "Pax Shirone",
+    "race": "Humain",
+    "birth_year_offset": -8,
+    "gender": "Masculin",
+    "origin": "Royaume de Shirone",
+    "occupation": {
+      "child": "Prince héritier",
+      "teen": "Prince héritier",
+      "adult": "Prince héritier"
+    },
+    "description": {
+      "child": "Un garçon au visage hautain, fils aîné et héritier du royaume de Shirone, déjà imbu de son pouvoir.",
+      "teen": "Un jeune homme arrogant et manipulateur, considérant son statut comme un droit à abuser des autres.",
+      "adult": "Un homme au visage cruel, héritier du trône de Shirone, connu pour ses manières violentes et son ego surdimensionné."
+    },
+    "personality": {
+      "traits": ["cruel", "manipulateur", "lâche", "arrogant"],
+      "quirks": ["Se cache derrière son statut", "Jaloux de son frère"]
+    },
+    "relationships": {
+      "zanoba": "Frère cadet",
+      "roi_shirone": "Père"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["pouvoir", "succession", "privilèges", "intrigues", "ambition"]
+  },
+  "roi_shirone": {
+    "name": "Roi de Shirone",
+    "race": "Humain",
+    "birth_year_offset": -47,
+    "gender": "Masculin",
+    "origin": "Royaume de Shirone",
+    "occupation": {
+      "adult": "Roi"
+    },
+    "description": {
+      "adult": "Un homme d'âge mûr à l'allure royale, portant les attributs ostentatoires du pouvoir, dirigeant le royaume de Shirone."
+    },
+    "personality": {
+      "traits": ["calculateur", "pragmatique", "autoritaire", "distant"],
+      "quirks": ["Favoritisme envers son fils aîné", "Néglige son fils cadet"]
+    },
+    "relationships": {
+      "pax": "Fils aîné et héritier",
+      "zanoba": "Fils cadet"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["gouvernance", "succession", "pouvoir royal", "alliances", "expansion"]
+  },
+  "roi_asura": {
+    "name": "Roi d'Asura",
+    "race": "Humain",
+    "birth_year_offset": -50,
+    "gender": "Masculin",
+    "origin": "Royaume d'Asura",
+    "occupation": {
+      "adult": "Roi"
+    },
+    "description": {
+      "adult": "Un homme à l'allure majestueuse, trônant avec une autorité calme mais absolue sur le plus puissant royaume du continent."
+    },
+    "personality": {
+      "traits": ["sage", "calculateur", "patient", "visionnaire"],
+      "quirks": ["Juge les gens uniquement sur leurs capacités", "Pense toujours plusieurs années à l'avance"]
+    },
+    "relationships": {
+      "ariel": "Fille",
+      "grabel": "Fils"
+    },
+    "magic_affinity": "Modéré",
+    "combat_style": "Stratégie militaire",
+    "dialogue_topics": ["politique", "stratégie", "pouvoir", "avenir du royaume", "relations internationales"]
+  },
+  "grabel": {
+    "name": "Prince Grabel Asura",
+    "race": "Humain",
+    "birth_year_offset": -15,
+    "gender": "Masculin",
+    "origin": "Royaume d'Asura",
+    "occupation": {
+      "child": "Prince",
+      "teen": "Prince héritier",
+      "adult": "Prince héritier"
+    },
+    "description": {
+      "child": "Un garçon princier à l'allure sérieuse, étudiant déjà l'art de gouverner.",
+      "teen": "Un jeune homme aux traits nobles et à l'attitude distante, préparé dès son plus jeune âge à régner.",
+      "adult": "Un homme noble à l'allure royale, préparé méticuleusement pour succéder à son père."
+    },
+    "personality": {
+      "traits": ["ambitieux", "intelligent", "calculateur", "discipliné"],
+      "quirks": ["Méprise secrètement les faibles", "Obsédé par la perfection"]
+    },
+    "relationships": {
+      "roi_asura": "Père",
+      "ariel": "Sœur cadette"
+    },
+    "magic_affinity": "Modéré",
+    "combat_style": "Escrime royale",
+    "dialogue_topics": ["succession", "stratégie politique", "responsabilités royales", "pouvoir"]
+  },
+  "rinia": {
+    "name": "Rinia Dedoldia",
+    "race": "Homme-bête",
+    "birth_year_offset": -3,
+    "gender": "Féminin",
+    "origin": "Tribu Dedoldia",
+    "occupation": {
+      "child": "Enfant de tribu",
+      "teen": "Guerrière en formation",
+      "adult": "Guerrière de la tribu"
+    },
+    "description": {
+      "child": "Une petite fille-bête aux traits félins, calme et observatrice contrairement à sa sœur jumelle.",
+      "teen": "Une jeune femme-bête au pelage soigné, toujours en retrait mais analysant tout ce qui l'entoure.",
+      "adult": "Sœur jumelle de Pursena, une femme-bête calme et observatrice aux traits félins."
+    },
+    "personality": {
+      "traits": ["calme", "observatrice", "intelligente", "pragmatique"],
+      "quirks": ["Souvent dans l'ombre de sa sœur", "Plus réfléchie que Pursena"]
+    },
+    "relationships": {
+      "pursena": "Sœur jumelle"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Combat bestial tactique",
+    "dialogue_topics": ["stratégie", "traditions", "survie", "nature", "observation"]
+  },
+  "pursena": {
+    "name": "Pursena Adorudia",
+    "race": "Homme-bête",
+    "birth_year_offset": -3,
+    "gender": "Féminin",
+    "origin": "Tribu Adorudia",
+    "occupation": {
+      "child": "Enfant de tribu",
+      "teen": "Guerrière en formation",
+      "adult": "Guerrière de la tribu"
+    },
+    "description": {
+      "child": "Une petite fille-bête aux traits félins, déjà énergique et impulsive contrairement à sa sœur jumelle.",
+      "teen": "Une jeune femme-bête au pelage sauvage, toujours prête à bondir et à défendre son territoire.",
+      "adult": "Une jeune femme-bête au caractère vif, caractérisée par ses traits félins et sa personnalité directe."
+    },
+    "personality": {
+      "traits": ["énergique", "loyale", "fière", "impulsive"],
+      "quirks": ["S'énerve facilement", "Très protectrice de sa tribu"]
+    },
+    "relationships": {
+      "rinia": "Sœur jumelle"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Combat bestial agressif",
+    "dialogue_topics": ["traditions des hommes-bêtes", "combat", "Grande Forêt", "famille", "territoire"]
+  },
+  "ginger": {
+    "name": "Ginger York",
+    "race": "Humain",
+    "birth_year_offset": -17,
+    "gender": "Féminin",
+    "origin": "Famille York (vassale de Shirone)",
+    "occupation": {
+      "adult": "Garde de Zanoba"
+    },
+    "description": {
+      "adult": "Une jeune femme sévère aux cheveux roux, loyale garde du corps du prince Zanoba Shirone."
+    },
+    "personality": {
+      "traits": ["stricte", "loyale", "professionnelle", "protectrice"],
+      "quirks": ["Dévouement absolu envers Zanoba", "Méfiance envers les étrangers"]
+    },
+    "relationships": {
+      "zanoba": "Protégé"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Épée et bouclier",
+    "dialogue_topics": ["devoir", "protection", "royaume de Shirone", "loyauté", "honneur"]
+  },
+  "darius": {
+    "name": "Darius Silva Ganius",
+    "race": "Humain",
+    "birth_year_offset": -67,
+    "gender": "Masculin",
+    "origin": "Royaume d'Asura",
+    "occupation": {
+      "adult": "Haut dignitaire corrompu"
+    },
+    "description": {
+      "adult": "Un vieil homme aux traits sévères, haut dignitaire corrompu d'Asura manipulant le pouvoir dans l'ombre."
+    },
+    "personality": {
+      "traits": ["corrompu", "manipulateur", "ambitieux", "impitoyable"],
+      "quirks": ["Obsession pour le contrôle", "Mépris pour les classes inférieures"]
+    },
+    "relationships": {},
+    "magic_affinity": "Faible",
+    "combat_style": "Manipulation politique",
+    "dialogue_topics": ["pouvoir", "corruption", "manipulation", "richesse", "influence"]
+  }
+
+  ,
+  "nanahoshi": {
+    "name": "Nanahoshi Shizuka",
+    "race": "Humain (d'un autre monde)",
+    "birth_year_offset": 10,
+    "gender": "Féminin",
+    "origin": "Japon (autre monde)",
+    "occupation": {
+      "teen": "Étudiante",
+      "adult": "Chercheuse en magie"
+    },
+    "description": {
+      "teen": "Une jeune fille japonaise aux cheveux noirs, déplacée de son monde d'origine, recherchant un moyen de rentrer chez elle.",
+      "adult": "Une femme aux traits asiatiques distinctifs, consacrant sa vie à la recherche magique pour trouver un chemin entre les mondes."
+    },
+    "personality": {
+      "traits": ["déterminée", "intelligente", "réservée", "nostalgique"],
+      "quirks": ["Obsédée par son retour dans son monde", "Garde ses distances émotionnelles"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune (résistance à la magie)",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["recherche magique", "téléportation", "monde d'origine", "mana", "voyage interdimensionnel"]
+  },
+  
+  "jenius": {
+    "name": "Jenius Grey Rat",
+    "race": "Humain",
+    "birth_year_offset": -57,
+    "gender": "Masculin",
+    "origin": "Académie de Ranoa",
+    "occupation": {
+      "adult": "Directeur de l'académie"
+    },
+    "description": {
+      "adult": "Un vieil homme à la barbe grise et aux yeux vifs, directeur de la prestigieuse Académie de Magie de Ranoa."
+    },
+    "personality": {
+      "traits": ["érudit", "ouvert d'esprit", "pragmatique", "curieux"],
+      "quirks": ["Fascination pour les cas exceptionnels", "Considère l'académie comme sa famille"]
+    },
+    "relationships": {},
+    "magic_affinity": "Multiple",
+    "combat_style": "Magie avancée",
+    "dialogue_topics": ["académie", "recherche magique", "éducation", "talent", "histoire de la magie"]
+  },
+  
+  "isolte": {
+    "name": "Isolte Cruel",
+    "race": "Humain",
+    "birth_year_offset": -30,
+    "gender": "Féminin",
+    "origin": "Royaume d'Asura",
+    "occupation": {
+      "adult": "Épéiste de rang Saint"
+    },
+    "description": {
+      "adult": "Une femme sévère aux cheveux noirs courts, épéiste d'élite au service du royaume d'Asura."
+    },
+    "personality": {
+      "traits": ["disciplinée", "stoïque", "loyale", "perfectionniste"],
+      "quirks": ["Rarement souriante", "Extrêmement dévouée à son devoir"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune",
+    "combat_style": "Épée (rang Saint)",
+    "dialogue_topics": ["techniques d'épée", "devoir", "royaume d'Asura", "discipline", "honneur"]
+  },
+  
+  "gallus": {
+    "name": "Gallus Cleaner",
+    "race": "Humain",
+    "birth_year_offset": -40,
+    "gender": "Masculin",
+    "origin": "Inconnu",
+    "occupation": {
+      "adult": "Assassin et espion"
+    },
+    "description": {
+      "adult": "Un homme ordinaire d'apparence insignifiante, assassin redoutable cachant sa véritable nature sous un masque de banalité."
+    },
+    "personality": {
+      "traits": ["méthodique", "patient", "professionnel", "sans scrupules"],
+      "quirks": ["Apparence trompeuse", "Fasciné par les méthodes d'assassinat"]
+    },
+    "relationships": {},
+    "magic_affinity": "Perturbation",
+    "combat_style": "Assassinat et poisons",
+    "dialogue_topics": ["assassinat", "espionnage", "techniques furtives", "politique", "contrats"]
+  },
+  
+  "laplace": {
+    "name": "Laplace",
+    "race": "Démon/Dragon",
+    "birth_year_offset": -1000,
+    "gender": "Masculin",
+    "origin": "Inconnu",
+    "occupation": {
+      "adult": "Ancien seigneur démoniaque"
+    },
+    "description": {
+      "adult": "Une entité légendaire divisée en plusieurs fragments, dont la réincarnation est prophétisée dans le futur."
+    },
+    "personality": {
+      "traits": ["complexe", "mystérieux", "puissant", "divisé"],
+      "quirks": ["Âme fragmentée", "Destinée liée aux cycles de réincarnation"]
+    },
+    "relationships": {
+      "hitogami": "Relation complexe",
+      "orsted": "Ennemi"
+    },
+    "magic_affinity": "Multiple (niveau divin)",
+    "combat_style": "Magie ancienne",
+    "dialogue_topics": ["pouvoir ancien", "cycle de réincarnation", "prophétie", "guerre ancienne", "technique magique"]
+  },
+  
+  "julie": {
+    "name": "Julie",
+    "race": "Humain",
+    "birth_year_offset": -20,
+    "gender": "Féminin",
+    "origin": "Royaume de Shirone",
+    "occupation": {
+      "adult": "Servante"
+    },
+    "description": {
+      "adult": "Une jeune femme calme et discrète, servante dévouée de la famille royale de Shirone, particulièrement au service du prince Zanoba."
+    },
+    "personality": {
+      "traits": ["loyale", "calme", "attentive", "discrète"],
+      "quirks": ["Dévotion totale envers Zanoba", "Observe tout en silence"]
+    },
+    "relationships": {
+      "zanoba": "Maître"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["service", "Zanoba", "royaume de Shirone", "vie de servante", "discrétion"]
+  },
+  
+  "monica": {
+    "name": "Monica",
+    "race": "Humain",
+    "birth_year_offset": -35,
+    "gender": "Féminin",
+    "origin": "Maison Boreas",
+    "occupation": {
+      "adult": "Servante d'Eris, gouvernante principale"
+    },
+    "description": {
+      "adult": "Une femme d'âge moyen à l'allure stricte, gouvernante principale de la maison Boreas et responsable de l'éducation d'Eris."
+    },
+    "personality": {
+      "traits": ["stricte", "loyale", "organisée", "patiente"],
+      "quirks": ["Désespérée par le comportement d'Eris", "Sens aigu de la hiérarchie"]
+    },
+    "relationships": {
+      "eris": "Pupille",
+      "philip": "Employeur",
+      "hilda": "Employeuse"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["étiquette", "éducation", "noblesse", "discipline", "responsabilités domestiques"]
+  },
+  
+  "derrick": {
+    "name": "Derrick Redbat",
+    "race": "Humain",
+    "birth_year_offset": -11,
+    "gender": "Masculin",
+    "origin": "Famille Redbat (Asura)",
+    "occupation": {
+      "child": "Noble",
+      "teen": "Garde du corps d'Ariel",
+      "adult": "Noble et chevalier"
+    },
+    "description": {
+      "child": "Un garçon de noble lignée, déjà promis à servir la famille royale.",
+      "teen": "Un jeune homme sérieux, servant aux côtés de Luke comme garde du corps de la princesse Ariel.",
+      "adult": "Un homme noble et fier portant les couleurs de sa famille, dévoué à la protection de la famille royale."
+    },
+    "personality": {
+      "traits": ["loyal", "discipliné", "orgueilleux", "protecteur"],
+      "quirks": ["Rivalité avec Luke", "Très attaché aux privilèges nobiliaires"]
+    },
+    "relationships": {
+      "luke": "Collègue et rival",
+      "ariel": "Princesse protégée"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Épée et tactique",
+    "dialogue_topics": ["devoir", "noblesse", "hiérarchie", "service", "honneur familial"]
+  },
+  
+  "halfa": {
+    "name": "Prince Halfa Asura",
+    "race": "Humain",
+    "birth_year_offset": -13,
+    "gender": "Masculin",
+    "origin": "Famille royale d'Asura",
+    "occupation": {
+      "child": "Prince",
+      "teen": "Prince",
+      "adult": "Prince"
+    },
+    "description": {
+      "child": "Un jeune prince aux traits délicats, plus intéressé par les arts que par la politique.",
+      "teen": "Un adolescent royal à l'apparence raffinée, souvent éclipsé par ses frères et sœurs.",
+      "adult": "Un homme cultivé et sensible de la famille royale, sans ambition particulière pour le trône."
+    },
+    "personality": {
+      "traits": ["sensible", "artistique", "réservé", "contemplatif"],
+      "quirks": ["Évite les conflits familiaux", "Préfère la compagnie des artistes à celle des nobles"]
+    },
+    "relationships": {
+      "ariel": "Sœur",
+      "grabel": "Frère aîné",
+      "roi_asura": "Père"
+    },
+    "magic_affinity": "Modéré",
+    "combat_style": "Minimal",
+    "dialogue_topics": ["arts", "culture", "vie à la cour", "philosophie", "beauté"]
+  },
+  
+  "daryl": {
+    "name": "Daryl Boreas Greyrat",
+    "race": "Humain",
+    "birth_year_offset": -24,
+    "gender": "Masculin",
+    "origin": "Maison Boreas",
+    "occupation": {
+      "adult": "Noble"
+    },
+    "description": {
+      "adult": "Un homme aux traits similaires à ceux de Philip, son frère, mais avec une expression plus rusée et opportuniste."
+    },
+    "personality": {
+      "traits": ["jaloux", "ambitieux", "manipulateur", "opportuniste"],
+      "quirks": ["Envie constante des possessions de son frère", "Prêt à trahir pour le pouvoir"]
+    },
+    "relationships": {
+      "philip": "Frère (rivalité)",
+      "sauros": "Père",
+      "eris": "Nièce"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Basique (épée)",
+    "dialogue_topics": ["rivalité familiale", "ambition", "pouvoir", "richesse", "manipulation"]
+  },
+  
+  "pape_millis": {
+    "name": "Pape de Millis",
+    "race": "Humain",
+    "birth_year_offset": -65,
+    "gender": "Masculin",
+    "origin": "Millis",
+    "occupation": {
+      "adult": "Chef de l'Église de Millis"
+    },
+    "description": {
+      "adult": "Un vieil homme aux traits austères portant les ornements sacrés de l'Église de Millis, détenant un pouvoir religieux et politique considérable."
+    },
+    "personality": {
+      "traits": ["autoritaire", "dogmatique", "calculateur", "inflexible"],
+      "quirks": ["Intolérant envers les autres croyances", "Obsédé par les traditions religieuses"]
+    },
+    "relationships": {
+      "raymond": "Subordonné",
+      "therese": "Fidèle"
+    },
+    "magic_affinity": "Guérison (rang Saint)",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["dogme de Millis", "pouvoir clérical", "purification", "traditions sacrées", "hérésie"]
+  },
+  
+  "rilina": {
+    "name": "Rilina Dedoldia",
+    "race": "Homme-bête",
+    "birth_year_offset": -37,
+    "gender": "Féminin",
+    "origin": "Tribu Dedoldia",
+    "occupation": {
+      "adult": "Professeur à l'académie de Ranoa"
+    },
+    "description": {
+      "adult": "Une femme-bête imposante au pelage tacheté, professeure respectée à l'académie de Ranoa malgré les préjugés contre les hommes-bêtes."
+    },
+    "personality": {
+      "traits": ["sévère", "juste", "pragmatique", "exigeante"],
+      "quirks": ["Teste constamment ses étudiants", "Combat les préjugés par l'excellence"]
+    },
+    "relationships": {
+      "kalman3": "Famille éloignée",
+      "ghislaine": "Famille éloignée"
+    },
+    "magic_affinity": "Terre",
+    "combat_style": "Combat bestial et armes",
+    "dialogue_topics": ["éducation", "préjugés", "excellence académique", "discipline", "magie pratique"]
+  }
+  ,
+  
+  "gisu": {
+    "name": "Gisu",
+    "race": "Homme-bête",
+    "birth_year_offset": -40,
+    "gender": "Masculin",
+    "origin": "Grande Forêt",
+    "occupation": {
+      "adult": "Aventurier et marchand"
+    },
+    "description": {
+      "adult": "Un homme-bête rusé au pelage gris, marchand et aventurier cachant de nombreux secrets sous un comportement affable."
+    },
+    "personality": {
+      "traits": ["opportuniste", "adaptable", "sociable", "rusé"],
+      "quirks": ["Double identité", "Toujours à la recherche de profit", "Très bien informé"]
+    },
+    "relationships": {
+      "ruijerd": "Ancienne connaissance"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Fuite et ruse",
+    "dialogue_topics": ["commerce", "rumeurs", "opportunités", "voyage", "négociation"]
+  },
+  
+  "ruijerd": {
+    "name": "Ruijerd Superdia",
+    "race": "Superd (démon)",
+    "birth_year_offset": -600,
+    "gender": "Masculin",
+    "origin": "Continent Démoniaque",
+    "occupation": {
+      "adult": "Guerrier"
+    },
+    "description": {
+      "adult": "Un guerrier Superd aux cheveux verts, imposant et honorable, portant une malédiction et le poids de son passé."
+    },
+    "personality": {
+      "traits": ["honorable", "protecteur", "sévère", "juste"],
+      "quirks": ["Vision du monde en noir et blanc", "Voué à la protection des enfants", "Malédiction des Superds"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune",
+    "combat_style": "Lance et combat corps-à-corps",
+    "dialogue_topics": ["code d'honneur", "histoire des Superds", "protection", "malédiction", "rédemption"]
+  },
+  
+  "suzanne": {
+    "name": "Suzanne",
+    "race": "Humain",
+    "birth_year_offset": -27,
+    "gender": "Féminin",
+    "origin": "Royaume Central",
+    "occupation": {
+      "adult": "Chef du groupe Counter Arrow"
+    },
+    "description": {
+      "adult": "Une femme d'allure autoritaire aux cheveux courts, meneuse respectée d'un groupe d'aventuriers expérimentés."
+    },
+    "personality": {
+      "traits": ["leader née", "pragmatique", "directe", "protectrice"],
+      "quirks": ["Boit beaucoup", "Fierté pour son équipe", "Déteste les incompétents"]
+    },
+    "relationships": {
+      "timothy": "Membre d'équipe",
+      "sara": "Membre d'équipe"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Combat à l'épée",
+    "dialogue_topics": ["aventures", "tactiques de combat", "guilde", "monstres", "travail d'équipe"]
+  },
+  
+  "sara": {
+    "name": "Sara",
+    "race": "Humain",
+    "birth_year_offset": -22,
+    "gender": "Féminin",
+    "origin": "Village rural",
+    "occupation": {
+      "adult": "Archère, membre du groupe Counter Arrow"
+    },
+    "description": {
+      "adult": "Une jeune femme aux cheveux châtains, archère douée au caractère amical et ouvert."
+    },
+    "personality": {
+      "traits": ["amicale", "optimiste", "honnête", "déterminée"],
+      "quirks": ["Tombe amoureuse facilement", "Très sociable", "Aime les histoires romantiques"]
+    },
+    "relationships": {
+      "suzanne": "Chef d'équipe"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Tir à l'arc",
+    "dialogue_topics": ["tir à l'arc", "amitié", "romance", "voyages", "aventures"]
+  },
+  
+  "timothy": {
+    "name": "Timothy",
+    "race": "Humain",
+    "birth_year_offset": -27,
+    "gender": "Masculin",
+    "origin": "Royaume Central",
+    "occupation": {
+      "adult": "Mage du groupe Counter Arrow"
+    },
+    "description": {
+      "adult": "Un homme aux lunettes et à l'air intellectuel, mage compétent spécialisé dans la magie de feu."
+    },
+    "personality": {
+      "traits": ["intellectuel", "calculateur", "précis", "fiable"],
+      "quirks": ["Ajuste constamment ses lunettes", "Explique tout en détail", "Évite les conflits"]
+    },
+    "relationships": {
+      "suzanne": "Chef d'équipe"
+    },
+    "magic_affinity": "Feu",
+    "combat_style": "Magie de combat",
+    "dialogue_topics": ["théorie magique", "tactiques", "analyse", "érudition", "formules magiques"]
+  },
+  
+  "soldat_elite": {
+    "name": "Capitaine de la Garde Royale d'Asura",
+    "race": "Humain",
+    "birth_year_offset": -45,
+    "gender": "Masculin",
+    "origin": "Royaume d'Asura",
+    "occupation": {
+      "adult": "Capitaine de la garde royale"
+    },
+    "description": {
+      "adult": "Un homme robuste en armure d'apparat, dirigeant la garde d'élite protégeant la famille royale d'Asura."
+    },
+    "personality": {
+      "traits": ["loyal", "discipliné", "rigoureux", "traditionnel"],
+      "quirks": ["Formalisme excessif", "Méfiance envers les étrangers", "Dévouement absolu à la couronne"]
+    },
+    "relationships": {
+      "roi_asura": "Souverain"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Combat à l'épée et tactique militaire",
+    "dialogue_topics": ["sécurité royale", "protocole", "devoir", "discipline", "menaces politiques"]
+  },
+  
+  "chaos_breaker": {
+    "name": "Chaos Breaker",
+    "race": "Humain (ancien)",
+    "birth_year_offset": -1000,
+    "gender": "Masculin",
+    "origin": "Inconnue",
+    "occupation": {
+      "adult": "Ancien Dieu de l'Eau"
+    },
+    "description": {
+      "adult": "Une figure légendaire dont seuls les récits subsistent, ancien détenteur du titre de Dieu de l'Eau."
+    },
+    "personality": {
+      "traits": ["imprévisible", "chaotique", "puissant", "révolutionnaire"],
+      "quirks": ["Style de combat imprévisible", "Rejetait les conventions", "Laissé un héritage controversé"]
+    },
+    "relationships": {
+      "reida": "Successeurs indirects"
+    },
+    "magic_affinity": "Eau (légendaire)",
+    "combat_style": "Water God style originel (imprévisible)",
+    "dialogue_topics": ["révolution des styles", "origines de l'école de l'eau", "pouvoir", "technique ancienne"]
+  },
+  
+  "patris": {
+    "name": "Patris",
+    "race": "Humain",
+    "birth_year_offset": -32,
+    "gender": "Masculin",
+    "origin": "Millis",
+    "occupation": {
+      "adult": "Prêtre et aventurier, membre du groupe Counter Arrow"
+    },
+    "description": {
+      "adult": "Un homme au visage serein portant les symboles religieux de Millis, prêtre guérisseur au sein d'un groupe d'aventuriers."
+    },
+    "personality": {
+      "traits": ["pieux", "calme", "attentionné", "médiateur"],
+      "quirks": ["Cite constamment les textes sacrés", "Essaie de convertir les autres", "Évite la violence"]
+    },
+    "relationships": {
+      "suzanne": "Chef d'équipe"
+    },
+    "magic_affinity": "Guérison",
+    "combat_style": "Magie de soutien",
+    "dialogue_topics": ["foi en Millis", "guérison", "compassion", "travail missionnaire", "philosophie religieuse"]
+  },
+  
+  "zenith_parents": {
+    "name": "Parents de Zenith",
+    "race": "Humain",
+    "birth_year_offset": -45,
+    "gender": "Divers",
+    "origin": "Maison Latreia",
+    "occupation": {
+      "adult": "Nobles de Millis"
+    },
+    "description": {
+      "adult": "Un couple de nobles pieux liés à la maison Latreia et à l'Église de Millis, parents de Zenith."
+    },
+    "personality": {
+      "traits": ["traditionnels", "pieux", "stricts", "formels"],
+      "quirks": ["Désapprobation du mariage de leur fille", "Attachement rigide aux traditions de Millis"]
+    },
+    "relationships": {
+      "zenith": "Fille",
+      "raymond": "Parent (frère du père)",
+      "paul": "Gendre (désapprouvé)"
+    },
+    "magic_affinity": "Faible (guérison)",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["traditions familiales", "église de Millis", "désappointement", "noblesse", "lignée"]
+  },
+
+  "thomas": {
+    "name": "Thomas Notos Greyrat",
+    "race": "Humain",
+    "birth_year_offset": -27,
+    "gender": "Masculin",
+    "origin": "Maison Notos",
+    "occupation": {
+      "adult": "Noble"
+    },
+    "description": {
+      "adult": "Un homme aux traits aristocratiques de la famille Greyrat, membre de la branche Notos de la famille."
+    },
+    "personality": {
+      "traits": ["aristocratique", "hautain", "calculateur", "politique"],
+      "quirks": ["Obsédé par le statut social", "Méprisant envers les roturiers"]
+    },
+    "relationships": {
+      "paul": "Parent éloigné",
+      "luke": "Famille (même branche)"
+    },
+    "magic_affinity": "Terre (faible)",
+    "combat_style": "Épée (style noble)",
+    "dialogue_topics": ["politique nobiliaire", "alliances", "prestige familial", "lignée", "pouvoir"]
+  },
+  
+  "christina": {
+    "name": "Christina Notos Greyrat",
+    "race": "Humain",
+    "birth_year_offset": -12,
+    "gender": "Féminin",
+    "origin": "Maison Notos",
+    "occupation": {
+      "child": "Noble",
+      "teen": "Étudiante à Ranoa",
+      "adult": "Noble et mage"
+    },
+    "description": {
+      "child": "Une petite fille aux manières impeccables, élevée selon les traditions strictes de la maison Notos.",
+      "teen": "Une adolescente aux cheveux bruns soigneusement coiffés, étudiante sérieuse et disciplinée à l'académie de Ranoa.",
+      "adult": "Une jeune femme élégante représentant la noblesse de la famille Greyrat, combinant éducation magique et devoirs aristocratiques."
+    },
+    "personality": {
+      "traits": ["studieuse", "disciplinée", "fière", "ambitieuse"],
+      "quirks": ["Attachement excessif à l'étiquette", "Rivalité avec d'autres nobles", "Perfectionniste"]
+    },
+    "relationships": {
+      "luke": "Parent",
+      "paul": "Parent éloigné (dédain)"
+    },
+    "magic_affinity": "Eau",
+    "combat_style": "Magie élégante",
+    "dialogue_topics": ["études magiques", "noblesse", "prestige familial", "ambitions académiques", "traditions"]
+  },
+  
+  "mimir": {
+    "name": "Mimir",
+    "race": "Humain",
+    "birth_year_offset": -32,
+    "gender": "Masculin",
+    "origin": "Royaume Central",
+    "occupation": {
+      "adult": "Aventurier, membre du groupe Counter Arrow"
+    },
+    "description": {
+      "adult": "Un homme robuste à la barbe courte, combattant expérimenté spécialisé dans le combat rapproché."
+    },
+    "personality": {
+      "traits": ["courageux", "direct", "loyal", "simple"],
+      "quirks": ["Parle peu mais agit beaucoup", "Amateur de bière", "Protecteur envers ses camarades"]
+    },
+    "relationships": {
+      "suzanne": "Chef d'équipe"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Combat à la hache",
+    "dialogue_topics": ["combat", "camaraderie", "tavernes", "monstres", "expériences de combat"]
+  },
+  
+  "alphonse": {
+    "name": "Alphonse",
+    "race": "Humain",
+    "birth_year_offset": -40,
+    "gender": "Masculin",
+    "origin": "Village de Fittoa",
+    "occupation": {
+      "adult": "Commandant de la ville"
+    },
+    "description": {
+      "adult": "Un homme d'âge moyen à l'allure militaire, commandant de la ville de Fittoa et responsable de sa sécurité."
+    },
+    "personality": {
+      "traits": ["responsable", "organisé", "pragmatique", "autoritaire"],
+      "quirks": ["Inquiétude constante pour la sécurité", "Attachement à sa communauté", "Respect des hiérarchies"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune",
+    "combat_style": "Combat militaire standard",
+    "dialogue_topics": ["sécurité du village", "organisation", "vie communautaire", "menaces extérieures", "résolution de problèmes"]
+  },
+  
+  "schult": {
+    "name": "Prince Schult Asura",
+    "race": "Humain",
+    "birth_year_offset": 7,
+    "gender": "Masculin",
+    "origin": "Royaume d'Asura",
+    "occupation": {
+      "child": "Prince",
+      "teen": "Prince",
+      "adult": "Prince"
+    },
+    "description": {
+      "child": "Un petit garçon qui naîtra dans sept ans, futur demi-frère d'Ariel, né d'une concubine royale.",
+      "teen": "Un adolescent timide et intelligent, demi-frère cadet d'Ariel et membre de la famille royale d'Asura.",
+      "adult": "Un jeune homme sensible et réfléchi de la famille royale, préférant les livres à la politique de cour."
+    },
+    "personality": {
+      "traits": ["doux", "curieux", "intelligent", "sensible"],
+      "quirks": ["Santé fragile", "Dévotion à sa sœur Ariel", "Passion pour la connaissance"]
+    },
+    "relationships": {
+      "ariel": "Demi-sœur (future)",
+      "roi_asura": "Père"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["livres", "connaissance", "famille", "santé", "royaume"]
+  },
+  
+  "juliette": {
+    "name": "Juliette",
+    "race": "Humain",
+    "birth_year_offset": -15,
+    "gender": "Féminin",
+    "origin": "Noblesse mineure",
+    "occupation": {
+      "teen": "Étudiante",
+      "adult": "Noble"
+    },
+    "description": {
+      "teen": "Une jeune fille noble aux cheveux bouclés, étudiante privilégiée à l'académie de Ranoa.",
+      "adult": "Une femme élégante de la noblesse mineure, ayant reçu une éducation magique à l'académie de Ranoa."
+    },
+    "personality": {
+      "traits": ["sociable", "privilégiée", "un peu snob", "ambitieuse"],
+      "quirks": ["Se vante de ses connexions", "Juge les autres par leur statut", "Aime les commérages"]
+    },
+    "relationships": {},
+    "magic_affinity": "Modérée",
+    "combat_style": "Magie basique",
+    "dialogue_topics": ["vie sociale", "noblesse", "mode", "rumeurs", "connexions politiques"]
+  }
+,
+
+  "vierra": {
+    "name": "Vierra",
+    "race": "Homme-bête",
+    "birth_year_offset": -29,
+    "gender": "Féminin",
+    "origin": "Tribu des Hommes-bêtes",
+    "occupation": {
+      "adult": "Chasseuse et guerrière"
+    },
+    "description": {
+      "adult": "Une femme-bête agile aux traits félins, sœur de Ghislaine, vivant principalement dans la forêt."
+    },
+    "personality": {
+      "traits": ["indépendante", "sauvage", "méfiante", "territoriale"],
+      "quirks": ["Préfère la vie sauvage à la civilisation", "Communication minimale"]
+    },
+    "relationships": {
+      "ghislaine": "Sœur"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Chasse et pièges",
+    "dialogue_topics": ["forêt", "survie", "territoire", "vie des hommes-bêtes", "chasse"]
+  }
+  ,
+
+  "randolph": {
+    "name": "Randolph Marianne",
+    "race": "Humain",
+    "birth_year_offset": -43,
+    "gender": "Masculin",
+    "origin": "Royaume d'Asura",
+    "occupation": {
+      "adult": "Commandant militaire"
+    },
+    "description": {
+      "adult": "Un homme robuste à la barbe carrée, commandant militaire respecté au service du royaume d'Asura."
+    },
+    "personality": {
+      "traits": ["discipliné", "loyal", "stratège", "pragmatique"],
+      "quirks": ["Parle de façon militaire", "Évalue tout en termes tactiques"]
+    },
+    "relationships": {},
+    "magic_affinity": "Faible",
+    "combat_style": "Épée et commandement",
+    "dialogue_topics": ["stratégie militaire", "défense du royaume", "tactique", "discipline", "loyauté"]
+  },
+
+  "sylvaril": {
+    "name": "Sylvaril",
+    "race": "Elfe",
+    "birth_year_offset": -150,
+    "gender": "Masculin",
+    "origin": "Forêt elfique",
+    "occupation": {
+      "adult": "Ancien du village elfique"
+    },
+    "description": {
+      "adult": "Un elfe âgé aux longs cheveux argentés, un des anciens d'un village elfique isolé."
+    },
+    "personality": {
+      "traits": ["sage", "méfiant", "traditionaliste", "patient"],
+      "quirks": ["Méfiance envers les humains", "Parle par proverbes anciens"]
+    },
+    "relationships": {},
+    "magic_affinity": "Vent (avancé)",
+    "combat_style": "Magie elfique ancienne",
+    "dialogue_topics": ["traditions elfiques", "histoire ancienne", "nature", "magie", "isolationnisme"]
+  },
+
+  "edna": {
+    "name": "Edna Courtyard",
+    "race": "Humain",
+    "birth_year_offset": -38,
+    "gender": "Féminin",
+    "origin": "Royaume d'Asura",
+    "occupation": {
+      "adult": "Négociante et informatrice"
+    },
+    "description": {
+      "adult": "Une femme élégante aux vêtements coûteux, négociante influente disposant d'un vaste réseau d'informations."
+    },
+    "personality": {
+      "traits": ["rusée", "charmante", "calculatrice", "indépendante"],
+      "quirks": ["Collectionne les informations comme monnaie d'échange", "Ne fait jamais rien gratuitement"]
+    },
+    "relationships": {},
+    "magic_affinity": "Faible",
+    "combat_style": "Évitement et manipulation",
+    "dialogue_topics": ["commerce", "information", "politique", "négociation", "secrets"]
+  },
+
+  "fergus": {
+    "name": "Fergus",
+    "race": "Humain",
+    "birth_year_offset": -52,
+    "gender": "Masculin",
+    "origin": "Royaume Central",
+    "occupation": {
+      "adult": "Maître forgeron"
+    },
+    "description": {
+      "adult": "Un homme massif aux bras musclés couverts de cicatrices de brûlures, forgeron légendaire spécialisé dans les armes magiques."
+    },
+    "personality": {
+      "traits": ["perfectionniste", "bourru", "passionné", "honnête"],
+      "quirks": ["Parle à ses créations", "Refuse les clients qu'il juge indignes"]
+    },
+    "relationships": {},
+    "magic_affinity": "Feu (appliqué à la forge)",
+    "combat_style": "Marteau de forgeron",
+    "dialogue_topics": ["forge", "armes magiques", "qualité des matériaux", "artisanat", "respect des armes"]
+  },
+
+  "nina": {
+    "name": "Nina",
+    "race": "Humain",
+    "birth_year_offset": -24,
+    "gender": "Féminin",
+    "origin": "Village rural",
+    "occupation": {
+      "adult": "Tavernière"
+    },
+    "description": {
+      "adult": "Une femme robuste aux joues rouges, tenancière d'une taverne populaire dans une ville commerçante."
+    },
+    "personality": {
+      "traits": ["extravertie", "intuitive", "maternelle", "résiliente"],
+      "quirks": ["Connaît les rumeurs de toute la région", "Protège ses clients réguliers comme une famille"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune",
+    "combat_style": "Bagarre de taverne",
+    "dialogue_topics": ["rumeurs locales", "boissons", "clients étranges", "vie en ville", "commerce"]
+  },
+
+  "rostelina": {
+    "name": "Rostelina",
+    "race": "Humain",
+    "birth_year_offset": -32,
+    "gender": "Féminin",
+    "origin": "Millis",
+    "occupation": {
+      "adult": "Prêtresse de Millis"
+    },
+    "description": {
+      "adult": "Une femme sereine aux habits blancs de l'ordre de Millis, prêtresse respectée pour sa sagesse et sa compassion."
+    },
+    "personality": {
+      "traits": ["compatissante", "sage", "dévouée", "pacifique"],
+      "quirks": ["Voit le bien en chacun", "Aide même ceux que l'Église rejette"]
+    },
+    "relationships": {},
+    "magic_affinity": "Guérison (avancée)",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["foi", "guérison", "compassion", "rédemption", "service"]
+  },
+
+  "york": {
+    "name": "York",
+    "race": "Nain",
+    "birth_year_offset": -63,
+    "gender": "Masculin",
+    "origin": "Colonies naines",
+    "occupation": {
+      "adult": "Maître brasseur"
+    },
+    "description": {
+      "adult": "Un nain trapu à la longue barbe rousse tressée, maître brasseur connu dans plusieurs royaumes pour ses bières exceptionnelles."
+    },
+    "personality": {
+      "traits": ["jovial", "fier", "artisan", "traditionnel"],
+      "quirks": ["Juge les gens par leur appréciation de la bière", "Raconte des histoires interminables"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune",
+    "combat_style": "Bagarre de taverne",
+    "dialogue_topics": ["brassage", "bière", "traditions naines", "ingrédients de qualité", "fêtes"]
+  },
+
+  "dorudia": {
+    "name": "Patriarche Dorudia",
+    "race": "Homme-bête",
+    "birth_year_offset": -73,
+    "gender": "Masculin",
+    "origin": "Tribu Dorudia",
+    "occupation": {
+      "adult": "Chef de tribu"
+    },
+    "description": {
+      "adult": "Un vieil homme-bête à la fourrure grisonnante, patriarche respecté d'une des tribus d'hommes-bêtes de la Grande Forêt."
+    },
+    "personality": {
+      "traits": ["sage", "traditionnel", "protecteur", "méfiant"],
+      "quirks": ["Raconte l'histoire tribale par des chants", "Méfiance instinctive envers les humains"]
+    },
+    "relationships": {
+      "pursena": "Lien tribal"
+    },
+    "magic_affinity": "Communion avec la nature",
+    "combat_style": "Ancien combattant bestial",
+    "dialogue_topics": ["traditions tribales", "Grande Forêt", "histoire des hommes-bêtes", "esprits de la nature", "territoire"]
+  },
+
+  "nokopara": {
+    "name": "Nokopara",
+    "race": "Démon (Migurd)",
+    "birth_year_offset": -90,
+    "gender": "Masculin",
+    "origin": "Village Migurd",
+    "occupation": {
+      "adult": "Ancien du village Migurd"
+    },
+    "description": {
+      "adult": "Un vieil homme de la race Migurd aux cheveux bleus clairsemés, respecté pour sa sagesse et sa maîtrise de la magie d'eau."
+    },
+    "personality": {
+      "traits": ["patient", "sage", "observateur", "traditionaliste"],
+      "quirks": ["Parle lentement et délibérément", "Communication principalement télépathique"]
+    },
+    "relationships": {
+      "roxy": "Connaissance du village"
+    },
+    "magic_affinity": "Eau (maître)",
+    "combat_style": "Magie d'eau défensive",
+    "dialogue_topics": ["traditions Migurd", "télépathie", "magie d'eau", "isolement du village", "histoire démoniaque"]
+  },
+
+  "dragonia": {
+    "name": "Dragonia",
+    "race": "Dragon",
+    "birth_year_offset": -700,
+    "gender": "Féminin",
+    "origin": "Terres draconiques",
+    "occupation": {
+      "adult": "Gardienne draconique"
+    },
+    "description": {
+      "adult": "Un dragon majestueux aux écailles iridescentes, capable d'adopter forme humaine, gardienne d'un ancien trésor."
+    },
+    "personality": {
+      "traits": ["fière", "ancienne", "protectrice", "solitaire"],
+      "quirks": ["Fascination pour les objets brillants", "Juge les créatures par leur puissance"]
+    },
+    "relationships": {},
+    "magic_affinity": "Draconique",
+    "combat_style": "Souffle draconique et magie ancienne",
+    "dialogue_topics": ["trésors", "histoire ancienne", "lignée des dragons", "puissance", "gardiennage"]
+  },
+
+  "water_emperor": {
+    "name": "Empereur de l'Eau",
+    "race": "Humain",
+    "birth_year_offset": -70,
+    "gender": "Masculin",
+    "origin": "Empire de l'Eau",
+    "occupation": {
+      "adult": "Empereur"
+    },
+    "description": {
+      "adult": "Un homme âgé au port noble, portant des vêtements somptueux aux teintes bleues, dirigeant l'Empire de l'Eau."
+    },
+    "personality": {
+      "traits": ["diplomatique", "calculateur", "patient", "traditionnel"],
+      "quirks": ["Fascination pour la culture de l'eau", "Stratège préférant les manœuvres à long terme"]
+    },
+    "relationships": {},
+    "magic_affinity": "Eau (modérée)",
+    "combat_style": "Stratégie politique",
+    "dialogue_topics": ["politique impériale", "culture de l'eau", "traditions", "équilibre des pouvoirs", "commerce"]
+  }
+,
+  "sauros_wife": {
+    "name": "Lady Boreas",
+    "race": "Humain",
+    "birth_year_offset": -54,
+    "gender": "Féminin",
+    "origin": "Maison Boreas",
+    "occupation": {
+      "adult": "Dame noble de la maison Boreas"
+    },
+    "description": {
+      "adult": "Une femme noble à l'allure sévère et distinguée, épouse de Sauros Boreas Greyrat et grand-mère d'Eris."
+    },
+    "personality": {
+      "traits": ["stricte", "digne", "traditionnelle", "réservée"],
+      "quirks": ["Maintient les apparences à tout prix", "Amour caché pour sa petite-fille"]
+    },
+    "relationships": {
+      "sauros": "Époux",
+      "philip": "Fils",
+      "eris": "Petite-fille"
+    },
+    "magic_affinity": "Faible",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["lignée familiale", "étiquette", "responsabilités nobiliaires", "apparences", "traditions"]
+  }
+  ,
+  
+  "north_emperor": {
+    "name": "Empereur du Nord",
+    "race": "Humain",
+    "birth_year_offset": -55,
+    "gender": "Masculin",
+    "origin": "Empire du Nord",
+    "occupation": {
+      "adult": "Empereur"
+    },
+    "description": {
+      "adult": "Un homme robuste aux traits nordiques, portant des fourrures imposantes et une couronne ornée de gemmes glacées."
+    },
+    "personality": {
+      "traits": ["autoritaire", "brutal", "direct", "ambitieux"],
+      "quirks": ["Mépris pour la faiblesse", "Respect uniquement pour la force"]
+    },
+    "relationships": {},
+    "magic_affinity": "Glace (modérée)",
+    "combat_style": "Combat au corps à corps et leadership militaire",
+    "dialogue_topics": ["conquête", "pouvoir", "territoires nordiques", "force militaire", "survie dans le froid"]
+  },
+
+  "magic_guild_master": {
+    "name": "Sylvester",
+    "race": "Humain",
+    "birth_year_offset": -65,
+    "gender": "Masculin",
+    "origin": "Royaume Central",
+    "occupation": {
+      "adult": "Maître de la Guilde des Mages"
+    },
+    "description": {
+      "adult": "Un homme âgé à la barbe blanche soignée, vêtu de robes ornées de runes, dirigeant la guilde des mages avec sagesse et autorité."
+    },
+    "personality": {
+      "traits": ["savant", "politique", "prudent", "respecté"],
+      "quirks": ["Parle en termes académiques", "Collectionne les artefacts magiques rares"]
+    },
+    "relationships": {},
+    "magic_affinity": "Multiple (maître)",
+    "combat_style": "Magie avancée",
+    "dialogue_topics": ["théorie magique", "organisation de la guilde", "régulation de la magie", "recherche", "artefacts"]
+  },
+
+  "adventure_guild_master": {
+    "name": "Rowan",
+    "race": "Humain",
+    "birth_year_offset": -58,
+    "gender": "Masculin",
+    "origin": "Royaume Central",
+    "occupation": {
+      "adult": "Maître de la Guilde des Aventuriers"
+    },
+    "description": {
+      "adult": "Un homme robuste au visage marqué par de nombreuses cicatrices, ancien aventurier légendaire devenu administrateur de la guilde."
+    },
+    "personality": {
+      "traits": ["pragmatique", "juste", "expérimenté", "direct"],
+      "quirks": ["Raconte des histoires d'aventures impossibles", "Teste les jeunes recrues"]
+    },
+    "relationships": {},
+    "magic_affinity": "Faible",
+    "combat_style": "Combat polyvalent (retraité)",
+    "dialogue_topics": ["aventures", "monstres", "système de rangs", "quêtes", "survie"]
+  },
+
+  "merchants_guild_master": {
+    "name": "Marianne Goldwood",
+    "race": "Humain",
+    "birth_year_offset": -49,
+    "gender": "Féminin",
+    "origin": "Royaume Central",
+    "occupation": {
+      "adult": "Maîtresse de la Guilde des Marchands"
+    },
+    "description": {
+      "adult": "Une femme aux formes généreuses parée de bijoux et vêtements luxueux, dirigeant la puissante guilde des marchands avec ruse et charme."
+    },
+    "personality": {
+      "traits": ["rusée", "charmante", "impitoyable en affaires", "sociable"],
+      "quirks": ["Connaît le prix exact de tout", "Collecte les dettes comme des trophées"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune",
+    "combat_style": "Gardes du corps",
+    "dialogue_topics": ["commerce", "négociation", "richesse", "réseaux commerciaux", "opportunités"]
+  },
+
+  "fang_tribe_chief": {
+    "name": "Chef Kharna",
+    "race": "Homme-bête (loup)",
+    "birth_year_offset": -45,
+    "gender": "Masculin",
+    "origin": "Tribu des Crocs",
+    "occupation": {
+      "adult": "Chef de tribu"
+    },
+    "description": {
+      "adult": "Un homme-bête imposant à l'apparence lupine, cicatrices de bataille parcourant son corps, chef respecté d'une des principales tribus d'hommes-bêtes."
+    },
+    "personality": {
+      "traits": ["féroce", "territorial", "loyal envers sa meute", "méfiant"],
+      "quirks": ["Juge par l'odeur et l'instinct", "Respect basé sur la force"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune",
+    "combat_style": "Combat bestial et tactique de meute",
+    "dialogue_topics": ["territoire", "force de la tribu", "traditions des hommes-bêtes", "hiérarchie", "chasse"]
+  },
+
+  "demon_lord_general": {
+    "name": "Galad Demon-Eye",
+    "race": "Démon",
+    "birth_year_offset": -320,
+    "gender": "Masculin",
+    "origin": "Continent Démoniaque",
+    "occupation": {
+      "adult": "Général démoniaque"
+    },
+    "description": {
+      "adult": "Un démon imposant à la peau rouge sombre et aux cornes impressionnantes, général respecté parmi les armées démoniaques."
+    },
+    "personality": {
+      "traits": ["stratège", "impitoyable", "honorable à sa façon", "ambitieux"],
+      "quirks": ["Collection d'armes des ennemis vaincus", "Respect pour les adversaires puissants"]
+    },
+    "relationships": {
+      "kishirika": "Loyauté à l'impératrice"
+    },
+    "magic_affinity": "Feu démoniaque",
+    "combat_style": "Armes démoniaques et magie de combat",
+    "dialogue_topics": ["stratégie militaire", "conquêtes", "hiérarchie démoniaque", "batailles légendaires", "armes"]
+  },
+
+  "guardians_twelve": {
+    "name": "Les Douze Gardiens",
+    "race": "Familiers de Dragon",
+    "birth_year_offset": -1000,
+    "gender": "Divers",
+    "origin": "Château Perugius",
+    "occupation": {
+      "adult": "Gardiens et serviteurs de Perugius"
+    },
+    "description": {
+      "adult": "Douze créatures mystiques aux formes diverses, dotées d'intelligence et de pouvoirs uniques, liées magiquement à Perugius comme ses familiers et gardiens."
+    },
+    "personality": {
+      "traits": ["loyaux", "anciens", "mystérieux", "puissants"],
+      "quirks": ["Communication télépathique entre eux", "Chacun a une personnalité distincte"]
+    },
+    "relationships": {
+      "perugius": "Maître"
+    },
+    "magic_affinity": "Diverse (selon l'individu)",
+    "combat_style": "Pouvoirs uniques",
+    "dialogue_topics": ["service à Perugius", "histoire ancienne", "gardiennage", "pouvoir des familiers", "menaces au monde"]
+  },
+
+  "zenith_grandfather": {
+    "name": "Patriarche Latreia",
+    "race": "Humain",
+    "birth_year_offset": -80,
+    "gender": "Masculin",
+    "origin": "Millis",
+    "occupation": {
+      "adult": "Ancien dignitaire de l'Ordre de Millis"
+    },
+    "description": {
+      "adult": "Un vieil homme aux traits nobles mais austères, patriarche influent de la famille Latreia et figure importante dans la hiérarchie religieuse de Millis."
+    },
+    "personality": {
+      "traits": ["pieux", "inflexible", "traditionnel", "autoritaire"],
+      "quirks": ["Cite constamment les textes sacrés", "Intransigeant sur les dogmes"]
+    },
+    "relationships": {
+      "zenith": "Petite-fille",
+      "raymond": "Fils",
+      "paul": "Désapprouve ce gendre"
+    },
+    "magic_affinity": "Guérison (faible)",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["lignée Latreia", "dogme de Millis", "pureté familiale", "hérésie", "tradition"]
+  },
+  
+  "technique_god": {
+    "name": "Dieu de la Technique",
+    "race": "Humain",
+    "birth_year_offset": -75,
+    "gender": "Masculin",
+    "origin": "Inconnu",
+    "occupation": {
+      "adult": "Dieu de la Technique"
+    },
+    "description": {
+      "adult": "Un homme d'âge moyen à l'apparence ordinaire mais aux mouvements parfaitement efficaces, maître absolu des techniques de combat à mains nues."
+    },
+    "personality": {
+      "traits": ["méthodique", "perfectionniste", "détaché", "observateur"],
+      "quirks": ["Analyse constamment les mouvements des autres", "Économie parfaite de mouvement"]
+    },
+    "relationships": {
+      "gal_farion": "Relation entre styles de combat",
+      "reida": "Relation entre styles de combat"
+    },
+    "magic_affinity": "Aucune",
+    "combat_style": "Technique God style (rang Dieu)",
+    "dialogue_topics": ["perfection technique", "efficacité du mouvement", "corps comme arme", "observation", "discipline"]
+  },
+  
+  "millishion_bishop": {
+    "name": "Évêque Bagley",
+    "race": "Humain",
+    "birth_year_offset": -58,
+    "gender": "Masculin",
+    "origin": "Millis",
+    "occupation": {
+      "adult": "Évêque de Millishion"
+    },
+    "description": {
+      "adult": "Un homme corpulent au visage sévère, évêque de la ville sainte de Millishion, vêtu des ornements luxueux de sa charge."
+    },
+    "personality": {
+      "traits": ["dogmatique", "politique", "ambitieux", "pieux en apparence"],
+      "quirks": ["Hypocrisie cachée", "Obsédé par les apparences"]
+    },
+    "relationships": {
+      "pape_millis": "Supérieur religieux"
+    },
+    "magic_affinity": "Guérison (modérée)",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["doctrine", "hérésie", "pouvoir clérical", "pureté", "péchés"]
+  },
+  
+  "glenn": {
+    "name": "Glenn",
+    "race": "Humain",
+    "birth_year_offset": -35,
+    "gender": "Masculin",
+    "origin": "Royaume Central",
+    "occupation": {
+      "adult": "Marchand d'esclaves"
+    },
+    "description": {
+      "adult": "Un homme aux vêtements voyants et au sourire commercial, marchand d'esclaves opérant dans plusieurs royaumes avec une réputation d'équité relative."
+    },
+    "personality": {
+      "traits": ["pragmatique", "commercial", "sans scrupules", "observateur"],
+      "quirks": ["Évalue constamment la valeur des gens", "Traite mieux sa 'marchandise' que ses concurrents"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune",
+    "combat_style": "Gardes du corps",
+    "dialogue_topics": ["commerce d'esclaves", "valeur marchande", "négociation", "marchandises rares", "qualités recherchées"]
+  },
+  
+  "elimaluk": {
+    "name": "Elimaluk",
+    "race": "Démon",
+    "birth_year_offset": -750,
+    "gender": "Masculin",
+    "origin": "Continent Démoniaque",
+    "occupation": {
+      "adult": "Ancien roi démon"
+    },
+    "description": {
+      "adult": "Un démon majestueux aux cornes spiralées et à la peau bleu sombre, ancien roi respecté même dans sa retraite."
+    },
+    "personality": {
+      "traits": ["sage", "calculateur", "patient", "observateur"],
+      "quirks": ["Parle par énigmes", "Collectionne les artefacts anciens"]
+    },
+    "relationships": {
+      "kishirika": "Lien avec l'impératrice"
+    },
+    "magic_affinity": "Multiple (maître)",
+    "combat_style": "Magie démoniaque ancienne",
+    "dialogue_topics": ["histoire démoniaque", "pouvoir ancien", "royauté", "conflits passés", "reliques"]
+  },
+  
+  "gull_barnacle": {
+    "name": "Gull Barnacle",
+    "race": "Humain",
+    "birth_year_offset": -36,
+    "gender": "Masculin",
+    "origin": "Côte maritime",
+    "occupation": {
+      "adult": "Capitaine pirate"
+    },
+    "description": {
+      "adult": "Un homme au teint hâlé et aux vêtements salés par l'océan, capitaine d'un navire pirate connu dans les mers du sud."
+    },
+    "personality": {
+      "traits": ["aventurier", "superstitieux", "charismatique", "imprévisible"],
+      "quirks": ["Collection de cartes maritimes", "Croyance en divers présages marins"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune",
+    "combat_style": "Combat naval et sabre",
+    "dialogue_topics": ["navigation", "trésors", "créatures marines", "superstitions", "îles inexplorées"]
+  },
+  
+  "guild_receptionist": {
+    "name": "Rinia",
+    "race": "Humain",
+    "birth_year_offset": -25,
+    "gender": "Féminin",
+    "origin": "Royaume Central",
+    "occupation": {
+      "adult": "Réceptionniste de guilde"
+    },
+    "description": {
+      "adult": "Une jeune femme aux cheveux bruns attachés, toujours souriante et organisée, travaillant comme réceptionniste à la guilde des aventuriers."
+    },
+    "personality": {
+      "traits": ["professionnelle", "patiente", "organisée", "informée"],
+      "quirks": ["Connaît tous les aventuriers par leur nom", "Mémorise toutes les quêtes"]
+    },
+    "relationships": {},
+    "magic_affinity": "Aucune",
+    "combat_style": "Aucun",
+    "dialogue_topics": ["quêtes disponibles", "rangs d'aventuriers", "procédures de guilde", "rumeurs locales", "monstres signalés"]
+  },
+  
+  "demon_empress_guard": {
+    "name": "Dramur",
+    "race": "Démon",
+    "birth_year_offset": -500,
+    "gender": "Masculin",
+    "origin": "Continent Démoniaque",
+    "occupation": {
+      "adult": "Garde impérial démoniaque"
+    },
+    "description": {
+      "adult": "Un démon massif à quatre bras, chacun tenant une arme différente, servant comme garde personnel de l'impératrice démoniaque."
+    },
+    "personality": {
+      "traits": ["loyal", "silencieux", "vigilant", "impitoyable"],
+      "quirks": ["Ne parle jamais sauf en cas d'absolue nécessité", "Vénération pour Kishirika"]
+    },
+    "relationships": {
+      "kishirika": "Impératrice qu'il sert"
+    },
+    "magic_affinity": "Force démoniaque",
+    "combat_style": "Combat à quatre armes",
+    "dialogue_topics": ["devoir", "protection", "hiérarchie démoniaque", "menaces", "loyauté"]
+  }
+}

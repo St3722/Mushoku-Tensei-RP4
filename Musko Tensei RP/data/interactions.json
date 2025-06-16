@@ -1,0 +1,871 @@
+{
+  "interaction_types": {
+    "dialogue": {
+      "name": "Dialogue",
+      "description": "Conversations normales avec les PNJ"
+    },
+    "combat": {
+      "name": "Combat",
+      "description": "Interactions de combat avec les ennemis"
+    },
+    "romance": {
+      "name": "Romance",
+      "description": "Interactions romantiques avec les personnages"
+    },
+    "intimate": {
+      "name": "Intime",
+      "description": "Interactions à caractère sensuel ou sexuel"
+    },
+    "quest": {
+      "name": "Quête",
+      "description": "Interactions liées aux quêtes"
+    },
+    "event": {
+      "name": "Événement",
+      "description": "Interactions lors d'événements spéciaux"
+    },
+    "training": {
+      "name": "Entraînement",
+      "description": "Interactions pendant les séances d'entraînement"
+    },
+    "trade": {
+      "name": "Commerce",
+      "description": "Interactions avec les marchands"
+    },
+    "crafting": {
+      "name": "Artisanat",
+      "description": "Interactions pendant la création d'objets"
+    },
+    "exploration": {
+      "name": "Exploration",
+      "description": "Interactions pendant l'exploration"
+    }
+  },
+  "dialogue_patterns": {
+    "greeting": {
+      "npc_standard": [
+        "Bonjour, aventurier. Que puis-je faire pour toi aujourd'hui ?",
+        "Salutations ! C'est une belle journée, n'est-ce pas ?",
+        "Oh, un voyageur ! Bienvenue dans notre humble {location}."
+      ],
+      "npc_hostile": [
+        "Qu'est-ce que tu veux ? Je n'ai pas de temps à perdre avec quelqu'un comme toi.",
+        "Hmph. Encore un étranger qui vient fouiner par ici.",
+        "Tu ferais mieux de faire attention où tu mets les pieds, étranger."
+      ],
+      "npc_friendly": [
+        "Ah, {player_name} ! Quel plaisir de te revoir !",
+        "Mon ami ! J'espérais justement que tu passerais aujourd'hui.",
+        "Le voilà ! Mon aventurier préféré est de retour !"
+      ],
+      "npc_romantic": [
+        "{player_name}... Mon cœur s'emballe chaque fois que je te vois.",
+        "Te voilà enfin... J'ai pensé à toi toute la journée.",
+        "Mmm, quelle agréable surprise de te voir ici..."
+      ]
+    },
+    "quest_offer": {
+      "standard": [
+        "J'aurais besoin de ton aide pour quelque chose...",
+        "Un aventurier comme toi pourrait m'être utile.",
+        "Dis-moi, serais-tu intéressé par un travail ?"
+      ],
+      "urgent": [
+        "Par les dieux, tu arrives au bon moment ! J'ai un problème urgent.",
+        "Je t'en prie, tu dois m'aider ! C'est une question de vie ou de mort !",
+        "Si tu ne m'aides pas maintenant, je crains le pire..."
+      ],
+      "mysterious": [
+        "J'ai quelque chose de... spécial à te proposer. Mais pas ici, pas maintenant.",
+        "Tu sembles être quelqu'un de confiance. J'ai une tâche qui nécessite discrétion.",
+        "As-tu déjà entendu parler de... Non, approche-toi, je ne peux pas parler fort."
+      ]
+    },
+    "trade": {
+      "merchant_greeting": [
+        "Bienvenue ! Mes marchandises sont les meilleures de tout {location} !",
+        "Ah, un client ! Que puis-je te vendre aujourd'hui ?",
+        "Regarde, touche, mais n'abîme rien ! J'ai des objets rares aujourd'hui."
+      ],
+      "merchant_haggle": [
+        "Ce prix ? Impossible ! Cette pièce me coûte une fortune à l'achat !",
+        "Je pourrais peut-être baisser un peu... mais vraiment pas beaucoup.",
+        "Tu sais marchander, hein ? Bon... faisons un compromis."
+      ]
+    },
+    "farewell": {
+      "standard": [
+        "À bientôt, aventurier !",
+        "Que les dieux veillent sur ton chemin.",
+        "Reviens me voir si tu as besoin de quoi que ce soit."
+      ],
+      "romantic": [
+        "Tu me manques déjà... Reviens vite, d'accord ?",
+        "Je penserai à toi jusqu'à notre prochaine rencontre...",
+        "Ne me fais pas attendre trop longtemps, {player_name}..."
+      ],
+      "hostile": [
+        "Bon débarras !",
+        "J'espère ne plus te revoir de sitôt.",
+        "La prochaine fois, passe ton chemin."
+      ]
+    }
+  },
+  "romance_interactions": {
+    "flirt": {
+      "initial": [
+        {
+          "player": "Tu as les plus beaux yeux que j'aie jamais vus.",
+          "responses": [
+            {
+              "npc": "Oh... merci. Personne ne m'avait fait ce compliment avant.",
+              "effect": {"romance": 1}
+            },
+            {
+              "npc": "Hmm, tu dis ça à tous ceux que tu rencontres ?",
+              "effect": {"romance": 0}
+            },
+            {
+              "npc": "*rougit* Tu... tu me flattes.",
+              "effect": {"romance": 2}
+            }
+          ]
+        },
+        {
+          "player": "Je n'arrête pas de penser à toi ces derniers temps.",
+          "responses": [
+            {
+              "npc": "Vraiment ? C'est... plutôt agréable à entendre.",
+              "effect": {"romance": 1}
+            },
+            {
+              "npc": "Je suis flattée, mais nous devrions rester concentrés sur notre tâche.",
+              "effect": {"romance": 0}
+            },
+            {
+              "npc": "Je... je dois avouer que tu occupes aussi mes pensées...",
+              "effect": {"romance": 2}
+            }
+          ]
+        }
+      ],
+      "medium": [
+        {
+          "player": "Quand tu es près de moi, je me sens invincible.",
+          "requirement": {"romance": 5},
+          "responses": [
+            {
+              "npc": "C'est étrange... je ressens la même chose.",
+              "effect": {"romance": 2}
+            },
+            {
+              "npc": "Tu es doux avec tes mots... j'aime ça.",
+              "effect": {"romance": 3}
+            }
+          ]
+        },
+        {
+          "player": "J'aimerais qu'on passe plus de temps ensemble, juste tous les deux.",
+          "requirement": {"romance": 5},
+          "responses": [
+            {
+              "npc": "J'attendais que tu le proposes... oui, j'aimerais beaucoup.",
+              "effect": {"romance": 3}
+            },
+            {
+              "npc": "*te prend la main* Que dirais-tu de commencer maintenant ?",
+              "effect": {"romance": 4, "trigger_event": "romantic_walk"}
+            }
+          ]
+        }
+      ],
+      "advanced": [
+        {
+          "player": "Je crois que je suis en train de tomber amoureux de toi.",
+          "requirement": {"romance": 15},
+          "responses": [
+            {
+              "npc": "*les yeux écarquillés* Je... je ne sais pas quoi dire... sauf peut-être que mon cœur ressent la même chose.",
+              "effect": {"romance": 5, "relationship_status": "lover"}
+            },
+            {
+              "npc": "C'est si soudain... Donne-moi un peu de temps pour comprendre mes sentiments.",
+              "effect": {"romance": 2}
+            }
+          ]
+        }
+      ]
+    },
+    "date": {
+      "locations": [
+        {
+          "id": "riverside_picnic",
+          "name": "Pique-nique au bord de la rivière",
+          "description": "Un endroit paisible où l'eau scintille sous le soleil, parfait pour un moment intime.",
+          "dialogues": [
+            {
+              "npc": "C'est si paisible ici... loin du bruit et des problèmes.",
+              "choices": [
+                {
+                  "text": "Tout comme toi, tu apportes la paix dans ma vie chaotique.",
+                  "effect": {"romance": 3}
+                },
+                {
+                  "text": "Profiter de ce moment avec toi est tout ce que je désire.",
+                  "effect": {"romance": 2}
+                }
+              ]
+            },
+            {
+              "npc": "*pose sa tête sur ton épaule* Si seulement le temps pouvait s'arrêter...",
+              "choices": [
+                {
+                  "text": "*caresser ses cheveux* Nous créerons d'autres moments comme celui-ci.",
+                  "effect": {"romance": 3, "intimacy": 1}
+                },
+                {
+                  "text": "*l'embrasser doucement* Pourquoi attendre un autre moment ?",
+                  "requirement": {"romance": 10},
+                  "effect": {"romance": 4, "intimacy": 3}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "stargazing",
+          "name": "Observer les étoiles",
+          "description": "Sur une colline éloignée, sous un ciel étoilé, les secrets de l'univers et du cœur se dévoilent.",
+          "requirement": {"time_of_day": "night"},
+          "dialogues": [
+            {
+              "npc": "Les étoiles sont magnifiques ce soir, mais...",
+              "choices": [
+                {
+                  "text": "Pas aussi magnifiques que tes yeux qui les reflètent.",
+                  "effect": {"romance": 3}
+                },
+                {
+                  "text": "Je me demande quels secrets elles gardent, tout comme toi.",
+                  "effect": {"romance": 2, "trigger_dialogue": "personal_secrets"}
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "confession": {
+      "scenes": [
+        {
+          "id": "sunset_confession",
+          "name": "Confession au coucher du soleil",
+          "requirement": {"romance": 20, "quest_completed": "help_village"},
+          "description": "Le soleil se couche, peignant le ciel de couleurs vives, créant un cadre parfait pour ouvrir son cœur.",
+          "dialogue": [
+            {
+              "npc": "Tu m'as demandé de venir ici... Quelque chose ne va pas ?",
+              "player_options": [
+                {
+                  "text": "Je voulais juste être avec toi, dans ce moment parfait.",
+                  "npc_response": "Oh... *sourit timidement* C'est vraiment magnifique ici.",
+                  "effect": {"romance": 1}
+                },
+                {
+                  "text": "Il y a quelque chose que je dois te dire... quelque chose que je ressens depuis longtemps.",
+                  "npc_response": "*te regarde intensément* Je t'écoute...",
+                  "next_dialogue": "actual_confession"
+                }
+              ]
+            },
+            {
+              "id": "actual_confession",
+              "player_options": [
+                {
+                  "text": "Je t'aime. Depuis le premier jour, mon cœur n'appartient qu'à toi.",
+                  "npc_response": "*larmes aux yeux* J'ai attendu si longtemps pour t'entendre dire ces mots... Je t'aime aussi, plus que tu ne peux l'imaginer.",
+                  "effect": {"romance": 10, "relationship_status": "committed"}
+                },
+                {
+                  "text": "Je ne peux plus imaginer ma vie sans toi à mes côtés.",
+                  "npc_response": "*prend tes mains* Alors fais en sorte que je reste toujours près de toi... car mon cœur ne bat que pour toi.",
+                  "effect": {"romance": 8, "relationship_status": "committed"}
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "intimate_interactions": {
+    "kiss": {
+      "first_kiss": {
+        "requirement": {"romance": 10},
+        "scenarios": [
+          {
+            "location": "moonlit_garden",
+            "description": "Sous la lumière argentée de la lune, les fleurs libèrent leur parfum enivrant.",
+            "dialogue": [
+              {
+                "npc": "*vous regarde intensément, les lèvres légèrement entrouvertes*",
+                "player_options": [
+                  {
+                    "text": "*se pencher lentement pour un baiser*",
+                    "npc_response": "*ferme les yeux et accepte le baiser avec douceur, frissonnant légèrement au contact*",
+                    "effect": {"romance": 5, "intimacy": 5, "first_kiss": true}
+                  },
+                  {
+                    "text": "*caresser sa joue et hésiter*",
+                    "npc_response": "*prend l'initiative et comble la distance, déposant un baiser tendre sur vos lèvres*",
+                    "effect": {"romance": 6, "intimacy": 5, "first_kiss": true}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "location": "after_battle",
+            "description": "L'adrénaline du combat encore présente, vos regards se croisent avec une intensité nouvelle.",
+            "dialogue": [
+              {
+                "npc": "*haletant* Je... je n'ai jamais ressenti une telle connexion avec quelqu'un...",
+                "player_options": [
+                  {
+                    "text": "*attirer brusquement contre soi* Je ne peux plus résister...",
+                    "npc_response": "*surprise, puis abandon total au baiser passionné*",
+                    "effect": {"romance": 4, "intimacy": 6, "first_kiss": true}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "passionate_kiss": {
+        "requirement": {"romance": 15, "first_kiss": true},
+        "scenes": [
+          {
+            "description": "Seuls dans la chambre, la tension entre vous est presque palpable.",
+            "dialogue": [
+              {
+                "npc": "*s'approche lentement* Je n'arrête pas de penser à notre baiser...",
+                "player_options": [
+                  {
+                    "text": "*la prendre par la taille* Alors pourquoi ne pas raviver ce souvenir ?",
+                    "npc_response": "*s'abandonne dans un baiser profond, ses mains explorant votre dos*",
+                    "effect": {"intimacy": 8, "trigger_scene": "intimate_possibility"}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "touch": {
+      "innocent": {
+        "description": "Contacts subtils et innocents qui peuvent mener à plus.",
+        "scenes": [
+          {
+            "dialogue": [
+              {
+                "context": "Assis côte à côte pendant un repos",
+                "npc": "*vos mains se frôlent accidentellement*",
+                "player_options": [
+                  {
+                    "text": "*entrelacer doucement les doigts*",
+                    "npc_response": "*rougit mais accepte le contact, serrant légèrement votre main*",
+                    "effect": {"romance": 2, "intimacy": 1}
+                  },
+                  {
+                    "text": "*retirer sa main et s'excuser*",
+                    "npc_response": "*semble légèrement déçu(e)* Non, c'est moi qui m'excuse...",
+                    "effect": {"romance": -1}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "intimate": {
+        "requirement": {"romance": 20, "intimacy": 10},
+        "scenes": [
+          {
+            "location": "private_springs",
+            "description": "Les sources chaudes privées, voilées par la vapeur, offrent un cadre intime.",
+            "dialogue": [
+              {
+                "npc": "L'eau est si agréable... *se rapproche de vous*",
+                "player_options": [
+                  {
+                    "text": "*caresser doucement son dos*",
+                    "npc_response": "*frissonne malgré la chaleur de l'eau* Tes mains sont magiques...",
+                    "effect": {"intimacy": 5},
+                    "leads_to": "intimate_massage"
+                  },
+                  {
+                    "text": "*l'attirer contre soi*",
+                    "npc_response": "*se blottit contre vous, sa peau humide contre la vôtre* Je me sens si bien avec toi...",
+                    "effect": {"intimacy": 6},
+                    "leads_to": "passionate_encounter"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "intimate_scene": {
+      "foreplay": {
+        "requirement": {"romance": 25, "intimacy": 15},
+        "scenes": [
+          {
+            "location": "candlelit_bedroom",
+            "description": "La chambre est baignée dans la lueur douce des bougies, créant des ombres dansantes sur les murs.",
+            "dialogue": [
+              {
+                "npc": "*vous regarde avec désir* J'ai attendu ce moment depuis si longtemps...",
+                "player_options": [
+                  {
+                    "text": "*l'embrasser passionnément tout en caressant son corps*",
+                    "npc_response": "*gémit doucement contre vos lèvres, son corps répondant à chaque toucher*",
+                    "effect": {"intimacy": 10},
+                    "leads_to": "intimate_undressing"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "full_scene": {
+        "requirement": {"romance": 30, "intimacy": 20, "relationship_status": "committed"},
+        "description": "Une union complète des corps et des âmes.",
+        "trigger_description": "Cette scène est disponible en fonction des choix précédents et de l'état de la relation.",
+        "note": "Descriptions détaillées générées par l'IA en temps réel selon le contexte et les préférences."
+      }
+    }
+  },
+  "combat_interactions": {
+    "initiation": {
+      "ambush": [
+        {
+          "description": "Des ombres surgissent soudainement des buissons !",
+          "enemies": ["bandit", "bandit_archer"],
+          "surprise_effect": {"player_initiative_penalty": 3}
+        },
+        {
+          "description": "Le sol tremble sous vos pieds avant qu'une créature massive ne jaillisse devant vous !",
+          "enemies": ["earth_golem"],
+          "surprise_effect": {"player_initiative_penalty": 5, "player_status": "shocked"}
+        }
+      ],
+      "challenge": [
+        {
+          "description": "Le guerrier vous dévisage avec mépris. 'Tu oses te prétendre fort ? Prouve-le !'",
+          "enemies": ["rival_warrior"],
+          "dialogue": {
+            "pre_combat": [
+              {
+                "npc": "Si tu veux gagner le respect de la guilde, tu dois d'abord gagner le mien.",
+                "player_options": [
+                  {
+                    "text": "Je n'ai rien à te prouver.",
+                    "response": "Alors tu n'as pas ta place parmi nous. Pars, lâche !",
+                    "effect": {"reputation_guild": -5}
+                  },
+                  {
+                    "text": "Très bien. Croisons le fer, mais sans animosité.",
+                    "response": "Hmph. Au moins tu as du cran. En garde !",
+                    "effect": {"reputation_guild": 2}
+                  },
+                  {
+                    "text": "Je vais te faire ravaler ton arrogance !",
+                    "response": "Hahaha ! J'aime cet esprit ! Voyons ce que tu vaux réellement !",
+                    "effect": {"combat_bonus": "attack+2"}
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "defense": [
+        {
+          "description": "Un villageois court vers vous, paniqué. 'À l'aide ! Des monstres attaquent le village !'",
+          "enemies": ["goblin_raider", "goblin_raider", "goblin_shaman"],
+          "stakes": {"village_safety": true, "reward_bonus": "reputation"},
+          "time_limit": 5
+        }
+      ]
+    },
+    "combat_dialogue": {
+      "taunts": [
+        {
+          "enemy_type": "bandit",
+          "lines": [
+            "Ta bourse ou ta vie !",
+            "Tu vas regretter d'avoir croisé mon chemin !",
+            "Je vais t'éventrer comme un poisson !"
+          ]
+        },
+        {
+          "enemy_type": "boss",
+          "lines": [
+            "Tu n'es qu'un insecte face à ma puissance !",
+            "D'autres ont essayé avant toi... ils sont tous morts.",
+            "Je vais t'écraser et utiliser tes os comme trophées !"
+          ]
+        }
+      ],
+      "player_responses": [
+        {
+          "category": "brave",
+          "lines": [
+            "C'est toi qui va mordre la poussière !",
+            "J'ai affronté pire que toi et je suis toujours là.",
+            "Tes menaces ne m'impressionnent pas."
+          ],
+          "effect": {"player_morale": 1}
+        },
+        {
+          "category": "smart",
+          "lines": [
+            "Tu parles beaucoup pour quelqu'un en position de désavantage.",
+            "J'analyse tes faiblesses à chaque mot que tu prononces.",
+            "La force brute ne remplace pas l'intelligence tactique."
+          ],
+          "effect": {"critical_chance": 0.05}
+        }
+      ]
+    },
+    "special_moves": {
+      "execution": {
+        "requirement": {"target_hp_percent": "below 20%"},
+        "moves": [
+          {
+            "name": "Décapitation Foudroyante",
+            "description": "Une frappe éclair qui sépare la tête du corps en un instant.",
+            "style": "sword_god",
+            "visual": "Un éclair argenté traverse l'espace tandis que vous disparaissez presque de la vue, réapparaissant derrière votre adversaire alors que sa tête glisse de son cou."
+          },
+          {
+            "name": "Pluie Cramoisie",
+            "description": "Une série de coups si rapides que le sang forme une brume rouge.",
+            "style": "martial",
+            "visual": "Vos poings deviennent flous, frappant tant de points vitaux simultanément que votre ennemi est enveloppé dans un nuage écarlate avant de s'effondrer."
+          }
+        ]
+      }
+    },
+    "defeat_interactions": {
+      "enemy_defeat": [
+        {
+          "enemy_type": "humanoid",
+          "options": [
+            {
+              "action": "kill",
+              "description": "Achever l'ennemi vaincu",
+              "dialogue": "Tu as combattu avec honneur, mais c'est ici que ton chemin s'achève.",
+              "effect": {"alignment_shift": "dark", "reputation_change": -2}
+            },
+            {
+              "action": "spare",
+              "description": "Épargner l'ennemi vaincu",
+              "dialogue": "Je n'ai pas besoin de prendre ta vie aujourd'hui. Repense à tes choix.",
+              "effect": {"alignment_shift": "light", "reputation_change": 2},
+              "potential_outcome": {
+                "chance": 0.2,
+                "event": "grateful_enemy",
+                "description": "L'ennemi épargné pourrait réapparaître plus tard comme allié ou informateur."
+              }
+            },
+            {
+              "action": "capture",
+              "description": "Faire prisonnier l'ennemi vaincu",
+              "dialogue": "Tu vas répondre de tes crimes devant la justice.",
+              "effect": {"reputation_change": 1, "reward_bonus": true}
+            }
+          ]
+        },
+        {
+          "enemy_type": "monster",
+          "options": [
+            {
+              "action": "harvest",
+              "description": "Récupérer des matériaux sur la créature",
+              "effect": {"materials_gained": true}
+            }
+          ]
+        }
+      ],
+      "player_defeat": {
+        "standard": {
+          "description": "Votre vision s'obscurcit alors que vous vous effondrez au sol...",
+          "outcomes": [
+            {
+              "type": "wake_up_injured",
+              "description": "Vous vous réveillez plus tard, affaibli et blessé.",
+              "effect": {
+                "hp_percent": 30,
+                "status_effect": "injured",
+                "item_loss_chance": 0.3
+              }
+            },
+            {
+              "type": "rescued",
+              "description": "Une silhouette floue vous traîne loin du danger avant que vous ne perdiez conscience...",
+              "chance": 0.4,
+              "effect": {
+                "hp_percent": 50,
+                "trigger_event": "mysterious_savior"
+              }
+            }
+          ]
+        },
+        "boss": {
+          "description": "Le coup final vous projette au sol. Votre adversaire s'approche, victorieux...",
+          "custom_scene": true
+        }
+      }
+    }
+  },
+  "training_interactions": {
+    "sword_training": {
+      "basic": {
+        "trainer_dialogue": [
+          {
+            "line": "Tiens fermement la garde. Le pouvoir vient de ta posture, pas seulement de tes muscles.",
+            "player_options": [
+              {
+                "text": "Comme ça ?",
+                "response": "Presque. Écarte un peu plus les pieds. La stabilité est essentielle.",
+                "effect": {"sword_skill": 0.5}
+              },
+              {
+                "text": "Je pense savoir mieux que vous comment tenir une épée.",
+                "response": "L'arrogance est le premier pas vers la défaite. Recommençons avec humilité.",
+                "effect": {"sword_skill": 0.1, "trainer_respect": -1}
+              }
+            ]
+          }
+        ],
+        "practice": {
+          "description": "Vous répétez les mouvements de base, encore et encore, jusqu'à ce que vos muscles brûlent.",
+          "success": {
+            "description": "La lame siffle dans l'air avec précision à chaque mouvement.",
+            "effect": {"sword_skill": 1, "strength": 0.2}
+          },
+          "failure": {
+            "description": "Votre épée vous échappe et se plante dans le sol.",
+            "effect": {"sword_skill": 0.3}
+          }
+        }
+      },
+      "advanced": {
+        "requirement": {"sword_skill": 5},
+        "trainer_dialogue": [
+          {
+            "line": "Maintenant, tu dois sentir ton épée comme une extension de ton corps. Ferme les yeux et ressens son équilibre.",
+            "player_options": [
+              {
+                "text": "*fermer les yeux et se concentrer*",
+                "response": "Bien... laisse ton instinct te guider. L'épée et toi ne faites qu'un.",
+                "effect": {"sword_skill": 1.5, "perception": 0.5}
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "magic_training": {
+      "meditation": {
+        "description": "Assis en position de méditation, vous cherchez à ressentir le flux de mana autour de vous.",
+        "dialogues": [
+          {
+            "trainer": "Vide ton esprit. Le mana est partout autour de nous. Il suffit d'apprendre à le percevoir, puis à le canaliser.",
+            "player_options": [
+              {
+                "text": "*se concentrer sur sa respiration*",
+                "result": "Lentement, vous commencez à percevoir des filaments d'énergie bleutée dansant autour de vos doigts.",
+                "effect": {"mana_control": 0.8, "max_mana": 5}
+              },
+              {
+                "text": "*essayer de forcer la canalisation*",
+                "result": "L'énergie s'agite et se dissipe. Votre tête commence à tourner légèrement.",
+                "effect": {"mana_control": 0.2, "status_effect": "dizzy"}
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "mentor_relationships": {
+      "sword_god_disciple": {
+        "respect_levels": {
+          "stranger": {
+            "dialogues": [
+              "Tu prétends vouloir apprendre le Style du Dieu Épée ? *rit* Des milliers ont essayé, des centaines sont morts en essayant."
+            ]
+          },
+          "testing": {
+            "dialogues": [
+              "Ta détermination est... intéressante. Peut-être y a-t-il quelque chose à forger en toi, après tout."
+            ],
+            "training": {
+              "description": "Des exercices brutaux qui poussent votre corps à ses limites.",
+              "effect": {"stamina": 1, "strength": 1, "chance_of_injury": 0.2}
+            }
+          },
+          "student": {
+            "dialogues": [
+              "Tu progresses. Lentement, mais tu progresses. Continue comme ça pendant dix ans et tu maîtriseras peut-être les bases."
+            ],
+            "training": {
+              "description": "Des techniques avancées qui commencent à révéler la véritable essence du style.",
+              "effect": {"sword_god_style": 1, "attack_speed": 0.5}
+            }
+          },
+          "favored": {
+            "requirement": {"training_sessions": 20, "quests_for_master": 3},
+            "dialogues": [
+              "Peu ont atteint le niveau où tu te trouves. Je commence à voir en toi l'écho du style originel."
+            ],
+            "special_training": {
+              "name": "Transmission de la technique secrète",
+              "description": "Le maître vous enseigne une technique que seuls quelques élus connaissent.",
+              "reward": {"skill_unlock": "godspeed_slash"}
+            }
+          }
+        }
+      }
+    }
+  },
+  "ai_interaction_parameters": {
+    "themes": [
+      "reincarnation",
+      "power_progression",
+      "divine_beings",
+      "martial_arts",
+      "magic_systems",
+      "political_intrigue",
+      "romance",
+      "betrayal",
+      "redemption",
+      "harem_elements",
+      "eastern_fantasy"
+    ],
+    "tone_adjustment": {
+      "formal": {
+        "usage": "nobles, officials, ancient beings",
+        "examples": [
+          "Je vous prie d'accepter mes excuses pour cette intrusion.",
+          "Votre présence honore grandement notre humble demeure."
+        ]
+      },
+      "casual": {
+        "usage": "friends, commoners",
+        "examples": [
+          "Hey, ça fait un bail ! Comment ça va ?",
+          "T'inquiète pas pour ça, on va s'en occuper."
+        ]
+      },
+      "flirtatious": {
+        "usage": "romantic interests",
+        "examples": [
+          "Tes yeux brillent comme les étoiles ce soir...",
+          "Chaque moment loin de toi me semble une éternité."
+        ]
+      },
+      "threatening": {
+        "usage": "enemies, antagonists",
+        "examples": [
+          "Tu regretteras bientôt d'avoir croisé mon chemin.",
+          "Je vais t'écraser comme l'insecte que tu es."
+        ]
+      },
+      "mysterious": {
+        "usage": "seers, ancient beings, cryptic characters",
+        "examples": [
+          "Ce que tu cherches n'est pas ce dont tu as besoin...",
+          "Les ombres murmurent des vérités que la lumière n'ose révéler."
+        ]
+      }
+    },
+    "character_voice_patterns": {
+      "tsundere": {
+        "description": "Personnage alternant entre hostilité et affection",
+        "patterns": [
+          "Ce n'est pas comme si je faisais ça pour toi, idiot !",
+          "J-je suppose que je pourrais t'aider... mais ne te fais pas d'idées !"
+        ]
+      },
+      "kuudere": {
+        "description": "Personnage calme et stoïque cachant des émotions profondes",
+        "patterns": [
+          "...",
+          "C'est logique d'agir ainsi.",
+          "*léger hochement de tête*"
+        ]
+      },
+      "yandere": {
+        "description": "Personnage obsessionnel et potentiellement dangereux par amour",
+        "patterns": [
+          "Je ne laisserai personne d'autre t'approcher...",
+          "*sourire inquiétant* Tu es à moi seul(e), n'est-ce pas ?"
+        ]
+      },
+      "wise_elder": {
+        "description": "Personnage âgé et sage, parlant souvent par métaphores",
+        "patterns": [
+          "La rivière trouve toujours son chemin vers la mer, tout comme tu trouveras le tien.",
+          "J'ai vu suffisamment de saisons pour reconnaître les signes du changement."
+        ]
+      }
+    },
+    "interaction_adaptations": {
+      "player_traits": {
+        "aggressive": {
+          "npc_reactions": {
+            "friendly": "intimidated",
+            "neutral": "defensive",
+            "hostile": "aggressive_response"
+          }
+        },
+        "kind": {
+          "npc_reactions": {
+            "friendly": "very_receptive",
+            "neutral": "warming_up",
+            "hostile": "slightly_less_hostile"
+          }
+        },
+        "flirtatious": {
+          "npc_reactions": {
+            "romantic_interest": {
+              "interested": "positively_receptive",
+              "not_interested": "uncomfortable"
+            }
+          }
+        }
+      },
+      "context_sensitivity": {
+        "public_setting": {
+          "romance_adjustment": "more_restrained",
+          "conflict_adjustment": "more_controlled"
+        },
+        "intimate_setting": {
+          "romance_adjustment": "more_expressive",
+          "dialogue_pacing": "slower_and_meaningful"
+        },
+        "dangerous_setting": {
+          "dialogue_length": "shorter",
+          "tone": "urgent"
+        }
+      }
+    }
+  }
+}
+
